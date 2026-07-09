@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -12,6 +10,7 @@ import {
   Send,
 } from "lucide-react";
 import { roles } from "./roles";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 const positionOptions = ["General Application", ...roles.map((r) => r.title)];
 const experienceOptions = ["Entry-level", "1–3 years", "3–6 years", "6+ years"];
@@ -314,28 +313,26 @@ export default function ApplicationForm({
                   </motion.div>
                 )}
 
-                <motion.button
-                  variants={fieldVariants}
-                  initial="hidden"
-                  animate="visible"
-                  type="submit"
-                  disabled={status === "submitting"}
-                  whileHover={status === "submitting" ? undefined : { y: -2 }}
-                  whileTap={status === "submitting" ? undefined : { scale: 0.98 }}
-                  className="mt-2 flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-white font-semibold bg-gradient-to-r from-brand-green-500 to-brand-blue-500 shadow-md shadow-brand-green-500/15 hover:shadow-lg hover:shadow-brand-green-500/25 transition-shadow duration-300 disabled:opacity-70 disabled:cursor-not-allowed select-none"
-                >
-                  {status === "submitting" ? (
-                    <>
-                      <Loader2 size={16} className="animate-spin" />
-                      Submitting...
-                    </>
-                  ) : (
-                    <>
-                      Submit Application
-                      <Send size={16} />
-                    </>
-                  )}
-                </motion.button>
+                <motion.div variants={fieldVariants} initial="hidden" animate="visible">
+                  <MagneticButton
+                    as="button"
+                    type="submit"
+                    disabled={status === "submitting"}
+                    className="w-full mt-2 flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-white font-semibold bg-gradient-to-r from-brand-green-500 to-brand-blue-500 shadow-md shadow-brand-green-500/15 hover:shadow-lg hover:shadow-brand-green-500/25 transition-shadow duration-300 disabled:opacity-70 disabled:cursor-not-allowed select-none"
+                  >
+                    {status === "submitting" ? (
+                      <>
+                        <Loader2 size={16} className="animate-spin" />
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        Submit Application
+                        <Send size={16} />
+                      </>
+                    )}
+                  </MagneticButton>
+                </motion.div>
               </motion.form>
             )}
           </AnimatePresence>

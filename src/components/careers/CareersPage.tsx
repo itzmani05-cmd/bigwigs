@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import CareersHero from "./CareersHero";
 import CultureValues from "./CultureValues";

@@ -1,12 +1,10 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navItems, ctaItem, demoItem } from "./navbar/navConfig";
 import MegaMenu from "./navbar/MegaMenu";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -15,7 +13,7 @@ export default function Navbar() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [openMega, setOpenMega] = useState<string | null>(null);
   const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const pathname = usePathname();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);
@@ -39,17 +37,16 @@ export default function Navbar() {
       <div
         className={`mx-auto flex items-center justify-between transition-[max-width,padding,margin,border-radius,background-color,box-shadow] duration-500 ease-out ${
           scrolled
-            ? "max-w-[1040px] mt-3 px-5 py-2.5 rounded-2xl border border-white/60 bg-white/75 backdrop-blur-xl shadow-[0_12px_40px_-16px_rgba(15,23,42,0.25)]"
-            : "max-w-[1240px] mt-0 px-6 lg:px-[15px] py-4 rounded-none border border-transparent bg-transparent shadow-none"
+            ? "max-w-[1040px] mt-3 px-3 py-2 rounded-2xl border border-white/60 bg-white/75 backdrop-blur-xl shadow-[0_12px_40px_-16px_rgba(15,23,42,0.25)]"
+            : "max-w-[1240px] mt-0 px-3 lg:px-[15px] py-2 rounded-none border border-transparent bg-transparent shadow-none"
         }`}
       >
         <a href="#home" className="flex items-center group shrink-0">
-          <Image
+          <img
             src="/assets/Logo.png"
             alt="BigWigs Technologies Logo"
             width={196}
             height={72}
-            priority
             className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
           />
         </a>
@@ -105,14 +102,8 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3 shrink-0">
-          <a
-            href={demoItem.href}
-            className="relative overflow-hidden border-2 border-brand-green-500 text-brand-green-500 hover:text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 ease-out group select-none"
-          >
-            <span className="absolute inset-0 w-full h-full bg-brand-green-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
-            <span className="relative z-10">{demoItem.name}</span>
-          </a>
-          <a
+          
+          <MagneticButton
             href={ctaItem.href}
             className="group flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-brand-green-500 to-brand-blue-500 shadow-md shadow-brand-green-500/15 hover:shadow-lg hover:shadow-brand-green-500/25 transition-all duration-300 hover:-translate-y-0.5 select-none"
           >
@@ -121,7 +112,14 @@ export default function Navbar() {
               size={15}
               className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
-          </a>
+          </MagneticButton>
+          <MagneticButton
+            href={demoItem.href}
+            className="relative overflow-hidden border-2 border-brand-green-500 text-brand-green-500 hover:text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 ease-out group select-none"
+          >
+            <span className="absolute inset-0 w-full h-full bg-brand-green-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
+            <span className="relative z-10">{demoItem.name}</span>
+          </MagneticButton>
         </div>
 
         <button
@@ -202,7 +200,7 @@ export default function Navbar() {
               <a
                 href={demoItem.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-4 flex items-center justify-center gap-1.5 px-5 py-3 rounded-full text-sm font-semibold border-2 border-brand-green-500 text-brand-green-500 select-none"
+                className="mt-4 flex items-center justify-center gap-1.5 px-5 py-3 text-sm font-semibold border-brand-green-500 text-brand-green-500 select-none"
               >
                 {demoItem.name}
               </a>

@@ -1,8 +1,8 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import HeroBackground from "@/components/hero/HeroBackground";
+import MagneticButton from "@/components/ui/MagneticButton";
+import CursorGlow from "@/components/ui/CursorGlow";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,6 +25,7 @@ export default function CareersHero() {
   return (
     <section className="relative w-full overflow-hidden bg-white py-28 lg:py-36">
       <HeroBackground />
+      <CursorGlow color="16,185,129" size={380} />
       <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-12 lg:px-20 text-center">
         <motion.div
           variants={containerVariants}
@@ -62,19 +63,19 @@ export default function CareersHero() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-4 mt-2">
-            <a
+            <MagneticButton
               href="#open-roles"
               className="flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold bg-gradient-to-r from-brand-green-500 to-brand-blue-500 shadow-md shadow-brand-green-500/15 hover:shadow-lg hover:shadow-brand-green-500/25 transition-all duration-300 hover:-translate-y-0.5 select-none"
             >
               <span>View Open Roles</span>
               <ArrowRight size={16} />
-            </a>
-            <a
+            </MagneticButton>
+            <MagneticButton
               href="#apply"
               className="px-7 py-3 rounded-full font-semibold border-2 border-slate-200 text-slate-700 hover:border-brand-green-500 hover:text-brand-green-600 transition-colors duration-300 select-none"
             >
               General Application
-            </a>
+            </MagneticButton>
           </motion.div>
         </motion.div>
       </div>

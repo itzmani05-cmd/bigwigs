@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { Rocket, Target, TrendingUp, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";

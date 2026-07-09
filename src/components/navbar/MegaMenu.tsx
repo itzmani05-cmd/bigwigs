@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { MegaContent } from "./navConfig";
