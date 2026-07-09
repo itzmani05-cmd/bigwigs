@@ -1,4 +1,16 @@
-import { Map, Radar, Stethoscope, ScanEye, Workflow, BarChart3 } from "lucide-react";
+import {
+  Map,
+  Radar,
+  Stethoscope,
+  ScanEye,
+  Workflow,
+  BarChart3,
+  Users,
+  Newspaper,
+  CalendarDays,
+  Building2,
+  BadgeCheck,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface MegaFeature {
@@ -22,7 +34,50 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
-  { name: "About Us", href: "#about" },
+  {
+    name: "About Us",
+    href: "#about",
+    mega: {
+      title: "About BigWigs",
+      description:
+        "Get to know the team, culture, and credentials behind our enterprise AI work.",
+      links: [
+        { name: "Our Team", href: "#" },
+        { name: "Blogs", href: "#" },
+        { name: "Events", href: "#" },
+        { name: "Locations", href: "#" },
+        { name: "Certifications", href: "#" },
+      ],
+      features: [
+        {
+          icon: Users,
+          title: "Our Team",
+          description: "Meet the engineers and researchers behind BigWigs.",
+        },
+        {
+          icon: Newspaper,
+          title: "Blogs",
+          description: "Insights and updates from our engineering team.",
+        },
+        {
+          icon: CalendarDays,
+          title: "Events",
+          description: "Webinars, meetups, and conferences we host or attend.",
+        },
+        {
+          icon: Building2,
+          title: "Locations",
+          description: "Where we operate and deliver enterprise AI.",
+        },
+        {
+          icon: BadgeCheck,
+          title: "Certifications",
+          description: "Compliance and quality credentials we hold.",
+        },
+      ],
+      cta: { label: "Learn more about us", href: "#about" },
+    },
+  },
   {
     name: "Services",
     href: "#services",

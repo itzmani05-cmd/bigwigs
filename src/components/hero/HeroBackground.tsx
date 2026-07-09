@@ -1,6 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { seededRandom } from "./utils";
 
 /** Rounded to 2 decimals so the server-rendered style string and the browser's
@@ -19,30 +18,52 @@ const PARTICLES = Array.from({ length: 26 }, (_, i) => ({
 }));
 
 export default function HeroBackground() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+
+  const blobY1 = useTransform(scrollYProgress, [0, 1], [-50, 50]);
+  const blobY2 = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  const blobY3 = useTransform(scrollYProgress, [0, 1], [-25, 25]);
+
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div ref={ref} className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* base wash */}
       <div className="absolute inset-0 bg-white" />
 
-      {/* large blurred radial gradients, layered depth */}
+      {/* large blurred radial gradients, layered depth, parallax on scroll */}
       <motion.div
+        style={{ y: blobY1 }}
         className="absolute -top-32 -left-20 w-lg h-128 rounded-full bg-brand-green-400/15 blur-[130px]"
-        animate={{ opacity: [0.6, 1, 0.6] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-      />
+      >
+        <motion.div
+          className="w-full h-full rounded-full"
+          animate={{ opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </motion.div>
       <motion.div
+        style={{ y: blobY2 }}
         className="absolute top-1/3 right-[-8%] w-152 h-152 rounded-full bg-brand-blue-500/12 blur-[150px]"
-        animate={{ opacity: [0.5, 0.9, 0.5] }}
-        transition={{ duration: 17, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
+      >
+        <motion.div
+          className="w-full h-full rounded-full"
+          animate={{ opacity: [0.5, 0.9, 0.5] }}
+          transition={{ duration: 17, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        />
+      </motion.div>
       <motion.div
+        style={{ y: blobY3 }}
         className="absolute bottom-[-15%] left-1/4 w-104 h-104 rounded-full bg-violet-400/10 blur-[120px]"
-        animate={{ opacity: [0.4, 0.8, 0.4] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-      />
+      >
+        <motion.div
+          className="w-full h-full rounded-full"
+          animate={{ opacity: [0.4, 0.8, 0.4] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+        />
+      </motion.div>
 
-      {/* subtle AI grid, faded at the edges */}
-      <div
+      {/* subtle AI grid, faded at the edges, slowly panning */}
+      <motion.div
         className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
@@ -52,6 +73,8 @@ export default function HeroBackground() {
           WebkitMaskImage:
             "radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 90%)",
         }}
+        animate={{ backgroundPosition: ["0px 0px", "56px 56px"] }}
+        transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
       />
 
       {/* thin abstract connecting lines */}

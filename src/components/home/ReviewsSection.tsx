@@ -1,9 +1,9 @@
-"use client";
-
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 import Container from "@/components/ui/Container";
+import CursorGlow from "@/components/ui/CursorGlow";
+import MagneticButton from "@/components/ui/MagneticButton";
 import { reviews } from "./reviews";
 
 const AUTOPLAY_DELAY = 1000;
@@ -70,6 +70,21 @@ export default function ReviewsSection() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
+      {/* floating blobs */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -top-20 -left-16 w-96 h-96 rounded-full bg-brand-green-400/15 blur-[110px]"
+        animate={{ opacity: [0.5, 0.9, 0.5], y: [0, -20, 0] }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-24 -right-16 w-[26rem] h-[26rem] rounded-full bg-brand-blue-500/12 blur-[130px]"
+        animate={{ opacity: [0.4, 0.85, 0.4], y: [0, 20, 0] }}
+        transition={{ duration: 19, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
+      <CursorGlow color="16,185,129" size={360} />
+
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* left column: heading + controls */}
@@ -94,22 +109,22 @@ export default function ReviewsSection() {
             </p>
 
             <div className="mt-10 flex items-center gap-4">
-              <button
+              <MagneticButton
+                as="button"
                 type="button"
-                aria-label="Previous review"
                 onClick={() => handleManualNav(goPrev)}
                 className="flex items-center justify-center w-12 h-12 rounded-full border border-slate-200 bg-white text-slate-700 shadow-[0_8px_20px_-12px_rgba(15,23,42,0.2)] transition-all duration-300 hover:border-brand-green-500 hover:text-brand-green-600 hover:-translate-y-0.5"
               >
                 <ArrowLeft size={18} />
-              </button>
-              <button
+              </MagneticButton>
+              <MagneticButton
+                as="button"
                 type="button"
-                aria-label="Next review"
                 onClick={() => handleManualNav(goNext)}
                 className="flex items-center justify-center w-12 h-12 rounded-full border border-slate-200 bg-white text-slate-700 shadow-[0_8px_20px_-12px_rgba(15,23,42,0.2)] transition-all duration-300 hover:border-brand-green-500 hover:text-brand-green-600 hover:-translate-y-0.5"
               >
                 <ArrowRight size={18} />
-              </button>
+              </MagneticButton>
 
               <span className="ml-2 text-sm font-semibold text-slate-400 tabular-nums">
                 {String(index + 1).padStart(2, "0")}{" "}
