@@ -1,18 +1,18 @@
 import { useRef, useState } from "react";
-import { Play } from "lucide-react";
+import { Volume2 } from "lucide-react";
 import Container from "@/components/ui/Container";
+import AboutStats from "./AboutStats";
 
 export default function AboutVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
+  const [unmuted, setUnmuted] = useState(false);
 
-  const handlePlay = () => {
+  const handleUnmute = () => {
     const video = videoRef.current;
     if (!video) return;
     video.muted = false;
     video.controls = true;
-    video.play();
-    setPlaying(true);
+    setUnmuted(true);
   };
 
   return (
@@ -35,27 +35,30 @@ export default function AboutVideo() {
           </p>
         </div>
 
+        <AboutStats />
+
         <div className="relative mt-12 sm:mt-16 mx-auto max-w-5xl rounded-3xl overflow-hidden bg-slate-950 shadow-[0_40px_100px_-30px_rgba(15,23,42,0.35)] aspect-video">
           <video
             ref={videoRef}
             className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
           >
             <source src="/assets/BigWigs-Technologies.mp4" type="video/mp4" />
           </video>
 
-          {!playing && (
+          {!unmuted && (
             <button
               type="button"
-              onClick={handlePlay}
-              aria-label="Play company video"
-              className="group absolute inset-0 flex items-center justify-center bg-slate-950/35 transition-colors duration-300 hover:bg-slate-950/45"
+              onClick={handleUnmute}
+              aria-label="Unmute video"
+              className="group absolute inset-0 flex items-center justify-center bg-slate-950/15 transition-colors duration-300 hover:bg-slate-950/25"
             >
               <span className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-white text-slate-900 shadow-lg transition-transform duration-300 group-hover:scale-110">
-                <Play size={26} className="ml-1" fill="currentColor" />
+                <Volume2 size={26} />
               </span>
             </button>
           )}

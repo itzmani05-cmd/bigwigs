@@ -1,108 +1,58 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { MegaContent } from "./navConfig";
+import MegaMenuIntro from "./MegaMenuIntro";
+import MegaMenuLinks from "./MegaMenuLinks";
+import FeaturePreview from "./FeaturePreview";
 
 const panelVariants = {
-  hidden: { opacity: 0, y: -12, scale: 0.98 },
+  hidden: { opacity: 0, y: -8 },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
-    transition: { type: "spring", stiffness: 300, damping: 28, mass: 0.9 },
+    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
   },
   exit: {
     opacity: 0,
     y: -8,
-    scale: 0.98,
-    transition: { duration: 0.15, ease: "easeIn" },
+    transition: { duration: 0.2, ease: "easeIn" },
   },
 } as const;
 
-const featureContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.05, delayChildren: 0.05 } },
-} as const;
+interface MegaMenuProps {
+  content: MegaContent;
+  id: string;
+}
 
-const featureVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.35, ease: [0.215, 0.61, 0.355, 1] },
-  },
-} as const;
+export default function MegaMenu({ content, id }: MegaMenuProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeFeature = content.features[activeIndex] ?? content.features[0];
 
-export default function MegaMenu({ content }: { content: MegaContent }) {
   return (
     <motion.div
+      id={id}
+      role="region"
+      aria-label={`${content.title} menu`}
       variants={panelVariants}
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="absolute left-1/2 top-full mt-3 w-[60vw] max-w-[880px] min-w-[640px] -translate-x-1/2 rounded-[28px] border border-white/60 bg-white/80 shadow-[0_30px_80px_-20px_rgba(15,23,42,0.25)] backdrop-blur-2xl overflow-hidden"
+      className="absolute left-0 right-0 top-full w-full max-h-[600px] overflow-y-auto bg-white border-t border-slate-100 shadow-[0_40px_80px_-30px_rgba(15,23,42,0.2)]"
     >
-      <div className="grid grid-cols-5">
-        {/* left 40% */}
-        <div className="col-span-2 p-8 border-r border-slate-100 flex flex-col">
-          <h3 className="text-lg font-bold text-slate-900 tracking-tight">{content.title}</h3>
-          <p className="mt-2.5 text-sm text-slate-600 leading-relaxed">{content.description}</p>
-
-          <ul className="mt-6 flex flex-col gap-1">
-            {content.links.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  className="group flex items-center justify-between rounded-lg px-2.5 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors duration-150"
-                >
-                  {link.name}
-                  <ArrowRight
-                    size={13}
-                    className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-brand-green-500"
-                  />
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <a
-            href={content.cta.href}
-            className="mt-auto pt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green-600 hover:text-brand-green-700 transition-colors"
-          >
-            {content.cta.label}
-            <ArrowUpRight size={15} />
-          </a>
+      <div className="mx-auto max-w-[1400px] px-8 lg:px-16 py-10 lg:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-8">
+          <div className="lg:col-span-4 xl:col-span-3">
+            <MegaMenuIntro content={content} />
+          </div>
+          <div className="lg:col-span-8 xl:col-span-4 lg:border-l lg:border-slate-100 lg:pl-10">
+            <MegaMenuLinks content={content} activeIndex={activeIndex} onHoverLink={setActiveIndex} />
+          </div>
+          <div className="hidden xl:block xl:col-span-5">
+            {activeFeature && <FeaturePreview feature={activeFeature} index={activeIndex} />}
+          </div>
         </div>
-
-        {/* right 60% */}
-        <motion.div
-          variants={featureContainerVariants}
-          className="col-span-3 p-6 grid grid-cols-2 gap-3"
-        >
-          {content.features.map((feature) => {
-            const Icon = feature.icon;
-            return (
-              <motion.a
-                key={feature.title}
-                href={content.cta.href}
-                variants={featureVariants}
-                whileHover={{ y: -3 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="group rounded-2xl border border-slate-100 bg-white p-4 flex flex-col gap-3 hover:border-brand-green-200 hover:shadow-[0_12px_30px_-14px_rgba(15,23,42,0.2)] transition-shadow duration-200"
-              >
-                <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-brand-green-50 to-brand-blue-50 text-brand-green-600 group-hover:scale-105 transition-transform duration-200">
-                  <Icon size={17} strokeWidth={1.75} />
-                </span>
-                <div>
-                  <h4 className="text-sm font-semibold text-slate-900">{feature.title}</h4>
-                  <p className="mt-1 text-xs text-slate-500 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.a>
-            );
-          })}
-        </motion.div>
       </div>
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-brand-green-500/30 to-transparent" aria-hidden="true" />
     </motion.div>
   );
 }

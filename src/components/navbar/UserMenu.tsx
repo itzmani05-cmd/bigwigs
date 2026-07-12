@@ -50,12 +50,6 @@ export default function UserMenu({ onNavigate }: { onNavigate?: () => void }) {
         <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-brand-green-500 to-brand-blue-500 text-white text-[11px] font-bold tracking-wide shadow-sm shrink-0">
           {getInitials(user.name)}
         </span>
-        <span className="text-sm font-semibold text-slate-700 max-w-[110px] truncate">
-          {user.name.split(" ")[0]}
-        </span>
-        <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
-          <ChevronDown size={14} className="text-slate-400" />
-        </motion.span>
       </button>
 
       <AnimatePresence>
