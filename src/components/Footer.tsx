@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Container from "@/components/ui/Container";
+import HashLink from "@/components/ui/HashLink";
 
 const focusRing =
   "outline-none rounded-sm focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]";
@@ -25,10 +26,10 @@ const linkGroups: LinkGroup[] = [
   {
     heading: "Company",
     links: [
-      { name: "Our Team", href: "#about" },
-      { name: "Blog", href: "#about" },
-      { name: "Events", href: "#about" },
-      { name: "Locations", href: "#about" },
+      { name: "Our Team", href: "/team" },
+      { name: "Blog", href: "/blog" },
+      { name: "Events", href: "/events" },
+      { name: "Locations", href: "/locations" },
       { name: "Careers", href: "/careers" },
     ],
   },
@@ -92,7 +93,7 @@ export default function Footer() {
         >
           {/* Row 1 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8">
-            <a href="#home" className={`flex items-start w-fit ${focusRing}`}>
+            <HashLink href="#home" className={`flex items-start w-fit ${focusRing}`}>
               <img
                 src="/assets/Logo.png"
                 alt="BigWigs Technologies Logo"
@@ -103,7 +104,7 @@ export default function Footer() {
                   brightness-150
                   drop-shadow-[0_0_10px_rgba(56,189,248,0.25)]"
               />
-            </a>
+            </HashLink>
 
             {linkGroups.map((group) => (
               <nav key={group.heading} aria-label={group.heading}>
@@ -113,12 +114,12 @@ export default function Footer() {
                 <ul className="flex flex-col gap-3.5">
                   {group.links.map((link) => (
                     <li key={link.name}>
-                      <a
+                      <HashLink
                         href={link.href}
                         className={`text-sm font-normal text-white/80 hover:text-white transition-colors duration-200 ${focusRing}`}
                       >
                         {link.name}
-                      </a>
+                      </HashLink>
                     </li>
                   ))}
                 </ul>

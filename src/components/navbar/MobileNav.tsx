@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, LogOut, ShieldCheck, Briefcase, User, UserPlus } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
+import HashLink from "@/components/ui/HashLink";
 import type { NavItem } from "./navConfig";
 import { ctaItem, demoItem } from "./navConfig";
 
@@ -47,13 +48,13 @@ export default function MobileNav({ id, items, isOpen, onClose }: MobileNavProps
                 transition={{ delay: index * 0.05 }}
               >
                 <div className="flex items-center justify-between">
-                  <a
+                  <HashLink
                     href={item.href}
                     onClick={() => !item.mega && onClose()}
                     className="flex-1 text-base font-semibold text-slate-700 hover:text-brand-green-500 py-2.5 transition-colors"
                   >
                     {item.name}
-                  </a>
+                  </HashLink>
                   {item.mega && (
                     <button
                       type="button"
@@ -79,16 +80,27 @@ export default function MobileNav({ id, items, isOpen, onClose }: MobileNavProps
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden border-l-2 border-slate-100 ml-1 pl-4 mb-2"
                     >
-                      {item.mega.links.map((link) => (
-                        <a
-                          key={link.name}
-                          href={link.href}
-                          onClick={onClose}
-                          className="block py-2 text-sm text-slate-500 hover:text-slate-900 transition-colors"
-                        >
-                          {link.name}
-                        </a>
-                      ))}
+                      {item.mega.links.map((link) =>
+                        link.href.startsWith("/") ? (
+                          <Link
+                            key={link.name}
+                            to={link.href}
+                            onClick={onClose}
+                            className="block py-2 text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                          >
+                            {link.name}
+                          </Link>
+                        ) : (
+                          <HashLink
+                            key={link.name}
+                            href={link.href}
+                            onClick={onClose}
+                            className="block py-2 text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                          >
+                            {link.name}
+                          </HashLink>
+                        )
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -160,20 +172,20 @@ export default function MobileNav({ id, items, isOpen, onClose }: MobileNavProps
               </Link>
             )}
 
-            <a
+            <HashLink
               href={ctaItem.href}
               onClick={onClose}
               className="mt-3 flex items-center justify-center gap-1.5 px-5 py-3 rounded-full text-sm font-semibold border-2 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-colors select-none"
             >
               {ctaItem.name}
-            </a>
-            <a
+            </HashLink>
+            <HashLink
               href={demoItem.href}
               onClick={onClose}
               className="mt-3 flex items-center justify-center gap-1.5 px-5 py-3 rounded-full text-sm font-semibold border-2 border-brand-green-500 text-brand-green-500 hover:bg-brand-green-50 transition-colors select-none"
             >
               {demoItem.name}
-            </a>
+            </HashLink>
           </div>
         </motion.div>
       )}

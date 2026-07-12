@@ -12,11 +12,17 @@ import {
   BadgeCheck,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import ourTeamImage from "@/assests/about/ourteams.jpg";
+import blogImage from "@/assests/about/blog.jpg";
+import eventsImage from "@/assests/about/events.jpg";
+import locationImage from "@/assests/about/location.jpg";
+import certificationImage from "@/assests/about/certification.jpg";
 
 export interface MegaFeature {
   icon: LucideIcon;
   title: string;
   description: string;
+  image?: string;
 }
 
 export interface MegaContent {
@@ -42,37 +48,42 @@ export const navItems: NavItem[] = [
       description:
         "Get to know the team, culture, and credentials behind our enterprise AI work.",
       links: [
-        { name: "Our Team", href: "#" },
-        { name: "Blogs", href: "#" },
-        { name: "Events", href: "#" },
-        { name: "Locations", href: "#" },
-        { name: "Certifications", href: "#" },
+        { name: "Our Team", href: "/team" },
+        { name: "Blogs", href: "/blog" },
+        { name: "Events", href: "/events" },
+        { name: "Locations", href: "/locations" },
+        { name: "Certifications", href: "/certifications" },
       ],
       features: [
         {
           icon: Users,
           title: "Our Team",
           description: "Meet the engineers and researchers behind BigWigs.",
+          image: ourTeamImage,
         },
         {
           icon: Newspaper,
           title: "Blogs",
           description: "Insights and updates from our engineering team.",
+          image: blogImage,
         },
         {
           icon: CalendarDays,
           title: "Events",
           description: "Webinars, meetups, and conferences we host or attend.",
+          image: eventsImage,
         },
         {
           icon: Building2,
           title: "Locations",
           description: "Where we operate and deliver enterprise AI.",
+          image: locationImage,
         },
         {
           icon: BadgeCheck,
           title: "Certifications",
           description: "Compliance and quality credentials we hold.",
+          image: certificationImage,
         },
       ],
       cta: { label: "Learn more about us", href: "#about" },
