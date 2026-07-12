@@ -29,7 +29,7 @@ export default function MissionStatement() {
         const trigger = ScrollTrigger.create({
           trigger: section,
           start: "top top",
-          end: () => "+=" + window.innerHeight,
+          end: () => "+=" + window.innerHeight * 1.75,
           pin: true,
           scrub: true,
           invalidateOnRefresh: true,

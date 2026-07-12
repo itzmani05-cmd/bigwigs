@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
+import { ArrowLeft, ArrowRight, Quote, Star } from "lucide-react";
 import Container from "@/components/ui/Container";
 import CursorGlow from "@/components/ui/CursorGlow";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { reviews } from "./reviews";
 
-const AUTOPLAY_DELAY = 1000;
+const AUTOPLAY_DELAY = 6000;
 
 const slideVariants = {
   enter: (direction: number) => ({
@@ -87,7 +87,7 @@ export default function ReviewsSection() {
 
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* left column: heading + controls */}
+          {/* left column*/}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +99,11 @@ export default function ReviewsSection() {
               Testimonials
             </span>
 
-            <div className="mt-10 flex items-center gap-4">
+            <h3 className="mt-5 text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 leading-tight">
+              What our clients say.
+            </h3>
+
+            <div className="mt-8 flex items-center gap-4">
               <MagneticButton
                 as="button"
                 type="button"
@@ -116,28 +120,10 @@ export default function ReviewsSection() {
               >
                 <ArrowRight size={18} />
               </MagneticButton>
-
-            </div>
-
-            {/* progress dots */}
-            <div className="mt-6 flex items-center gap-2">
-              {reviews.map((r, i) => (
-                <button
-                  key={r.id}
-                  type="button"
-                  aria-label={`Go to review ${i + 1}`}
-                  onClick={() => handleManualNav(() => goTo(i, i > index ? 1 : -1))}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    i === index
-                      ? "w-8 bg-gradient-to-r from-brand-green-500 to-brand-blue-500"
-                      : "w-1.5 bg-slate-300 hover:bg-slate-400"
-                  }`}
-                />
-              ))}
             </div>
           </motion.div>
 
-          {/* right column: review content */}
+          {/* right column*/}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -145,40 +131,64 @@ export default function ReviewsSection() {
             transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1], delay: 0.1 }}
             className="lg:col-span-8"
           >
-            <div className="relative rounded-3xl bg-white border border-slate-100 shadow-[0_24px_60px_-24px_rgba(15,23,42,0.18)] p-8 sm:p-10 lg:p-12 min-h-[320px] overflow-hidden">
-              <Quote
-                size={54}
-                strokeWidth={2.2}
-                className="absolute top-8 right-8 text-brand-green-500/10"
-              />
+            <div className="relative rounded-[2rem] p-[1px] bg-gradient-to-br from-brand-green-500/30 via-slate-200 to-brand-blue-500/30 shadow-[0_24px_60px_-24px_rgba(15,23,42,0.18)]">
+              <div className="relative rounded-[calc(2rem-1px)] bg-white p-8 sm:p-10 lg:p-12 min-h-[340px] overflow-hidden">
+                <Quote
+                  size={160}
+                  strokeWidth={1.5}
+                  className="absolute -top-6 -right-6 text-brand-green-500/[0.06] rotate-6 pointer-events-none"
+                  aria-hidden="true"
+                />
 
-              <AnimatePresence mode="wait" custom={direction}>
-                <motion.div
-                  key={active.id}
-                  custom={direction}
-                  variants={slideVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  className="relative z-10 flex flex-col h-full"
-                >
-                  <p className="text-lg sm:text-xl lg:text-2xl font-medium text-slate-800 leading-relaxed">
-                    &ldquo;{active.content}&rdquo;
-                  </p>
-
-                  <div className="mt-8 flex items-center gap-4">
-                    <span
-                      className={`flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br ${avatarTint} text-white font-bold text-base shrink-0 shadow-md`}
-                    >
-                      {active.initials}
-                    </span>
-                    <div>
-                      <p className="text-base font-bold text-slate-900">{active.name}</p>
-                      <p className="text-sm text-slate-500">{active.position}</p>
+                <AnimatePresence mode="wait" custom={direction}>
+                  <motion.div
+                    key={active.id}
+                    custom={direction}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    className="relative z-10 flex flex-col h-full"
+                  >
+                    <div className="flex items-center gap-1" aria-hidden="true">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} size={16} className="text-brand-green-500" fill="currentColor" />
+                      ))}
                     </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+
+                    <p className="mt-5 text-lg sm:text-xl lg:text-2xl font-medium text-slate-800 leading-relaxed">
+                      &ldquo;{active.content}&rdquo;
+                    </p>
+
+                    <div className="mt-8 flex items-center gap-4">
+                      <span
+                        className={`flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br ${avatarTint} text-white font-bold text-base shrink-0 shadow-md`}
+                      >
+                        {active.initials}
+                      </span>
+                      <div>
+                        <p className="text-base font-bold text-slate-900">{active.name}</p>
+                        <p className="text-sm text-slate-500">{active.position}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* autoplay progress*/}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-100" aria-hidden="true">
+                  <div
+                    key={active.id}
+                    className="h-full bg-gradient-to-r from-brand-green-500 to-brand-blue-500"
+                    style={{
+                      animationName: "testimonial-progress",
+                      animationDuration: `${AUTOPLAY_DELAY}ms`,
+                      animationTimingFunction: "linear",
+                      animationFillMode: "forwards",
+                      animationPlayState: isPaused ? "paused" : "running",
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
