@@ -9,6 +9,7 @@ import Account from "@/pages/Account";
 import Admin from "@/pages/Admin";
 import Employee from "@/pages/Employee";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
+import CookieConsent from "@/components/CookieConsent";
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <CookieConsent />
     </>
   );
 }

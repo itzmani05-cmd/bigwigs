@@ -98,15 +98,6 @@ export default function ReviewsSection() {
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-green-500/25 bg-brand-green-50 px-4 py-1.5 text-xs sm:text-sm font-bold tracking-[0.2em] text-brand-green-600 uppercase">
               Testimonials
             </span>
-            <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-              Trusted by clients{" "}
-              <span className="bg-gradient-to-r from-brand-green-500 via-brand-green-400 to-brand-blue-500 bg-clip-text text-transparent">
-                and founders.
-              </span>
-            </h2>
-            <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-              Real feedback from the teams and builders we&apos;ve partnered with.
-            </p>
 
             <div className="mt-10 flex items-center gap-4">
               <MagneticButton
@@ -126,11 +117,6 @@ export default function ReviewsSection() {
                 <ArrowRight size={18} />
               </MagneticButton>
 
-              <span className="ml-2 text-sm font-semibold text-slate-400 tabular-nums">
-                {String(index + 1).padStart(2, "0")}{" "}
-                <span className="text-slate-300">/</span>{" "}
-                {String(reviews.length).padStart(2, "0")}
-              </span>
             </div>
 
             {/* progress dots */}
@@ -161,8 +147,8 @@ export default function ReviewsSection() {
           >
             <div className="relative rounded-3xl bg-white border border-slate-100 shadow-[0_24px_60px_-24px_rgba(15,23,42,0.18)] p-8 sm:p-10 lg:p-12 min-h-[320px] overflow-hidden">
               <Quote
-                size={64}
-                strokeWidth={1.2}
+                size={54}
+                strokeWidth={2.2}
                 className="absolute top-8 right-8 text-brand-green-500/10"
               />
 
