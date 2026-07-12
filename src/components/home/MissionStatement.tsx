@@ -5,12 +5,10 @@ import Container from "@/components/ui/Container";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Easy to swap later — split into words for wrapping, then characters for
-// the scroll-scrubbed reveal.
 const STATEMENT = "Precision AI for the decisions that matter most.";
 
-const MUTED_COLOR = "rgba(148, 163, 184, 0.35)"; // slate-400 @ low opacity, muted on dark bg
-const REVEALED_COLOR = "#10b981"; // brand-green-500
+const MUTED_COLOR = "rgba(148, 163, 184, 0.35)"; 
+const REVEALED_COLOR = "#10b981"; 
 
 export default function MissionStatement() {
   const sectionRef = useRef<HTMLElement>(null);

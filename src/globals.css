@@ -126,3 +126,40 @@ h6 {
 .animate-spin-slow {
   animation: spin-slow 6s linear infinite;
 }
+
+/* Ambient background drift for the About section's signal field */
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(18px, -14px); }
+}
+
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-16px, 12px); }
+}
+
+@keyframes drift-c {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(14px, 16px); }
+}
+
+.animate-drift-a {
+  animation: drift-a 16s ease-in-out infinite;
+}
+
+.animate-drift-b {
+  animation: drift-b 20s ease-in-out infinite;
+}
+
+.animate-drift-c {
+  animation: drift-c 14s ease-in-out infinite;
+}
+
+@keyframes signal-pulse {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.4; }
+}
+
+.animate-signal-pulse {
+  animation: signal-pulse 8s ease-in-out infinite;
+}

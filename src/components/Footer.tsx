@@ -98,13 +98,16 @@ export default function Footer() {
                 alt="BigWigs Technologies Logo"
                 width={180}
                 height={60}
-                className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
+                // className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
+                className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain
+                  brightness-150
+                  drop-shadow-[0_0_10px_rgba(56,189,248,0.25)]"
               />
             </a>
 
             {linkGroups.map((group) => (
               <nav key={group.heading} aria-label={group.heading}>
-                <h4 className="text-xs font-semibold text-white/90 uppercase tracking-wider mb-5">
+                <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-5">
                   {group.heading}
                 </h4>
                 <ul className="flex flex-col gap-3.5">
@@ -112,7 +115,7 @@ export default function Footer() {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className={`text-sm font-normal text-[#8a8a8a] hover:text-white transition-colors duration-200 ${focusRing}`}
+                        className={`text-sm font-normal text-white/80 hover:text-white transition-colors duration-200 ${focusRing}`}
                       >
                         {link.name}
                       </a>
