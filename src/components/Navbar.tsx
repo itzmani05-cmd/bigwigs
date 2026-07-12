@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { Menu, X, ChevronDown, ArrowUpRight, LogOut, ShieldCheck, Briefcase, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { navItems, ctaItem, demoItem } from "./navbar/navConfig";
+import { navItems, demoItem } from "./navbar/navConfig";
 import MegaMenu from "./navbar/MegaMenu";
 import UserMenu from "./navbar/UserMenu";
 import MagneticButton from "@/components/ui/MagneticButton";
@@ -24,6 +24,7 @@ export default function Navbar() {
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [openMega, setOpenMega] = useState<string | null>(null);
+  const [heroVisible, setHeroVisible] = useState(true);
   const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { pathname } = useLocation();
   const { user, logout } = useAuth();
@@ -34,6 +35,24 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Only show the navbar while the hero section is in view; hide it for
+  // the rest of the page. Re-observed on route change; routes without a
+  // "#home" hero (e.g. /careers) have no such section, so the navbar just
+  // stays visible there.
+  useEffect(() => {
+    const hero = document.getElementById("home");
+    if (!hero) {
+      setHeroVisible(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => setHeroVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, [pathname]);
 
   const openMenu = (name: string) => {
     if (closeTimeout.current) clearTimeout(closeTimeout.current);
@@ -46,12 +65,16 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50">
+    <header
+      className={`sticky top-0 left-0 right-0 z-50 transition-transform duration-300 ease-out ${
+        heroVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div
         className={`mx-auto flex items-center justify-between transition-[max-width,padding,margin,border-radius,background-color,box-shadow] duration-500 ease-out ${
           scrolled
             ? "max-w-[1040px] mt-3 px-3 py-2 rounded-2xl border border-white/60 bg-white/75 backdrop-blur-xl shadow-[0_12px_40px_-16px_rgba(15,23,42,0.25)]"
-            : "max-w-[1240px] mt-0 px-3 lg:px-[15px] py-2.5 rounded-none border border-transparent bg-white/80 backdrop-blur-sm shadow-[0_1px_0_0_rgba(15,23,42,0.06)]"
+            : "max-w-[1240px] px-3 lg:px-[15px] py-2.5 rounded-none border border-transparent bg-white/80 backdrop-blur-sm shadow-[0_1px_0_0_rgba(15,23,42,0.06)]"
         }`}
       >
         <a href="#home" className="flex items-center group shrink-0">
@@ -129,16 +152,6 @@ export default function Navbar() {
             </Link>
           )}
           <span className="h-6 w-px bg-slate-200" aria-hidden="true" />
-          <MagneticButton
-            href={ctaItem.href}
-            className="group flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-brand-green-500 to-brand-blue-500 shadow-md shadow-brand-green-500/15 hover:shadow-lg hover:shadow-brand-green-500/25 transition-all duration-300 hover:-translate-y-0.5 select-none"
-          >
-            {ctaItem.name}
-            <ArrowUpRight
-              size={15}
-              className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </MagneticButton>
           <MagneticButton
             href={demoItem.href}
             className="relative overflow-hidden border-2 border-brand-green-500 text-brand-green-500 hover:text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 ease-out group select-none hover:shadow-md hover:shadow-brand-green-500/20"
@@ -292,14 +305,7 @@ export default function Navbar() {
               >
                 {demoItem.name}
               </a>
-              <a
-                href={ctaItem.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-3 flex items-center justify-center gap-1.5 px-5 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-brand-green-500 to-brand-blue-500 select-none"
-              >
-                {ctaItem.name}
-                <ArrowUpRight size={15} />
-              </a>
+              
             </div>
           </motion.div>
         )}
