@@ -40,8 +40,8 @@ const buttonVariants = {
 
 export default function Hero() {
   return (
-    <section id="home" className="w-full bg-white py-4 sm:py-2 ">
-      <div className="relative mx-4 sm:mx-4 lg:mx-6 h-[350px] sm:h-[450px] lg:h-[530px] rounded-3xl overflow-hidden bg-slate-950">
+    <section id="home" className="w-full bg-white ">
+      <div className="relative mx-4 sm:mx-2 lg:mx-4 h-[350px] sm:h-[450px] lg:h-[530px] rounded-b-2xl overflow-hidden bg-slate-950">
         <motion.video
           className="absolute inset-0 w-full h-full object-cover opacity-40"
           autoPlay
@@ -60,13 +60,13 @@ export default function Hero() {
         <HeroParticles />
         <CursorGlow color="16,185,129" size={420} />
 
-        <div className="relative z-10 h-full flex items-center px-6 sm:px-10 lg:px-16">
+        <div className="relative z-10 h-full flex items-center px-6 sm:px-10 lg:px-10">
           <div className="flex flex-col gap-6 max-w-xl">
             <motion.h1
               variants={headingVariants}
               initial="hidden"
               animate="visible"
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.08]"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl pt-22 font-extrabold tracking-tight text-white leading-[1.08]"
             >
               Bigwigs{" "}
               <span className="bg-gradient-to-r from-brand-green-400 via-brand-green-400 to-brand-blue-500 bg-clip-text text-transparent">

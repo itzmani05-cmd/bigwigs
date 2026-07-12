@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -15,7 +16,7 @@
   --color-brand-green-600: #059669;
   --color-brand-green-700: #047857;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", monospace;
 }
@@ -23,7 +24,6 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a; /* Slate 900 */
-  --font-inter: "Inter", sans-serif;
   --font-manrope: "Manrope", sans-serif;
 }
 
