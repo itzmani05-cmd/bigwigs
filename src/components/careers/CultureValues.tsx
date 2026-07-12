@@ -16,7 +16,7 @@ const values: { icon: LucideIcon; title: string; body: string }[] = [
   {
     icon: TrendingUp,
     title: "Continuous Growth",
-    body: "Exposure across GIS, LiDAR, Medical AI, Vision, Automation, and Analytics — depth and breadth.",
+    body: "Exposure across GIS, LiDAR, Medical AI, Vision, Automation, and Analytics depth and breadth.",
   },
   {
     icon: Users,
@@ -54,7 +54,7 @@ export default function CultureValues() {
             Why join us
           </h2>
           <p className="mt-3 text-slate-600 text-base sm:text-lg leading-relaxed">
-            We&apos;re a small, focused team — every hire meaningfully shapes what we build next.
+            We&apos;re a small, focused team every hire meaningfully shapes what we build next.
           </p>
         </motion.div>
 

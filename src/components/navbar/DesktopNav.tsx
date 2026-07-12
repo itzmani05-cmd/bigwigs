@@ -1,11 +1,47 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useHashLink } from "@/hooks/useHashLink";
 import type { NavItem } from "./navConfig";
 import MegaMenu from "./MegaMenu";
 
 function slug(name: string) {
   return name.toLowerCase().replace(/\s+/g, "-");
+}
+
+interface NavTriggerProps {
+  item: NavItem;
+  isActive: boolean;
+  isOpen: boolean;
+  onFocus: () => void;
+}
+
+function NavTrigger({ item, isActive, isOpen, onFocus }: NavTriggerProps) {
+  const { href, onClick } = useHashLink(item.href);
+
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      onFocus={onFocus}
+      aria-haspopup={item.mega ? "true" : undefined}
+      aria-expanded={item.mega ? isOpen : undefined}
+      aria-controls={item.mega ? `mega-${slug(item.name)}` : undefined}
+      className={`relative z-10 flex items-center gap-1 px-5 py-2.5 text-[15px] font-semibold tracking-[-0.01em] rounded-full transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-green-500 focus-visible:outline-offset-2 ${
+        isActive || isOpen ? "text-slate-900" : "text-slate-500 hover:text-slate-900"
+      }`}
+    >
+      {item.name}
+      {item.mega && (
+        <motion.span
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+        >
+          <ChevronDown size={14} />
+        </motion.span>
+      )}
+    </a>
+  );
 }
 
 interface DesktopNavProps {
@@ -56,29 +92,15 @@ export default function DesktopNav({ items, pathname }: DesktopNavProps) {
                 setOpenMega(item.mega ? item.name : null);
               }}
             >
-              <a
-                href={item.href}
+              <NavTrigger
+                item={item}
+                isActive={isActive}
+                isOpen={isOpen}
                 onFocus={() => {
                   setHoveredIndex(index);
                   if (item.mega) setOpenMega(item.name);
                 }}
-                aria-haspopup={item.mega ? "true" : undefined}
-                aria-expanded={item.mega ? isOpen : undefined}
-                aria-controls={item.mega ? `mega-${slug(item.name)}` : undefined}
-                className={`relative z-10 flex items-center gap-1 px-5 py-2.5 text-[15px] font-semibold tracking-[-0.01em] rounded-full transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-green-500 focus-visible:outline-offset-2 ${
-                  isActive || isOpen ? "text-slate-900" : "text-slate-500 hover:text-slate-900"
-                }`}
-              >
-                {item.name}
-                {item.mega && (
-                  <motion.span
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.25, ease: "easeOut" }}
-                  >
-                    <ChevronDown size={14} />
-                  </motion.span>
-                )}
-              </a>
+              />
               {isActive && (
                 <span className="absolute left-1/2 -bottom-0.5 h-1 w-1 -translate-x-1/2 rounded-full bg-brand-green-500" />
               )}
