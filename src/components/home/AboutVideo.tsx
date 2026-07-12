@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Volume2 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import AboutStats from "./AboutStats";
+import AboutBackground from "./AboutBackground";
 
 export default function AboutVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -16,8 +17,13 @@ export default function AboutVideo() {
   };
 
   return (
-    <section id="about" className="w-full bg-white py-20 sm:py-28 scroll-mt-24">
-      <Container>
+    <section
+      id="about"
+      className="relative w-full overflow-hidden py-20 sm:py-28 scroll-mt-24"
+      style={{ backgroundColor: "#F8FCFB" }}
+    >
+      <AboutBackground />
+      <Container className="relative z-10">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-green-500/25 bg-brand-green-50 px-4 py-1.5 text-xs sm:text-sm font-bold tracking-[0.2em] text-brand-green-600 uppercase">
             About Us

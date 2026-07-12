@@ -24,7 +24,7 @@ export default function AboutStats() {
         return (
           <div
             key={stat.label}
-            className="flex flex-col items-center text-center gap-2 rounded-2xl border border-slate-100 bg-slate-50/60 px-4 py-6 sm:py-8"
+            className="group flex flex-col items-center text-center gap-2 rounded-2xl border border-white/60 bg-white/75 backdrop-blur-sm px-4 py-6 sm:py-8 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.12)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-brand-green-500/30 hover:shadow-[0_16px_40px_-14px_rgba(16,185,129,0.25)]"
           >
             <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-green-50 text-brand-green-600">
               <Icon size={20} strokeWidth={1.75} />

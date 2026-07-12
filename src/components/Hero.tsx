@@ -41,7 +41,7 @@ const buttonVariants = {
 export default function Hero() {
   return (
     <section id="home" className="w-full bg-white ">
-      <div className="relative mx-4 sm:mx-2 lg:mx-4 h-[350px] sm:h-[450px] lg:h-[530px] rounded-b-2xl overflow-hidden bg-slate-950">
+      <div className="relative mx-4 sm:mx-2 lg:mx-4 h-[425px] sm:h-[450px] lg:h-[500px] rounded-b-2xl overflow-hidden bg-slate-950">
         <motion.video
           className="absolute inset-0 w-full h-full object-cover opacity-40"
           autoPlay
@@ -66,7 +66,7 @@ export default function Hero() {
               variants={headingVariants}
               initial="hidden"
               animate="visible"
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl pt-22 font-extrabold tracking-tight text-white leading-[1.08]"
+              className="text-4xl sm:text-4xl lg:text-4xl xl:text-6xl pt-22 font-extrabold tracking-tight text-white leading-[1.08]"
             >
               Bigwigs{" "}
               <span className="bg-gradient-to-r from-brand-green-400 via-brand-green-400 to-brand-blue-500 bg-clip-text text-transparent">
@@ -78,9 +78,9 @@ export default function Hero() {
               variants={subheadingVariants}
               initial="hidden"
               animate="visible"
-              className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-md font-normal"
+              className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-md"
             >
-              We build AI, GIS, LiDAR, Healthcare AI, and Enterprise Software
+              We build AI, GIS, Healthcare AI, and Enterprise Software
               solutions that transform businesses worldwide.
             </motion.p>
 
@@ -91,22 +91,22 @@ export default function Hero() {
               className="flex flex-wrap items-center gap-4 mt-2"
             >
               <motion.div variants={buttonVariants}>
-                <MagneticButton
+                <button
                   href="#solutions"
-                  className="flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold bg-gradient-to-r from-brand-green-500 to-brand-blue-500 shadow-md shadow-brand-green-500/20 hover:shadow-lg hover:shadow-brand-green-500/30 transition-all duration-300 hover:-translate-y-0.5 select-none"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-white font-semibold bg-gradient-to-r from-brand-green-500 to-brand-blue-500 shadow-md shadow-brand-green-500/20 hover:shadow-lg hover:shadow-brand-green-500/30 transition-all duration-300 hover:-translate-y-0.5 select-none"
                 >
                   <span>Get Started</span>
                   <ArrowRight size={16} />
-                </MagneticButton>
+                </button>
               </motion.div>
               <motion.div variants={buttonVariants}>
-                <MagneticButton
+                <button
                   href="#demo"
-                  className="flex items-center gap-2 px-7 py-3 rounded-full font-semibold border-2 border-white/40 text-white backdrop-blur-sm hover:bg-white/10 hover:border-white/70 transition-colors duration-300 select-none"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full font-semibold border-2 border-white/40 text-white backdrop-blur-sm hover:bg-white/10 hover:border-white/70 transition-colors duration-300 select-none"
                 >
                   <Play size={16} />
                   <span>Watch Demo</span>
-                </MagneticButton>
+                </button>
               </motion.div>
             </motion.div>
           </div>
