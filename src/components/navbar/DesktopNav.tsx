@@ -27,8 +27,8 @@ function NavTrigger({ item, isActive, isOpen, onFocus }: NavTriggerProps) {
       aria-haspopup={item.mega ? "true" : undefined}
       aria-expanded={item.mega ? isOpen : undefined}
       aria-controls={item.mega ? `mega-${slug(item.name)}` : undefined}
-      className={`relative z-10 flex items-center gap-1 px-5 py-2.5 text-[15px] font-semibold tracking-[-0.01em] rounded-full transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-green-500 focus-visible:outline-offset-2 ${
-        isActive || isOpen ? "text-slate-900" : "text-slate-500 hover:text-slate-900"
+      className={`relative z-10 flex items-center gap-1 px-5 py-2.5 text-[15px] font-semibold tracking-[-0.01em] rounded-full transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-blue-500 focus-visible:outline-offset-2 ${
+        isActive ? "text-brand-blue-600" : isOpen ? "text-slate-900" : "text-slate-500 hover:text-slate-900"
       }`}
     >
       {item.name}
@@ -47,9 +47,10 @@ function NavTrigger({ item, isActive, isOpen, onFocus }: NavTriggerProps) {
 interface DesktopNavProps {
   items: NavItem[];
   pathname: string;
+  activeHash: string;
 }
 
-export default function DesktopNav({ items, pathname }: DesktopNavProps) {
+export default function DesktopNav({ items, pathname, activeHash }: DesktopNavProps) {
   const [openMega, setOpenMega] = useState<string | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -81,7 +82,10 @@ export default function DesktopNav({ items, pathname }: DesktopNavProps) {
     >
       <nav aria-label="Primary" className="flex items-center gap-2 relative">
         {items.map((item, index) => {
-          const isActive = item.href !== "#" && pathname === item.href;
+          const isActive =
+            item.href !== "#" &&
+            (pathname === item.href ||
+              (pathname === "/" && item.href.startsWith("#") && activeHash === item.href));
           const isOpen = openMega === item.name;
           return (
             <div
@@ -102,7 +106,11 @@ export default function DesktopNav({ items, pathname }: DesktopNavProps) {
                 }}
               />
               {isActive && (
-                <span className="absolute left-1/2 -bottom-0.5 h-1 w-1 -translate-x-1/2 rounded-full bg-brand-green-500" />
+                <motion.span
+                  layoutId="navbar-underline"
+                  className="absolute left-4 right-4 -bottom-0.5 h-[2.5px] rounded-full bg-brand-blue-500"
+                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                />
               )}
               {hoveredIndex === index && (
                 <motion.span

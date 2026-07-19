@@ -163,8 +163,3 @@ h6 {
 .animate-signal-pulse {
   animation: signal-pulse 8s ease-in-out infinite;
 }
-
-@keyframes testimonial-progress {
-  from { width: 0%; }
-  to { width: 100%; }
-}

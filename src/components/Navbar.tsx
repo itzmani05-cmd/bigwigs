@@ -7,20 +7,31 @@ import DesktopNav from "./navbar/DesktopNav";
 import MobileNav from "./navbar/MobileNav";
 import UserMenu from "./navbar/UserMenu";
 import HashLink from "@/components/ui/HashLink";
-import { useAuth } from "@/context/AuthContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [heroVisible, setHeroVisible] = useState(true);
-  const { pathname } = useLocation();
-  const { user } = useAuth();
-
+  const [activeHash, setActiveHash] = useState(() => window.location.hash);
+  const { pathname, hash } = useLocation();
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Plain in-page anchor clicks (already on "/") change window.location.hash
+  // natively without going through react-router, so useLocation()'s hash
+  // doesn't update for that case — track the real hash directly too.
+  useEffect(() => {
+    setActiveHash(window.location.hash);
+  }, [pathname, hash]);
+
+  useEffect(() => {
+    const onHashChange = () => setActiveHash(window.location.hash);
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
   useEffect(() => {
@@ -59,10 +70,10 @@ export default function Navbar() {
             />
           </HashLink>
 
-          <DesktopNav items={navItems} pathname={pathname} />
+          <DesktopNav items={navItems} pathname={pathname} activeHash={activeHash} />
 
           <div className="hidden lg:flex items-center gap-3 shrink-0">
-            {user ? (
+            {/* {user ? (
               <UserMenu />
             ) : (
               <Link
@@ -72,12 +83,12 @@ export default function Navbar() {
                 <UserPlus size={16} />
                 Sign up
               </Link>
-            )}
+            )} */}
             <HashLink
               href={demoItem.href}
-              className="inline-flex items-center justify-center bg-black text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 hover:bg-neutral-800"
+              className="inline-flex items-center justify-center border hover:border-slate-200 text-slate-700 px-5 py-2.5 rounded-md text-sm font-semibold transition-all duration-300 hover:border-slate-900 bg-slate-900 text-white"
             >
-              {demoItem.name}
+              Contact us
             </HashLink>
           </div>
 

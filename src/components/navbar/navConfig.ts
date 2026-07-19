@@ -40,8 +40,9 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
+  { name: "Home", href: "/Home" },
   {
-    name: "About Us",
+    name: "About",
     href: "#about",
     mega: {
       title: "About BigWigs",
@@ -139,8 +140,10 @@ export const navItems: NavItem[] = [
       cta: { label: "Explore all services", href: "#services" },
     },
   },
-  { name: "Solutions", href: "#solutions" },
+  { name: "Industries", href: "/industries" },
+  { name: "Case Studies", href: "/case-studies" },
   { name: "Careers", href: "/careers" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export const ctaItem = { name: "Contact Us", href: "#contact" };

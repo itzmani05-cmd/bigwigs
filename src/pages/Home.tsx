@@ -1,23 +1,21 @@
 import Hero from "@/components/Hero";
 import DomainTicker from "@/components/home/DomainTicker";
-import AboutVideo from "@/components/home/AboutVideo";
-import Services from "@/components/home/Services";
-import MissionStatement from "@/components/home/MissionStatement";
-import TrustedBrands from "@/components/trusted/TrustedBrands";
-import CeoMessage from "@/components/home/CeoMessage";
-import ReviewsSection from "@/components/home/ReviewsSection";
+import AboutSection from "@/components/home/AboutSection";
+import CoreServicesSection from "@/components/home/CoreServicesSection";
+import WhyChooseSection from "@/components/home/WhyChooseSection";
+import IndustriesSection from "@/components/home/IndustriesSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 
 export default function Home() {
   return (
     <main className="w-full overflow-x-hidden">
       <Hero />
       <DomainTicker />
-      <AboutVideo />
-      <Services />
-      <MissionStatement />
-      <TrustedBrands />
-      <CeoMessage />
-      <ReviewsSection />
+      <AboutSection />
+      <CoreServicesSection />
+      <WhyChooseSection />
+      <IndustriesSection />
+      <TestimonialsSection />
     </main>
   );
 }
