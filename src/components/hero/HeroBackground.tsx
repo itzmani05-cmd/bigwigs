@@ -2,9 +2,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { seededRandom } from "./utils";
 
-/** Rounded to 2 decimals so the server-rendered style string and the browser's
- *  own serialization of that number always agree — full-precision floats
- *  trigger a spurious hydration mismatch warning. */
 const round2 = (n: number) => Math.round(n * 100) / 100;
 
 const PARTICLES = Array.from({ length: 26 }, (_, i) => ({
@@ -36,7 +33,7 @@ export default function HeroBackground() {
         className="absolute -top-32 -left-20 w-lg h-128 rounded-full bg-brand-green-400/15 blur-[130px]"
       >
         <motion.div
-          className="w-full h-full rounded-full"
+          className="w-full rounded-full"
           animate={{ opacity: [0.6, 1, 0.6] }}
           transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -62,7 +59,6 @@ export default function HeroBackground() {
         />
       </motion.div>
 
-      {/* subtle AI grid, faded at the edges, slowly panning */}
       <motion.div
         className="absolute inset-0 opacity-[0.05]"
         style={{

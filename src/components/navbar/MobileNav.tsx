@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, LogOut, ShieldCheck, Briefcase, User, UserPlus } from "lucide-react";
-import { useAuth } from "@/context/AuthContext";
+
 import HashLink from "@/components/ui/HashLink";
 import type { NavItem } from "./navConfig";
 import { ctaItem, demoItem } from "./navConfig";
@@ -26,7 +26,6 @@ interface MobileNavProps {
 
 export default function MobileNav({ id, items, isOpen, onClose }: MobileNavProps) {
   const [expanded, setExpanded] = useState<string | null>(null);
-  const { user, logout } = useAuth();
 
   return (
     <AnimatePresence>
@@ -108,70 +107,6 @@ export default function MobileNav({ id, items, isOpen, onClose }: MobileNavProps
               </motion.div>
             ))}
 
-            {user ? (
-              <div className="mt-4 rounded-2xl border border-slate-100 bg-slate-50/60 overflow-hidden">
-                <div className="flex items-center gap-3 px-4 py-3.5 border-b border-slate-100">
-                  <span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-brand-green-500 to-brand-blue-500 text-white text-xs font-bold shrink-0">
-                    {initialsOf(user.name)}
-                  </span>
-                  <div className="min-w-0">
-                    <p className="text-sm font-semibold text-slate-900 truncate">{user.name}</p>
-                    <p className="text-xs text-slate-500 truncate">{user.email}</p>
-                  </div>
-                </div>
-                <div className="p-1.5 flex flex-col">
-                  <Link
-                    to="/account"
-                    onClick={onClose}
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-white hover:text-slate-900 transition-colors"
-                  >
-                    <User size={16} className="text-slate-400" />
-                    My account
-                  </Link>
-                  {user.role === "admin" && (
-                    <Link
-                      to="/admin"
-                      onClick={onClose}
-                      className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-white hover:text-slate-900 transition-colors"
-                    >
-                      <ShieldCheck size={16} className="text-slate-400" />
-                      Admin dashboard
-                    </Link>
-                  )}
-                  {(user.role === "admin" || user.role === "employee") && (
-                    <Link
-                      to="/employee"
-                      onClick={onClose}
-                      className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-white hover:text-slate-900 transition-colors"
-                    >
-                      <Briefcase size={16} className="text-slate-400" />
-                      Employee portal
-                    </Link>
-                  )}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      logout();
-                      onClose();
-                    }}
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-red-500 hover:bg-red-50 transition-colors"
-                  >
-                    <LogOut size={16} />
-                    Log out
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <Link
-                to="/signup"
-                onClick={onClose}
-                className="mt-4 flex items-center justify-center gap-1.5 px-5 py-3 rounded-full text-sm font-semibold border-2 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-colors select-none"
-              >
-                <UserPlus size={16} />
-                Sign up
-              </Link>
-            )}
-
             <HashLink
               href={ctaItem.href}
               onClick={onClose}
@@ -182,7 +117,7 @@ export default function MobileNav({ id, items, isOpen, onClose }: MobileNavProps
             <HashLink
               href={demoItem.href}
               onClick={onClose}
-              className="mt-3 flex items-center justify-center gap-1.5 px-5 py-3 rounded-full text-sm font-semibold border-2 border-brand-green-500 text-brand-green-500 hover:bg-brand-green-50 transition-colors select-none"
+              className="mt-3 flex items-center justify-center gap-1.5 px-5 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-brand-green-500 to-brand-blue-500 shadow-md shadow-brand-blue-500/20 transition-all duration-300 select-none"
             >
               {demoItem.name}
             </HashLink>
