@@ -15,7 +15,7 @@ export default function WhyChooseSection() {
   return (
     <section
       id="why-choose-us"
-      className="relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32"
+      className="relative scroll-mt-24 overflow-hidden bg-white py-15 lg:py-18"
     >
       <div
         aria-hidden

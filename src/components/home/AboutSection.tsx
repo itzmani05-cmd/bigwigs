@@ -71,7 +71,7 @@ export default function AboutSection() {
   return (
     <section
       id="about-bigwigs"
-      className="relative scroll-mt-24 overflow-hidden bg-white py-10 lg:py-18"
+      className="relative scroll-mt-6 overflow-hidden bg-white py-8 lg:py-6"
     >
       <div
         aria-hidden
@@ -174,7 +174,7 @@ export default function AboutSection() {
 
             <div className="mt-9 flex items-center gap-3">
               <div className="flex -space-x-3">
-                {AVATARS.map((avatar, i) => (
+                {AVATARS.map((avatar, i)=>(
                   <img
                     key={avatar}
                     src={avatar}
@@ -191,7 +191,7 @@ export default function AboutSection() {
           </div>
 
           {/* RIGHT */}
-          <div className="relative pb-14  lg:pb-20 lg:pl-6">
+          <div className="relative pb-8  lg:pb-10 lg:pl-6">
             {SERVICE_CHIPS.map((chip) => (
               <motion.div
                 key={chip.label}
