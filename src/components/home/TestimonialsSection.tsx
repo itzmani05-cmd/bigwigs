@@ -116,7 +116,7 @@ export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="relative scroll-mt-24 overflow-hidden bg-white py-24 lg:py-32"
+      className="relative scroll-mt-24 overflow-hidden bg-white pt-12 lg:py-18"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -145,7 +145,7 @@ export default function TestimonialsSection() {
 
       <Container className="relative z-10">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/25 bg-orange-50 px-4 py-1.5 text-xs font-bold tracking-[0.2em] text-orange-500 uppercase sm:text-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/25 bg-orange-50 px-4 py-1 text-xs font-bold tracking-[0.2em] text-orange-500 uppercase sm:text-sm">
             Testimonials
           </span> 
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
