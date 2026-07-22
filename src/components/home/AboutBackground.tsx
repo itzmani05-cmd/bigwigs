@@ -2,7 +2,7 @@ export default function AboutBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
       {/* Layer 2: atmospheric gradient glows, flowing lower-left (green) to upper-right (blue) */}
-      <div className="absolute -bottom-40 -left-40 w-[560px] h-[560px] rounded-full bg-brand-green-400/25 blur-[110px] animate-drift-a" />
+      <div className="absolute -bottom-60 -left-40 w-[560px] h-[560px] rounded-full bg-brand-green-400/25 blur-[110px] animate-drift-a" />
       <div className="absolute top-[38%] left-[26%] w-[420px] h-[420px] rounded-full bg-cyan-400/20 blur-[120px] animate-drift-b" />
       <div className="absolute -top-28 -right-28 w-[520px] h-[520px] rounded-full bg-brand-blue-500/20 blur-[130px] animate-drift-c" />
       <div className="absolute top-[8%] right-[30%] w-[300px] h-[300px] rounded-full bg-brand-green-500/10 blur-[100px] animate-drift-b" />

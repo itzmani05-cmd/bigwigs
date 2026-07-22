@@ -6,14 +6,12 @@ export default function CoreServicesSection() {
   return (
     <section
       id="core-services"
-      className="relative scroll-mt-24 overflow-hidden bg-white py-15 lg:py-18"
+      className="relative scroll-mt-24 overflow-hidden bg-blue-100 py-15 lg:py-18"
     >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white to-white"
       />
-
-      {/* thin grid lines */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
