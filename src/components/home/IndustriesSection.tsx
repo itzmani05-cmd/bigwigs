@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import Container from "@/components/ui/Container";
-import MagneticButton from "@/components/ui/MagneticButton";
+import CTASection from "@/components/ui/CTASection";
 import { industries, type Industry } from "./industries";
 
 const PARTICLES = [
@@ -185,57 +185,15 @@ export default function IndustriesSection() {
           ))}
         </div>
 
-        {/* CTA banner */}
-        <div className="relative mt-16 overflow-hidden rounded-[24px] bg-gradient-to-br from-[#03132f] via-[#0b1f45] to-[#0F172A] p-8 sm:p-10 lg:p-12">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-brand-blue-500/20 blur-[100px]"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute bottom-0 right-0 h-full w-1/2 opacity-30"
-            style={{
-              backgroundImage: "radial-gradient(#3b82f6 1.4px, transparent 1.4px)",
-              backgroundSize: "16px 16px",
-              WebkitMaskImage: "radial-gradient(circle at 100% 100%, black 0%, transparent 65%)",
-              maskImage: "radial-gradient(circle at 100% 100%, black 0%, transparent 65%)",
-            }}
-          />
-
-          <div className="relative z-10 flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex items-start gap-5">
-              <span className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gray-300 text-brand-blue-300  sm:flex">
-                <Phone size={22} strokeWidth={1.75} />
-              </span>
-              <div>
-                <h3 className="text-xl font-bold text-white sm:text-2xl">
-                  Let&rsquo;s Build Smarter AI Solutions Together
-                </h3>
-                <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
-                  Talk to our AI experts and discover how Bigwigs Technologies can
-                  accelerate your business with enterprise-grade AI data services.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex w-full shrink-0 flex-wrap items-center gap-3 sm:w-auto">
-              <MagneticButton
-                href="#contact"
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_15px_-8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 select-none sm:w-auto"
-              >
-                <span>Contact Us</span>
-                <ArrowRight size={16} />
-              </MagneticButton>
-              <MagneticButton
-                href="#contact"
-                className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 select-none sm:w-auto"
-              >
-                <span>Get a Quote</span>
-                <ArrowRight size={16} />
-              </MagneticButton>
-            </div>
-          </div>
-        </div>
+        <CTASection
+          withContainer={false}
+          className="mt-16"
+          icon={Phone}
+          heading="Let’s Build Smarter AI Solutions Together"
+          description="Talk to our AI experts and discover how Bigwigs Technologies can accelerate your business with enterprise-grade AI data services."
+          primaryAction={{ label: "Contact Us", href: "#contact" }}
+          secondaryAction={{ label: "Get a Quote", href: "#contact" }}
+        />
       </Container>
     </section>
   );

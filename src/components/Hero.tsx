@@ -70,7 +70,6 @@ const trustedLogos = [
   { name: "Google", logo: googleLogo },
   { name: "YouTube", logo: youtubeLogo },
   { name: "Google", logo: googleLogo },
-  { name: "YouTube", logo: youtubeLogo }
 ];
 
 const stats = [

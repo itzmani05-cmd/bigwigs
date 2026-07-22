@@ -6,6 +6,7 @@ export interface JourneyMilestone {
   title: string;
   color: string;
   bg: string;
+  bar: string;
 }
 
 export const journeyMilestones: JourneyMilestone[] = [
@@ -15,6 +16,7 @@ export const journeyMilestones: JourneyMilestone[] = [
     title: "Company Founded",
     color: "text-brand-blue-500",
     bg: "bg-brand-blue-50",
+    bar: "bg-brand-blue-500",
   },
   {
     icon: Globe2,
@@ -22,6 +24,7 @@ export const journeyMilestones: JourneyMilestone[] = [
     title: "First Global Client",
     color: "text-violet-500",
     bg: "bg-violet-50",
+    bar: "bg-violet-500",
   },
   {
     icon: Database,
@@ -29,6 +32,7 @@ export const journeyMilestones: JourneyMilestone[] = [
     title: "Expanded AI Data Services",
     color: "text-brand-green-600",
     bg: "bg-brand-green-50",
+    bar: "bg-brand-green-600",
   },
   {
     icon: Brain,
@@ -36,6 +40,7 @@ export const journeyMilestones: JourneyMilestone[] = [
     title: "Generative AI & Software Development",
     color: "text-orange-500",
     bg: "bg-orange-50",
+    bar: "bg-orange-500",
   },
   {
     icon: Trophy,
@@ -43,5 +48,6 @@ export const journeyMilestones: JourneyMilestone[] = [
     title: "Serving Global Enterprises",
     color: "text-brand-blue-500",
     bg: "bg-brand-blue-50",
+    bar: "bg-brand-blue-500",
   },
 ];

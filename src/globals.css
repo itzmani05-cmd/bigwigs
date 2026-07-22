@@ -163,3 +163,44 @@ h6 {
 .animate-signal-pulse {
   animation: signal-pulse 8s ease-in-out infinite;
 }
+
+/* Auto-advancing progress fill for the About page's process step tabs */
+@keyframes process-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-process-fill {
+  animation: process-fill 4.5s linear forwards;
+}
+
+/* Premium glass-card treatment shared across the About page */
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(37, 99, 235, 0.08);
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1),
+    box-shadow 0.35s cubic-bezier(0.215, 0.61, 0.355, 1),
+    border-color 0.35s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(37, 99, 235, 0.28);
+  box-shadow: 0 22px 50px -14px rgba(37, 99, 235, 0.28);
+}
+
+/* Flowing dash animation for AI network / connector lines */
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+
+.animate-dash-flow {
+  stroke-dasharray: 3 5;
+  animation: dash-flow 2.4s linear infinite;
+}
