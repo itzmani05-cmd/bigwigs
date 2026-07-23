@@ -71,7 +71,7 @@ export default function BlogHero() {
             <motion.div variants={itemVariants} className="mt-6 flex flex-wrap items-center gap-4">
               <MagneticButton
                 href="#latest-articles"
-                className="inline-flex items-center gap-2 rounded-lg bg-brand-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
+                className="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
               >
                 <span>Latest Articles</span>
                 <ArrowRight size={16} />

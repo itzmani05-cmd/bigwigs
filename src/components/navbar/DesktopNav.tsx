@@ -27,7 +27,7 @@ function NavTrigger({ item, isActive, isOpen, onFocus }: NavTriggerProps) {
       aria-haspopup={item.mega ? "true" : undefined}
       aria-expanded={item.mega ? isOpen : undefined}
       aria-controls={item.mega ? `mega-${slug(item.name)}` : undefined}
-      className={`relative z-10 flex items-center gap-1 px-5 py-2.5 text-[15px] font-semibold tracking-[-0.01em] rounded-full transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-blue-500 focus-visible:outline-offset-2 ${
+      className={`relative z-10 flex items-center gap-1 px-3 py-2.5 text-[15px] font-semibold tracking-[-0.01em] rounded-full transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-blue-500 focus-visible:outline-offset-2 ${
         isActive ? "text-brand-blue-600" : isOpen ? "text-slate-900" : "text-slate-500 hover:text-slate-900"
       }`}
     >
@@ -80,7 +80,7 @@ export default function DesktopNav({ items, pathname, activeHash }: DesktopNavPr
         }
       }}
     >
-      <nav aria-label="Primary" className="flex items-center gap-2 relative">
+      <nav aria-label="Primary" className="flex items-center gap-1.5 relative">
         {items.map((item, index) => {
           const isActive =
             item.href !== "#" &&
@@ -108,7 +108,7 @@ export default function DesktopNav({ items, pathname, activeHash }: DesktopNavPr
               {isActive && (
                 <motion.span
                   layoutId="navbar-underline"
-                  className="absolute left-4 right-4 -bottom-0.5 h-[2.5px] rounded-full bg-brand-blue-500"
+                  className="absolute left-2 right-2 -bottom-0.5 h-[2.5px] rounded-full bg-brand-blue-500"
                   transition={{ type: "spring", stiffness: 400, damping: 32 }}
                 />
               )}
