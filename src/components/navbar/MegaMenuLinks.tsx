@@ -12,9 +12,9 @@ export default function MegaMenuLinks({ content, activeIndex, onHoverLink }: Meg
   return (
     <ul className="flex flex-col">
       {content.links.map((link, index) => {
-        const linkClassName = `block py-2.5 lg:py-3 text-lg lg:text-[22px] font-semibold tracking-[-0.01em] transition-all duration-200 ease-out ${
+        const linkClassName = `block py-2.5 lg:py-3 text-lg lg:text-[16px] font-semibold tracking-[-0.01em] transition-all duration-200 ease-out ${
           index === activeIndex
-            ? "text-brand-green-500 translate-x-1.5"
+            ? "text-blue-500 translate-x-1.5"
             : "text-slate-700 hover:text-blue-500 hover:translate-x-1.5"
         }`;
         return (

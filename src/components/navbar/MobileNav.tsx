@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, LogOut, ShieldCheck, Briefcase, User, UserPlus } from "lucide-react";
+import { ChevronDown, LogOut, ShieldCheck, Briefcase, User, UserPlus, Phone } from "lucide-react";
 
 import HashLink from "@/components/ui/HashLink";
 import type { NavItem } from "./navConfig";
@@ -112,6 +112,7 @@ export default function MobileNav({ id, items, isOpen, onClose }: MobileNavProps
               onClick={onClose}
               className="mt-3 flex items-center justify-center gap-1.5 px-5 py-3 rounded-full text-sm font-semibold border-2 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-colors select-none"
             >
+              <Phone size={16} />
               {ctaItem.name}
             </HashLink>
             <HashLink

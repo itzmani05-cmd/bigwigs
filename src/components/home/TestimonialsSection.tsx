@@ -124,6 +124,30 @@ export default function TestimonialsSection() {
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/60 via-white to-white"
       />
+
+      {/* thin grid lines */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#0F172A 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
+        }}
+      />
+
+      {/* dotted world map */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-0 h-[40rem] w-[56rem] -translate-x-1/2 opacity-40"
+        style={{
+          backgroundImage: "radial-gradient(#2563EB 1.4px, transparent 1.4px)",
+          backgroundSize: "15px 15px",
+          WebkitMaskImage: "radial-gradient(ellipse 60% 55% at 50% 0%, black 40%, transparent 75%)",
+          maskImage: "radial-gradient(ellipse 60% 55% at 50% 0%, black 40%, transparent 75%)",
+        }}
+      />
+
       <motion.div
         aria-hidden
         className="pointer-events-none absolute -top-24 -left-24 h-[26rem] w-[26rem] rounded-full bg-brand-blue-500/10 blur-[120px]"

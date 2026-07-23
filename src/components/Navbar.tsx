@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
-import { Menu, X, UserPlus } from "lucide-react";
+import { Menu, X, UserPlus, Phone } from "lucide-react";
 import { MotionConfig } from "framer-motion";
 import { navItems, demoItem } from "./navbar/navConfig";
 import DesktopNav from "./navbar/DesktopNav";
@@ -86,8 +86,9 @@ export default function Navbar() {
             )} */}
             <HashLink
               href={demoItem.href}
-              className="inline-flex items-center justify-center border hover:border-slate-200 text-slate-700 px-5 py-2.5 rounded-md text-sm font-semibold transition-all duration-300 hover:border-slate-900 bg-slate-900 text-white"
+              className="inline-flex items-center justify-center gap-2 border hover:border-slate-200 text-slate-700 px-5 py-2.5 rounded-md text-sm font-semibold transition-all duration-300 hover:border-slate-900 bg-slate-900 text-white"
             >
+              <Phone size={16} />
               Contact us
             </HashLink>
           </div>

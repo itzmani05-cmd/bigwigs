@@ -15,11 +15,11 @@ export default function WhyChooseSection() {
   return (
     <section
       id="why-choose-us"
-      className="relative scroll-mt-24 overflow-hidden bg-white py-15 lg:py-18"
+      className="relative scroll-mt-24 overflow-hidden bg-orange-50 py-15 lg:py-18"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white to-white"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-orange-100/50 via-white to-white"
       />
 
       {/* thin grid lines */}

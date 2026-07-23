@@ -10,6 +10,12 @@ import {
   CalendarDays,
   Building2,
   BadgeCheck,
+  Car,
+  ShoppingCart,
+  Landmark,
+  Factory,
+  Sprout,
+  Truck,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import ourTeamImage from "@/assests/about/ourteams.jpg";
@@ -17,6 +23,14 @@ import blogImage from "@/assests/about/blog.jpg";
 import eventsImage from "@/assests/about/events.jpg";
 import locationImage from "@/assests/about/location.jpg";
 import certificationImage from "@/assests/about/certification.jpg";
+import healthCareImg from "@/assests/industries/healthCare.png";
+import automotiveImg from "@/assests/industries/Automotive.png";
+import retailImg from "@/assests/industries/Retail.png";
+import bankingImg from "@/assests/industries/Banking.png";
+import manufacturingImg from "@/assests/industries/Manufacturing.png";
+import agricultureImg from "@/assests/industries/Agriculture.png";
+import smartCitiesImg from "@/assests/industries/SmartCities.png";
+import logisticsImg from "@/assests/industries/Drones.png";
 
 export interface MegaFeature {
   icon: LucideIcon;
@@ -140,7 +154,76 @@ export const navItems: NavItem[] = [
       cta: { label: "Explore all services", href: "#services" },
     },
   },
-  { name: "Industries", href: "/industries" },
+  {
+    name: "Industries",
+    href: "/industries",
+    mega: {
+      title: "Industries We Serve",
+      description:
+        "AI data solutions engineered for the operational realities of every industry we work in.",
+      links: [
+        { name: "Healthcare", href: "/industries#industries-grid" },
+        { name: "Automotive", href: "/industries#industries-grid" },
+        { name: "Retail & E-commerce", href: "/industries#industries-grid" },
+        { name: "Banking & Finance", href: "/industries#industries-grid" },
+        { name: "Manufacturing", href: "/industries#industries-grid" },
+        { name: "Agriculture", href: "/industries#industries-grid" },
+        { name: "Smart Cities", href: "/industries#industries-grid" },
+        { name: "Logistics & Supply Chain", href: "/industries#industries-grid" },
+      ],
+      features: [
+        {
+          icon: Stethoscope,
+          title: "Healthcare",
+          description: "Medical image annotation, clinical NLP, medical AI.",
+          image: healthCareImg,
+        },
+        {
+          icon: Car,
+          title: "Automotive",
+          description: "ADAS, autonomous driving, LiDAR annotation.",
+          image: automotiveImg,
+        },
+        {
+          icon: ShoppingCart,
+          title: "Retail & E-commerce",
+          description: "Recommendation engine, OCR, customer analytics.",
+          image: retailImg,
+        },
+        {
+          icon: Landmark,
+          title: "Banking & Finance",
+          description: "Fraud detection, risk analysis, document AI.",
+          image: bankingImg,
+        },
+        {
+          icon: Factory,
+          title: "Manufacturing",
+          description: "Robotics, quality inspection, industrial AI.",
+          image: manufacturingImg,
+        },
+        {
+          icon: Sprout,
+          title: "Agriculture",
+          description: "Drone analytics, crop monitoring, satellite AI.",
+          image: agricultureImg,
+        },
+        {
+          icon: Building2,
+          title: "Smart Cities",
+          description: "GIS, traffic intelligence, urban analytics.",
+          image: smartCitiesImg,
+        },
+        {
+          icon: Truck,
+          title: "Logistics & Supply Chain",
+          description: "Warehouse automation, route optimization, supply chain AI.",
+          image: logisticsImg,
+        },
+      ],
+      cta: { label: "Explore all industries", href: "/industries" },
+    },
+  },
   { name: "Case Studies", href: "/case-studies" },
   { name: "Careers", href: "/careers" },
   { name: "Blog", href: "/blog" },
