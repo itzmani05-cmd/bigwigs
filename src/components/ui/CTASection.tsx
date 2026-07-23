@@ -174,7 +174,7 @@ export default function CTASection({
   if (!withContainer) return card;
 
   return (
-    <section className="relative w-full overflow-hidden py-14 lg:py-20">
+    <section className="relative w-full overflow-hidden py-14 lg:py-12">
       <Container>{card}</Container>
     </section>
   );

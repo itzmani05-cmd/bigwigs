@@ -183,10 +183,10 @@ export default function Hero() {
       <div className="relative w-full bg-white">
         <div className="mx-auto flex max-w-[1400px] flex-col items-center gap-8 px-4 py-3 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-10 lg:py-3">
           <div className="flex flex-col items-center lg:items-start">
-            <span className="text-xs font-semibold uppercase tracking-[0.1em] pt-4 text-slate-700">
+            <span className="text-xs font-semibold uppercase tracking-[0.1em] pt-3.5 text-slate-700">
               Trusted by Innovators
             </span>
-            <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-2 lg:justify-start">
+            <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-1 lg:justify-start">
               {trustedLogos.map((brand) => (
                 <img
                   key={brand.name}
