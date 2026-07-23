@@ -58,7 +58,7 @@ export default function CareersHero() {
               Build The Future
               <br />
               Of{" "}
-              <span className="bg-gradient-to-r from-brand-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              <span className="text-blue-500">
                 Artificial Intelligence
               </span>
             </motion.h1>
@@ -72,7 +72,7 @@ export default function CareersHero() {
             <motion.div variants={itemVariants} className="mt-8 flex flex-wrap items-center gap-4">
               <MagneticButton
                 href="#open-positions"
-                className="inline-flex items-center gap-2 rounded-lg bg-brand-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
+                className="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
               >
                 <span>View Open Positions</span>
                 <ArrowRight size={16} />

@@ -133,10 +133,8 @@ export default function BlogNewsletter() {
               </motion.div>
             ) : (
               <div className="relative">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-blue-50 text-brand-blue-500">
-                  <Mail size={20} strokeWidth={1.5} />
-                </span>
-                <h3 className="mt-2 text-lg font-bold text-slate-900">
+                
+                <h3 className=" text-lg font-bold text-slate-900">
                   Join the newsletter
                 </h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
