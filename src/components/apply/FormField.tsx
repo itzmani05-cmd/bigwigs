@@ -66,7 +66,7 @@ export default function FormField(props: FormFieldProps) {
         {Icon && (
           <Icon
             size={18}
-            className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-black"
+            className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 "
           />
         )}
 

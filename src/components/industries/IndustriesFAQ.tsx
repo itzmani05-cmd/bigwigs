@@ -2,25 +2,22 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import Container from "@/components/ui/Container";
-import { faqItems } from "./faqData";
+import { industriesFaqItems } from "./industriesFaqData";
 
-export default function CareersFAQ() {
+export default function IndustriesFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative w-full overflow-hidden py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden py-14 lg:py-12">
       <Container className="relative z-10">
-        <div className="mx-auto max-w-xl text-center">
+        <div className="max-w-xl text-left">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
-            FAQ
-          </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Frequently Asked Questions
-          </h2>
+          </span>
         </div>
 
-        <div className="mx-auto mt-10 flex max-w-2xl flex-col gap-3">
-          {faqItems.map((item, i) => {
+        <div className="mt-8 flex flex-col gap-3">
+          {industriesFaqItems.map((item, i) => {
             const isOpen = openIndex === i;
             return (
               <div key={item.question} className="glass-card overflow-hidden rounded-2xl">

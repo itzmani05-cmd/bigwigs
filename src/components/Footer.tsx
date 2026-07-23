@@ -246,7 +246,7 @@ export default function Footer() {
       />
 
       <Container
-        className="relative z-10 pt-16 sm:pt-20 lg:pt-24 pb-8 transition-[opacity,transform] duration-500 ease-out"
+        className="relative z-10 pt-16 sm:pt-20 lg:pt-24 pb-6 transition-[opacity,transform] duration-500 ease-out"
         style={{ opacity: reveal, transform: `translateY(${(1 - reveal) * 48}px)` }}
       >
         {/* main columns */}
@@ -335,7 +335,7 @@ export default function Footer() {
         </div>
 
         {/* bottom bar */}
-        <div className="mt-12 flex flex-col items-center gap-6 border-t border-[#1F2937] pt-4 sm:flex-row sm:justify-between">
+        <div className="mt-10 flex flex-col items-center gap-6 border-t border-[#1F2937] pt-4 sm:flex-row sm:justify-between">
           <p className="text-center text-xs text-[#A1A1AA] sm:text-left">
             © {year} Bigwigs Technologies.
             <br className="sm:hidden" /> All Rights Reserved.

@@ -4,7 +4,7 @@ import { hiringSteps } from "./hiringProcessData";
 
 export default function HiringProcess() {
   return (
-    <section className="relative w-full overflow-hidden py-14 lg:py-20">
+    <section className="relative w-full overflow-hidden py-10 lg:py-12">
       <Container className="relative z-10">
         <div className="mx-auto max-w-xl text-center">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">

@@ -5,6 +5,15 @@ import { ACCENT_STYLES, coreServices, type CoreService } from "./coreServices";
 
 const GAP = 32;
 
+/** Splits a capability label into a keyword line and a descriptive line
+ *  (e.g. "LiDAR & Point Cloud Annotation" -> ["LiDAR & Point Cloud", "Annotation"])
+ *  so every feature-list item renders as exactly two aligned rows. */
+function splitCapabilityLines(label: string): [string, string] {
+  const words = label.trim().split(" ");
+  if (words.length <= 1) return [label, ""];
+  return [words.slice(0, -1).join(" "), words[words.length - 1]];
+}
+
 function useVisibleCount() {
   const [count, setCount] = useState(() => {
     if (typeof window === "undefined") return 3;
@@ -120,36 +129,42 @@ function ShowcaseCard({ service, showConnector }: { service: CoreService; showCo
 
         <span className="mt-5 h-px w-full bg-slate-200" aria-hidden="true" />
 
-        <ul className="mt-4 grid grid-cols-2 gap-x-8">
+        <ul className="mt-4 grid grid-cols-2 gap-x-6">
         {[0, 1].map((col) => (
-          <div key={col} className="space-y-4">
+          <div key={col} className="space-y-3">
             {service.capabilities
               .filter((_, i) => i % 2 === col)
-              .map((cap) => (
-                <li
-                  key={cap}
-                  className="flex items-start gap-1 text-[11.5px] leading-6 text-slate-700"
-                >
-                  <span
-                    className={`
-                      mt-1
-                      flex h-5 w-5 shrink-0 items-center justify-center
-                      rounded-full
-                      ${s.capabilityIcon}
-                      bg-white
-                    `}
+              .map((cap) => {
+                const [line1, line2] = splitCapabilityLines(cap);
+                return (
+                  <li
+                    key={cap}
+                    className="flex items-start gap-1.5 text-[11.5px] leading-[1.35] text-slate-700"
                   >
-                    <CheckCircle2
-                      size={15}
-                      strokeWidth={1.75}
-                      className={`mt-0.5 shrink-0 ${s.capabilityIcon}`}
-                      aria-hidden="true"
-                    />
-                  </span>
+                    <span
+                      className={`
+                        mt-0.5
+                        flex h-5 w-5 shrink-0 items-center justify-center
+                        rounded-full
+                        ${s.capabilityIcon}
+                        bg-white
+                      `}
+                    >
+                      <CheckCircle2
+                        size={15}
+                        strokeWidth={1.75}
+                        className={`shrink-0 ${s.capabilityIcon}`}
+                        aria-hidden="true"
+                      />
+                    </span>
 
-                  <span>{cap}</span>
-                </li>
-              ))}
+                    <span className="flex min-h-[2.4em] flex-col justify-center break-words">
+                      <span className="block">{line1}</span>
+                      <span className="block">{line2 || " "}</span>
+                    </span>
+                  </li>
+                );
+              })}
           </div>
         ))}
       </ul>
