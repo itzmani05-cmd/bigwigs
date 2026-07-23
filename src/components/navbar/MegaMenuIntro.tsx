@@ -1,25 +1,36 @@
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import HashLink from "@/components/ui/HashLink";
 import type { MegaContent } from "./navConfig";
 
 export default function MegaMenuIntro({ content }: { content: MegaContent }) {
+  const ctaClassName =
+    "group mt-8 lg:mt-auto lg:pt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green-600 hover:text-brand-green-700 transition-colors w-fit";
+  const ctaArrow = (
+    <ArrowUpRight
+      size={16}
+      className="transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+    />
+  );
+
   return (
     <div className="flex flex-col h-full">
-      <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
-        Overview
+      <span className="text-xs font-semibold uppercase tracking-[0.14em] text-orange-500">
+        Overview -
       </span>
-      <h3 className="mt-3 text-2xl font-bold text-slate-900 tracking-tight">{content.title}</h3>
+      <h3 className="mt-2 text-2xl font-bold text-slate-900 tracking-tight">{content.title}</h3>
       <p className="mt-3 text-sm text-slate-500 leading-relaxed">{content.description}</p>
-      <HashLink
-        href={content.cta.href}
-        className="group mt-8 lg:mt-auto lg:pt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green-600 hover:text-brand-green-700 transition-colors w-fit"
-      >
-        {content.cta.label}
-        <ArrowUpRight
-          size={16}
-          className="transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-        />
-      </HashLink>
+      {content.cta.href.startsWith("/") ? (
+        <Link to={content.cta.href} className={ctaClassName}>
+          {content.cta.label}
+          {ctaArrow}
+        </Link>
+      ) : (
+        <HashLink href={content.cta.href} className={ctaClassName}>
+          {content.cta.label}
+          {ctaArrow}
+        </HashLink>
+      )}
     </div>
   );
 }
