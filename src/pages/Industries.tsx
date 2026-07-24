@@ -10,8 +10,11 @@ import IndustriesStats from "@/components/industries/IndustriesStats";
 import IndustriesFAQ from "@/components/industries/IndustriesFAQ";
 import SectionDivider from "@/components/careers/SectionDivider";
 import CTASection from "@/components/ui/CTASection";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function Industries() {
+  useDocumentTitle("Industries | Bigwigs Technologies");
+
   return (
     <main className="relative w-full overflow-x-hidden">
       <IndustriesBackground />

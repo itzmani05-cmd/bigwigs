@@ -7,8 +7,11 @@ import BlogNewsletter from "@/components/blog/BlogNewsletter";
 import LatestResearch from "@/components/blog/LatestResearch";
 import SectionDivider from "@/components/careers/SectionDivider";
 import CTASection from "@/components/ui/CTASection";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function Blog() {
+  useDocumentTitle("Blog & Insights | Bigwigs Technologies");
+
   return (
     <main className="relative w-full overflow-x-hidden">
       <BlogBackground />

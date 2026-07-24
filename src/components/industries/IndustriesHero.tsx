@@ -14,7 +14,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } },
 } as const;
 
-const TRUSTED_LOGOS = ["appen", "Remotasks", "TicTac", "WisePL", "GTS"];
+const TRUSTED_LOGOS = ["Venkat Prabhu", "Vijay", "Rajesh", "Suresh", "Karthik", ];
 
 const FLOATING_BADGES = [
   { icon: Building2, label: "Smart Cities", sub: "Traffic Intelligence", position: "left-[4%] top-[10%]", delay: 0 },

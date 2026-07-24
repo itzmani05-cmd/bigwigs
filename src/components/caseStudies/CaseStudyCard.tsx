@@ -43,9 +43,9 @@ export default function CaseStudyCard({ study, index = 0 }: { study: CaseStudy; 
           {study.technologies.slice(0, 3).map((tech) => (
             <span
               key={tech}
-              className="rounded-full bg-brand-blue-50 px-2.5 py-1 text-[11px] font-semibold text-brand-blue-600"
+              className="rounded-full bg-brand-blue-50 pb-1 text-[11px] font-semibold text-orange-500"
             >
-              {tech}
+              {tech}  |
             </span>
           ))}
         </div>

@@ -4,8 +4,11 @@ import CaseStudiesHero from "@/components/caseStudies/CaseStudiesHero";
 import FeaturedCaseStudies from "@/components/caseStudies/FeaturedCaseStudies";
 import SectionDivider from "@/components/careers/SectionDivider";
 import CTASection from "@/components/ui/CTASection";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function CaseStudies() {
+  useDocumentTitle("Case Studies | Bigwigs Technologies");
+
   return (
     <main className="relative w-full overflow-x-hidden">
       <CaseStudiesBackground />

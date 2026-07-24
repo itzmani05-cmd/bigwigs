@@ -2,8 +2,11 @@ import ApplyBackground from "@/components/apply/ApplyBackground";
 import ApplyIntro from "@/components/apply/ApplyIntro";
 import ApplyForm from "@/components/apply/ApplyForm";
 import Container from "@/components/ui/Container";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function Apply() {
+  useDocumentTitle("Apply Now | Bigwigs Technologies");
+
   return (
     <main className="relative w-full overflow-x-hidden py-10 lg:py-12">
       <ApplyBackground />
