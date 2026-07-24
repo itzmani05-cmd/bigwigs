@@ -11,8 +11,11 @@ import Expertise from "@/components/about/Expertise";
 import GlobalImpact from "@/components/about/GlobalImpact";
 import Process from "@/components/about/Process";
 import AboutCTA from "@/components/about/AboutCTA";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function About() {
+  useDocumentTitle("About Us | Bigwigs Technologies");
+
   return (
     <main className="relative w-full overflow-x-hidden">
       <AboutBackground />

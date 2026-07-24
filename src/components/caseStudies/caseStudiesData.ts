@@ -73,7 +73,7 @@ export const caseStudies: CaseStudy[] = [
     shortDescription:
       "A HIPAA-compliant medical image annotation pipeline that trained a radiology triage model to flag critical findings in under two minutes.",
     coverImage: healthCareImg,
-    technologies: ["Medical Image Annotation", "DICOM Processing", "Computer Vision", "Python"],
+    technologies: ["Medical Image Annotation", "DICOM Processing", ],
     client: "Multi-Specialty Diagnostic Imaging Network",
     duration: "5 months",
     overview:
@@ -115,7 +115,7 @@ export const caseStudies: CaseStudy[] = [
     shortDescription:
       "A high-throughput 3D point cloud and camera-LiDAR fusion annotation pipeline built for a Tier-1 autonomous vehicle supplier.",
     coverImage: automotiveImg,
-    technologies: ["LiDAR Annotation", "Sensor Fusion", "3D Point Cloud", "Computer Vision"],
+    technologies: ["LiDAR Annotation", "Sensor Fusion", ],
     client: "Tier-1 Autonomous Vehicle Supplier",
     duration: "9 months",
     overview:
@@ -157,7 +157,7 @@ export const caseStudies: CaseStudy[] = [
     shortDescription:
       "An automated pre-labeling and human-in-the-loop QA pipeline that cut catalog processing time by 65% for a global marketplace.",
     coverImage: retailImg,
-    technologies: ["Computer Vision", "Image Classification", "Data Labeling", "Automation"],
+    technologies: ["Computer Vision", "Image Classification",],
     client: "Global E-Commerce Marketplace",
     duration: "4 months",
     overview:
@@ -199,7 +199,7 @@ export const caseStudies: CaseStudy[] = [
     shortDescription:
       "An entity-annotation and OCR-correction pipeline powering a digital bank's fraud detection and compliance review models.",
     coverImage: bankingImg,
-    technologies: ["NLP", "Document AI", "OCR", "Fraud Detection"],
+    technologies: ["NLP", "Document AI", ],
     client: "Regional Digital Banking Platform",
     duration: "6 months",
     overview:
@@ -241,7 +241,7 @@ export const caseStudies: CaseStudy[] = [
     shortDescription:
       "A geospatial segmentation pipeline fusing satellite and drone imagery to power early crop stress detection at scale.",
     coverImage: agricultureImg,
-    technologies: ["GIS & Geospatial", "Drone Imagery", "Semantic Segmentation", "Computer Vision"],
+    technologies: ["GIS & Geospatial", "Drone Imagery", ],
     client: "Precision Agriculture Technology Provider",
     duration: "7 months",
     overview:
