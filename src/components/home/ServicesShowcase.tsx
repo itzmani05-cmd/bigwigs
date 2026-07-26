@@ -170,7 +170,7 @@ function ShowcaseCard({ service, showConnector }: { service: CoreService; showCo
       </ul>
 
         <a
-          href="#contact"
+          href={service.href ?? "#contact"}
           className={`mt-auto pt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold ${s.ctaText}`}
         >
           {service.ctaLabel}

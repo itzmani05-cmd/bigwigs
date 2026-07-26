@@ -5,6 +5,8 @@ import {
   ScanEye,
   Workflow,
   BarChart3,
+  Code2,
+  Languages,
   Users,
   Newspaper,
   CalendarDays,
@@ -16,6 +18,12 @@ import {
   Factory,
   Sprout,
   Truck,
+  Mic,
+  AudioLines,
+  Database,
+  ShieldCheck,
+  BookOpen,
+  Bot,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import ourTeamImage from "@/assests/about/ourteams.jpg";
@@ -112,14 +120,27 @@ export const navItems: NavItem[] = [
       description:
         "Enterprise AI systems engineered for accuracy, security, and scale — across six core domains.",
       links: [
+        { name: "Software Development", href: "/software-development" },
         { name: "GIS & Geospatial Mapping", href: "#services" },
         { name: "LiDAR (2D & 3D)", href: "#services" },
-        { name: "Medical Image Annotation", href: "#services" },
-        { name: "Computer Vision", href: "#services" },
-        { name: "Enterprise Automation", href: "#services" },
+        { name: "Medical Image Annotation", href: "/healthcare-ai" },
+        { name: "AI Data Annotation", href: "/ai-data-annotation" },
+        { name: "Generative AI Services", href: "/generative-ai" },
         { name: "Data Analytics", href: "#services" },
+        { name: "Translation & Localization", href: "/translation-localization" },
+        { name: "Transcription Services", href: "/transcription-services" },
+        { name: "Voice & Speech Data Collection", href: "/voice-data-collection" },
+        { name: "Data Collection & AI Datasets", href: "/data-collection" },
+        { name: "Data Validation & QA", href: "/data-quality-assurance" },
+        { name: "Digital Publishing", href: "/digital-publishing" },
+        { name: "AI Agents & Automation", href: "/ai-agents-automation" },
       ],
       features: [
+        {
+          icon: Code2,
+          title: "Software Development",
+          description: "Custom, cloud-native software engineering.",
+        },
         {
           icon: Map,
           title: "GIS & Geospatial",
@@ -137,18 +158,53 @@ export const navItems: NavItem[] = [
         },
         {
           icon: ScanEye,
-          title: "Computer Vision",
-          description: "Production-grade detection & segmentation.",
+          title: "AI Data Annotation",
+          description: "Image, video, LiDAR, and OCR annotation for computer vision.",
         },
         {
           icon: Workflow,
-          title: "Automation",
-          description: "Intelligent workflows at enterprise scale.",
+          title: "Generative AI Services",
+          description: "LLMs, AI agents, RAG, and intelligent workflow automation.",
         },
         {
           icon: BarChart3,
           title: "Data Analytics",
           description: "Dashboards that turn data into decisions.",
+        },
+        {
+          icon: Languages,
+          title: "Translation & Localization",
+          description: "Multilingual content, software, and web experiences.",
+        },
+        {
+          icon: Mic,
+          title: "Transcription Services",
+          description: "AI-assisted, human-reviewed audio and video transcription.",
+        },
+        {
+          icon: AudioLines,
+          title: "Voice & Speech Data Collection",
+          description: "Enterprise speech datasets for voice AI and conversational AI.",
+        },
+        {
+          icon: Database,
+          title: "Data Collection & AI Datasets",
+          description: "Image, video, text, and document datasets for AI and ML training.",
+        },
+        {
+          icon: ShieldCheck,
+          title: "Data Validation & QA",
+          description: "Multi-level quality assurance for annotation, media, and LLM datasets.",
+        },
+        {
+          icon: BookOpen,
+          title: "Digital Publishing",
+          description: "eBook conversion, typesetting, and structured content production.",
+        },
+        {
+          icon: Bot,
+          title: "AI Agents & Automation",
+          description: "Autonomous agents that execute enterprise workflows end-to-end.",
         },
       ],
       cta: { label: "Explore all services", href: "#services" },

@@ -34,6 +34,10 @@ export default function BusinessResults({ study }: { study: CaseStudy }) {
             <h2 className="mt-3 max-w-lg text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
               The Measurable Impact
             </h2>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
+              Beyond the delivery metrics, this engagement moved the needle on what {study.client} could do
+              with the data — faster decisions, fewer manual reviews, and a model pipeline built to scale.
+            </p>
 
             <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
               {study.businessResults.map((result, i) => (

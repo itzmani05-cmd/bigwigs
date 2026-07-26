@@ -1,0 +1,17 @@
+export const annotationTypes: string[] = [
+  "X-Ray",
+  "MRI",
+  "CT",
+  "PET",
+  "Ultrasound",
+  "Retina",
+  "Histopathology",
+  "Dental",
+  "Dermatology",
+  "Tumor Segmentation",
+  "Lesion Detection",
+  "Bounding Box",
+  "Polygon",
+  "Semantic Segmentation",
+  "Instance Segmentation",
+];

@@ -7,8 +7,14 @@
   --color-brand-green-400: #22c55e; /* Lighter green - rgba(34, 197, 94, 1) */
   
   /* Logo Blue Colors */
+  --color-brand-blue-50: #eff6ff;
+  --color-brand-blue-100: #dbeafe;
+  --color-brand-blue-200: #bfdbfe;
+  --color-brand-blue-300: #93c5fd;
+  --color-brand-blue-400: #3b82f6;
   --color-brand-blue-500: #2563eb;  /* Royal Blue - rgba(37, 99, 235, 1) */
   --color-brand-blue-600: #1d4ed8;  /* Darker Blue - rgba(29, 78, 216, 1) */
+  --color-brand-blue-700: #1e40af;
   
   /* Additional system tokens */
   --color-brand-green-50: #f0fdf4;
@@ -203,4 +209,48 @@ h6 {
 .animate-dash-flow {
   stroke-dasharray: 3 5;
   animation: dash-flow 2.4s linear infinite;
+}
+
+/* Small vertical bob for floating particles / illustration accents */
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-particle-float {
+  animation: particle-float 7s ease-in-out infinite;
+}
+
+/* Very slow opacity breathing for background glows */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 10s ease-in-out infinite;
+}
+
+/* Subtle blueprint / graph-paper grid overlay, used behind page content */
+.bg-grid-blueprint {
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Subtle dot-matrix pattern, used behind page content */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(37, 99, 235, 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
 }

@@ -23,6 +23,9 @@
 /backend/dist/
 /backend/node_modules/
 
+# generated RAG vector index (rebuild with `npm run index:pdf` in backend/)
+/backend/vectorstore/
+
 # misc
 .DS_Store
 *.pem
