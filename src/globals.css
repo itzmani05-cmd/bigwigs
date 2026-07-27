@@ -241,6 +241,22 @@ h6 {
   animation: glow-pulse 10s ease-in-out infinite;
 }
 
+/* Slow-moving gradient sheen for highlighted heading text */
+@keyframes gradient-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-shimmer {
+  background-size: 200% auto;
+  animation: gradient-shimmer 6s ease-in-out infinite;
+}
+
 /* Subtle blueprint / graph-paper grid overlay, used behind page content */
 .bg-grid-blueprint {
   background-image:

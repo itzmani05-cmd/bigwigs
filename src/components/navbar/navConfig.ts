@@ -24,6 +24,8 @@ import {
   ShieldCheck,
   BookOpen,
   Bot,
+  GraduationCap,
+  Scale,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import ourTeamImage from "@/assests/about/ourteams.jpg";
@@ -218,14 +220,17 @@ export const navItems: NavItem[] = [
       description:
         "AI data solutions engineered for the operational realities of every industry we work in.",
       links: [
-        { name: "Healthcare", href: "/industries#industries-grid" },
-        { name: "Automotive", href: "/industries#industries-grid" },
-        { name: "Retail & E-commerce", href: "/industries#industries-grid" },
-        { name: "Banking & Finance", href: "/industries#industries-grid" },
-        { name: "Manufacturing", href: "/industries#industries-grid" },
+        { name: "Healthcare", href: "/industries/healthcare-life-sciences" },
+        { name: "Automotive", href: "/industries/automotive-mobility" },
+        { name: "Retail & E-commerce", href: "/industries/retail-ecommerce" },
+        { name: "Banking & Finance", href: "/industries/bfsi-solutions" },
+        { name: "Manufacturing", href: "/industries/manufacturing-industrial-solutions" },
         { name: "Agriculture", href: "/industries#industries-grid" },
         { name: "Smart Cities", href: "/industries#industries-grid" },
         { name: "Logistics & Supply Chain", href: "/industries#industries-grid" },
+        { name: "Education & eLearning", href: "/industries/education-elearning-solutions" },
+        { name: "Government & Public Sector", href: "/industries/government-public-sector-solutions" },
+        { name: "Publishing & Media", href: "/industries/publishing-media-solutions" },
       ],
       features: [
         {
@@ -275,6 +280,21 @@ export const navItems: NavItem[] = [
           title: "Logistics & Supply Chain",
           description: "Warehouse automation, route optimization, supply chain AI.",
           image: logisticsImg,
+        },
+        {
+          icon: GraduationCap,
+          title: "Education & eLearning",
+          description: "LMS platforms, AI tutoring, digital publishing, accessibility.",
+        },
+        {
+          icon: Scale,
+          title: "Government & Public Sector",
+          description: "Digital government platforms, smart cities, secure citizen services.",
+        },
+        {
+          icon: BookOpen,
+          title: "Publishing & Media",
+          description: "XML-first publishing, AI content tagging, accessible EPUB & PDF.",
         },
       ],
       cta: { label: "Explore all industries", href: "/industries" },

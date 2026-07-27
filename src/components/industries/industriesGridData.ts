@@ -7,6 +7,9 @@ import {
   Sprout,
   Building2,
   Truck,
+  GraduationCap,
+  Landmark as GovernmentIcon,
+  BookOpen as PublishingIcon,
   type LucideIcon,
 } from "lucide-react";
 import healthCareImg from "@/assests/industries/healthCare.png";
@@ -22,8 +25,10 @@ export interface IndustryCardItem {
   icon: LucideIcon;
   name: string;
   description: string;
-  image: string;
+  /** Omit to render an icon-only gradient card instead of a photo. */
+  image?: string;
   iconGradient: string;
+  href?: string;
 }
 
 export const industriesGrid: IndustryCardItem[] = [
@@ -33,6 +38,7 @@ export const industriesGrid: IndustryCardItem[] = [
     description: "Medical image annotation, clinical NLP, medical AI.",
     image: healthCareImg,
     iconGradient: "from-brand-blue-500 to-brand-blue-600",
+    href: "/industries/healthcare-life-sciences",
   },
   {
     icon: Car,
@@ -40,6 +46,7 @@ export const industriesGrid: IndustryCardItem[] = [
     description: "ADAS, autonomous driving, LiDAR annotation.",
     image: automotiveImg,
     iconGradient: "from-brand-blue-500 to-cyan-500",
+    href: "/industries/automotive-mobility",
   },
   {
     icon: ShoppingCart,
@@ -47,6 +54,7 @@ export const industriesGrid: IndustryCardItem[] = [
     description: "Recommendation engine, OCR, customer analytics.",
     image: retailImg,
     iconGradient: "from-cyan-500 to-brand-blue-500",
+    href: "/industries/retail-ecommerce",
   },
   {
     icon: Landmark,
@@ -54,6 +62,7 @@ export const industriesGrid: IndustryCardItem[] = [
     description: "Fraud detection, risk analysis, document AI.",
     image: bankingImg,
     iconGradient: "from-brand-blue-500 to-indigo-500",
+    href: "/industries/bfsi-solutions",
   },
   {
     icon: Factory,
@@ -61,6 +70,7 @@ export const industriesGrid: IndustryCardItem[] = [
     description: "Robotics, quality inspection, industrial AI.",
     image: manufacturingImg,
     iconGradient: "from-orange-500 to-amber-500",
+    href: "/industries/manufacturing-industrial-solutions",
   },
   {
     icon: Sprout,
@@ -82,5 +92,26 @@ export const industriesGrid: IndustryCardItem[] = [
     description: "Warehouse automation, route optimization, supply chain AI.",
     image: logisticsImg,
     iconGradient: "from-orange-500 to-rose-500",
+  },
+  {
+    icon: GraduationCap,
+    name: "Education & eLearning",
+    description: "LMS platforms, AI tutoring, digital publishing, accessibility.",
+    iconGradient: "from-violet-500 to-fuchsia-500",
+    href: "/industries/education-elearning-solutions",
+  },
+  {
+    icon: GovernmentIcon,
+    name: "Government & Public Sector",
+    description: "Digital government platforms, smart cities, secure citizen services.",
+    iconGradient: "from-brand-blue-500 to-indigo-500",
+    href: "/industries/government-public-sector-solutions",
+  },
+  {
+    icon: PublishingIcon,
+    name: "Publishing & Media",
+    description: "XML-first publishing, AI content tagging, accessible EPUB & PDF.",
+    iconGradient: "from-cyan-500 to-brand-blue-500",
+    href: "/industries/publishing-media-solutions",
   },
 ];

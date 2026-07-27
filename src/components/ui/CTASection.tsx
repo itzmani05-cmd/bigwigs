@@ -39,7 +39,7 @@ export default function CTASection({
 }: CTASectionProps) {
   const card = (
     <div
-      className={`relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#03132f] via-[#0b1f45] to-[#0F172A] p-8 sm:p-12 lg:p-14 ${className}`}
+      className={`relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#03132f] via-[#0b1f45] to-[#0F172A] p-6 sm:p-10 md:p-12 lg:p-14 ${className}`}
     >
       <div
         aria-hidden
@@ -127,43 +127,45 @@ export default function CTASection({
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
 
-      <div className="relative z-10 flex flex-col items-center gap-8 text-center lg:flex-row lg:items-center lg:justify-between lg:text-left">
-        <div className="relative hidden shrink-0 lg:block">
+      <div className="relative z-10 flex flex-col items-center gap-6 text-center sm:gap-8 lg:flex-row lg:items-center lg:justify-between lg:text-left">
+        <div className="relative shrink-0">
           <motion.div
             aria-hidden
-            className="pointer-events-none absolute inset-0 -m-6 rounded-full bg-brand-blue-400/30 blur-[40px]"
+            className="pointer-events-none absolute inset-0 -m-4 rounded-full bg-brand-blue-400/30 blur-[40px] sm:-m-6"
             animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.15, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="relative flex h-24 w-24 items-center justify-center rounded-full bg-gray-200 text-brand-blue-300"
+            className="relative flex h-16 w-16 items-center justify-center rounded-full bg-gray-200 text-blue-800 sm:h-20 sm:w-20 lg:h-24 lg:w-24"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
-            <Icon size={40} strokeWidth={1.5} />
+            <Icon size={28} strokeWidth={1.5} className="sm:hidden" />
+            <Icon size={34} strokeWidth={1.5} className="hidden sm:block lg:hidden" />
+            <Icon size={40} strokeWidth={1.5} className="hidden lg:block" />
           </motion.div>
         </div>
 
         <div className="max-w-xl">
-          <h3 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-[32px]">{heading}</h3>
+          <h3 className="text-xl font-extrabold tracking-tight text-white sm:text-3xl md:text-[28px] lg:text-[32px]">{heading}</h3>
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">{description}</p>
         </div>
 
-        <div className="flex w-full shrink-0 flex-wrap items-center justify-center gap-3 lg:w-auto lg:justify-end">
+        <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:w-auto lg:justify-end">
           <MagneticButton
             href={primaryAction.href}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_15px_-8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 select-none sm:w-auto"
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-5 py-3 text-center text-sm font-semibold text-white shadow-[0_10px_15px_-8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 select-none sm:w-auto sm:px-6"
           >
             <span>{primaryAction.label}</span>
-            {primaryAction.showArrow !== false && <ArrowRight size={16} />}
+            {primaryAction.showArrow !== false && <ArrowRight size={16} className="shrink-0" />}
           </MagneticButton>
           {secondaryAction && (
             <MagneticButton
               href={secondaryAction.href}
-              className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 select-none sm:w-auto"
+              className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 select-none sm:w-auto sm:px-6"
             >
               <span>{secondaryAction.label}</span>
-              {secondaryAction.showArrow && <ArrowRight size={16} />}
+              {secondaryAction.showArrow && <ArrowRight size={16} className="shrink-0" />}
             </MagneticButton>
           )}
         </div>
@@ -174,7 +176,7 @@ export default function CTASection({
   if (!withContainer) return card;
 
   return (
-    <section className="relative w-full overflow-hidden py-14 lg:py-12">
+    <section className="relative w-full overflow-hidden py-10 sm:py-14 lg:py-12">
       <Container>{card}</Container>
     </section>
   );

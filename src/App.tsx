@@ -1,9 +1,17 @@
-import { Routes, Route, useLocation, matchPath } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Industries from "@/pages/Industries";
+import HealthcareLifeSciences from "@/pages/HealthcareLifeSciences";
+import AutomotiveMobility from "@/pages/AutomotiveMobility";
+import RetailEcommerce from "@/pages/RetailEcommerce";
+import BfsiSolutions from "@/pages/BfsiSolutions";
+import ManufacturingIndustrialSolutions from "@/pages/ManufacturingIndustrialSolutions";
+import EducationElearningSolutions from "@/pages/EducationElearningSolutions";
+import GovernmentPublicSectorSolutions from "@/pages/GovernmentPublicSectorSolutions";
+import PublishingMediaSolutions from "@/pages/PublishingMediaSolutions";
 import Careers from "@/pages/Careers";
 import Apply from "@/pages/Apply";
 import Blog from "@/pages/Blog";
@@ -18,53 +26,42 @@ import DataCollection from "@/pages/DataCollection";
 import DataQualityAssurance from "@/pages/DataQualityAssurance";
 import DigitalPublishing from "@/pages/DigitalPublishing";
 import AiDataAnnotation from "@/pages/AiDataAnnotation";
-import GenerativeAi from "@/pages/GenerativeAi";
-import AiAgentsAutomation from "@/pages/AiAgentsAutomation";
-import NotFound from "@/pages/NotFound";
+import GenerativeAI from "@/pages/GenerativeAi";
+import AIAgentsAutomation from "@/pages/AiAgentsAutomation";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollToHash from "@/components/ScrollToHash";
 import ChatBot from "@/components/chatbot/ChatBot";
 
-const KNOWN_ROUTE_PATHS = [
-  "/",
-  "/about",
-  "/industries",
-  "/careers",
-  "/apply",
-  "/blog",
-  "/case-studies",
-  "/case-studies/:slug",
-  "/software-development",
-  "/healthcare-ai",
-  "/translation-localization",
-  "/transcription-services",
-  "/voice-data-collection",
-  "/data-collection",
-  "/data-quality-assurance",
-  "/digital-publishing",
-  "/ai-data-annotation",
-  "/generative-ai",
-  "/ai-agents-automation",
-];
-
 export default function App() {
-  const location = useLocation();
-  const isKnownRoute = KNOWN_ROUTE_PATHS.some((path) => matchPath(path, location.pathname));
-
   return (
     <>
       <ScrollToHash />
-      {isKnownRoute && <Navbar />}
+      <Navbar />
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/industries" element={<Industries />} />
+          
+          {/* Industries */}
+          <Route path="/industries/healthcare-life-sciences" element={<HealthcareLifeSciences />} />
+          <Route path="/industries/automotive-mobility" element={<AutomotiveMobility />} />
+          <Route path="/industries/retail-ecommerce" element={<RetailEcommerce />} />
+          <Route path="/industries/bfsi-solutions" element={<BfsiSolutions />} />
+          <Route path="/industries/manufacturing-industrial-solutions" element={<ManufacturingIndustrialSolutions />} />
+          <Route path="/industries/education-elearning-solutions" element={<EducationElearningSolutions />} />
+          <Route path="/industries/government-public-sector-solutions" element={<GovernmentPublicSectorSolutions />} />
+          <Route path="/industries/publishing-media-solutions" element={<PublishingMediaSolutions />} />
+
+          
           <Route path="/careers" element={<Careers />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/blog" element={<Blog />} />
+
+          {/* Case Studies */}
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+
           {/* Services */}
           <Route path="/software-development" element={<SoftwareDevelopment />} />
           <Route path="/healthcare-ai" element={<HealthcareAI />} />
@@ -75,12 +72,11 @@ export default function App() {
           <Route path="/data-quality-assurance" element={<DataQualityAssurance />} />
           <Route path="/digital-publishing" element={<DigitalPublishing />} />
           <Route path="/ai-data-annotation" element={<AiDataAnnotation />} />
-          <Route path="/generative-ai" element={<GenerativeAi />} />
-          <Route path="/ai-agents-automation" element={<AiAgentsAutomation />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/generative-ai" element={<GenerativeAI />} />
+          <Route path="/ai-agents-automation" element={<AIAgentsAutomation />} />
         </Routes>
       </main>
-      {isKnownRoute && <Footer />}
+      <Footer />
       <CookieConsent />
       <ChatBot />
     </>
