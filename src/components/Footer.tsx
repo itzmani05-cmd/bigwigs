@@ -71,7 +71,6 @@ const SOCIAL_LINKS = [
   { Icon: LinkedInIcon, label: "LinkedIn", href: "#" },
   { Icon: XIcon, label: "X (Twitter)", href: "#" },
   { Icon: FacebookIcon, label: "Facebook", href: "#" },
-  { Icon: InstagramIcon, label: "Instagram", href: "#" },
   { Icon: YoutubeIcon, label: "YouTube", href: "#" },
 ];
 
@@ -82,7 +81,8 @@ interface ContactItem {
 }
 
 const CONTACT_INFO: ContactItem[] = [
-  { icon: MapPin, lines: ["Pudukkottai, Tamil Nadu, India"] },
+  { icon: MapPin, lines: ["204, 2nd floor, Pudukkottai to Trichy road"," Mathur, Kulathur (PO)",
+    "Pudukkottai - 622515, Tamil Nadu, India"] },
   {
     icon: Mail,
     lines: ["info@bigwigsfolks.in "],
@@ -334,7 +334,7 @@ export default function Footer() {
         {/* bottom bar */}
         <div className="mt-10 flex flex-col items-center gap-6 border-t border-[#1F2937] pt-4 sm:flex-row sm:justify-between">
           <p className="text-center text-xs text-[#A1A1AA] sm:text-left">
-            © {year} Bigwigs Technologies.
+            © {year} Bigwigs Technologies Private Limited .
             <br className="sm:hidden" /> All Rights Reserved.
           </p>
 
