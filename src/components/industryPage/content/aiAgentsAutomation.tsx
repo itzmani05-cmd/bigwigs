@@ -60,8 +60,8 @@ export const aiAgentsHero = {
   ),
   description:
     "Design intelligent AI Agents that understand, reason, retrieve enterprise knowledge, automate workflows, and execute business operations with minimal human intervention.",
-  primaryCta: { label: "Schedule an AI Strategy Session", href: "#contact" },
-  secondaryCta: { label: "Speak With AI Automation Experts", href: "#contact" },
+  primaryCta: { label: "Schedule an AI Strategy Session", href: "/demo" },
+  secondaryCta: { label: "Speak With AI Automation Experts", href: "/contact" },
   trustedBy: ["Healthcare", "Finance", "Retail", "Government", "Technology", "Manufacturing"],
   visualIcon: Bot,
   badges: [

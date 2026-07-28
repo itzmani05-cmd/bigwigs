@@ -62,8 +62,8 @@ export const annotationHero = {
   ),
   description:
     "Build accurate, scalable, and reliable AI models with enterprise-grade data annotation services. Bigwigs Technologies delivers precision labeling for Computer Vision, NLP, Speech AI, Autonomous Driving, Healthcare AI, Robotics, and Large Language Models.",
-  primaryCta: { label: "Start Your AI Annotation Project", href: "#contact" },
-  secondaryCta: { label: "Talk To AI Specialists", href: "#contact" },
+  primaryCta: { label: "Start Your AI Annotation Project", href: "/demo" },
+  secondaryCta: { label: "Talk To AI Specialists", href: "/contact" },
   trustedBy: ["Healthcare", "Automotive", "Retail", "Manufacturing", "AI Companies", "Government"],
   visualIcon: Camera,
   badges: [

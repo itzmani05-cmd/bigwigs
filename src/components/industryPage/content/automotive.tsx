@@ -65,8 +65,8 @@ export const automotiveHero = {
   ),
   description:
     "We help automotive manufacturers, Tier-1 suppliers, mobility providers, autonomous vehicle companies, and transportation technology organizations accelerate innovation through AI data services, software engineering, intelligent automation, and digital transformation.",
-  primaryCta: { label: "Schedule an Automotive AI Consultation", href: "#contact" },
-  secondaryCta: { label: "Speak with Our Mobility Solutions Experts", href: "#contact" },
+  primaryCta: { label: "Schedule an Automotive AI Consultation", href: "/demo" },
+  secondaryCta: { label: "Speak with Our Mobility Solutions Experts", href: "/contact" },
   trustedBy: ["Automotive OEMs", "Tier-1 Suppliers", "Autonomous Vehicle Companies", "EV Manufacturers", "Mobility Startups", "Fleet Operators"],
   visualIcon: Car,
   badges: [

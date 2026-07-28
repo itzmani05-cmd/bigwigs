@@ -75,8 +75,8 @@ export const healthcareAiHero = {
   ),
   description:
     "Empowering hospitals, healthcare providers, pharmaceutical companies, and medical innovators with AI-driven solutions that improve diagnosis, automate workflows, and enhance patient care.",
-  primaryCta: { label: "Discuss Your Healthcare AI Project", href: "#contact" },
-  secondaryCta: { label: "Contact Healthcare Team", href: "#contact" },
+  primaryCta: { label: "Discuss Your Healthcare AI Project", href: "/demo" },
+  secondaryCta: { label: "Contact Healthcare Team", href: "/contact" },
   trustedBy: ["Hospitals", "Healthcare Providers", "Pharmaceutical Companies", "Medical Innovators"],
   visualIcon: Stethoscope,
   badges: [

@@ -65,8 +65,8 @@ export const educationHero = {
   ),
   description:
     "The education sector is evolving through AI, digital learning platforms, virtual classrooms, intelligent tutoring systems, and data-driven educational insights. We help educational institutions, EdTech companies, universities, publishers, and corporate training providers build intelligent, engaging, and scalable learning ecosystems.",
-  primaryCta: { label: "Schedule an Education Technology Consultation", href: "#contact" },
-  secondaryCta: { label: "Speak with Our EdTech Solutions Experts", href: "#contact" },
+  primaryCta: { label: "Schedule an Education Technology Consultation", href: "/demo" },
+  secondaryCta: { label: "Speak with Our EdTech Solutions Experts", href: "/contact" },
   trustedBy: ["Universities", "EdTech Companies", "Online Learning Platforms", "Corporate Training Providers", "Educational Publishers", "Schools"],
   visualIcon: GraduationCap,
   badges: [

@@ -64,8 +64,8 @@ export const generativeAiHero = {
   ),
   description:
     "Leverage Large Language Models, AI Agents, Retrieval-Augmented Generation (RAG), and intelligent automation to transform business operations, accelerate innovation, and deliver exceptional customer experiences.",
-  primaryCta: { label: "Request a Generative AI Consultation", href: "#contact" },
-  secondaryCta: { label: "Talk To Our AI Experts", href: "#contact" },
+  primaryCta: { label: "Request a Generative AI Consultation", href: "/demo" },
+  secondaryCta: { label: "Talk To Our AI Experts", href: "/contact" },
   trustedBy: ["Healthcare", "Finance", "Retail", "Government", "Technology", "Manufacturing"],
   visualIcon: Brain,
   badges: [

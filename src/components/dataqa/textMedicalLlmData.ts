@@ -1,3 +1,4 @@
+
 import { FileText, Stethoscope, Bot, type LucideIcon } from "lucide-react";
 
 export interface ValidationPillar {

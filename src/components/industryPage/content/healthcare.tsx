@@ -78,8 +78,8 @@ export const healthcareHero = {
   ),
   description:
     "Empowering hospitals, pharmaceutical companies, healthcare providers, research institutions, and medical device manufacturers with enterprise AI, intelligent automation, software engineering, and healthcare data solutions.",
-  primaryCta: { label: "Talk to Our Healthcare AI Experts", href: "#contact" },
-  secondaryCta: { label: "Start Your Healthcare Transformation", href: "#contact" },
+  primaryCta: { label: "Talk to Our Healthcare AI Experts", href: "/demo" },
+  secondaryCta: { label: "Start Your Healthcare Transformation", href: "/contact" },
   trustedBy: ["Hospitals", "Pharmaceuticals", "HealthTech", "Medical Devices", "Research Labs", "Healthcare Startups"],
   visualIcon: Brain,
   badges: [

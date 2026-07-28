@@ -122,14 +122,14 @@ export const navItems: NavItem[] = [
       description:
         "Enterprise AI systems engineered for accuracy, security, and scale — across six core domains.",
       links: [
-        { name: "Software Development", href: "/software-development" },
-        { name: "Medical Image Annotation", href: "/healthcare-ai" },
-        { name: "AI Data Annotation", href: "/ai-data-annotation" },
-        { name: "Generative AI Services", href: "/generative-ai" },
-        { name: "Translation & Localization", href: "/translation-localization" },
-        { name: "Transcription Services", href: "/transcription-services" },
-        { name: "Voice & Speech Data Collection", href: "/voice-data-collection" },
-        { name: "AI Agents & Automation", href: "/ai-agents-automation" },
+        { name: "Software Development", href: "/service/software-development" },
+        { name: "Medical Image Annotation", href: "/service/healthcare-ai" },
+        { name: "AI Data Annotation", href: "/service/ai-data-annotation" },
+        { name: "Generative AI Services", href: "/service/generative-ai" },
+        { name: "Translation & Localization", href: "/service/translation-localization" },
+        { name: "Transcription Services", href: "/service/transcription-services" },
+        { name: "Voice & Speech Data Collection", href: "/service/voice-data-collection" },
+        { name: "AI Agents & Automation", href: "/service/ai-agents-automation" },
       ],
       features: [
         {

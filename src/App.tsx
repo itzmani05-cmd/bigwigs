@@ -64,17 +64,17 @@ export default function App() {
           <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
 
           {/* Services */}
-          <Route path="/software-development" element={<SoftwareDevelopment />} />
-          <Route path="/healthcare-ai" element={<HealthcareAI />} />
-          <Route path="/translation-localization" element={<TranslationLocalization />} />
-          <Route path="/transcription-services" element={<TranscriptionServices />} />
-          <Route path="/voice-data-collection" element={<VoiceDataCollection />} />
-          <Route path="/data-collection" element={<DataCollection />} />
-          <Route path="/data-quality-assurance" element={<DataQualityAssurance />} />
-          <Route path="/digital-publishing" element={<DigitalPublishing />} />
-          <Route path="/ai-data-annotation" element={<AiDataAnnotation />} />
-          <Route path="/generative-ai" element={<GenerativeAI />} />
-          <Route path="/ai-agents-automation" element={<AIAgentsAutomation />} />
+          <Route path="/service/software-development" element={<SoftwareDevelopment />} />
+          <Route path="/service/healthcare-ai" element={<HealthcareAI />} />
+          <Route path="/service/translation-localization" element={<TranslationLocalization />} />
+          <Route path="/service/transcription-services" element={<TranscriptionServices />} />
+          <Route path="/service/voice-data-collection" element={<VoiceDataCollection />} />
+          <Route path="/service/data-collection" element={<DataCollection />} />
+          <Route path="/service/data-quality-assurance" element={<DataQualityAssurance />} />
+          <Route path="/service/digital-publishing" element={<DigitalPublishing />} />
+          <Route path="/service/ai-data-annotation" element={<AiDataAnnotation />} />
+          <Route path="/service/generative-ai" element={<GenerativeAI />} />
+          <Route path="/service/ai-agents-automation" element={<AIAgentsAutomation />} />
         </Routes>
       </main>
       <Footer />

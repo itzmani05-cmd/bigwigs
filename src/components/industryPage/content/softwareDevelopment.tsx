@@ -62,8 +62,8 @@ export const softwareHero = {
   ),
   description:
     "Transform ideas into secure, scalable, cloud-native software with Bigwigs Technologies. From custom enterprise applications to AI-powered platforms, we build digital products engineered for long-term growth.",
-  primaryCta: { label: "Start Your Software Project", href: "#contact" },
-  secondaryCta: { label: "Speak With Our Engineering Team", href: "#contact" },
+  primaryCta: { label: "Start Your Software Project", href: "/demo" },
+  secondaryCta: { label: "Speak With Our Engineering Team", href: "/contact" },
   trustedBy: ["Startups", "Enterprises", "SaaS Platforms", "Healthcare Organizations", "Retail Brands", "Government Agencies"],
   visualIcon: Code2,
   badges: [

@@ -66,8 +66,8 @@ export const dataCollectionHero = {
   ),
   description:
     "Collect, validate, and prepare high-quality datasets for Artificial Intelligence, Machine Learning, Computer Vision, NLP, Speech AI, and Large Language Models with enterprise-scale delivery and global data collection capabilities.",
-  primaryCta: { label: "Start Your Data Collection Project", href: "#contact" },
-  secondaryCta: { label: "Talk To AI Data Specialists", href: "#contact" },
+  primaryCta: { label: "Start Your Data Collection Project", href: "/demo" },
+  secondaryCta: { label: "Talk To AI Data Specialists", href: "/contact" },
   trustedBy: ["Healthcare", "Automotive", "Retail", "AI Companies", "Financial Services", "Government"],
   visualIcon: Database,
   badges: [

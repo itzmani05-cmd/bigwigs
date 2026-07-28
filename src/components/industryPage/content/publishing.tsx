@@ -62,8 +62,8 @@ export const publishingHero = {
   ),
   description:
     "The publishing and media industry is undergoing rapid digital transformation. We combine decades of traditional publishing expertise with modern AI capabilities to help organizations streamline publishing workflows, modernize legacy content, and create intelligent, accessible, multilingual digital experiences.",
-  primaryCta: { label: "Schedule a Publishing Solutions Consultation", href: "#contact" },
-  secondaryCta: { label: "Speak with Our Publishing Technology Experts", href: "#contact" },
+  primaryCta: { label: "Schedule a Publishing Solutions Consultation", href: "/demo" },
+  secondaryCta: { label: "Speak with Our Publishing Technology Experts", href: "/contact" },
   trustedBy: ["Book Publishers", "Academic Publishers", "Educational Publishers", "Scientific Journals", "Digital Media Companies", "Government Publishing Offices"],
   visualIcon: BookOpen,
   badges: [

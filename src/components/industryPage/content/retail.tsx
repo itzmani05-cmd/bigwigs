@@ -59,8 +59,8 @@ export const retailHero = {
   ),
   description:
     "We help retailers, e-commerce companies, marketplaces, consumer brands, and logistics providers harness AI, automation, and modern software solutions to accelerate growth and deliver exceptional customer experiences.",
-  primaryCta: { label: "Schedule a Retail Solutions Consultation", href: "#contact" },
-  secondaryCta: { label: "Speak with Our Retail Technology Experts", href: "#contact" },
+  primaryCta: { label: "Schedule a Retail Solutions Consultation", href: "/demo" },
+  secondaryCta: { label: "Speak with Our Retail Technology Experts", href: "/contact" },
   trustedBy: ["E-Commerce Companies", "Online Marketplaces", "Retail Chains", "Fashion & Apparel Brands", "FMCG Companies", "D2C Brands"],
   visualIcon: ShoppingCart,
   badges: [

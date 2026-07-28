@@ -119,7 +119,7 @@ export const coreServices: CoreService[] = [
       "Data Labeling",
     ],
     ctaLabel: "Learn More",
-    href: "/ai-data-annotation",
+    href: "/service/ai-data-annotation",
   },
   {
     id: "genai",
@@ -138,7 +138,7 @@ export const coreServices: CoreService[] = [
       "AI Workflow Automation",
     ],
     ctaLabel: "Explore GenAI",
-    href: "/generative-ai",
+    href: "/service/generative-ai",
   },
   {
     id: "software",
@@ -158,7 +158,7 @@ export const coreServices: CoreService[] = [
       "Application Modernization",
     ],
     ctaLabel: "Build with Us",
-    href: "/software-development",
+    href: "/service/software-development",
   },
   {
     id: "healthcare",
@@ -193,6 +193,6 @@ export const coreServices: CoreService[] = [
       "PDF Accessibility",
     ],
     ctaLabel: "View Language Services",
-    href: "/translation-localization",
+    href: "/service/translation-localization",
   },
 ];

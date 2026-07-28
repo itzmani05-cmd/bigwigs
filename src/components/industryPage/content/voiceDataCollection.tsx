@@ -61,8 +61,8 @@ export const voiceDataHero = {
   ),
   description:
     "Build intelligent speech recognition, conversational AI, voice assistants, and multilingual voice technologies with enterprise-grade speech datasets. Bigwigs Technologies delivers scalable voice data collection, annotation, validation, and quality assurance for next-generation AI systems.",
-  primaryCta: { label: "Start Your Speech AI Project", href: "#contact" },
-  secondaryCta: { label: "Contact Our Voice Data Specialists", href: "#contact" },
+  primaryCta: { label: "Start Your Speech AI Project", href: "/demo" },
+  secondaryCta: { label: "Contact Our Voice Data Specialists", href: "/contact" },
   trustedBy: ["AI Companies", "Automotive", "Healthcare", "Telecommunications", "Smart Devices"],
   visualIcon: Mic,
   badges: [

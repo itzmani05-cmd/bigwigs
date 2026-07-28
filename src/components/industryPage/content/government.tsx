@@ -69,8 +69,8 @@ export const governmentHero = {
   ),
   description:
     "Governments and public sector organizations are embracing digital transformation to improve citizen services, modernize legacy systems, automate administrative processes, and strengthen cybersecurity. We partner with government agencies, public institutions, smart city initiatives, and non-profits to build secure, scalable, citizen-centric digital solutions.",
-  primaryCta: { label: "Schedule a Government Digital Transformation Consultation", href: "#contact" },
-  secondaryCta: { label: "Speak with Our Public Sector Technology Experts", href: "#contact" },
+  primaryCta: { label: "Schedule a Government Digital Transformation Consultation", href: "/demo" },
+  secondaryCta: { label: "Speak with Our Public Sector Technology Experts", href: "/contact" },
   trustedBy: ["Federal Government Agencies", "State & Provincial Governments", "Municipal Authorities", "Smart City Programs", "Public Health Departments", "Non-Profit Organizations"],
   visualIcon: Landmark,
   badges: [

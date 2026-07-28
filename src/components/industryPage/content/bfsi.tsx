@@ -63,8 +63,8 @@ export const bfsiHero = {
   ),
   description:
     "Empowering banks, financial institutions, insurance companies, fintech organizations, and payment service providers with AI-powered solutions,and secure data services to accelerate digital transformation.",
-  primaryCta: { label: "Schedule a Consultation", href: "contact" },
-  secondaryCta: { label: "Speak with Our Experts", href: "contact" },
+  primaryCta: { label: "Schedule a Consultation", href: "/demo" },
+  secondaryCta: { label: "Speak with Our Experts", href: "/contact" },
   trustedBy: ["Commercial Banks", "Insurance Companies", "FinTech Organizations", "Asset Management Firms",],
   visualIcon: Landmark,
   badges: [

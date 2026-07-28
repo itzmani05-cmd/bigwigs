@@ -15,10 +15,10 @@ const OPTIONAL_LINKS = [
 ];
 
 const DESTINATIONS = [
-  { icon: Boxes, title: "AI Data Annotation", href: "/ai-data-annotation" },
-  { icon: Sparkles, title: "Generative AI", href: "/generative-ai" },
-  { icon: Code2, title: "Software Development", href: "/software-development" },
-  { icon: Stethoscope, title: "Healthcare AI", href: "/healthcare-ai" },
+  { icon: Boxes, title: "AI Data Annotation", href: "/service/ai-data-annotation" },
+  { icon: Sparkles, title: "Generative AI", href: "/service/generative-ai" },
+  { icon: Code2, title: "Software Development", href: "/service/software-development" },
+  { icon: Stethoscope, title: "Healthcare AI", href: "/service/healthcare-ai" },
 ];
 
 export default function NotFound() {

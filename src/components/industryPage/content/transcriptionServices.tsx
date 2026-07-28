@@ -53,8 +53,8 @@ export const transcriptionHero = {
   ),
   description:
     "Convert audio and video into highly accurate, searchable, multilingual text with AI-assisted transcription and expert human review. Empower compliance, accessibility, analytics, and AI model training with enterprise-grade transcription services.",
-  primaryCta: { label: "Request a Transcription Quote", href: "#contact" },
-  secondaryCta: { label: "Talk To Language Experts", href: "#contact" },
+  primaryCta: { label: "Request a Transcription Quote", href: "/demo" },
+  secondaryCta: { label: "Talk To Language Experts", href: "/contact" },
   trustedBy: ["Healthcare", "Legal", "Media", "Education", "Finance", "Government"],
   visualIcon: Mic,
   badges: [
