@@ -1,26 +1,41 @@
-import { Sparkles, Target, Workflow, TrendingDown } from "lucide-react";
-import PageBackground from "@/components/servicePage/PageBackground";
-import SectionDivider from "@/components/servicePage/SectionDivider";
-import IconGridSection from "@/components/servicePage/IconGridSection";
-import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
-import StatsBar from "@/components/servicePage/StatsBar";
-import FAQAccordion from "@/components/servicePage/FAQAccordion";
-import ClosingCta from "@/components/servicePage/ClosingCta";
-import GenerativeAiHero from "@/components/genai/GenerativeAiHero";
-import GenerativeAiEcosystemSection from "@/components/genai/GenerativeAiEcosystemSection";
-import LargeLanguageModelsSection from "@/components/genai/LargeLanguageModelsSection";
-import PromptEngineeringSection from "@/components/genai/PromptEngineeringSection";
-import AiChatbotsSection from "@/components/genai/AiChatbotsSection";
-import AiAgentsSection from "@/components/genai/AiAgentsSection";
-import RagSection from "@/components/genai/RagSection";
-import DocumentIntelligenceSection from "@/components/genai/DocumentIntelligenceSection";
-import AiWorkflowAutomationSection from "@/components/genai/AiWorkflowAutomationSection";
-import GenAiCaseStudy from "@/components/genai/GenAiCaseStudy";
-import { genaiCapabilities } from "@/components/genai/genaiCapabilitiesData";
-import { deliveryProcessSteps } from "@/components/genai/deliveryProcessData";
-import { genaiIndustries } from "@/components/genai/genaiIndustriesData";
-import { whyGenaiReasons } from "@/components/genai/whyBigwigsGenaiData";
-import { genaiFaqItems } from "@/components/genai/genaiFaqData";
+import IndustriesBackground from "@/components/industries/IndustriesBackground";
+import GlowDivider from "@/components/industryPage/GlowDivider";
+import CTASection from "@/components/ui/CTASection";
+import IndustryHero from "@/components/industryPage/IndustryHero";
+import ChallengesSection from "@/components/industryPage/ChallengesSection";
+import SolutionsSection from "@/components/industryPage/SolutionsSection";
+import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
+import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
+import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
+import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
+import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
+import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
+import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
+import WhyUsSection from "@/components/industryPage/WhyUsSection";
+import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
+import CaseStudySection from "@/components/industryPage/CaseStudySection";
+import ProcessSection from "@/components/industryPage/ProcessSection";
+import FaqSection from "@/components/industryPage/FaqSection";
+import {
+  generativeAiHero,
+  generativeAiChallenges,
+  generativeAiSolutions,
+  generativeAiEcosystem,
+  largeLanguageModels,
+  promptEngineering,
+  chatbotsAndAgents,
+  retrievalAugmentedGeneration,
+  documentIntelligence,
+  workflowAutomation,
+  generativeAiWhoWeServe,
+  generativeAiBusinessBenefits,
+  generativeAiWhyUs,
+  generativeAiUseCases,
+  generativeAiCaseStudy,
+  generativeAiProcess,
+  generativeAiFaq,
+  generativeAiBottomCta,
+} from "@/components/industryPage/content/generativeAi";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function GenerativeAi() {
@@ -28,113 +43,42 @@ export default function GenerativeAi() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <PageBackground />
-      <GenerativeAiHero />
-      <SectionDivider />
+      <IndustriesBackground />
+      <IndustryHero {...generativeAiHero} />
+      <GlowDivider />
+      <ChallengesSection {...generativeAiChallenges} />
+      <GlowDivider />
+      <SolutionsSection {...generativeAiSolutions} />
+      <GlowDivider />
+      <SplitFeatureListSection eyebrow="Generative AI Ecosystem" {...generativeAiEcosystem} />
+      <GlowDivider />
+      <NumberedListWorkflowSection eyebrow="Large Language Models" {...largeLanguageModels} />
+      <GlowDivider />
+      <ChecklistWorkflowSection eyebrow="Prompt Engineering" {...promptEngineering} />
+      <GlowDivider />
+      <TwoFeatureCardsSection eyebrow="AI Chatbots & AI Agents" {...chatbotsAndAgents} />
+      <GlowDivider />
+      <SplitFeatureListSection eyebrow="Retrieval-Augmented Generation" {...retrievalAugmentedGeneration} />
+      <GlowDivider />
+      <ChecklistWorkflowSection eyebrow="Document Intelligence" {...documentIntelligence} />
+      <GlowDivider />
+      <MarqueeWorkflowSection eyebrow="AI Workflow Automation" {...workflowAutomation} />
+      <GlowDivider />
+      <WhoWeServeSection eyebrow="Industries We Serve" {...generativeAiWhoWeServe} />
+      <GlowDivider />
+      <BusinessBenefitsSection eyebrow="Business Benefits" {...generativeAiBusinessBenefits} />
+      <GlowDivider />
+      <WhyUsSection eyebrow="Why Bigwigs" {...generativeAiWhyUs} />
+      <GlowDivider />
+      <UseCasesCarousel eyebrow="Sample Use Cases" {...generativeAiUseCases} />
+      <GlowDivider />
+      <CaseStudySection eyebrow="Case Study" {...generativeAiCaseStudy} />
+      <GlowDivider />
+      <ProcessSection eyebrow="Our Delivery Process" {...generativeAiProcess} />
+      <GlowDivider />
+      <FaqSection eyebrow="Frequently Asked Questions" {...generativeAiFaq} />
 
-      <div className="bg-slate-50/60">
-        <GenerativeAiEcosystemSection />
-      </div>
-
-      <SectionDivider />
-
-      <IconGridSection
-        id="genai-capabilities"
-        eyebrow="Our Generative AI Capabilities"
-        heading="Eight ways we help you put Generative AI to work"
-        description="LLMs, agents, and automation — one team across the full Generative AI stack."
-        items={genaiCapabilities}
-        columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-        iconTone="blue"
-        hoverable
-      />
-
-      <SectionDivider />
-      <LargeLanguageModelsSection />
-      <SectionDivider />
-
-      <div className="bg-slate-50/60">
-        <PromptEngineeringSection />
-      </div>
-
-      <SectionDivider />
-      <AiChatbotsSection />
-      <SectionDivider />
-
-      <div className="bg-slate-50/60">
-        <AiAgentsSection />
-      </div>
-
-      <SectionDivider />
-      <RagSection />
-      <SectionDivider />
-
-      <div className="bg-slate-50/60">
-        <DocumentIntelligenceSection />
-      </div>
-
-      <SectionDivider />
-      <AiWorkflowAutomationSection />
-      <SectionDivider />
-
-      <div className="bg-slate-50/60">
-        <IconGridSection
-          eyebrow="Industries We Serve"
-          heading="Generative AI expertise across every sector"
-          items={genaiIndustries.map((industry) => ({ icon: industry.icon, title: industry.name }))}
-          columnsClassName="grid-cols-3 sm:grid-cols-4 lg:grid-cols-6"
-          align="center"
-          iconShape="circle"
-          iconTone="blue"
-          headerAlign="center"
-          maxWidthClassName="max-w-5xl"
-        />
-      </div>
-
-      <SectionDivider />
-
-      <ProcessTimeline
-        eyebrow="Our Delivery Process"
-        heading="Six stages between an idea and a production AI system"
-        steps={deliveryProcessSteps}
-        desktopColumnsClassName="grid-cols-6"
-      />
-
-      <SectionDivider />
-
-      <IconGridSection
-        eyebrow="Why Bigwigs"
-        heading="Six reasons enterprises trust our AI teams"
-        items={whyGenaiReasons}
-        columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-        titleSize="md"
-        headerAlign="center"
-        maxWidthClassName="max-w-5xl"
-      />
-
-      <StatsBar
-        stats={[
-          { icon: Sparkles, value: 50, suffix: "+", label: "Enterprise AI Solutions" },
-          { icon: Target, value: 99, suffix: "%", label: "Response Accuracy" },
-          { icon: Workflow, value: 60, suffix: "%", label: "Workflow Automation" },
-          { icon: TrendingDown, value: 40, suffix: "%", label: "Operational Cost Reduction" },
-        ]}
-      />
-
-      <SectionDivider />
-      <GenAiCaseStudy />
-      <SectionDivider />
-
-      <div className="bg-slate-50/60">
-        <FAQAccordion items={genaiFaqItems} />
-      </div>
-
-      <ClosingCta
-        heading="Transform every workflow with enterprise AI"
-        description="Whether you're building intelligent assistants, deploying AI agents, integrating enterprise knowledge with RAG, or automating business operations, Bigwigs Technologies delivers secure, scalable, and production-ready Generative AI solutions that drive measurable business value."
-        primary={{ label: "Request a Generative AI Consultation", href: "#contact" }}
-        secondary={{ label: "Talk To Our AI Experts", href: "#contact" }}
-      />
+      <CTASection {...generativeAiBottomCta} />
     </main>
   );
 }

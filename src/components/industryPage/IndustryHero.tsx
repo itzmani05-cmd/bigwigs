@@ -56,7 +56,7 @@ export default function IndustryHero({
   return (
     <section className="relative w-full overflow-hidden pt-16 pb-10 lg:pt-12 lg:pb-20">
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[55%_45%] lg:gap-4">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[55%_45%] lg:gap-2">
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
             <motion.div variants={itemVariants} className="flex items-center gap-2">
               <span className="relative flex h-2 w-2">
@@ -82,7 +82,7 @@ export default function IndustryHero({
             <motion.div variants={itemVariants} className="mt-9 flex flex-wrap items-center gap-4">
               <MagneticButton
                 href={primaryCta.href}
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-blue-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_-8px_rgba(37,99,235,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_50px_-4px_rgba(37,99,235,0.9)] select-none"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-blue-400 px-6 py-3 text-sm font-semibold text-white  transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_50px_-4px_rgba(37,99,235,0.9)] select-none"
               >
                 <span className="relative">{primaryCta.label}</span>
                 <ArrowRight size={16} className="relative transition-transform duration-300 group-hover:translate-x-1" />

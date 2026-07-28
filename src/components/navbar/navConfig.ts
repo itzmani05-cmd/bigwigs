@@ -123,18 +123,12 @@ export const navItems: NavItem[] = [
         "Enterprise AI systems engineered for accuracy, security, and scale — across six core domains.",
       links: [
         { name: "Software Development", href: "/software-development" },
-        { name: "GIS & Geospatial Mapping", href: "#services" },
-        { name: "LiDAR (2D & 3D)", href: "#services" },
         { name: "Medical Image Annotation", href: "/healthcare-ai" },
         { name: "AI Data Annotation", href: "/ai-data-annotation" },
         { name: "Generative AI Services", href: "/generative-ai" },
-        { name: "Data Analytics", href: "#services" },
         { name: "Translation & Localization", href: "/translation-localization" },
         { name: "Transcription Services", href: "/transcription-services" },
         { name: "Voice & Speech Data Collection", href: "/voice-data-collection" },
-        { name: "Data Collection & AI Datasets", href: "/data-collection" },
-        { name: "Data Validation & QA", href: "/data-quality-assurance" },
-        { name: "Digital Publishing", href: "/digital-publishing" },
         { name: "AI Agents & Automation", href: "/ai-agents-automation" },
       ],
       features: [
@@ -142,16 +136,6 @@ export const navItems: NavItem[] = [
           icon: Code2,
           title: "Software Development",
           description: "Custom, cloud-native software engineering.",
-        },
-        {
-          icon: Map,
-          title: "GIS & Geospatial",
-          description: "Mapped, actionable geospatial intelligence.",
-        },
-        {
-          icon: Radar,
-          title: "LiDAR Processing",
-          description: "High-precision 2D/3D point-cloud pipelines.",
         },
         {
           icon: Stethoscope,
@@ -169,11 +153,6 @@ export const navItems: NavItem[] = [
           description: "LLMs, AI agents, RAG, and intelligent workflow automation.",
         },
         {
-          icon: BarChart3,
-          title: "Data Analytics",
-          description: "Dashboards that turn data into decisions.",
-        },
-        {
           icon: Languages,
           title: "Translation & Localization",
           description: "Multilingual content, software, and web experiences.",
@@ -189,27 +168,12 @@ export const navItems: NavItem[] = [
           description: "Enterprise speech datasets for voice AI and conversational AI.",
         },
         {
-          icon: Database,
-          title: "Data Collection & AI Datasets",
-          description: "Image, video, text, and document datasets for AI and ML training.",
-        },
-        {
-          icon: ShieldCheck,
-          title: "Data Validation & QA",
-          description: "Multi-level quality assurance for annotation, media, and LLM datasets.",
-        },
-        {
-          icon: BookOpen,
-          title: "Digital Publishing",
-          description: "eBook conversion, typesetting, and structured content production.",
-        },
-        {
           icon: Bot,
           title: "AI Agents & Automation",
           description: "Autonomous agents that execute enterprise workflows end-to-end.",
         },
       ],
-      cta: { label: "Explore all services", href: "#services" },
+      cta: { label: "Explore all services", href: "/services" },
     },
   },
   {
@@ -221,13 +185,9 @@ export const navItems: NavItem[] = [
         "AI data solutions engineered for the operational realities of every industry we work in.",
       links: [
         { name: "Healthcare", href: "/industries/healthcare-life-sciences" },
-        { name: "Automotive", href: "/industries/automotive-mobility" },
         { name: "Retail & E-commerce", href: "/industries/retail-ecommerce" },
         { name: "Banking & Finance", href: "/industries/bfsi-solutions" },
         { name: "Manufacturing", href: "/industries/manufacturing-industrial-solutions" },
-        { name: "Agriculture", href: "/industries#industries-grid" },
-        { name: "Smart Cities", href: "/industries#industries-grid" },
-        { name: "Logistics & Supply Chain", href: "/industries#industries-grid" },
         { name: "Education & eLearning", href: "/industries/education-elearning-solutions" },
         { name: "Government & Public Sector", href: "/industries/government-public-sector-solutions" },
         { name: "Publishing & Media", href: "/industries/publishing-media-solutions" },
@@ -238,12 +198,6 @@ export const navItems: NavItem[] = [
           title: "Healthcare",
           description: "Medical image annotation, clinical NLP, medical AI.",
           image: healthCareImg,
-        },
-        {
-          icon: Car,
-          title: "Automotive",
-          description: "ADAS, autonomous driving, LiDAR annotation.",
-          image: automotiveImg,
         },
         {
           icon: ShoppingCart,
@@ -258,28 +212,10 @@ export const navItems: NavItem[] = [
           image: bankingImg,
         },
         {
-          icon: Factory,
-          title: "Manufacturing",
-          description: "Robotics, quality inspection, industrial AI.",
-          image: manufacturingImg,
-        },
-        {
           icon: Sprout,
           title: "Agriculture",
           description: "Drone analytics, crop monitoring, satellite AI.",
           image: agricultureImg,
-        },
-        {
-          icon: Building2,
-          title: "Smart Cities",
-          description: "GIS, traffic intelligence, urban analytics.",
-          image: smartCitiesImg,
-        },
-        {
-          icon: Truck,
-          title: "Logistics & Supply Chain",
-          description: "Warehouse automation, route optimization, supply chain AI.",
-          image: logisticsImg,
         },
         {
           icon: GraduationCap,
@@ -305,5 +241,5 @@ export const navItems: NavItem[] = [
   { name: "Blog", href: "/blog" },
 ];
 
-export const ctaItem = { name: "Contact Us", href: "#contact" };
-export const demoItem = { name: "Book a Demo", href: "#demo" };
+export const ctaItem = { name: "Contact Us", href: "/contact" };
+export const demoItem = { name: "Book a Demo", href: "/demo" };

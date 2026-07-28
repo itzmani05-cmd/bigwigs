@@ -14,6 +14,7 @@ import GovernmentPublicSectorSolutions from "@/pages/GovernmentPublicSectorSolut
 import PublishingMediaSolutions from "@/pages/PublishingMediaSolutions";
 import Careers from "@/pages/Careers";
 import Apply from "@/pages/Apply";
+import Demo from "@/pages/Demo";
 import Blog from "@/pages/Blog";
 import CaseStudies from "@/pages/CaseStudies";
 import CaseStudyDetail from "@/pages/CaseStudyDetail";
@@ -52,10 +53,10 @@ export default function App() {
           <Route path="/industries/education-elearning-solutions" element={<EducationElearningSolutions />} />
           <Route path="/industries/government-public-sector-solutions" element={<GovernmentPublicSectorSolutions />} />
           <Route path="/industries/publishing-media-solutions" element={<PublishingMediaSolutions />} />
-
           
           <Route path="/careers" element={<Careers />} />
           <Route path="/apply" element={<Apply />} />
+          <Route path="/demo" element={<Demo />} />
           <Route path="/blog" element={<Blog />} />
 
           {/* Case Studies */}

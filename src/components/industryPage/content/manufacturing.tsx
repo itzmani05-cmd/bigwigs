@@ -72,10 +72,10 @@ export const manufacturingHero = {
     </>
   ),
   description:
-    "Manufacturing is rapidly evolving with Industry 4.0 technologies, Industrial IoT, robotics, predictive analytics, and intelligent automation. We help manufacturers modernize operations through AI-powered data services, software engineering, automation, and advanced analytics — from factory floor intelligence to predictive maintenance and quality inspection.",
-  primaryCta: { label: "Schedule a Manufacturing Solutions Consultation", href: "#contact" },
-  secondaryCta: { label: "Speak with Our Industrial Technology Experts", href: "#contact" },
-  trustedBy: ["Automotive Manufacturing", "Electronics Manufacturing", "Aerospace & Defense", "Industrial Equipment", "Food & Beverage", "Chemical Manufacturing"],
+    "Manufacturing is transforming through Industry 4.0, Industrial IoT, robotics, and intelligent automation. Bigwigs Technologies empowers manufacturers with AI-driven solutions, software engineering, predictive maintenance, quality inspection, and factory intelligence.",
+  primaryCta: { label: "Schedule a Consultation", href: "/demo" },
+  secondaryCta: { label: "Speak with Our Experts", href: "/contact" },
+  trustedBy: ["Automotive Manufacturing", "Electronics Manufacturing", "Aerospace & Defense",],
   visualIcon: Factory,
   badges: [
     { icon: ScanEye, label: "Quality Inspection AI", position: "left-[2%] top-[6%]", delay: 0 },
