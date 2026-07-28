@@ -9,7 +9,7 @@ export interface ChatMessage {
   content: string;
 }
 
-const API_BASE = "http://localhost:3001/api";
+const API_BASE = import.meta.env.PROD ? "https://bigwigs-backend-1.onrender.com/api" : "http://localhost:3001/api";
 
 const WELCOME_MESSAGE: ChatMessage = {
   id: "welcome",
