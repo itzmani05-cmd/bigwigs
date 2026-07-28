@@ -81,8 +81,8 @@ interface ContactItem {
 }
 
 const CONTACT_INFO: ContactItem[] = [
-  { icon: MapPin, lines: ["204, 2nd floor, Pudukkottai to Trichy road"," Mathur, Kulathur (PO)",
-    "Pudukkottai - 622515, Tamil Nadu, India"] },
+  { icon: MapPin, lines: ["204, 2nd floor,","Pudukkottai to Trichy road,","Mathur, Kulathur (PO),",
+    "Pudukkottai - 622515,","Tamil Nadu, India"] },
   {
     icon: Mail,
     lines: ["info@bigwigsfolks.in "],
