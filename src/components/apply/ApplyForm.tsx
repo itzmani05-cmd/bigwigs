@@ -19,10 +19,10 @@ import {
 } from "lucide-react";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { jobs } from "@/components/careers/jobsData";
+import { API_BASE } from "@/config/api";
 import FormField from "./FormField";
 import ResumeUpload from "./ResumeUpload";
 
-const API_BASE = import.meta.env.PROD ? "https://bigwigs-backend-1.onrender.com/api" : "http://localhost:3001/api";
 const DRAFT_KEY = "bigwigs-apply-draft";
 
 function LinkedinIcon({ size = 24, strokeWidth: _strokeWidth, className }: { size?: number | string; strokeWidth?: number; className?: string }) {

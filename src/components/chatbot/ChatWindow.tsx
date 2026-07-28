@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { Send, X } from "lucide-react";
+import { API_BASE } from "@/config/api";
 import MessageBubble from "./MessageBubble";
 import TypingIndicator from "./TypingIndicator";
 
@@ -8,8 +9,6 @@ export interface ChatMessage {
   role: "user" | "assistant";
   content: string;
 }
-
-const API_BASE = import.meta.env.PROD ? "https://bigwigs-backend-1.onrender.com/api" : "http://localhost:3001/api";
 
 const WELCOME_MESSAGE: ChatMessage = {
   id: "welcome",
