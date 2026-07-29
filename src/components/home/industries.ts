@@ -27,18 +27,18 @@ export interface Industry {
 
 export const industries: Industry[] = [
   {
-    icon: HeartPulse,
-    name: "Healthcare",
-    description:
-      "Medical image annotation, clinical NLP, disease detection, and radiology AI data solutions.",
-    image: healthCareImg,
-  },
-  {
     icon: Car,
     name: "Automotive",
     description:
       "Powering autonomous driving with LiDAR annotation, sensor fusion, and ADAS datasets.",
     image: AutomotiveImg,
+  },
+  {
+    icon: HeartPulse,
+    name: "Healthcare",
+    description:
+      "Medical image annotation, clinical NLP, disease detection, and radiology AI data solutions.",
+    image: healthCareImg,
   },
   {
     icon: ShoppingCart,

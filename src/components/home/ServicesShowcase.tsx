@@ -98,7 +98,7 @@ function ShowcaseCard({ service, showConnector }: { service: CoreService; showCo
   return (
     <div className="relative h-full">
       <div
-        className={`group flex h-full flex-col border bg-white p-7 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(37,99,235,0.2)] ${s.cardBorder} ${s.cardBorderHover}`}
+        className={`group flex h-full flex-col border bg-white p-5 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(37,99,235,0.2)] sm:p-7 ${s.cardBorder} ${s.cardBorderHover}`}
         style={{ clipPath: CARD_CLIP }}
       >
         <div>
@@ -141,7 +141,7 @@ function ShowcaseCard({ service, showConnector }: { service: CoreService; showCo
 
         <span className="mt-5 h-px w-full bg-slate-200" aria-hidden="true" />
 
-        <ul className="mt-4 grid grid-cols-2 gap-x-6">
+        <ul className="mt-4 grid grid-cols-1 gap-x-6 sm:grid-cols-2">
         {[0, 1].map((col) => (
           <div key={col} className="space-y-3">
             {service.capabilities
@@ -224,7 +224,7 @@ export default function ServicesShowcase() {
   const cardBasis = `calc((100% - ${(visibleCount - 1) * GAP}px) / ${visibleCount})`;
 
   return (
-    <div className="relative px-14 sm:px-16">
+    <div className="relative px-0 sm:px-12 lg:px-16">
       <div className="mb-6 flex items-center justify-center gap-4 sm:justify-end lg:mb-8">
         <button
           type="button"
