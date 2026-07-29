@@ -19,6 +19,9 @@ export default function ApplyIntro() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.5, delay: 0.15, ease: [0.215, 0.61, 0.355, 1] }}
       >
+        <span className="text-xs pb-9 font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
+          Book Your Demo
+        </span>
         <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
           Join Bigwigs Technologies
         </h2>

@@ -41,18 +41,28 @@ export default function Testimonials() {
         <div
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="relative mx-auto mt-12 flex max-w-3xl items-center gap-3 sm:gap-6"
+          className="relative mx-auto mt-12 max-w-3xl"
         >
-          <button
-            type="button"
-            onClick={() => goTo(index - 1)}
-            aria-label="Previous testimonial"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white/70 text-slate-500 backdrop-blur-sm transition-colors duration-200 hover:border-brand-blue-500 hover:text-brand-blue-600"
-          >
-            <ChevronLeft size={18} />
-          </button>
+          <div className="mb-4 flex items-center justify-end gap-2">
+            <button
+              type="button"
+              onClick={() => goTo(index - 1)}
+              aria-label="Previous testimonial"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white/70 text-slate-500 backdrop-blur-sm transition-colors duration-200 hover:border-brand-blue-500 hover:text-brand-blue-600 sm:h-10 sm:w-10"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              type="button"
+              onClick={() => goTo(index + 1)}
+              aria-label="Next testimonial"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white/70 text-slate-500 backdrop-blur-sm transition-colors duration-200 hover:border-brand-blue-500 hover:text-brand-blue-600 sm:h-10 sm:w-10"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
 
-          <div className="relative min-h-[280px] flex-1 overflow-hidden">
+          <div className="relative min-h-[300px] overflow-hidden sm:min-h-[280px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
@@ -60,7 +70,7 @@ export default function Testimonials() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -30 }}
                 transition={{ duration: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
-                className="glass-card flex flex-col items-center gap-5 rounded-[28px] p-8 text-center sm:p-10"
+                className="glass-card flex flex-col items-center gap-5 rounded-[28px] p-6 text-center sm:p-10"
               >
                 <Quote size={32} strokeWidth={1.5} className="text-brand-blue-200" />
                 <p className="max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
@@ -88,15 +98,6 @@ export default function Testimonials() {
               </motion.div>
             </AnimatePresence>
           </div>
-
-          <button
-            type="button"
-            onClick={() => goTo(index + 1)}
-            aria-label="Next testimonial"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white/70 text-slate-500 backdrop-blur-sm transition-colors duration-200 hover:border-brand-blue-500 hover:text-brand-blue-600"
-          >
-            <ChevronRight size={18} />
-          </button>
         </div>
 
         <div className="mt-6 flex items-center justify-center gap-2">
