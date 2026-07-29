@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+﻿import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { ACCENT_STYLES, coreServices, type CoreService } from "./coreServices";
@@ -170,9 +170,10 @@ function ShowcaseCard({ service, showConnector }: { service: CoreService; showCo
                       />
                     </span>
 
-                    <span className="flex min-h-[2.4em] flex-col justify-center break-words">
-                      <span className="block">{line1}</span>
-                      <span className="block">{line2 || " "}</span>
+                    <span className="flex min-h-[1.4em] flex-col justify-center break-words lg:min-h-[2.4em]">
+                      <span className="block truncate lg:hidden">{cap}</span>
+                      <span className="hidden lg:block">{line1}</span>
+                      <span className="hidden lg:block">{line2 || " "}</span>
                     </span>
                   </li>
                 );
