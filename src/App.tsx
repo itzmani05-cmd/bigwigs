@@ -33,6 +33,7 @@ import GenerativeAI from "@/pages/GenerativeAi";
 import AIAgentsAutomation from "@/pages/AiAgentsAutomation";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollToHash from "@/components/ScrollToHash";
+import ScrollToTop from "@/components/ScrollToTop";
 import ChatBot from "@/components/chatbot/ChatBot";
 
 export default function App() {
@@ -83,6 +84,7 @@ export default function App() {
       </main>
       <Footer />
       <CookieConsent />
+      <ScrollToTop />
       <ChatBot />
     </>
   );
