@@ -126,8 +126,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#03132f] via-[#03132f]/85 to-[#03132f]/25 lg:via-[#03132f]/70 lg:to-[#03132f]/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#03132f]/90 via-transparent to-[#03132f]/40" />
 
-        <div className="relative z-10 mx-auto flex min-h-[480px] sm:min-h-[520px] lg:min-h-[450px] max-w-[1360px] items-center px-6 pt-20 pb-6 sm:px-10 lg:px-10 lg:py-0">
-          <div className="flex w-full flex-col items-start gap-3 pt-10 text-left lg:w-[45%] lg:pr-6">
+        <div className="relative z-10 mx-auto flex min-h-[480px] sm:min-h-[520px] lg:min-h-[450px] max-w-[1360px] items-center px-4 pt-14 pb-6 sm:px-10 sm:pt-16 lg:px-10 lg:py-0">
+          <div className="flex w-full flex-col items-start gap-3 text-left lg:w-[45%] lg:pr-6">
             <motion.span
               variants={eyebrowVariants}
               initial="hidden"
@@ -156,7 +156,7 @@ export default function Hero() {
               variants={descriptionVariants}
               initial="hidden"
               animate="visible"
-              className="max-w-[450px] text-small sm:text-medium leading-relaxed text-slate-200"
+              className="max-w-[450px] text-sm sm:text-base leading-relaxed text-slate-200"
             >
               High-quality training data that powers the world&apos;s AI and
               Machine Learning innovations.
@@ -166,7 +166,7 @@ export default function Hero() {
               variants={featuresVariants}
               initial="hidden"
               animate="visible"
-              className="grid grid-cols-2 gap-x-6 gap-y-3 mt-2 lg:mt-4 lg:flex lg:w-fit lg:max-w-full lg:flex-nowrap lg:items-center lg:gap-0"
+              className="hidden sm:grid sm:grid-cols-2 gap-x-6 gap-y-3 mt-2 lg:mt-4 lg:flex lg:w-fit lg:max-w-full lg:flex-nowrap lg:items-center lg:gap-0"
             >
               {serviceFeatures.map(({ icon: Icon, label }, i) => (
                 <div key={i} className="flex items-center lg:shrink-0">
