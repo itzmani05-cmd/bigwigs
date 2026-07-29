@@ -11,7 +11,7 @@ export default function Demo() {
     <main className="relative w-full overflow-x-hidden py-10 lg:py-12">
       <ApplyBackground />
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 gap-14 pr-15 lg:grid-cols-[40%_60%] lg:gap-16">
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-[40%_60%] lg:gap-16">
           <DemoIntro />
           <DemoForm />
         </div>

@@ -87,8 +87,8 @@ const EXPERIENCE_OPTIONS = [
 function FormSection({ icon: Icon, title, children }: { icon: LucideIcon; title: string; children: ReactNode }) {
   return (
     <div>
-      <div className="flex items-center">
-        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-blue-50 text-brand-blue-500">
+      <div className="flex items-center gap-3">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-blue-50 text-brand-blue-500">
           <Icon size={17} strokeWidth={1.75} />
         </span>
         <h3 className="text-base font-bold text-slate-900 sm:text-lg">{title}</h3>
