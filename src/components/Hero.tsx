@@ -169,7 +169,7 @@ export default function Hero() {
               className="grid grid-cols-2 gap-x-6 gap-y-3 mt-2 lg:mt-4 lg:flex lg:w-fit lg:max-w-full lg:flex-nowrap lg:items-center lg:gap-0"
             >
               {serviceFeatures.map(({ icon: Icon, label }, i) => (
-                <div key={label} className="flex items-center lg:shrink-0">
+                <div key={i} className="flex items-center lg:shrink-0">
                   {i !== 0 && (
                     <span
                       aria-hidden
