@@ -117,7 +117,7 @@ const stats = [
 export default function Hero() {
   return (
     <section id="home" className="relative w-full bg-[#03132f]">
-      <div className="relative w-full min-h-[400px] sm:min-h-[480px] lg:min-h-[480px] ">
+      <div className="relative w-full lg:min-h-[480px]">
         <div
           style={{ backgroundImage: `url(${heroIllustration})` }}
           className="absolute inset-0 hidden bg-cover bg-center lg:block lg:bg-[position:67%_center]"
@@ -126,7 +126,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#03132f] via-[#03132f]/85 to-[#03132f]/25 lg:via-[#03132f]/70 lg:to-[#03132f]/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#03132f]/90 via-transparent to-[#03132f]/40" />
 
-        <div className="relative z-10 mx-auto flex min-h-[480px] sm:min-h-[520px] lg:min-h-[450px] max-w-[1360px] items-center px-4 pt-14 pb-6 sm:px-10 sm:pt-16 lg:px-10 lg:py-0">
+        <div className="relative z-10 mx-auto flex lg:min-h-[450px] max-w-[1360px] items-center px-4 pt-14 pb-6 sm:px-10 sm:pt-16 lg:px-10 lg:py-0">
           <div className="flex w-full flex-col items-start gap-3 text-left lg:w-[45%] lg:pr-6">
             <motion.span
               variants={eyebrowVariants}
