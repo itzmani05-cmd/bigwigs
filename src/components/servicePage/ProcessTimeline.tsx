@@ -35,8 +35,8 @@ export default function ProcessTimeline({
           transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
           className="mx-auto max-w-xl text-center"
         >
-          <span className="text-xs font-semibold uppercase tracking-[0.14em] text-blue-500">{eyebrow}</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{heading}</h2>
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">{eyebrow}</span>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">{heading}</h2>
         </motion.div>
 
         {/* mobile / tablet: vertical stepper */}
@@ -63,18 +63,22 @@ export default function ProcessTimeline({
                   className="relative flex items-start gap-5"
                 >
                   <span
-                    className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-brand-blue-600 transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue-200 hover:shadow-md animate-particle-float"
+                    className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-brand-blue-50 text-brand-blue-600 shadow-[0_10px_20px_-8px_rgba(15,23,42,0.3)] transition-transform duration-300 hover:-translate-y-1 animate-particle-float"
                     style={{ animationDelay: `${i * 0.4}s` }}
                   >
-                    <Icon size={16} strokeWidth={1.75} />
+                    <Icon size={18} strokeWidth={1.75} />
                   </span>
                   {step.description ? (
-                    <div className="min-w-0 flex-1 rounded-xl border border-slate-100 px-5 py-4">
-                      <h3 className="text-sm font-semibold text-slate-900">{step.title}</h3>
+                    <div className="glass-card min-w-0 flex-1 rounded-2xl px-5 py-4">
+                      <h3 className="text-sm font-bold text-slate-900">
+                        {i + 1}. {step.title}
+                      </h3>
                       <p className="mt-1 text-sm leading-relaxed text-slate-500">{step.description}</p>
                     </div>
                   ) : (
-                    <h3 className="pt-2 text-sm font-semibold text-slate-900">{step.title}</h3>
+                    <h3 className="pt-2 text-sm font-bold text-slate-900">
+                      {i + 1}. {step.title}
+                    </h3>
                   )}
                 </motion.div>
               );
@@ -107,12 +111,14 @@ export default function ProcessTimeline({
                   className="flex flex-col items-center text-center"
                 >
                   <span
-                    className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-brand-blue-600 transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue-200 hover:shadow-md animate-particle-float"
+                    className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 border-white bg-brand-blue-50 text-brand-blue-600 shadow-[0_10px_24px_-8px_rgba(15,23,42,0.35)] transition-transform duration-300 hover:-translate-y-1.5 hover:scale-105 animate-particle-float"
                     style={{ animationDelay: `${i * 0.4}s` }}
                   >
-                    <Icon size={18} strokeWidth={1.75} />
+                    <Icon size={20} strokeWidth={1.75} />
                   </span>
-                  <h3 className="mt-3.5 text-sm font-semibold leading-tight text-slate-900">{step.title}</h3>
+                  <h3 className="mt-3.5 text-sm font-bold leading-tight text-slate-900">
+                    {i + 1}. {step.title}
+                  </h3>
                   {step.description && (
                     <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{step.description}</p>
                   )}

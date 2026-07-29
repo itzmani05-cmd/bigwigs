@@ -27,17 +27,17 @@ export default function IconGrid({
   items,
   columnsClassName = "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4",
   align = "left",
-  iconTone = "slate",
-  iconShape = "square",
+  iconTone = "blue",
+  iconShape = "circle",
   titleSize = "sm",
   hoverable = false,
 }: IconGridProps) {
   const isCenter = align === "center";
   const toneClass = ICON_TONES[iconTone];
-  const shapeClass = iconShape === "circle" ? "rounded-full" : "rounded-lg";
+  const shapeClass = iconShape === "circle" ? "rounded-full" : "rounded-xl";
 
   return (
-    <div className={`grid gap-px border border-slate-200 bg-slate-200 ${columnsClassName}`}>
+    <div className={`grid gap-5 ${columnsClassName}`}>
       {items.map((item, i) => {
         const Icon = item.icon;
         const hasDescription = Boolean(item.description);
@@ -48,22 +48,22 @@ export default function IconGrid({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, delay: (i % 6) * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-            className={`relative bg-white transition-all duration-300 hover:z-10 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl ${
-              hoverable ? "hover:bg-slate-50" : ""
-            } ${isCenter ? "flex flex-col items-center gap-2.5 px-3 py-6 text-center" : "flex flex-col gap-3 p-6"}`}
+            className={`glass-card rounded-[24px] ${hoverable ? "hover:bg-slate-50" : ""} ${
+              isCenter ? "flex flex-col items-center gap-3 px-5 py-7 text-center" : "flex flex-col gap-4 p-6"
+            }`}
           >
             <span
-              className={`flex h-10 w-10 shrink-0 items-center text-blue-500 justify-center ${shapeClass} ${toneClass}`}
+              className={`flex h-14 w-14 shrink-0 items-center justify-center ${shapeClass} ${toneClass}`}
             >
-              <Icon size={18} strokeWidth={1.75} />
+              <Icon size={22} strokeWidth={1.75} />
             </span>
 
             {hasDescription ? (
               <div>
-                <h3 className={`font-semibold text-slate-900 ${titleSize === "md" ? "text-base" : "text-sm"}`}>
+                <h3 className={`font-bold text-slate-900 ${titleSize === "md" ? "text-lg" : "text-base"}`}>
                   {item.title}
                 </h3>
-                <p className={`mt-1.5 leading-relaxed text-slate-500 ${titleSize === "md" ? "text-sm" : "text-xs"}`}>
+                <p className={`mt-2 leading-relaxed text-slate-500 ${titleSize === "md" ? "text-sm" : "text-xs"}`}>
                   {item.description}
                 </p>
               </div>
