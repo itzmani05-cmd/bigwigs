@@ -6,6 +6,7 @@ import {
   MessagesSquare,
   type LucideIcon,
 } from "lucide-react";
+import dataAnnotationCoreImg from "@/assests/DataAnnotationCore.png";
 
 export type AccentColor = "blue" | "purple" | "green" | "cyan" | "orange";
 
@@ -90,6 +91,7 @@ export interface CoreService {
   number: string;
   accent: AccentColor;
   icon: LucideIcon;
+  image?: string;
   title: string;
   description: string;
   capabilities: string[];
@@ -103,6 +105,7 @@ export const coreServices: CoreService[] = [
     number: "01",
     accent: "blue",
     icon: BoxSelect,
+    image: dataAnnotationCoreImg,
     title: "AI Data Annotation",
     description:
       "Accurate, scalable annotation services for computer vision and ML projects.",

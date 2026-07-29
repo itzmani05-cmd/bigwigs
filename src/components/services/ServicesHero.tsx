@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowRight, HeartPulse, Car, Factory, Landmark, Building2 } from "lucide-react";
+import { ArrowRight, Code2, Workflow, ScanEye, Mic, Bot } from "lucide-react";
+import { Link } from "react-router-dom";
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
 import heroImage from "@/assests/bgHero.png";
@@ -14,17 +15,17 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } },
 } as const;
 
-const TRUSTED_LOGOS = ["Venkat Prabhu", "Vijay", "Rajesh", "Suresh", "Karthik", ];
+const TRUSTED_LOGOS = ["Venkat Prabhu", "Vijay", "Rajesh", "Suresh", "Karthik"];
 
 const FLOATING_BADGES = [
-  { icon: Building2, label: "Smart Cities", sub: "Traffic Intelligence", position: "left-[4%] top-[10%]", delay: 0 },
-  { icon: Car, label: "Automotive", sub: "Autonomous Driving", position: "right-[4%] top-[14%]", delay: 0.5 },
-  { icon: HeartPulse, label: "Healthcare", sub: "AI Diagnostics", position: "left-[6%] bottom-[26%]", delay: 1 },
-  { icon: Factory, label: "Manufacturing", sub: "Smart Automation", position: "right-[6%] top-[46%]", delay: 1.5 },
-  { icon: Landmark, label: "Financial Services", sub: "Risk & Fraud Detection", position: "left-[10%] bottom-[6%]", delay: 2 },
+  { icon: Code2, label: "Software", sub: "Cloud-Native Engineering", position: "left-[4%] top-[10%]", delay: 0 },
+  { icon: Workflow, label: "Generative AI", sub: "LLMs & AI Agents", position: "right-[4%] top-[14%]", delay: 0.5 },
+  { icon: ScanEye, label: "Data Annotation", sub: "Vision & LiDAR", position: "left-[6%] bottom-[26%]", delay: 1 },
+  { icon: Mic, label: "Transcription", sub: "Audio & Video", position: "right-[6%] top-[46%]", delay: 1.5 },
+  { icon: Bot, label: "AI Agents", sub: "Workflow Automation", position: "left-[10%] bottom-[6%]", delay: 2 },
 ];
 
-export default function IndustriesHero() {
+export default function ServicesHero() {
   return (
     <section className="relative w-full overflow-hidden pt-10 pb-10 lg:pt-10 lg:pb-12">
       <div
@@ -49,8 +50,8 @@ export default function IndustriesHero() {
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
             <motion.div variants={itemVariants} className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
-              <span className="text-xs font-bold uppercase tracking-[0.2em]  text-orange-500 sm:text-sm">
-                Industries
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
+                Services
               </span>
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
             </motion.div>
@@ -59,35 +60,30 @@ export default function IndustriesHero() {
               variants={itemVariants}
               className="mt-2 text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-5xl lg:text-[44px] xl:text-5xl"
             >
-              Powering{" "}
-              <span className="text-blue-500">
-                AI
-              </span>{" "}
-              Across
+              Enterprise AI Services,
               <br />
-              Every Industry
+              <span className="text-blue-500">Engineered to Scale</span>
             </motion.h1>
 
             <motion.p variants={itemVariants} className="mt-4 max-w-lg text-base leading-relaxed text-slate-500 sm:text-lg">
-              Bigwigs Technologies delivers enterprise AI data services, software
-              engineering, Generative AI, and digital transformation solutions
-              across healthcare, automotive, finance, manufacturing,
-              agriculture, retail, logistics, and smart cities.
+              From software engineering and Generative AI to data annotation, transcription, and
+              autonomous agents — Bigwigs Technologies delivers the full stack of AI-native services
+              behind every enterprise transformation.
             </motion.p>
 
             <motion.div variants={itemVariants} className="mt-7 flex flex-wrap items-center gap-4">
-              <MagneticButton
-                href="#industries-grid"
-                className="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 select-none"
+              <Link
+                to="/demo"
+                className="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
               >
-                <span>Explore Solutions</span>
+                <span>Book a Demo</span>
                 <ArrowRight size={16} />
-              </MagneticButton>
+              </Link>
               <MagneticButton
-                href="#contact"
+                href="#services-grid"
                 className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-6 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500 hover:text-brand-blue-600 select-none"
               >
-                <span>Talk To Experts</span>
+                <span>Explore Services</span>
                 <ArrowRight size={16} />
               </MagneticButton>
             </motion.div>
@@ -131,7 +127,7 @@ export default function IndustriesHero() {
             >
               <img
                 src={heroImage}
-                alt="Bigwigs Technologies AI perception system detecting vehicles, pedestrians, and infrastructure across a connected smart city"
+                alt="Bigwigs Technologies AI systems spanning software engineering, data annotation, and generative AI"
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div

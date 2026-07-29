@@ -114,14 +114,26 @@ function ShowcaseCard({ service, showConnector }: { service: CoreService; showCo
             className={`absolute top-0 h-16 w-16 rounded-full border border-dashed opacity-40 ${s.cardBorder}`}
           />
           <span aria-hidden className="absolute bottom-0 h-3 w-20 rounded-full bg-slate-100" />
-          <motion.span
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className={`relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br text-white ${s.iconGradient}`}
-            style={{ boxShadow: `0 14px 28px -10px ${s.iconGlow}` }}
-          >
-            <Icon size={26} strokeWidth={1.75} />
-          </motion.span>
+          {service.image ? (
+            <motion.img
+              src={service.image}
+              alt=""
+              aria-hidden="true"
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="relative h-14 w-14 rounded-2xl object-cover"
+              style={{ boxShadow: `0 14px 28px -10px ${s.iconGlow}` }}
+            />
+          ) : (
+            <motion.span
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className={`relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br text-white ${s.iconGradient}`}
+              style={{ boxShadow: `0 14px 28px -10px ${s.iconGlow}` }}
+            >
+              <Icon size={26} strokeWidth={1.75} />
+            </motion.span>
+          )}
         </div>
 
         <h3 className="mt-5 text-xl font-bold leading-snug text-slate-900">{service.title}</h3>
@@ -186,11 +198,8 @@ function ShowcaseCard({ service, showConnector }: { service: CoreService; showCo
   );
 }
 
-const arrowButtonBaseStyle = {
-  background: "rgba(255,255,255,0.85)",
-  borderColor: "rgba(37,99,235,0.15)",
-  boxShadow: "0 20px 50px rgba(15,23,42,0.12)",
-};
+const arrowButtonClass =
+  "group flex h-12 w-12 items-center justify-center rounded-full border border-[#E5E7EB] bg-white shadow-lg transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-40 enabled:hover:-translate-y-0.5 enabled:hover:border-[#2563EB] enabled:hover:bg-[#2563EB] lg:h-14 lg:w-14";
 
 export default function ServicesShowcase() {
   const visibleCount = useVisibleCount();
@@ -216,33 +225,35 @@ export default function ServicesShowcase() {
 
   return (
     <div className="relative px-14 sm:px-16">
-      <button
-        type="button"
-        onClick={goLeft}
-        disabled={isFirst}
-        aria-label="Previous services"
-        className="absolute left-0 top-1/2 z-20 flex h-[52px] w-[52px] -translate-y-1/2 items-center justify-center rounded-full border backdrop-blur-[20px] transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-40 enabled:hover:scale-105 enabled:hover:border-brand-blue-500 enabled:hover:shadow-[0_0_0_6px_rgba(37,99,235,0.12)]"
-        style={arrowButtonBaseStyle}
-      >
-        <ArrowLeft
-          size={20}
-          className={`transition-colors duration-300 ${isFirst ? "text-slate-400" : "text-slate-600 hover:text-brand-blue-600"}`}
-        />
-      </button>
+      <div className="mb-6 flex items-center justify-center gap-4 sm:justify-end lg:mb-8">
+        <button
+          type="button"
+          onClick={goLeft}
+          disabled={isFirst}
+          aria-label="Previous services"
+          className={arrowButtonClass}
+        >
+          <ArrowLeft
+            size={22}
+            strokeWidth={2}
+            className="text-slate-500 transition-colors duration-300 group-enabled:group-hover:text-white"
+          />
+        </button>
 
-      <button
-        type="button"
-        onClick={goRight}
-        disabled={isLast}
-        aria-label="Next services"
-        className="absolute right-0 top-1/2 z-20 flex h-[52px] w-[52px] -translate-y-1/2 items-center justify-center rounded-full border backdrop-blur-[20px] transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-40 enabled:hover:scale-105 enabled:hover:border-brand-blue-500 enabled:hover:shadow-[0_0_0_6px_rgba(37,99,235,0.12)]"
-        style={arrowButtonBaseStyle}
-      >
-        <ArrowRight
-          size={20}
-          className={`transition-colors duration-300 ${isLast ? "text-slate-400" : "text-slate-600 hover:text-brand-blue-600"}`}
-        />
-      </button>
+        <button
+          type="button"
+          onClick={goRight}
+          disabled={isLast}
+          aria-label="Next services"
+          className={arrowButtonClass}
+        >
+          <ArrowRight
+            size={22}
+            strokeWidth={2}
+            className="text-brand-blue-500 transition-colors duration-300 group-enabled:group-hover:text-white"
+          />
+        </button>
+      </div>
 
       <div className="overflow-hidden">
         <AnimatePresence mode="wait" custom={direction} initial={false}>

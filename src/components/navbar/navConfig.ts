@@ -116,11 +116,11 @@ export const navItems: NavItem[] = [
   },
   {
     name: "Services",
-    href: "#services",
+    href: "/services",
     mega: {
       title: "What we build",
       description:
-        "Enterprise AI systems engineered for accuracy, security, and scale — across six core domains.",
+        "Enterprise AI systems engineered for accuracy, security, and scale — across every domain we serve.",
       links: [
         { name: "Software Development", href: "/service/software-development" },
         { name: "Medical Image Annotation", href: "/service/healthcare-ai" },
@@ -129,6 +129,9 @@ export const navItems: NavItem[] = [
         { name: "Translation & Localization", href: "/service/translation-localization" },
         { name: "Transcription Services", href: "/service/transcription-services" },
         { name: "Voice & Speech Data Collection", href: "/service/voice-data-collection" },
+        { name: "Data Collection & AI Datasets", href: "/service/data-collection" },
+        { name: "Data Validation & QA", href: "/service/data-quality-assurance" },
+        { name: "Digital Publishing", href: "/service/digital-publishing" },
         { name: "AI Agents & Automation", href: "/service/ai-agents-automation" },
       ],
       features: [
@@ -166,6 +169,21 @@ export const navItems: NavItem[] = [
           icon: AudioLines,
           title: "Voice & Speech Data Collection",
           description: "Enterprise speech datasets for voice AI and conversational AI.",
+        },
+        {
+          icon: Database,
+          title: "Data Collection & AI Datasets",
+          description: "Custom datasets, crowdsourcing, and synthetic data for AI training.",
+        },
+        {
+          icon: ShieldCheck,
+          title: "Data Validation & QA",
+          description: "Annotation QA, dataset validation, and accuracy benchmarking at scale.",
+        },
+        {
+          icon: BookOpen,
+          title: "Digital Publishing",
+          description: "XML-first publishing, eBook conversion, and accessible EPUB & PDF.",
         },
         {
           icon: Bot,

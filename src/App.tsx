@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Industries from "@/pages/Industries";
+import Services from "@/pages/Services";
 import HealthcareLifeSciences from "@/pages/HealthcareLifeSciences";
 import AutomotiveMobility from "@/pages/AutomotiveMobility";
 import RetailEcommerce from "@/pages/RetailEcommerce";
@@ -64,6 +65,7 @@ export default function App() {
           <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
 
           {/* Services */}
+          <Route path="/services" element={<Services />} />
           <Route path="/service/software-development" element={<SoftwareDevelopment />} />
           <Route path="/service/healthcare-ai" element={<HealthcareAI />} />
           <Route path="/service/translation-localization" element={<TranslationLocalization />} />

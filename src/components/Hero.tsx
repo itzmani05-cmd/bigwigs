@@ -1,4 +1,4 @@
-import { ArrowRight, Image, Box, Eye, MessagesSquare, Users, ListChecks, Globe2, ShieldCheck } from "lucide-react";
+import { ArrowRight, Image, Box, Eye, MessageSquare, Users, ListChecks, Globe2, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
 import heroIllustration from "@/assests/bgHero.png";
@@ -58,12 +58,47 @@ const buttonVariants = {
 } as const;
 
 const serviceFeatures = [
-  { icon: Image, label: "AI Data Annotation" },
-  { icon: Box, label: "LiDAR & 3D Annotation" },
-  { icon: Eye, label: "Computer Vision" },
-  { icon: MessagesSquare, label: "NLP & Data Processing" },
+  {
+    icon: Image,
+    label: (
+      <>
+        AI Data
+        <br />
+        Annotation
+      </>
+    ),
+  },
+  {
+    icon: Box,
+    label: (
+      <>
+        LiDAR & 3D
+        <br />
+        Annotation
+      </>
+    ),
+  },
+  {
+    icon: Eye,
+    label: (
+      <>
+        Computer
+        <br />
+        Vision
+      </>
+    ),
+  },
+  {
+    icon: MessageSquare,
+    label: (
+      <>
+        NLP & Data
+        <br />
+        Processing
+      </>
+    ),
+  },
 ];
-
 const trustedLogos = [
   { name: "Google", logo: googleLogo },
   { name: "YouTube", logo: youtubeLogo },
@@ -82,10 +117,10 @@ const stats = [
 export default function Hero() {
   return (
     <section id="home" className="relative w-full bg-[#03132f]">
-      <div className="relative w-full min-h-[400px] sm:min-h-[480px] lg:min-h-[460px] overflow-hidden">
+      <div className="relative w-full min-h-[400px] sm:min-h-[480px] lg:min-h-[480px] ">
         <div
           style={{ backgroundImage: `url(${heroIllustration})` }}
-          className="absolute inset-0 bg-cover bg-center lg:bg-[position:68%_center]"
+          className="absolute inset-0 bg-cover bg-center lg:bg-[position:67%_center]"
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-[#03132f] via-[#03132f]/85 to-[#03132f]/25 lg:via-[#03132f]/70 lg:to-[#03132f]/10" />
@@ -181,7 +216,7 @@ export default function Hero() {
       </div>
 
       <div className="relative w-full bg-white">
-        <div className="mx-auto flex max-w-[1400px] flex-col items-center gap-8 px-4 py-3 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-10 lg:py-3">
+        <div className="mx-auto flex max-w-[1400px] flex-col items-center gap-8 px-4 py-3 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-10 lg:py-1.5">
           <div className="flex flex-col items-center lg:items-start">
             <span className="text-xs font-semibold uppercase tracking-[0.1em] pt-3.5 text-slate-700">
               Trusted by Innovators
