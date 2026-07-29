@@ -17,6 +17,7 @@ import Careers from "@/pages/Careers";
 import Apply from "@/pages/Apply";
 import Demo from "@/pages/Demo";
 import Blog from "@/pages/Blog";
+import Certifications from "@/pages/Certifications";
 import CaseStudies from "@/pages/CaseStudies";
 import CaseStudyDetail from "@/pages/CaseStudyDetail";
 import SoftwareDevelopment from "@/pages/SoftwareDevelopment";
@@ -43,6 +44,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/certifications" element={<Certifications />} />
           <Route path="/industries" element={<Industries />} />
           
           {/* Industries */}

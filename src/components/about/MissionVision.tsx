@@ -47,7 +47,7 @@ export default function MissionVision() {
                 Our Mission
               </h3>
               <p className="relative mt-3 max-w-md text-base leading-relaxed text-slate-500">
-                Our mission is to empower businesses with reliable AI data, cutting-edge software solutions, and domain expertise through exceptional quality, operational excellence, and customer-centric innovation.
+                Our mission is to leverage our expertise in composite products to deliver high quality services inspired by creativity and innovation. We dream to be the go-to BPO organization that tailors our services to match our client requirements in the most effective way.
               </p>
             </motion.div>
           </div>
@@ -92,7 +92,7 @@ export default function MissionVision() {
                 Our Vision
               </h3>
               <p className="relative mt-3 max-w-md text-base leading-relaxed text-slate-500">
-                To become one of the world's most trusted AI data services and digital engineering companies by delivering innovative, secure, and scalable technology solutions that enable organizations to build intelligent products and transform their businesses.
+                Our vision is to become the standard of excellence in customer services and inspire other brands to do the same. We envision to provide the best services and use effective strategies to inspire and implement solutions to various business needs.
               </p>
             </motion.div>
           </div>
