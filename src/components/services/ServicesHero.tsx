@@ -105,7 +105,7 @@ export default function ServicesHero() {
             </motion.div>
           </motion.div>
 
-          <div className="relative mr-10">
+          <div className="relative hidden lg:mr-10 lg:block">
             <motion.div
               aria-hidden
               className="pointer-events-none absolute -inset-6 rounded-[36px] bg-brand-blue-500/15 blur-[60px]"

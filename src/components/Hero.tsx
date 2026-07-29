@@ -120,7 +120,7 @@ export default function Hero() {
       <div className="relative w-full min-h-[400px] sm:min-h-[480px] lg:min-h-[480px] ">
         <div
           style={{ backgroundImage: `url(${heroIllustration})` }}
-          className="absolute inset-0 bg-cover bg-center lg:bg-[position:67%_center]"
+          className="absolute inset-0 hidden bg-cover bg-center lg:block lg:bg-[position:67%_center]"
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-[#03132f] via-[#03132f]/85 to-[#03132f]/25 lg:via-[#03132f]/70 lg:to-[#03132f]/10" />

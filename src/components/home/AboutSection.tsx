@@ -142,7 +142,7 @@ export default function AboutSection() {
             <h2 className="mt-5 text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl">
               Transforming Data Into
               <br />
-              <span className="bg-gradient-to-r from-brand-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              <span className="text-blue-500">
                 Intelligent AI Solutions
               </span>
             </h2>

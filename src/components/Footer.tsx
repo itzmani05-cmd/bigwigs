@@ -174,10 +174,11 @@ export default function Footer() {
       return;
     }
 
-    const thresholds = Array.from({ length: 21 }, (_, i) => i / 20);
     const observer = new IntersectionObserver(
-      ([entry]) => setReveal(entry.intersectionRatio),
-      { threshold: thresholds }
+      ([entry]) => {
+        if (entry.isIntersecting) setReveal(1);
+      },
+      { threshold: 0.1 }
     );
     observer.observe(node);
     return () => observer.disconnect();
