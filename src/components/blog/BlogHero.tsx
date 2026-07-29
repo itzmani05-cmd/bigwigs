@@ -80,7 +80,7 @@ export default function BlogHero() {
             </motion.div>
           </motion.div>
 
-          <div className="relative mr-6">
+          <div className="relative hidden lg:mr-6 lg:block">
             <motion.div
               aria-hidden
               className="pointer-events-none absolute -inset-6 rounded-[36px] bg-brand-blue-500/15 blur-[60px]"

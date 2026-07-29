@@ -78,7 +78,7 @@ export default function CaseStudyHero({ study }: { study: CaseStudy }) {
           </motion.div>
 
           {/* RIGHT — premium illustration panel */}
-          <div className="relative mx-auto w-full max-w-[560px] lg:mx-0">
+          <div className="relative mx-auto hidden w-full max-w-[560px] lg:mx-0 lg:block">
             <motion.div
               aria-hidden
               className="pointer-events-none absolute -inset-6 rounded-[36px] bg-brand-blue-500/15 blur-[60px]"
