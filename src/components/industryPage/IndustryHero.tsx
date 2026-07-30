@@ -111,7 +111,7 @@ export default function IndustryHero({
             </motion.div>
           </motion.div>
 
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <motion.div
               aria-hidden
               className="pointer-events-none absolute -inset-10 rounded-full bg-brand-blue-500/20 blur-[90px]"

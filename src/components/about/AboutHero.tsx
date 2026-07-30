@@ -105,7 +105,7 @@ export default function AboutHero() {
             </motion.div>
           </motion.div>
 
-          <div className="relative mr-10">
+          <div className="relative hidden lg:mr-10 lg:block">
             {/* ambient glow behind the image */}
             <motion.div
               aria-hidden

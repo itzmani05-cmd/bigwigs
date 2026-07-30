@@ -15,8 +15,7 @@ export default function ChatBot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.96 }}
             transition={{ duration: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-            className="fixed bottom-14 right-4 z-[9999] w-[calc(100vw-2rem)] max-w-sm sm:right-6 sm:bottom-1
-            8"
+            className="fixed bottom-14 right-4 z-[9999] w-[calc(100vw-2rem)] max-w-sm sm:right-6 sm:bottom-18"
           >
             <ChatWindow onClose={() => setIsOpen(false)} />
           </motion.div>
@@ -30,7 +29,7 @@ export default function ChatBot() {
         aria-expanded={isOpen}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-5 right-4 z-[9999] flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue-500 text-white shadow-[0_12px_30px_-8px_rgba(37,99,235,0.6)] transition-colors duration-300 hover:bg-brand-blue-600 hover:shadow-[0_16px_40px_-8px_rgba(37,99,235,0.75)] sm:right-6"
+        className="fixed bottom-5 right-4 z-[9999] flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue-500 text-white shadow-[0_12px_30px_-8px_rgba(37,99,235,0.6)] transition-colors duration-300 hover:bg-brand-blue-600 hover:shadow-[0_16px_40px_-8px_rgba(37,99,235,0.75)] sm:right-6"
       >
         {!isOpen && (
           <motion.span
