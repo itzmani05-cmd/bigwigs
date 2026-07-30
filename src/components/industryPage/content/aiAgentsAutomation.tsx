@@ -399,7 +399,7 @@ export const aiAgentsProcess = {
     { icon: ShieldCheck, title: "Testing", description: "Accuracy, safety, and performance verified before launch." },
     { icon: PackageCheck, title: "Deployment", description: "Live in production, monitored, and supported at scale." },
   ],
-  desktopColumnsClassName: "grid-cols-6",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-6",
 };
 
 export const aiAgentsFaq = {

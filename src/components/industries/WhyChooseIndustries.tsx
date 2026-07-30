@@ -21,7 +21,7 @@ export default function WhyChooseIndustries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
-              className="glass-card flex flex-col items-start gap-4 rounded-[24px] p-6"
+              className="glass-card flex h-full flex-col items-start gap-4 rounded-[24px] p-6"
             >
               <motion.span
                 className={`flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br text-white shadow-[0_10px_20px_-8px_rgba(15,23,42,0.35)] ${item.gradient}`}

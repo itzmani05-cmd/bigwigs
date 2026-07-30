@@ -397,7 +397,7 @@ export const annotationProcessSteps = [
 export const annotationProcess = {
   heading: "Seven Stages Between Raw Data and a Trained Model",
   steps: annotationProcessSteps,
-  desktopColumnsClassName: "grid-cols-7",
+  desktopColumnsClassName: "grid-cols-4 xl:grid-cols-7",
 };
 
 export const annotationFaq = {

@@ -401,7 +401,7 @@ export const manufacturingProcessSteps = [
 export const manufacturingProcess = {
   heading: "From Discovery to Continuous Optimization",
   steps: manufacturingProcessSteps,
-  desktopColumnsClassName: "grid-cols-5",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-5",
 };
 
 export const manufacturingFaq = {

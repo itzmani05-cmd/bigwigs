@@ -406,7 +406,7 @@ export const dataCollectionProcess = {
     { icon: ShieldCheck, title: "Quality Assurance", description: "Every batch validated against your accuracy and format spec." },
     { icon: PackageCheck, title: "Delivery", description: "Final dataset packaged and delivered on your schedule." },
   ],
-  desktopColumnsClassName: "grid-cols-5",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-5",
 };
 
 export const dataCollectionFaq = {

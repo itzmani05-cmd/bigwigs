@@ -201,7 +201,7 @@ export const dataQaWorkflow = {
   eyebrow: "Multi-Level QA Workflow",
   heading: "Four Review Levels Stand Between Annotation and Delivery",
   steps: dataQaWorkflowSteps,
-  desktopColumnsClassName: "grid-cols-4",
+  desktopColumnsClassName: "grid-cols-2 xl:grid-cols-4",
 };
 
 export const dataQaImprovementSteps = [

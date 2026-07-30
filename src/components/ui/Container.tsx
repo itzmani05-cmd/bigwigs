@@ -11,7 +11,7 @@ export default function Container({
 }) {
   return (
     <div
-      className={`w-full max-w-[1240px] mx-auto px-6 sm:px-10 lg:px-[15px] ${className}`}
+      className={`w-full max-w-[1240px] mx-auto px-6 sm:px-10 lg:px-12 ${className}`}
       style={style}
     >
       {children}

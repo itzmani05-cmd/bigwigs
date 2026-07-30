@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
@@ -38,7 +39,7 @@ import ChatBot from "@/components/chatbot/ChatBot";
 
 export default function App() {
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <ScrollToHash />
       <Navbar />
       <main className="flex-grow">
@@ -86,6 +87,6 @@ export default function App() {
       <CookieConsent />
       <ScrollToTop />
       <ChatBot />
-    </>
+    </MotionConfig>
   );
 }

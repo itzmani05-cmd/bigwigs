@@ -22,7 +22,7 @@ export default function SuccessStories() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-              className="glass-card group flex flex-col overflow-hidden rounded-[28px]"
+              className="glass-card group flex h-full flex-col overflow-hidden rounded-[28px]"
             >
               <div className="relative h-40 w-full overflow-hidden">
                 <img

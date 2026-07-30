@@ -379,7 +379,7 @@ export const retailProcessSteps = [
 export const retailProcess = {
   heading: "From Discovery to Continuous Optimization",
   steps: retailProcessSteps,
-  desktopColumnsClassName: "grid-cols-5",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-5",
 };
 
 export const retailFaq = {

@@ -316,7 +316,7 @@ export const digitalPublishingProcess = {
     { icon: ShieldCheck, title: "Quality Assurance", description: "Every file validated against format and accessibility standards." },
     { icon: PackageCheck, title: "Delivery", description: "Final files delivered in every platform and format you need." },
   ],
-  desktopColumnsClassName: "grid-cols-5",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-5",
 };
 
 export const digitalPublishingFaq = {

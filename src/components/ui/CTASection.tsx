@@ -147,7 +147,7 @@ export default function CTASection({
         </div>
 
         <div className="max-w-xl">
-          <h3 className="text-xl font-extrabold tracking-tight text-white sm:text-3xl md:text-[28px] lg:text-[32px]">{heading}</h3>
+          <h3 className="text-xl font-extrabold tracking-tight text-white sm:text-3xl md:text-[30px] lg:text-[32px]">{heading}</h3>
           <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">{description}</p>
         </div>
 

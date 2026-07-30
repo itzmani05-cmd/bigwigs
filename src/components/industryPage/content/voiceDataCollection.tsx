@@ -364,7 +364,7 @@ export const voiceProcess = {
     { icon: ShieldCheck, title: "Quality Assurance", description: "Audio, metadata, and format validated against enterprise benchmarks." },
     { icon: PackageCheck, title: "Delivery & Support", description: "Final dataset packaged and delivered in your required format." },
   ],
-  desktopColumnsClassName: "grid-cols-6",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-6",
 };
 
 export const voiceFaq = {

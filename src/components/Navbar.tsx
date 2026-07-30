@@ -94,7 +94,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="lg:hidden p-2 rounded-full text-slate-600 hover:text-slate-950 hover:bg-slate-100 transition-colors duration-200 focus:outline-none"
+            className="lg:hidden flex h-11 w-11 items-center justify-center rounded-full text-slate-600 hover:text-slate-950 hover:bg-slate-100 transition-colors duration-200 focus:outline-none"
             onClick={() => setMobileMenuOpen((open) => !open)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}

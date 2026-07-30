@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { announceCookieConsentVisibility } from "@/hooks/useCookieConsentVisible";
 
 const STORAGE_KEY = "bigwigs-cookie-consent";
 
@@ -19,6 +20,10 @@ export default function CookieConsent() {
     const timer = window.setTimeout(() => setStatus("visible"), 800);
     return () => window.clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    announceCookieConsentVisibility(status === "visible");
+  }, [status]);
 
   useLayoutEffect(() => {
     if (status !== "visible") return;
@@ -59,7 +64,7 @@ export default function CookieConsent() {
       aria-label="Cookie notice"
       className="fixed inset-x-0 bottom-0 z-[9999] w-full bg-[#151718] border-t border-white/10"
     >
-      <div className="mx-auto flex max-w-[1240px] flex-col items-center gap-3 px-6 py-4 sm:min-h-[80px] sm:flex-row sm:justify-between sm:gap-6 sm:py-0 lg:px-[15px]">
+      <div className="mx-auto flex max-w-[1240px] flex-col items-center gap-3 px-6 py-4 sm:min-h-[80px] sm:flex-row sm:justify-between sm:gap-6 sm:py-0 lg:px-12">
         <p className="text-center text-sm leading-relaxed text-slate-300 sm:text-left">
           We use cookies to allow us to remember you. To find out more about the cookies we
           use, see our{" "}
@@ -76,7 +81,7 @@ export default function CookieConsent() {
         <button
           type="button"
           onClick={acceptCookies}
-          className="shrink-0 rounded-md border border-white px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors duration-300 hover:bg-white hover:text-black"
+          className="flex min-h-11 shrink-0 items-center justify-center rounded-md border border-white px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors duration-300 hover:bg-white hover:text-black"
         >
           Accept
         </button>

@@ -70,7 +70,7 @@ export default function IndustryHero({
 
             <motion.h1
               variants={itemVariants}
-              className="mt-4 text-3xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-xl lg:text-[42px]"
+              className="mt-4 text-3xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-4xl lg:text-[42px]"
             >
               {heading}
             </motion.h1>

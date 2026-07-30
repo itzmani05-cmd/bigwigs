@@ -256,7 +256,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className={`flex h-10 w-10 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-[#A1A1AA] transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500/50 hover:text-brand-blue-400 hover:shadow-[0_0_20px_2px_rgba(37,99,235,0.35)] ${focusRing}`}
+                  className={`flex h-11 w-11 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-[#A1A1AA] transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500/50 hover:text-brand-blue-400 hover:shadow-[0_0_20px_2px_rgba(37,99,235,0.35)] ${focusRing}`}
                 >
                   <Icon className="h-4 w-4" />
                 </a>

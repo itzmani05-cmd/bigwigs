@@ -365,7 +365,7 @@ export const softwareProcessSteps = [
 export const softwareProcess = {
   heading: "Seven Stages. No Guesswork.",
   steps: softwareProcessSteps,
-  desktopColumnsClassName: "grid-cols-7",
+  desktopColumnsClassName: "grid-cols-4 xl:grid-cols-7",
 };
 
 export const softwareFaq = {

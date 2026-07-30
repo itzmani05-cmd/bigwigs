@@ -403,7 +403,7 @@ export const publishingProcessSteps = [
 export const publishingProcess = {
   heading: "From Discovery to Continuous Optimization",
   steps: publishingProcessSteps,
-  desktopColumnsClassName: "grid-cols-5",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-5",
 };
 
 export const publishingFaq = {

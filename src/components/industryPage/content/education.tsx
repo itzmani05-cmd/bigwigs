@@ -404,7 +404,7 @@ export const educationProcessSteps = [
 export const educationProcess = {
   heading: "From Discovery to Ongoing Support",
   steps: educationProcessSteps,
-  desktopColumnsClassName: "grid-cols-5",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-5",
 };
 
 export const educationFaq = {

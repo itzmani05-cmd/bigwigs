@@ -390,7 +390,7 @@ export const automotiveProcessSteps = [
 export const automotiveProcess = {
   heading: "From Discovery to Ongoing Support",
   steps: automotiveProcessSteps,
-  desktopColumnsClassName: "grid-cols-5",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-5",
 };
 
 export const automotiveFaq = {

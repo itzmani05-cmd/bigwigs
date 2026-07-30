@@ -411,7 +411,7 @@ export const governmentProcessSteps = [
 export const governmentProcess = {
   heading: "From Discovery to Continuous Enhancement",
   steps: governmentProcessSteps,
-  desktopColumnsClassName: "grid-cols-5",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-5",
 };
 
 export const governmentFaq = {

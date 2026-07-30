@@ -272,7 +272,7 @@ export const translationProcess = {
     { icon: ShieldCheck, title: "Quality Assurance", description: "Independent review against your terminology and style guide." },
     { icon: Send, title: "Delivery", description: "Final content delivered in your format, on your timeline." },
   ],
-  desktopColumnsClassName: "grid-cols-5",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-5",
 };
 
 export const translationBusinessBenefits = {

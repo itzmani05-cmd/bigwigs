@@ -61,7 +61,7 @@ export default function MobileNav({ id, items, isOpen, onClose }: MobileNavProps
                       aria-expanded={expanded === item.name}
                       aria-controls={`mobile-submenu-${index}`}
                       onClick={() => setExpanded(expanded === item.name ? null : item.name)}
-                      className="p-2 text-slate-400 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-green-500"
+                      className="flex h-11 w-11 items-center justify-center text-slate-400 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-green-500"
                     >
                       <motion.span animate={{ rotate: expanded === item.name ? 180 : 0 }}>
                         <ChevronDown size={16} />

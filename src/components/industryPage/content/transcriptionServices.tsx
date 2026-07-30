@@ -367,7 +367,7 @@ export const transcriptionProcess = {
     { icon: FlaskConical, title: "Client Revision Round", description: "Feedback incorporated before the transcript is finalized." },
     { icon: PackageCheck, title: "Final Delivery", description: "Transcript delivered in your required format, on schedule." },
   ],
-  desktopColumnsClassName: "grid-cols-6",
+  desktopColumnsClassName: "grid-cols-3 xl:grid-cols-6",
 };
 
 export const transcriptionFaq = {

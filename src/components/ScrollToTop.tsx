@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
+import { useCookieConsentVisible } from "@/hooks/useCookieConsentVisible";
 
 const SCROLL_THRESHOLD = 300;
 
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);
+  const cookieBannerVisible = useCookieConsentVisible();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +28,7 @@ export default function ScrollToTop() {
 
   return (
     <AnimatePresence>
-      {visible && (
+      {visible && !cookieBannerVisible && (
         <motion.button
           type="button"
           onClick={scrollToTop}
@@ -37,7 +39,7 @@ export default function ScrollToTop() {
           transition={{ duration: 0.45, ease: "easeOut" }}
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
-          className="group fixed right-4 bottom-24 z-[9998] flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue-500 text-white shadow-[0_12px_30px_-8px_rgba(37,99,235,0.6)] transition-colors duration-300 hover:bg-brand-blue-600 hover:shadow-[0_16px_40px_-8px_rgba(37,99,235,0.75)] sm:right-6"
+          className="group fixed right-4 bottom-24 z-[9998] flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue-500 text-white shadow-[0_12px_30px_-8px_rgba(37,99,235,0.6)] transition-colors duration-300 hover:bg-brand-blue-600 hover:shadow-[0_16px_40px_-8px_rgba(37,99,235,0.75)] sm:right-6"
         >
           <motion.span
             aria-hidden
