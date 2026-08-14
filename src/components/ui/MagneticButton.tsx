@@ -10,6 +10,8 @@ interface MagneticButtonProps {
   disabled?: boolean;
   className?: string;
   strength?: number;
+  /** Set false to keep the hover/tap scale but drop the mouse-follow drift. Default true. */
+  magnetic?: boolean;
   children: ReactNode;
 }
 
@@ -23,6 +25,7 @@ export default function MagneticButton({
   disabled,
   className = "",
   strength = 0.3,
+  magnetic = true,
   children,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLElement | null>(null);
@@ -48,9 +51,9 @@ export default function MagneticButton({
 
   const sharedProps = {
     ref: ref as never,
-    style: { x: springX, y: springY },
-    onMouseMove: handleMouseMove,
-    onMouseLeave: handleMouseLeave,
+    style: magnetic ? { x: springX, y: springY } : undefined,
+    onMouseMove: magnetic ? handleMouseMove : undefined,
+    onMouseLeave: magnetic ? handleMouseLeave : undefined,
     whileHover: { scale: 1.03 },
     whileTap: { scale: 0.96 },
     className: `group ${className}`,
