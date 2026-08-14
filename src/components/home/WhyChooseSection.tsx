@@ -152,15 +152,17 @@ export default function WhyChooseSection() {
           </div>
 
           {/* middle: stats */}
-          <div className="flex flex-col border-t border-slate-100 mt-3 pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
-            <video
-              src="/bigwigs-technologies.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="aspect-[16/10] w-full rounded-xl object-cover object-top shadow-[0_16px_40px_-30px_rgba(15,23,42,0.25)]"
-            />
+          <div className="flex flex-col border-t border-slate-100 mt-12 pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
+            <div className="rounded-xl bg-gray-600 p-1 shadow-[0_16px_40px_-30px_rgba(15,23,42,0.35)]">
+              <video
+                src="/bigwigs-technologies.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="aspect-[16/10] w-full rounded-lg bg-gray-600 object-contain"
+              />
+            </div>
             <div className="mt-8 flex w-full flex-col divide-y divide-slate-100">
               {stats.map((stat, i) => {
                 const Icon = stat.icon;
