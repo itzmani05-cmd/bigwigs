@@ -85,7 +85,7 @@ function Tile({ images, interval, delay, className, paused, priority }: TileProp
         ref={layerARef}
         src={images[0]}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-contain"
         loading={priority ? "eager" : "lazy"}
       />
       <img
@@ -137,14 +137,14 @@ export default function HeroVisualAnimation() {
       ref={containerRef}
       className="relative h-full w-full overflow-hidden rounded-[28px] p-2.5 sm:p-3"
     >
-      <div className="relative grid h-full w-full grid-cols-2 grid-rows-2 gap-3 sm:grid-cols-4 sm:grid-rows-3 sm:gap-3.5 lg:grid-rows-4 lg:gap-4">
+      <div className="relative grid h-full w-full grid-cols-2 grid-rows-2 gap-3 sm:gap-3.5 lg:gap-4">
         <Tile
           images={pickSequence(0, 3)}
           interval={6500}
           delay={0}
           paused={paused}
           priority
-          className="col-span-1 row-span-2 sm:col-span-2 sm:row-span-3"
+          className="col-span-1 row-span-2"
         />
         <Tile
           images={pickSequence(1, 3)}
@@ -152,35 +152,14 @@ export default function HeroVisualAnimation() {
           delay={900}
           paused={paused}
           priority
-          className="col-span-1 row-span-1 sm:col-span-2 sm:row-span-2"
+          className="col-span-1 row-span-1"
         />
         <Tile
           images={pickSequence(2, 3)}
           interval={4300}
           delay={1600}
           paused={paused}
-          className="hidden lg:block lg:col-span-1 lg:row-span-1"
-        />
-        <Tile
-          images={pickSequence(3, 3)}
-          interval={4700}
-          delay={2200}
-          paused={paused}
-          className="hidden lg:block lg:col-span-1 lg:row-span-1"
-        />
-        <Tile
-          images={pickSequence(4, 3)}
-          interval={5800}
-          delay={1200}
-          paused={paused}
-          className="hidden sm:block sm:col-span-2 sm:row-span-1 lg:col-span-4"
-        />
-        <Tile
-          images={pickSequence(5, 3)}
-          interval={4300}
-          delay={500}
-          paused={paused}
-          className="col-span-1 row-span-1 sm:hidden"
+          className="col-span-1 row-span-1"
         />
       </div>
     </div>

@@ -155,7 +155,7 @@ export default function Hero() {
       </div>
 
       <div className="relative w-full border-t border-slate-100 bg-white">
-        <div className="mx-auto grid max-w-[1380px] grid-cols-1 items-center gap-6 px-4 py-5 sm:grid-cols-[45%_55%] sm:gap-8 sm:px-7 sm:py-2 lg:gap-12 lg:px-8">
+        <div className="mx-auto grid max-w-[1380px] grid-cols-1 items-center gap-6 px-4 py-5 sm:grid-cols-[45%_55%] sm:gap-4 sm:px-7 sm:py-2 lg:gap-6 lg:px-8">
           <motion.div
             variants={statsVariants}
             initial="hidden"
@@ -182,7 +182,7 @@ export default function Hero() {
           ))}
           </motion.div>
 
-          <div className="flex flex-col items-start gap-3 border-t border-slate-100 pt-5 sm:items-end sm:gap-2 sm:border-l sm:border-t-0 sm:pl-12 sm:pr-6 sm:pt-0">
+          <div className="flex flex-col items-start gap-3 border-t border-slate-100 pt-5 sm:items-end sm:gap-2 sm:border-l sm:border-t-0 sm:pl-6 sm:pr-6 sm:pt-0">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
               Trusted by Global Enterprises
             </span>
