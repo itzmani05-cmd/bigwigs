@@ -85,7 +85,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative w-full overflow-hidden bg-white">
       <div className="mx-auto max-w-[1360px] px-4 pt-4 pb-4 sm:px-8 lg:px-10 lg:pt-6 lg:pb-10">
-        <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-[3fr_2fr] lg:gap-8">
+        <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[3fr_2fr] md:gap-8">
           <div className="flex flex-col items-start gap-3 text-left">
             <motion.span
               variants={eyebrowVariants}
@@ -167,23 +167,23 @@ export default function Hero() {
             className="grid w-full grid-cols-2 gap-x-3 gap-y-4 sm:gap-x-6 sm:gap-y-5 lg:grid-cols-4 lg:gap-x-8"
           >
            {stats.map(({ icon: Icon, value, label }) => (
-  <div key={label} className="flex flex-col items-start gap-1.5">
-    <div className="flex items-center gap-2">
-      <Icon
-        size={20}
-        className="text-brand-blue-600"
-        strokeWidth={1.75}
-      />
-      <span className="text-sm font-extrabold tracking-tight text-slate-900 sm:text-base">
-        {value}
-      </span>
-    </div>
+            <div key={label} className="flex flex-col items-start gap-1.5">
+              <div className="flex items-center gap-2">
+                <Icon
+                  size={20}
+                  className="text-brand-blue-600"
+                  strokeWidth={1.75}
+                />
+                <span className="text-sm font-extrabold tracking-tight text-slate-900 sm:text-base">
+                  {value}
+                </span>
+              </div>
 
-    <span className="text-xs leading-snug text-slate-500">
-      {label}
-    </span>
-  </div>
-))}
+              <span className="text-xs leading-snug text-slate-500">
+                {label}
+              </span>
+            </div>
+          ))}
           </motion.div>
 
           <div className="flex flex-col items-start gap-3 border-l border-slate-100 pl-4 sm:items-end sm:gap-2 sm:pl-12">

@@ -108,7 +108,7 @@ export default function WhyChooseSection() {
       />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[2.3fr_1fr] lg:gap-8">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[2.3fr_1.3fr] lg:gap-8">
           <div>
             <div className="flex items-center gap-3" aria-hidden="true">
               <span className="text-xs font-bold tracking-[0.2em] text-orange-500 uppercase sm:text-sm">
@@ -159,9 +159,9 @@ export default function WhyChooseSection() {
               loop
               muted
               playsInline
-              className="aspect-[16/9] w-full rounded-xl object-cover object-top shadow-[0_16px_40px_-30px_rgba(15,23,42,0.25)]"
+              className="aspect-[16/10] w-full rounded-xl object-cover object-top shadow-[0_16px_40px_-30px_rgba(15,23,42,0.25)]"
             />
-            <div className="mt-5 flex w-full flex-col divide-y divide-slate-100">
+            <div className="mt-8 flex w-full flex-col divide-y divide-slate-100">
               {stats.map((stat, i) => {
                 const Icon = stat.icon;
                 return (
