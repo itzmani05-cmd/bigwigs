@@ -5,13 +5,30 @@ import ourTeamImage from "@/assests/about/ourteams.jpg";
 export default function WhoWeAre() {
   return (
     <section className="relative w-full overflow-hidden bg-white py-14 lg:py-20">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/70 via-brand-blue-50/25 to-white"
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 -left-24 h-[26rem] w-[26rem] rounded-full bg-brand-blue-500/10 blur-[130px]"
+        animate={{ opacity: [0.4, 0.8, 0.4] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-28 -right-20 h-[22rem] w-[22rem] rounded-full bg-orange-400/[0.08] blur-[120px]"
+        animate={{ opacity: [0.3, 0.7, 0.3] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
+
       <Container className="relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-          className="glass-card grid grid-cols-1 overflow-hidden rounded-[28px] lg:grid-cols-2"
+          className="grid grid-cols-1 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] lg:grid-cols-2"
         >
           <div className="relative min-h-[280px] overflow-hidden lg:min-h-[380px]">
             <img
@@ -21,7 +38,7 @@ export default function WhoWeAre() {
             />
           </div>
 
-          <div className="flex flex-col justify-center bg-white/80 p-8 backdrop-blur-sm sm:p-12 lg:p-14">
+          <div className="flex flex-col justify-center bg-white p-8 sm:p-12 lg:p-14">
             <div className="flex items-center gap-3">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
                 Who We Are

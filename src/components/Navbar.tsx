@@ -63,14 +63,14 @@ export default function Navbar() {
             : "bg-white border-b border-transparent"
         }`}
       >
-        <div className="mx-auto max-w-[1400px] px-4 lg:px-8 flex items-center justify-between h-18 lg:h-20">
+        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 flex items-center justify-between h-18 lg:h-20">
           <HashLink href="#home" className="flex items-center group shrink-0">
             <img
               src="/assets/Logo.png"
               alt="BigWigs Technologies Logo"
               width={196}
               height={72}
-              className="h-11 lg:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-11 md:h-12 lg:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </HashLink>
 

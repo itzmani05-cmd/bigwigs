@@ -1,16 +1,9 @@
-import { useEffect, useState, type ReactNode } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useState, type ReactNode } from "react";
 import { motion } from "framer-motion";
 import {
   User,
   Mail,
   Phone,
-  MapPin,
-  Globe,
-  Briefcase,
-  BarChart3,
-  Building2,
-  IdCard,
   MessageSquare,
   CheckCircle2,
   ArrowRight,
@@ -18,40 +11,17 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import MagneticButton from "@/components/ui/MagneticButton";
-import { jobs } from "@/components/careers/jobsData";
 import { API_BASE } from "@/config/api";
 import FormField from "./FormField";
 import ResumeUpload from "./ResumeUpload";
 
 const DRAFT_KEY = "bigwigs-apply-draft";
 
-function LinkedinIcon({ size = 24, strokeWidth: _strokeWidth, className }: { size?: number | string; strokeWidth?: number; className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      width={size}
-      height={size}
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M6.94 5.5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-3.96 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z" />
-    </svg>
-  );
-}
-
 interface ApplyFormState {
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
-  location: string;
-  linkedin: string;
-  portfolio: string;
-  position: string;
-  experience: string;
-  company: string;
-  jobTitle: string;
   coverLetter: string;
   whyJoin: string;
   consent: boolean;
@@ -62,27 +32,10 @@ const EMPTY_FORM: ApplyFormState = {
   lastName: "",
   email: "",
   phone: "",
-  location: "",
-  linkedin: "",
-  portfolio: "",
-  position: "",
-  experience: "",
-  company: "",
-  jobTitle: "",
   coverLetter: "",
   whyJoin: "",
   consent: false,
 };
-
-const POSITION_OPTIONS = [...jobs.map((j) => ({ value: j.title, label: j.title })), { value: "Other", label: "Other" }];
-
-const EXPERIENCE_OPTIONS = [
-  { value: "0-1 Years", label: "0-1 Years" },
-  { value: "1-3 Years", label: "1-3 Years" },
-  { value: "3-5 Years", label: "3-5 Years" },
-  { value: "5-8 Years", label: "5-8 Years" },
-  { value: "8+ Years", label: "8+ Years" },
-];
 
 function FormSection({ icon: Icon, title, children }: { icon: LucideIcon; title: string; children: ReactNode }) {
   return (
@@ -99,7 +52,6 @@ function FormSection({ icon: Icon, title, children }: { icon: LucideIcon; title:
 }
 
 export default function ApplyForm() {
-  const [searchParams] = useSearchParams();
   const [form, setForm] = useState<ApplyFormState>(EMPTY_FORM);
   const [resume, setResume] = useState<File | null>(null);
   const [errors, setErrors] = useState<Partial<Record<keyof ApplyFormState, string>>>({});
@@ -107,33 +59,10 @@ export default function ApplyForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [draftSaved, setDraftSaved] = useState(false);
-
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(DRAFT_KEY);
-      if (saved) setForm((prev) => ({ ...prev, ...JSON.parse(saved) }));
-    } catch {
-    }
-  }, []);
-
-  useEffect(() => {
-    const positionFromUrl = searchParams.get("position");
-    if (positionFromUrl) {
-      setForm((prev) => (prev.position ? prev : { ...prev, position: positionFromUrl }));
-    }
-  }, [searchParams]);
 
   const setField = <K extends keyof ApplyFormState>(name: K, value: ApplyFormState[K]) => {
     setForm((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: undefined }));
-  };
-
-  const handleSaveDraft = () => {
-    const { ...draft } = form;
-    localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
-    setDraftSaved(true);
-    setTimeout(() => setDraftSaved(false), 2500);
   };
 
   const validate = () => {
@@ -143,9 +72,6 @@ export default function ApplyForm() {
     if (!form.email.trim()) nextErrors.email = "Email address is required.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) nextErrors.email = "Enter a valid email address.";
     if (!form.phone.trim()) nextErrors.phone = "Phone number is required.";
-    if (!form.location.trim()) nextErrors.location = "Current location is required.";
-    if (!form.position) nextErrors.position = "Please select a position.";
-    if (!form.experience) nextErrors.experience = "Please select your experience.";
     if (!form.consent) nextErrors.consent = "Please accept the privacy policy to continue.";
     return nextErrors;
   };
@@ -159,13 +85,7 @@ export default function ApplyForm() {
     setSubmitError(null);
     setIsSubmitting(true);
 
-    const appendix = [
-      form.linkedin && `LinkedIn: ${form.linkedin}`,
-      `Current Location: ${form.location}`,
-      form.company && `Current Company: ${form.company}`,
-      form.jobTitle && `Current Job Title: ${form.jobTitle}`,
-      form.whyJoin && `Why join Bigwigs Technologies: ${form.whyJoin}`,
-    ]
+    const appendix = [form.whyJoin && `Why join Bigwigs Technologies: ${form.whyJoin}`]
       .filter(Boolean)
       .join("\n");
 
@@ -175,9 +95,6 @@ export default function ApplyForm() {
     payload.set("fullName", `${form.firstName} ${form.lastName}`.trim());
     payload.set("email", form.email);
     payload.set("phone", form.phone);
-    payload.set("position", form.position);
-    payload.set("experience", form.experience);
-    if (form.portfolio) payload.set("portfolioUrl", form.portfolio);
     if (coverLetter) payload.set("coverLetter", coverLetter);
     if (resume) payload.set("resume", resume);
 
@@ -200,7 +117,7 @@ export default function ApplyForm() {
 
   if (isSubmitted) {
     return (
-      <div className="glass-card flex flex-col items-center rounded-[28px] px-6 py-16 text-center sm:px-10">
+      <div className="flex flex-col items-center rounded-[28px] border border-gray-300 bg-white px-6 py-16 text-center shadow-sm sm:px-10">
         <motion.span
           initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -225,6 +142,7 @@ export default function ApplyForm() {
         </p>
         <MagneticButton
           href="/careers"
+          magnetic={false}
           className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
         >
           <span>View More Open Positions</span>
@@ -235,7 +153,7 @@ export default function ApplyForm() {
   }
 
   return (
-    <div className="glass-card overflow-hidden rounded-[28px] p-6 sm:p-10 lg:p-12">
+    <div className="overflow-hidden rounded-[28px] border border-gray-300 bg-white p-6 sm:p-10 lg:p-12 shadow-sm">
       <div>
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
           Application Form
@@ -291,76 +209,6 @@ export default function ApplyForm() {
               placeholder="+1 (555) 000-0000"
               error={errors.phone}
             />
-            <FormField
-              label="Current Location"
-              name="location"
-              required
-              icon={MapPin}
-              value={form.location}
-              onChange={(v) => setField("location", v)}
-              placeholder="City, Country"
-              error={errors.location}
-            />
-            <FormField
-              label="LinkedIn Profile"
-              name="linkedin"
-              icon={LinkedinIcon}
-              value={form.linkedin}
-              onChange={(v) => setField("linkedin", v)}
-              placeholder="linkedin.com/in/janedoe"
-            />
-            <FormField
-              label="Portfolio / GitHub / Website"
-              name="portfolio"
-              icon={Globe}
-              value={form.portfolio}
-              onChange={(v) => setField("portfolio", v)}
-              placeholder="https://"
-              className="sm:col-span-2"
-            />
-          </div>
-        </FormSection>
-
-        <FormSection icon={Briefcase} title="Professional Information">
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            <FormField
-              as="select"
-              label="Position Applying For"
-              name="position"
-              required
-              icon={Briefcase}
-              value={form.position}
-              onChange={(v) => setField("position", v)}
-              options={POSITION_OPTIONS}
-              error={errors.position}
-            />
-            <FormField
-              as="select"
-              label="Years of Experience"
-              name="experience"
-              required
-              icon={BarChart3}
-              value={form.experience}
-              onChange={(v) => setField("experience", v)}
-              options={EXPERIENCE_OPTIONS}
-              error={errors.experience}
-            />
-            <FormField
-              label="Current Company"
-              name="company"
-              icon={Building2}
-              value={form.company}
-              onChange={(v) => setField("company", v)}
-              placeholder="Company name"
-            />
-            <FormField
-              label="Current Job Title"
-              name="jobTitle"
-              icon={IdCard}
-              value={form.jobTitle}
-              onChange={(v) => setField("jobTitle", v)}
-              placeholder="e.g. Software Engineer"
-            />
           </div>
         </FormSection>
 
@@ -411,20 +259,12 @@ export default function ApplyForm() {
           {errors.consent && <span className="mt-1.5 block text-xs font-medium text-rose-500">{errors.consent}</span>}
         </div>
 
-        <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <MagneticButton
-            as="button"
-            type="button"
-            onClick={handleSaveDraft}
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500 hover:text-brand-blue-600 select-none"
-          >
-            <span>{draftSaved ? "Draft Saved" : "Save & Continue Later"}</span>
-          </MagneticButton>
-
+        <div className="flex justify-end">
           <MagneticButton
             as="button"
             type="submit"
             disabled={isSubmitting}
+            magnetic={false}
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-blue-500 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 disabled:cursor-not-allowed disabled:opacity-70 select-none"
           >
             {isSubmitting ? (

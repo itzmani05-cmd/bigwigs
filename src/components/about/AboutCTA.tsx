@@ -3,10 +3,10 @@ import CTASection from "@/components/ui/CTASection";
 export default function AboutCTA() {
   return (
     <CTASection
-      heading="Let’s Build the Future of AI Together"
-      description="Partner with Bigwigs Technologies to build intelligent, scalable, and secure AI-powered solutions."
-      primaryAction={{ label: "Start Your Project", href: "#contact" }}
-      secondaryAction={{ label: "Talk to Our Experts", href: "#contact", showArrow: false }}
+      heading="Let’s Build What’s Next Together"
+      description="Discover how Bigwigs Technologies combines data, AI, and engineering to turn complex challenges into intelligent solutions."
+      primaryAction={{ label: "Talk to Us", href: "/demo" }}
+      secondaryAction={{ label: "Explore Our Services", href: "/services", showArrow: false }}
     />
   );
 }

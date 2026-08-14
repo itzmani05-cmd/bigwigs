@@ -1,6 +1,4 @@
 import { Layers, ShieldCheck, Clock, Globe2, Award, HeartHandshake, Search, ClipboardList, Rocket, LifeBuoy, Users2 } from "lucide-react";
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import SectionDivider from "@/components/careers/SectionDivider";
 import CTASection from "@/components/ui/CTASection";
 import ServicesHero from "@/components/services/ServicesHero";
 import ServicesGrid from "@/components/services/ServicesGrid";
@@ -58,28 +56,13 @@ export default function Services() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
       <ServicesHero />
-      <SectionDivider />
       <ServicesGrid />
-      <SectionDivider />
-      <IconGridSection
-        eyebrow="Why Bigwigs"
-        heading="Six Reasons Enterprises Choose Us"
-        description="What makes engagements with Bigwigs Technologies different from a typical vendor relationship."
-        items={whyChooseItems}
-        columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-        titleSize="md"
-      />
-      <SectionDivider />
-      <StatsBar stats={servicesStats} />
-      <SectionDivider />
       <ProcessTimeline
         eyebrow="How We Work"
         heading="Five Stages. Every Engagement."
         steps={servicesProcessSteps}
       />
-      <SectionDivider />
       <FAQAccordion items={servicesFaq} />
 
       <CTASection

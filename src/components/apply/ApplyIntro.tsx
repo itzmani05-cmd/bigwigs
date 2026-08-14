@@ -20,10 +20,10 @@ export default function ApplyIntro() {
         transition={{ duration: 0.5, delay: 0.15, ease: [0.215, 0.61, 0.355, 1] }}
       >
         <span className="text-xs pb-9 font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
-          Book Your Demo
+          CAREERS AT BIGWIGS
         </span>
-        <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-          Join Bigwigs Technologies
+        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
+          Build Your Future With Bigwigs
         </h2>
         <p className="mt-4 text-base leading-relaxed text-slate-500">
           Become part of an innovative team building intelligent AI solutions

@@ -27,6 +27,7 @@ export default function OpenPositions() {
           </div>
           <MagneticButton
             href="#open-positions"
+            magnetic={false}
             className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500 hover:text-brand-blue-600 select-none"
           >
             <span>View All Jobs</span>

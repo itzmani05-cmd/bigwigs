@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Globe2, Users, ShieldCheck, Zap, BrainCircuit, BarChart3, Code2, Building2 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
-import aboutRightImage from "@/assests/aboutRightSide.png";
-import trustedPic1 from "@/assests/trusted/pic1.jpg";
-import trustedPic2 from "@/assests/trusted/pic2.jpg";
-import trustedPic3 from "@/assests/trusted/pic3.jpg";
 
-const AVATARS = [trustedPic1, trustedPic2, trustedPic3];
+const worldMapModules = import.meta.glob("/data/aboutPageWorldMap.png", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+const aboutWorldMap = Object.values(worldMapModules)[0];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -19,27 +19,23 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } },
 } as const;
 
+const heroStats = [
+  { icon: Globe2, value: "7+", label: "Countries Served" },
+  { icon: Users, value: "150+", label: "Projects Delivered" },
+  { icon: ShieldCheck, value: "98%", label: "Client Retention" },
+  { icon: Zap, value: "10+", label: "Years of Excellence" },
+];
+
+const featureChips = [
+  { icon: BrainCircuit, label: "AI & GenAI", position: "top-[16%] left-0 -translate-x-1/4", delay: 0 },
+  { icon: BarChart3, label: "Data Intelligence", position: "top-[16%] right-0 translate-x-1/4", delay: 1 },
+  { icon: Code2, label: "Software Engineering", position: "bottom-[30%] left-0 -translate-x-1/3", delay: 2 },
+  { icon: Building2, label: "Industry Solutions", position: "bottom-[30%] right-0 translate-x-1/3", delay: 3 },
+];
+
 export default function AboutHero() {
   return (
-    <section className="relative w-full overflow-hidden pt-10 pb-10 lg:pt-10 lg:pb-14">
-      {/* blue gradient mesh wash */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white/40 to-transparent"
-      />
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute -top-24 -left-24 h-[28rem] w-[28rem] rounded-full bg-brand-blue-500/10 blur-[130px]"
-        animate={{ opacity: [0.5, 0.9, 0.5] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-32 -right-20 h-[24rem] w-[24rem] rounded-full bg-orange-400/[0.08] blur-[120px]"
-        animate={{ opacity: [0.4, 0.8, 0.4] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
-
+    <section className="relative w-full overflow-hidden bg-white pt-7 pb-10 lg:pt-10 lg:pb-14">
       <Container className="relative z-10">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[45%_55%] lg:gap-10">
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
@@ -52,109 +48,99 @@ export default function AboutHero() {
 
             <motion.h1
               variants={itemVariants}
-              className="mt-5 text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-5xl lg:text-[44px] xl:text-5xl"
+              className="mt-5 text-3xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl lg:text-[40px] xl:text-5xl"
             >
-              Building Intelligent Data
-              <br />
-              That Powers{" "}
-              <span className="text-blue-500">
-                AI Innovation
-              </span>
+              Building Intelligence That Moves{" "}
+              <span className="text-blue-500">Businesses Forward</span>
             </motion.h1>
 
             <motion.p variants={itemVariants} className="mt-6 max-w-lg text-base leading-relaxed text-slate-500 sm:text-lg">
-              We help enterprises build intelligent AI products through high-quality
-              data annotation, Generative AI solutions, software engineering, and
-              healthcare AI technologies.
+              We combine data, AI, and engineering excellence to create
+              intelligent solutions that solve real-world problems and drive
+              meaningful impact.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="mt-8 flex flex-wrap items-center gap-4">
+            <motion.div variants={itemVariants} className="mt-6 flex flex-wrap items-center gap-4">
               <MagneticButton
-                href="#core-services"
+                href="/apply"
+                magnetic={false}
                 className="inline-flex items-center gap-2 rounded-lg bg-brand-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
               >
-                <span>Our Services</span>
+                <span>Work With Us</span>
                 <ArrowRight size={16} />
               </MagneticButton>
               <MagneticButton
-                href="#contact"
+                href="/services"
+                magnetic={false}
                 className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500 hover:text-brand-blue-600 select-none"
               >
-                <span>Contact Us</span>
+                <span>Explore Our Services</span>
                 <ArrowRight size={16} />
               </MagneticButton>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="mt-9 flex items-center gap-3">
-              <div className="flex -space-x-3">
-                {AVATARS.map((avatar, i) => (
-                  <img
-                    key={avatar}
-                    src={avatar}
-                    alt="Client from a global enterprise trusted by Bigwigs Technologies"
-                    className="h-9 w-9 rounded-full object-cover ring-2 ring-white"
-                    style={{ zIndex: AVATARS.length - i }}
-                  />
-                ))}
-              </div>
-              <p className="text-sm leading-snug text-slate-500">
-                Trusted by global enterprises
-                <br />
-                to build the future of AI.
-              </p>
             </motion.div>
           </motion.div>
 
-          <div className="relative hidden lg:mr-10 lg:block">
+          <div className="relative mx-auto hidden w-full max-w-[480px] lg:mr-10 lg:block">
             <motion.div
               aria-hidden
-              className="pointer-events-none absolute -inset-6 rounded-[36px] bg-brand-blue-500/15 blur-[60px]"
+              className="pointer-events-none absolute -inset-6 rounded-full bg-brand-blue-500/15 blur-[70px]"
               animate={{ opacity: [0.5, 0.9, 0.5] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             />
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute -inset-10 rounded-full border border-dashed border-brand-blue-300/40"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute -inset-16 hidden rounded-full border border-dashed border-brand-blue-200/30 sm:block"
-              animate={{ rotate: -360 }}
-              transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.span
-              aria-hidden
-              className="pointer-events-none absolute -left-3 top-[20%] h-2 w-2 rounded-full bg-brand-blue-400 shadow-[0_0_10px_3px_rgba(37,99,235,0.5)]"
-              animate={{ y: [0, -12, 0], opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.span
-              aria-hidden
-              className="pointer-events-none absolute -right-4 bottom-[24%] h-1.5 w-1.5 rounded-full bg-orange-400 shadow-[0_0_10px_3px_rgba(249,115,22,0.5)]"
-              animate={{ y: [0, -10, 0], opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+
+            <motion.img
+              src={aboutWorldMap}
+              alt="Global network of Bigwigs Technologies AI and data operations"
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+              className="relative z-10 h-auto w-full object-contain"
             />
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-              className="relative aspect-[3/2] overflow-hidden rounded-[28px] border border-white/10 bg-[#03132f] shadow-[0_40px_90px_-30px_rgba(7,27,70,0.5)]"
-            >
-              <img
-                src={aboutRightImage}
-                alt="Bigwigs Technologies AI operations center with holographic data visualization"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-200 ease-out hover:scale-105"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#03132f]/60 via-transparent to-[#03132f]/20"
-              />
-            </motion.div>
+            {featureChips.map((chip) => (
+              <motion.div
+                key={chip.label}
+                className={`absolute z-20 hidden items-center gap-2 rounded-2xl border border-white/60 bg-white/90 px-3 py-2 shadow-[0_16px_30px_-16px_rgba(15,23,42,0.3)] backdrop-blur-xl sm:flex ${chip.position}`}
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: chip.delay }}
+              >
+                <chip.icon size={15} strokeWidth={1.75} className="text-brand-blue-500" />
+                <span className="text-[11px] font-bold whitespace-nowrap text-slate-700">{chip.label}</span>
+              </motion.div>
+            ))}
           </div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+          className="mt-5 grid grid-cols-2 divide-x divide-y divide-slate-100 rounded-2xl border border-slate-200 bg-white shadow-[0_20px_45px_-20px_rgba(15,23,42,0.15)] sm:grid-cols-4 sm:divide-y-0"
+        >
+          {heroStats.map(({ icon: Icon, value, label }) => (
+            <div
+              key={label}
+              className="flex flex-col items-center justify-center px-4 py-4 text-center"
+            >
+              <div className="flex items-center gap-2">
+                <Icon
+                  size={20}
+                  strokeWidth={1.75}
+                  className="text-brand-blue-500"
+                />
+
+                <span className="text-lg font-extrabold tracking-tight text-slate-900 sm:text-xl">
+                  {value}
+                </span>
+              </div>
+
+              <span className="mt-1 text-[11px] leading-tight text-slate-500 sm:text-xs">
+                {label}
+              </span>
+            </div>
+          ))}
+        </motion.div>
       </Container>
     </section>
   );

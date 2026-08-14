@@ -30,7 +30,7 @@ export default function IconGridSection({
   ...gridProps
 }: IconGridSectionProps) {
   return (
-    <section id={id} className="relative w-full scroll-mt-24 overflow-hidden py-12 lg:py-14">
+    <section id={id} className="relative w-full scroll-mt-24 overflow-hidden bg-gradient-to-b from-orange-50/70 via-orange-50/25 to-white py-14 lg:py-16">
       <SectionBackdrop />
 
       <Container className="relative z-10">

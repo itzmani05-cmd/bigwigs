@@ -4,10 +4,17 @@ import { whyBigwigsFeatures } from "./whyBigwigsData";
 
 export default function WhyBigwigs() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-orange-50/50 via-white to-white py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-orange-50/60 via-orange-50/20 to-white py-10 lg:py-12">
       <Container className="relative z-10">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
+              The Bigwigs Difference
+            </span>
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+          </div>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Why Bigwigs Technologies?
           </h2>
         </div>
@@ -22,7 +29,7 @@ export default function WhyBigwigs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: i * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
-                className="glass-card group flex flex-col items-center rounded-[24px] p-7 text-center"
+                className="group flex flex-col items-center rounded-[24px] border border-slate-200 bg-white p-7 text-center shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]"
               >
                 <motion.span
                   className="flex h-16 w-16 items-center justify-center rounded-full border border-brand-blue-500/20 bg-brand-blue-50 text-brand-blue-500"

@@ -244,6 +244,7 @@ export default function CaseStudySection({
             <div className="mt-9">
               <MagneticButton
                 href={ctaHref}
+                magnetic={false}
                 className="inline-flex items-center gap-2 rounded-xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_-8px_rgba(37,99,235,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_50px_-4px_rgba(37,99,235,0.9)] select-none"
               >
                 <span>{ctaLabel}</span>

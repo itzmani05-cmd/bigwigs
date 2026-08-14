@@ -7,7 +7,6 @@ import {
   BarChart3,
   Languages,
   Users,
-  Newspaper,
   CalendarDays,
   Building2,
   BadgeCheck,
@@ -25,7 +24,6 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import ourTeamImage from "@/assests/about/ourteams.jpg";
-import blogImage from "@/assests/about/blog.jpg";
 import eventsImage from "@/assests/about/events.jpg";
 import locationImage from "@/assests/about/location.jpg";
 import certificationImage from "@/assests/about/certification.jpg";
@@ -63,14 +61,13 @@ export const navItems: NavItem[] = [
   { name: "Home", href: "/" },
   {
     name: "About",
-    href: "#about",
+    href: "/about",
     mega: {
       title: "About BigWigs",
       description:
         "Get to know the team, culture, and credentials behind our enterprise AI work.",
       links: [
         { name: "Our Team", href: "/team" },
-        { name: "Blogs", href: "/blog" },
         { name: "Events", href: "/events" },
         { name: "Locations", href: "/locations" },
         { name: "Certifications", href: "/certifications" },
@@ -81,12 +78,6 @@ export const navItems: NavItem[] = [
           title: "Our Team",
           description: "Meet the engineers and researchers behind BigWigs.",
           image: ourTeamImage,
-        },
-        {
-          icon: Newspaper,
-          title: "Blogs",
-          description: "Insights and updates from our engineering team.",
-          image: blogImage,
         },
         {
           icon: CalendarDays,
@@ -107,7 +98,7 @@ export const navItems: NavItem[] = [
           image: certificationImage,
         },
       ],
-      cta: { label: "Learn more about us", href: "#about" },
+      cta: { label: "Learn more about us", href: "/about" },
     },
   },
   {
@@ -222,7 +213,6 @@ export const navItems: NavItem[] = [
   },
   { name: "Case Studies", href: "/case-studies" },
   { name: "Careers", href: "/careers" },
-  { name: "Blog", href: "/blog" },
 ];
 
 export const ctaItem = { name: "Contact Us", href: "/contact" };

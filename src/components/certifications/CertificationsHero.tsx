@@ -66,6 +66,7 @@ export default function CertificationsHero() {
           <motion.div variants={itemVariants} className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <MagneticButton
               href="#certifications-grid"
+              magnetic={false}
               className="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
             >
               <span>View Certifications</span>
@@ -73,6 +74,7 @@ export default function CertificationsHero() {
             </MagneticButton>
             <MagneticButton
               href="#contact"
+              magnetic={false}
               className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500 hover:text-brand-blue-600 select-none"
             >
               <span>Talk To Us</span>

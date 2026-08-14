@@ -48,7 +48,7 @@ export default function IconGrid({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, delay: (i % 6) * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-            className={`glass-card rounded-[24px] ${hoverable ? "hover:bg-slate-50" : ""} ${
+            className={`rounded-[24px] border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] ${hoverable ? "hover:bg-slate-50" : ""} ${
               isCenter ? "flex flex-col items-center gap-3 px-5 py-7 text-center" : "flex flex-col gap-4 p-6"
             }`}
           >

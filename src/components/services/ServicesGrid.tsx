@@ -6,12 +6,16 @@ import { servicesGrid } from "./servicesGridData";
 
 export default function ServicesGrid() {
   return (
-    <section id="services-grid" className="relative w-full scroll-mt-24 overflow-hidden py-10 lg:py-12">
+    <section id="services-grid" className="relative w-full scroll-mt-24 overflow-hidden bg-white py-14 lg:py-16">
       <Container className="relative z-10">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
-            What We Build
-          </span>
+          <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
+              What We Build
+            </span>
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+          </div>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Services Engineered for Scale
           </h2>
@@ -31,7 +35,7 @@ export default function ServicesGrid() {
             >
               <Link
                 to={item.href}
-                className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/60 bg-white/70 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_32px_70px_-20px_rgba(37,99,235,0.28)]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-2 hover:border-slate-300 hover:shadow-[0_32px_70px_-20px_rgba(37,99,235,0.28)]"
               >
                 <span
                   aria-hidden

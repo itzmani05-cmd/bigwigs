@@ -16,12 +16,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
-import MagneticButton from "@/components/ui/MagneticButton";
 import aboutRightImage from "@/assests/aboutRightSide.png";
-import trustedPic1 from "@/assests/trusted/pic1.jpg";
-import trustedPic2 from "@/assests/trusted/pic2.jpg";
-import trustedPic3 from "@/assests/trusted/pic3.jpg";
-import trustedPic4 from "@/assests/trusted/pic4.jpg";
+
 import mountainFlagIllustration from "@/assests/about/mountainFlag.png";
 import telescopeIllustration from "@/assests/about/telescope.png";
 import shieldBadgeIllustration from "@/assests/about/shieldBadge.png";
@@ -112,7 +108,6 @@ const SERVICE_CHIPS = [
   },
 ];
 
-const AVATARS = [trustedPic1, trustedPic2, trustedPic3, trustedPic4];
 
 export default function AboutSection() {
   return (
@@ -196,7 +191,7 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.25)]"
+                  className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.25)]"
                 >
                   <img
                     src={pillar.illustration}
@@ -205,8 +200,8 @@ export default function AboutSection() {
                     className="pointer-events-none absolute -bottom-3 -right-3 h-20 w-20 object-contain opacity-20"
                   />
 
-                  <div className="relative z-10">
-                    <span className={`flex h-12 w-12 items-center justify-center rounded-full ${pillar.iconBg} ${pillar.iconText}`}>
+                  <div className="relative z-10 ">
+                    <span className={`flex h-12 w-12 items-center justify-center  rounded-full ${pillar.iconBg} ${pillar.iconText}`}>
                       <pillar.icon size={20} strokeWidth={1.75} />
                     </span>
                     <h3 className="mt-4 text-sm font-bold text-slate-900">{pillar.title}</h3>
@@ -217,27 +212,8 @@ export default function AboutSection() {
                   </div>
                 </motion.div>
               ))}
-            </div>
-
-            <div className="mt-7 flex items-center gap-3">
-              <div className="flex -space-x-3">
-                {AVATARS.map((avatar, i)=>(
-                  <img
-                    key={avatar}
-                    src={avatar}
-                    alt="Client from a global enterprise trusted by Bigwigs Technologies"
-                    className="h-9 w-9 rounded-full object-cover ring-2 ring-white"
-                    style={{ zIndex: AVATARS.length - i }}
-                  />
-                ))}
-              </div>
-              <p className="text-sm text-slate-500">
-                Trusted by <span className="font-bold text-slate-900">Global Enterprises</span>
-              </p>
-            </div>
+            </div>i 
           </div>
-
-          {/* RIGHT */}
           <div className="relative pb-8  lg:pb-10 lg:pl-6">
             {SERVICE_CHIPS.map((chip) => (
               <motion.div
@@ -252,16 +228,12 @@ export default function AboutSection() {
                 </span>
               </motion.div>
             ))}
-
-            {/* main glass panel */}
             <div className="relative mt-15 aspect-[4/3] overflow-hidden rounded-[28px] border border-white/10 bg-[#03132f] shadow-[0_40px_90px_-30px_rgba(7,27,70,0.5)]">
               <img
                 src={aboutRightImage}
                 alt="Bigwigs Technologies AI operations center with holographic data visualization"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-
-              {/* contrast wash so floating chips stay legible */}
               <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#03132f]/70 via-transparent to-[#03132f]/30"
@@ -281,7 +253,6 @@ export default function AboutSection() {
               />
             </div>
 
-            {/* floating stats bar */}
             <div className="relative z-20 mx-4 -mt-10 grid grid-cols-2 gap-y-6 rounded-[24px] border border-slate-100 bg-white p-6 shadow-[0_30px_60px_-24px_rgba(15,23,42,0.25)] sm:grid-cols-4 sm:divide-x sm:divide-slate-100 sm:gap-y-0 lg:-mt-12">
               {STATS.map((stat) => (
                 <div key={stat.label} className="flex flex-col items-center text-center sm:px-2">

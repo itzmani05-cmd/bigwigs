@@ -17,7 +17,7 @@ interface StatsBarProps {
 
 export default function StatsBar({ stats }: StatsBarProps) {
   return (
-    <section className="relative w-full overflow-hidden py-14 lg:py-16">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-violet-50/70 via-violet-50/25 to-white py-14 lg:py-16">
       <SectionBackdrop />
       <Container className="relative z-10">
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-4">
@@ -30,7 +30,7 @@ export default function StatsBar({ stats }: StatsBarProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-                className="glass-card flex flex-col items-center gap-3 rounded-[24px] px-4 py-8 text-center"
+                className="flex flex-col items-center gap-3 rounded-[24px] border border-slate-200 bg-white px-4 py-8 text-center shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue-50 text-brand-blue-500">
                   <Icon size={22} strokeWidth={1.75} />

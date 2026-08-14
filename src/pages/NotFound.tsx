@@ -9,7 +9,6 @@ const OPTIONAL_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/#services" },
   { label: "Industries", href: "/industries" },
-  { label: "Blogs", href: "/blog" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -64,6 +63,7 @@ export default function NotFound() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <MagneticButton
               href="/"
+              magnetic={false}
               className="inline-flex items-center gap-2 rounded-lg bg-brand-blue-600 px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-brand-blue-700 select-none"
             >
               <span>Go Back Home</span>
@@ -71,6 +71,7 @@ export default function NotFound() {
             </MagneticButton>
             <MagneticButton
               href="/#services"
+              magnetic={false}
               className="inline-flex items-center gap-2 rounded-lg border border-brand-blue-500/30 bg-white px-5 py-2.5 text-sm font-medium text-brand-blue-600 transition-colors duration-200 hover:bg-brand-blue-50 select-none"
             >
               <span>Explore Our Services</span>

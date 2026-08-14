@@ -159,6 +159,7 @@ export default function CTASection({
         <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:w-auto lg:justify-end">
           <MagneticButton
             href={primaryAction.href}
+            magnetic={false}
             className="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-5 py-3 text-center text-sm font-semibold text-white shadow-[0_10px_15px_-8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 select-none sm:w-auto sm:px-6"
           >
             <span>{primaryAction.label}</span>
@@ -169,6 +170,7 @@ export default function CTASection({
           {secondaryAction && (
             <MagneticButton
               href={secondaryAction.href}
+              magnetic={false}
               className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 select-none sm:w-auto sm:px-6"
             >
               <span>{secondaryAction.label}</span>
@@ -185,7 +187,7 @@ export default function CTASection({
   if (!withContainer) return card;
 
   return (
-    <section className="relative w-full overflow-hidden py-10 sm:py-14 lg:py-12">
+    <section className="relative w-full overflow-hidden py-10 sm:py-14 lg:py-16">
       <Container>{card}</Container>
     </section>
   );

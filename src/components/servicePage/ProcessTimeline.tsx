@@ -25,7 +25,7 @@ export default function ProcessTimeline({
   desktopColumnsClassName = "grid-cols-5",
 }: ProcessTimelineProps) {
   return (
-    <section className="relative w-full overflow-hidden py-16 lg:py-20">
+    <section className="relative w-full overflow-hidden bg-slate-50/70 py-16 lg:py-20">
       <SectionBackdrop />
       <Container className="relative z-10">
         <motion.div
@@ -69,7 +69,7 @@ export default function ProcessTimeline({
                     <Icon size={18} strokeWidth={1.75} />
                   </span>
                   {step.description ? (
-                    <div className="glass-card min-w-0 flex-1 rounded-2xl px-5 py-4">
+                    <div className="min-w-0 flex-1 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]">
                       <h3 className="text-sm font-bold text-slate-900">
                         {i + 1}. {step.title}
                       </h3>

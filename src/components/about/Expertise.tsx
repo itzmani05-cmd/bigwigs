@@ -7,7 +7,7 @@ const RADIUS = 36;
 
 export default function Expertise() {
   return (
-    <section className="relative w-full overflow-hidden bg-slate-50/70 py-10 lg:py-4">
+    <section className="relative w-full overflow-hidden bg-slate-50/70 py-14 lg:py-20">
       <motion.div
         aria-hidden
         className="pointer-events-none absolute right-0 top-1/2 h-[32rem] w-[32rem] -translate-y-1/2 translate-x-1/4 rounded-full bg-brand-blue-500/[0.1] blur-[130px]"
@@ -15,15 +15,21 @@ export default function Expertise() {
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <Container className="relative z-10 ">
-        <div className="px-24 grid grid-cols-1 items-center gap-14  lg:grid-cols-2 lg:gap-10">
+      <Container className="relative z-10">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-10">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
           >
-            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            <div className="flex items-center gap-3">
+              <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
+                What We're Good At
+              </span>
+            </div>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
               Our Expertise
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-slate-500 sm:text-lg">

@@ -20,7 +20,7 @@ const stats: Stat[] = [
 
 export default function GlobalImpact() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-brand-blue-50/60 via-white to-white py-14 lg:py-20">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-brand-blue-50/80 via-brand-blue-50/30 to-white py-14 lg:py-20">
       <motion.div
         aria-hidden
         className="pointer-events-none absolute -bottom-32 left-1/2 h-80 w-[34rem] -translate-x-1/2 rounded-full bg-brand-blue-500/[0.1] blur-[120px]"
@@ -29,8 +29,15 @@ export default function GlobalImpact() {
       />
 
       <Container className="relative z-10">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
+              By The Numbers
+            </span>
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+          </div>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Our Global Impact
           </h2>
         </div>
@@ -45,7 +52,7 @@ export default function GlobalImpact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-                className="glass-card flex flex-col items-center rounded-[24px] p-6 text-center sm:p-8"
+                className="flex flex-col items-center rounded-[24px] border border-slate-200 bg-white p-6 text-center shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:p-8"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-500">
                   <Icon size={22} strokeWidth={1.75} />

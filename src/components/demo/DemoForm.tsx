@@ -114,7 +114,7 @@ export default function DemoForm() {
 
   if (isSubmitted) {
     return (
-      <div className="glass-card flex flex-col items-center rounded-[28px] px-6 py-16 text-center sm:px-10">
+      <div className="flex flex-col items-center rounded-[28px] border border-gray-500 bg-gray-900 px-6 py-16 text-center shadow-sm sm:px-10">
         <motion.span
           initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -141,6 +141,7 @@ export default function DemoForm() {
         </p>
         <MagneticButton
           href="/"
+          magnetic={false}
           className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
         >
           <span>Back To Home</span>
@@ -151,7 +152,7 @@ export default function DemoForm() {
   }
 
   return (
-    <div className="glass-card overflow-hidden rounded-[28px] p-6 sm:p-10 lg:p-12">
+    <div className="overflow-hidden rounded-[28px] border border-gray-300 bg-white p-6 sm:p-10 lg:p-12 shadow-sm">
       <div>
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
           Demo Request Form
@@ -298,6 +299,7 @@ export default function DemoForm() {
         <MagneticButton
           as="button"
           type="submit"
+          magnetic={false}
           className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-blue-500 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none sm:w-auto"
         >
           <span>Schedule My Demo</span>

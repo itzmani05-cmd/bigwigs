@@ -53,7 +53,6 @@ export default function ServicesHero() {
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
                 Services
               </span>
-              <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
             </motion.div>
 
             <motion.h1
@@ -79,29 +78,7 @@ export default function ServicesHero() {
                 <span>Book a Demo</span>
                 <ArrowRight size={16} />
               </Link>
-              <MagneticButton
-                href="#services-grid"
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-6 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500 hover:text-brand-blue-600 select-none"
-              >
-                <span>Explore Services</span>
-                <ArrowRight size={16} />
-              </MagneticButton>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="mt-10">
-              <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400">
-                Trusted By Innovators Worldwide
-              </p>
-              <div className="mt-3 flex flex-wrap items-center gap-x-8 gap-y-3">
-                {TRUSTED_LOGOS.map((name) => (
-                  <span
-                    key={name}
-                    className="text-lg font-extrabold tracking-tight text-slate-300 grayscale transition-colors duration-300 hover:text-slate-500"
-                  >
-                    {name}
-                  </span>
-                ))}
-              </div>
+              
             </motion.div>
           </motion.div>
 

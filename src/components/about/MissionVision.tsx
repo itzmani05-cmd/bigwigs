@@ -2,31 +2,60 @@ import { motion } from "framer-motion";
 import { Target, Eye, Gem, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 
+interface ValueItem {
+  title: string;
+  description: string;
+}
+
 interface Pillar {
   icon: LucideIcon;
   title: string;
-  description: string;
-  accent: string;
+  description?: string;
+  items?: ValueItem[];
+  iconBg: string;
+  iconText: string;
+  bar: string;
 }
 
 const pillars: Pillar[] = [
   {
     icon: Target,
     title: "Our Mission",
-    description: "Deliver AI-powered solutions that create measurable business impact.",
-    accent: "#2563EB",
+    description:
+      "Our mission is to leverage our expertise in composite products to deliver high quality services inspired by creativity and innovation. We dream to be the go-to BPO organization that tailors our services to match our client requirements in the most effective way.",
+    iconBg: "bg-brand-blue-50",
+    iconText: "text-brand-blue-600",
+    bar: "bg-brand-blue-500",
   },
   {
     icon: Eye,
     title: "Our Vision",
-    description: "Be the most trusted AI data partner for global enterprises.",
-    accent: "#F97316",
+    description:
+      "Our vision is to become the standard of excellence in customer services and inspire other brands to do the same. We envision to provide the best services and use effective strategies to inspire and implement solutions to various business needs.",
+    iconBg: "bg-orange-50",
+    iconText: "text-orange-500",
+    bar: "bg-orange-500",
   },
   {
     icon: Gem,
     title: "Our Values",
-    description: "Innovation, integrity, and excellence in everything we deliver.",
-    accent: "#8B5CF6",
+    items: [
+      {
+        title: "Innovation",
+        description: "We continuously explore better ideas and emerging technologies.",
+      },
+      {
+        title: "Integrity",
+        description: "We build relationships through transparency, trust, and accountability.",
+      },
+      {
+        title: "Excellence",
+        description: "We are committed to delivering quality in everything we do.",
+      },
+    ],
+    iconBg: "bg-purple-50",
+    iconText: "text-purple-600",
+    bar: "bg-purple-500",
   },
 ];
 
@@ -38,41 +67,69 @@ export default function MissionVision() {
         className="pointer-events-none absolute left-1/2 top-0 h-[28rem] w-[36rem] -translate-x-1/2 rounded-full bg-brand-blue-500/[0.06] blur-[100px]"
       />
 
-      <Container className="relative z-10 max-w-[1100px]">
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {pillars.map((pillar, i) => {
-            const Icon = pillar.icon;
-            return (
-              <motion.div
-                key={pillar.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-                whileHover={{ y: -4 }}
-                className="group relative min-h-[205px] rounded-[20px] border border-[#E5EAF2] bg-white p-7 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-shadow duration-300 ease-out hover:border-[#D6DEEA] hover:shadow-[0_16px_40px_rgba(15,23,42,0.1)]"
-              >
-                {/* top accent line, overlapping the card's top border */}
-                <span
-                  aria-hidden
-                  className="absolute -top-px left-7 h-[2px] w-12 rounded-full"
-                  style={{ backgroundColor: pillar.accent }}
-                />
+      <Container className="relative z-10">
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
+              What Drives Us
+            </span>
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+          </div>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            Mission, Vision &amp; Values
+          </h2>
+        </div>
 
-                <span
-                  className="flex h-12 w-12 items-center justify-center rounded-full transition-shadow duration-300 group-hover:shadow-[0_0_0_6px_rgba(0,0,0,0.02)]"
-                  style={{ backgroundColor: `${pillar.accent}1A`, color: pillar.accent }}
+        <div className="relative mt-10">
+          {/* subtle connector implying Mission → Vision → Values, visible only in the gutters between cards */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute left-[16.6%] right-[16.6%] top-11 hidden h-px bg-gradient-to-r from-brand-blue-300 via-orange-300 to-purple-300 lg:block"
+          />
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {pillars.map((pillar, i) => {
+              const Icon = pillar.icon;
+              return (
+                <motion.div
+                  key={pillar.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
+                  whileHover={{ y: -4 }}
+                  className="group relative rounded-[20px] border border-slate-200 bg-white p-7 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-shadow duration-300 ease-out hover:border-slate-300 hover:shadow-[0_16px_40px_rgba(15,23,42,0.1)]"
                 >
-                  <Icon size={21} strokeWidth={1.8} />
-                </span>
+                  {/* top accent line, overlapping the card's top border */}
+                  <span aria-hidden className={`absolute -top-px left-7 h-[2px] w-12 rounded-full ${pillar.bar}`} />
 
-                <h3 className="mt-[18px] text-lg font-bold text-[#0F172A]">{pillar.title}</h3>
-                <p className="mt-2 max-w-[220px] text-[15px] leading-[1.6] font-normal text-[#64748B]">
-                  {pillar.description}
-                </p>
-              </motion.div>
-            );
-          })}
+                  <span
+                    className={`flex h-10 w-10 items-center justify-center rounded-full transition-shadow duration-300 group-hover:shadow-[0_0_0_6px_rgba(0,0,0,0.02)] ${pillar.iconBg} ${pillar.iconText}`}
+                  >
+                    <Icon size={18} strokeWidth={1.8} />
+                  </span>
+
+                  <h3 className="mt-4 text-lg font-bold text-slate-900">{pillar.title}</h3>
+
+                  {pillar.items ? (
+                    <ul className="mt-3 flex flex-col divide-y divide-slate-100">
+                      {pillar.items.map((item) => (
+                        <li key={item.title} className="py-2.5 first:pt-0 last:pb-0">
+                          <span className="text-sm font-bold text-slate-900">{item.title}</span>
+                          <p className="mt-0.5 text-[13px] leading-[1.5] text-slate-500">{item.description}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="mt-2 text-[15px] leading-[1.6] font-normal text-slate-500">
+                      {pillar.description}
+                    </p>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </Container>
     </section>

@@ -112,11 +112,13 @@ export default function DesktopNav({ items, pathname, activeHash }: DesktopNavPr
                   transition={{ type: "spring", stiffness: 400, damping: 32 }}
                 />
               )}
-              {hoveredIndex === index && (
+              {hoveredIndex === index && !isActive && (
                 <motion.span
-                  layoutId="navbar-pill"
-                  className="absolute inset-0 rounded-full bg-slate-100/80"
-                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                  aria-hidden
+                  className="absolute left-3 right-3 -bottom-0.5 h-[2px] origin-left rounded-full bg-slate-400"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
                 />
               )}
             </div>

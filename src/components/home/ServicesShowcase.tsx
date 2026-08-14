@@ -1,9 +1,6 @@
-﻿import { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { ACCENT_STYLES, coreServices, type CoreService } from "./coreServices";
-
-const GAP = 32;
 
 /** Splits a capability label into a keyword line and a descriptive line
  *  (e.g. "LiDAR & Point Cloud Annotation" -> ["LiDAR & Point Cloud", "Annotation"])
@@ -14,89 +11,21 @@ function splitCapabilityLines(label: string): [string, string] {
   return [words.slice(0, -1).join(" "), words[words.length - 1]];
 }
 
-function useVisibleCount() {
-  const [count, setCount] = useState(() => {
-    if (typeof window === "undefined") return 3;
-    if (window.innerWidth < 640) return 1;
-    if (window.innerWidth < 1024) return 2;
-    return 3;
-  });
-
-  useEffect(() => {
-    const update = () => {
-      const w = window.innerWidth;
-      setCount(w < 640 ? 1 : w < 1024 ? 2 : 3);
-    };
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  return count;
-}
-
-const slideVariants = {
-  enter: (direction: number) => ({
-    opacity: 0,
-    x: direction === 0 ? 0 : direction > 0 ? 60 : -60,
-  }),
-  center: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.45, ease: "easeInOut" },
-  },
-  exit: (direction: number) => ({
-    opacity: 0,
-    x: direction === 0 ? 0 : direction > 0 ? -60 : 60,
-    transition: { duration: 0.45, ease: "easeInOut" as const },
-  }),
-} as const;
-
 const CARD_CLIP =
   "polygon(0 30px, 12px 0, calc(100% - 40px) 0, 100% 40px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px))";
 
-function ConnectorArrow({ accent }: { accent: CoreService["accent"] }) {
-  const s = ACCENT_STYLES[accent];
-  return (
-    <motion.span
-      aria-hidden
-      animate={{ scale: [1, 1.08, 1] }}
-      transition={{
-        duration: 2.4,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-      className="
-        absolute
-        -right-5
-        top-54
-        -translate-y-1/2
-        z-20
-        hidden
-        h-8
-        w-8
-        items-center
-        justify-center
-        text-white
-        shadow-xl
-        sm:flex
-      "
-      style={{
-        clipPath:
-          "polygon(0% 0%, 78% 0%, 100% 50%, 78% 100%, 0% 100%, 18% 50%)",
-        background: `linear-gradient(to bottom right, ${s.iconGlow}, ${s.iconGlow} )`,
-      }}
-    >
-      <ArrowRight size={16} strokeWidth={2.5} />
-    </motion.span>
-  );
-}
-
-function ShowcaseCard({ service, showConnector }: { service: CoreService; showConnector: boolean }) {
+function ShowcaseCard({ service, index }: { service: CoreService; index: number }) {
   const Icon = service.icon;
   const s = ACCENT_STYLES[service.accent];
 
   return (
-    <div className="relative h-full">
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, delay: (index % 6) * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
+      className="h-full"
+    >
       <div
         className={`group flex h-full flex-col border bg-white p-5 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(37,99,235,0.2)] sm:p-7 ${s.cardBorder} ${s.cardBorderHover}`}
         style={{ clipPath: CARD_CLIP }}
@@ -170,10 +99,10 @@ function ShowcaseCard({ service, showConnector }: { service: CoreService; showCo
                       />
                     </span>
 
-                    <span className="flex min-h-[1.4em] flex-col justify-center break-words lg:min-h-[2.4em]">
-                      <span className="block truncate lg:hidden">{cap}</span>
-                      <span className="hidden lg:block">{line1}</span>
-                      <span className="hidden lg:block">{line2 || " "}</span>
+                    <span className="flex min-h-[1.4em] flex-col justify-center break-words sm:min-h-[2.4em]">
+                      <span className="block truncate sm:hidden">{cap}</span>
+                      <span className="hidden sm:block">{line1}</span>
+                      <span className="hidden sm:block">{line2 || " "}</span>
                     </span>
                   </li>
                 );
@@ -193,92 +122,16 @@ function ShowcaseCard({ service, showConnector }: { service: CoreService; showCo
           />
         </a>
       </div>
-
-      {showConnector && <ConnectorArrow accent={service.accent} />}
-    </div>
+    </motion.div>
   );
 }
 
-const arrowButtonClass =
-  "group flex h-11 w-11 items-center justify-center rounded-full border border-[#E5E7EB] bg-white shadow-lg transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-40 enabled:hover:-translate-y-0.5 enabled:hover:border-[#2563EB] enabled:hover:bg-[#2563EB] lg:h-14 lg:w-14";
-
 export default function ServicesShowcase() {
-  const visibleCount = useVisibleCount();
-  const maxIndex = Math.max(0, coreServices.length - visibleCount);
-  const [[currentIndex, direction], setState] = useState<[number, number]>([0, 0]);
-
-  useEffect(() => {
-    setState(([idx]) => (idx > maxIndex ? [maxIndex, 0] : [idx, 0]));
-  }, [maxIndex]);
-
-  const goLeft = useCallback(() => {
-    setState(([idx]) => [Math.max(idx - 1, 0), -1]);
-  }, []);
-
-  const goRight = useCallback(() => {
-    setState(([idx]) => [Math.min(idx + 1, maxIndex), 1]);
-  }, [maxIndex]);
-
-  const isFirst = currentIndex <= 0;
-  const isLast = currentIndex >= maxIndex;
-  const visibleServices = coreServices.slice(currentIndex, currentIndex + visibleCount);
-  const cardBasis = `calc((100% - ${(visibleCount - 1) * GAP}px) / ${visibleCount})`;
-
   return (
-    <div className="relative px-0 sm:px-12 lg:px-16">
-      <div className="mb-6 flex items-center justify-center gap-4 sm:justify-end lg:mb-8">
-        <button
-          type="button"
-          onClick={goLeft}
-          disabled={isFirst}
-          aria-label="Previous services"
-          className={arrowButtonClass}
-        >
-          <ArrowLeft
-            size={18}
-            strokeWidth={2}
-            className="text-slate-500 transition-colors duration-300 group-enabled:group-hover:text-white"
-          />
-        </button>
-
-        <button
-          type="button"
-          onClick={goRight}
-          disabled={isLast}
-          aria-label="Next services"
-          className={arrowButtonClass}
-        >
-          <ArrowRight
-            size={18}
-            strokeWidth={2}
-            className="text-brand-blue-500 transition-colors duration-300 group-enabled:group-hover:text-white"
-          />
-        </button>
-      </div>
-
-      <div className="overflow-hidden">
-        <AnimatePresence mode="wait" custom={direction} initial={false}>
-          <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            className="flex"
-            style={{ gap: GAP }}
-          >
-            {visibleServices.map((service, i) => (
-              <div
-                key={service.id}
-                style={{ flex: `0 0 ${cardBasis}`, maxWidth: cardBasis }}
-              >
-                <ShowcaseCard service={service} showConnector={i < visibleServices.length - 1} />
-              </div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-      </div>
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {coreServices.map((service, i) => (
+        <ShowcaseCard key={service.id} service={service} index={i} />
+      ))}
     </div>
   );
 }

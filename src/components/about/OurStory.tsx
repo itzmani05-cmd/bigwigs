@@ -4,7 +4,7 @@ import Container from "@/components/ui/Container";
 
 export default function OurStory() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-orange-50/50 via-white to-white py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-orange-50/70 via-orange-50/25 to-white py-10 lg:py-12">
       <motion.div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-blue-500/[0.07] blur-[120px]"
@@ -18,7 +18,7 @@ export default function OurStory() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-          className="glass-card relative mx-auto max-w-3xl overflow-hidden rounded-[28px] px-8 py-12 text-center sm:px-14 sm:py-16"
+          className="relative mx-auto max-w-3xl overflow-hidden rounded-[28px] border border-slate-200 bg-white px-8 py-12 text-center shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:px-14 sm:py-16"
         >
           <span
             aria-hidden

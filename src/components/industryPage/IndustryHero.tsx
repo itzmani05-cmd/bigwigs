@@ -82,6 +82,7 @@ export default function IndustryHero({
             <motion.div variants={itemVariants} className="mt-9 flex flex-wrap items-center gap-4">
               <MagneticButton
                 href={primaryCta.href}
+                magnetic={false}
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-blue-400 px-6 py-3 text-sm font-semibold text-white  transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_50px_-4px_rgba(37,99,235,0.9)] select-none"
               >
                 <span className="relative">{primaryCta.label}</span>
@@ -89,6 +90,7 @@ export default function IndustryHero({
               </MagneticButton>
               <MagneticButton
                 href={secondaryCta.href}
+                magnetic={false}
                 className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-300 hover:bg-slate-50 select-none"
               >
                 <span>{secondaryCta.label}</span>

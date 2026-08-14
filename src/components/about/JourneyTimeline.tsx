@@ -15,7 +15,7 @@ function MilestoneCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
-      className="glass-card group w-full max-w-[11rem] overflow-hidden rounded-2xl text-center"
+      className="group w-full max-w-[11rem] overflow-hidden rounded-2xl border border-slate-200 bg-white text-center shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]"
     >
       <span className={`block h-1 w-full ${milestone.bar}`} aria-hidden />
       <div className="px-4 py-4">
@@ -28,10 +28,17 @@ function MilestoneCard({
 
 export default function JourneyTimeline() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-violet-50/50 via-white to-white py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-violet-50/70 via-violet-50/25 to-white py-10 lg:py-12">
       <Container className="relative z-10">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+          <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
+              How Far We've Come
+            </span>
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+          </div>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Our Journey
           </h2>
           <p className="mt-3 text-base leading-relaxed text-slate-500 sm:text-lg">
@@ -72,7 +79,7 @@ export default function JourneyTimeline() {
                     </motion.span>
                   </span>
 
-                  <div className="glass-card min-w-0 flex-1 rounded-2xl px-5 py-4">
+                  <div className="min-w-0 flex-1 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]">
                     <span className="text-lg font-extrabold tracking-tight text-slate-900">
                       {milestone.year}
                     </span>

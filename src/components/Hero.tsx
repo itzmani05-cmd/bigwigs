@@ -2,8 +2,12 @@ import { ArrowRight, Users, ShieldCheck, Globe2, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
 import HeroVisualAnimation from "@/components/hero/HeroVisualAnimation";
-import googleLogo from "@/assests/google.png";
-import youtubeLogo from "@/assests/youtube.png";
+
+const partnerLogoModules = import.meta.glob("/data/trustedPartners/*", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+const trustedPartnerLogos = Object.values(partnerLogoModules);
 
 const eyebrowVariants = {
   hidden: { opacity: 0, y: 16 },
@@ -71,14 +75,6 @@ const stats = [
   { icon: ShieldCheck, value: "ISO 27001", label: "Certified" },
   { icon: Globe2, value: "Global", label: "Delivery" },
   { icon: Star, value: "99%", label: "Client Satisfaction" },
-];
-
-const trustedLogos = [
-  { name: "Google", logo: googleLogo },
-  { name: "YouTube", logo: youtubeLogo },
-  { name: "Google", logo: googleLogo },
-  { name: "YouTube", logo: youtubeLogo },
-  { name: "Google", logo: googleLogo },
 ];
 
 export default function Hero() {
@@ -159,16 +155,16 @@ export default function Hero() {
       </div>
 
       <div className="relative w-full border-t border-slate-100 bg-white">
-        <div className="mx-auto grid max-w-[1360px] grid-cols-2 items-center gap-4 px-4 py-2 sm:gap-8 sm:px-8 sm:py-2 lg:gap-12 lg:px-10">
+        <div className="mx-auto grid max-w-[1380px] grid-cols-1 items-center gap-6 px-4 py-5 sm:grid-cols-[45%_55%] sm:gap-8 sm:px-7 sm:py-2 lg:gap-12 lg:px-8">
           <motion.div
             variants={statsVariants}
             initial="hidden"
             animate="visible"
-            className="grid w-full grid-cols-2 gap-x-3 gap-y-4 sm:gap-x-6 sm:gap-y-5 lg:grid-cols-4 lg:gap-x-8"
+            className="grid w-full grid-cols-2 gap-x-2 gap-y-4 sm:gap-x-3 sm:gap-y-5 lg:grid-cols-4 lg:gap-x-3"
           >
            {stats.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="flex flex-col items-start gap-1.5">
-              <div className="flex items-center gap-2">
+            <div key={label} className="flex flex-col items-start gap-1">
+              <div className="flex items-center gap-1">
                 <Icon
                   size={20}
                   className="text-brand-blue-600"
@@ -186,17 +182,17 @@ export default function Hero() {
           ))}
           </motion.div>
 
-          <div className="flex flex-col items-start gap-3 border-l border-slate-100 pl-4 sm:items-end sm:gap-2 sm:pl-12">
+          <div className="flex flex-col items-start gap-3 border-t border-slate-100 pt-5 sm:items-end sm:gap-2 sm:border-l sm:border-t-0 sm:pl-12 sm:pr-6 sm:pt-0">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
               Trusted by Global Enterprises
             </span>
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 sm:justify-end sm:gap-x-10 sm:gap-y-3">
-              {trustedLogos.map((brand, i) => (
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 sm:justify-end">
+              {trustedPartnerLogos.map((logo) => (
                 <img
-                  key={`${brand.name}-${i}`}
-                  src={brand.logo}
-                  alt={brand.name}
-                  className="h-15 w-auto max-w-[120px] object-contain   duration-300 hover:opacity-90 sm:h-12 sm:max-w-[130px]"
+                  key={logo}
+                  src={logo}
+                  alt="Bigwigs Technologies partner logo"
+                  className="h-6 w-auto max-w-[100px] object-contain sm:h-8 sm:max-w-[120px]"
                 />
               ))}
             </div>

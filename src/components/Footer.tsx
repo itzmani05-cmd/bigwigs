@@ -81,14 +81,38 @@ interface ContactItem {
 }
 
 const CONTACT_INFO: ContactItem[] = [
-  { icon: MapPin, lines: ["204, 2nd floor,","Pudukkottai to Trichy road,","Mathur, Kulathur (PO),",
-    "Pudukkottai - 622515,","Tamil Nadu, India"] },
   {
-    icon: Mail,
-    lines: ["info@bigwigsfolks.in "],
-    href: "mailto:info@bigwigsfolks.in",
+    icon: MapPin,
+    lines: [
+      "Bigwigs Technologies Private Limited",
+      "2nd Floor, Vijaya Mini Hall,",
+      "206, Mathur, Tamil Nadu – 622515, India.",
+    ],
   },
-  { icon: Clock, lines: ["Monday – Saturday", "24 hours support with response","within 24 hours"] },
+];
+
+interface ContactGroup {
+  heading: string;
+  details: ContactItem[];
+}
+
+const CONTACT_GROUPS: ContactGroup[] = [
+  {
+    heading: "Business Enquiries",
+    details: [
+      { icon: Phone, lines: ["+91 93447 69914"], href: "tel:+919344769914" },
+      { icon: Mail, lines: ["info@bigwigsfolks.in"], href: "mailto:info@bigwigsfolks.in" },
+      { icon: Clock, lines: ["Monday – Sunday | 24/7"] },
+    ],
+  },
+  {
+    heading: "Interview & Career Enquiries",
+    details: [
+      { icon: Phone, lines: ["+91 63824 73625"], href: "tel:+916382473625" },
+      { icon: Mail, lines: ["hr@bigwigstech.com"], href: "mailto:hr@bigwigstech.com" },
+      { icon: Clock, lines: ["Monday – Saturday | 9:30 AM – 6:00 PM"] },
+    ],
+  },
 ];
 
 interface LinkGroup {
@@ -130,23 +154,8 @@ const linkGroups: LinkGroup[] = [
       { name: "Careers", href: "/careers" },
       { name: "Our Team", href: "/team" },
       { name: "Case Studies", href: "#" },
-      { name: "Blog & Insights", href: "/blog" },
       { name: "News & Updates", href: "#" },
       { name: "Contact Us", href: "#contact" },
-    ],
-  },
-  {
-    heading: "Resources",
-    links: [
-      { name: "Documentation", href: "#" },
-      { name: "Knowledge Base", href: "#" },
-      { name: "Datasets", href: "#" },
-      { name: "API Reference", href: "#" },
-      { name: "Guides & Tutorials", href: "#" },
-      { name: "Whitepapers", href: "#" },
-      { name: "Downloads", href: "#" },
-      { name: "Glossary", href: "#" },
-      { name: "Help Center", href: "#" },
     ],
   },
 ];
@@ -265,7 +274,7 @@ export default function Footer() {
                 const Icon = item.icon;
                 const content = (
                   <>
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-brand-blue-400">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-brand-blue-400">
                       <Icon size={16} strokeWidth={1.75} />
                     </span>
                     <span className="flex flex-col text-sm text-[#A1A1AA]">
@@ -293,7 +302,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Columns 2–5 — link groups */}
+          {/* Columns 2–4 — link groups */}
           {linkGroups.map((group) => (
             <nav key={group.heading} aria-label={group.heading} className="lg:col-span-2">
               <h4 className="text-sm font-bold text-white">{group.heading}</h4>
@@ -312,6 +321,46 @@ export default function Footer() {
               </ul>
             </nav>
           ))}
+
+          {/* Column 5 — contact details (replaces the old Resources column) */}
+          <nav aria-label="Contact" className="lg:col-span-2">
+            <h4 className="text-sm font-bold text-white">Contact</h4>
+            <span aria-hidden className="mt-2 block h-0.5 w-8 rounded-full bg-brand-blue-500" />
+            <div className="mt-5 flex flex-col gap-5">
+              {CONTACT_GROUPS.map((group) => (
+                <div key={group.heading}>
+                  <h5 className="text-xs font-semibold uppercase tracking-[0.08em] text-[#A1A1AA]">
+                    {group.heading}
+                  </h5>
+                  <ul className="mt-2.5 flex flex-col gap-2">
+                    {group.details.map((item, i) => {
+                      const Icon = item.icon;
+                      const content = (
+                        <>
+                          <Icon size={14} strokeWidth={1.75} className="shrink-0 text-brand-blue-400" />
+                          <span className="text-sm leading-snug text-[#A1A1AA]">{item.lines[0]}</span>
+                        </>
+                      );
+                      return (
+                        <li key={i}>
+                          {item.href ? (
+                            <a
+                              href={item.href}
+                              className={`flex items-center gap-2 transition-colors duration-200 hover:text-white ${focusRing}`}
+                            >
+                              {content}
+                            </a>
+                          ) : (
+                            <div className="flex items-center gap-2">{content}</div>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </nav>
         </div>
 
         {/* bottom bar */}

@@ -23,11 +23,11 @@ export default function FAQAccordion({
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative w-full overflow-hidden py-16 lg:py-20">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-brand-blue-50/70 via-brand-blue-50/25 to-white py-16 lg:py-20">
       <SectionBackdrop />
       <Container className="relative z-10">
         <div className="mx-auto max-w-xl text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">{eyebrow}</span>
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">{eyebrow}</span>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">{heading}</h2>
         </div>
 
@@ -35,7 +35,7 @@ export default function FAQAccordion({
           {items.map((item, i) => {
             const isOpen = openIndex === i;
             return (
-              <div key={item.question} className="glass-card overflow-hidden rounded-2xl">
+              <div key={item.question} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]">
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
