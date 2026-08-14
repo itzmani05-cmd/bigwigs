@@ -5,7 +5,6 @@ import {
   ScanEye,
   Workflow,
   BarChart3,
-  Code2,
   Languages,
   Users,
   Newspaper,
@@ -20,10 +19,7 @@ import {
   Truck,
   Mic,
   AudioLines,
-  Database,
-  ShieldCheck,
   BookOpen,
-  Bot,
   GraduationCap,
   Scale,
 } from "lucide-react";
@@ -64,7 +60,7 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
-  { name: "Home", href: "/Home" },
+  { name: "Home", href: "/" },
   {
     name: "About",
     href: "#about",
@@ -122,24 +118,14 @@ export const navItems: NavItem[] = [
       description:
         "Enterprise AI systems engineered for accuracy, security, and scale — across every domain we serve.",
       links: [
-        { name: "Software Development", href: "/service/software-development" },
         { name: "Medical Image Annotation", href: "/service/healthcare-ai" },
         { name: "AI Data Annotation", href: "/service/ai-data-annotation" },
         { name: "Generative AI Services", href: "/service/generative-ai" },
         { name: "Translation & Localization", href: "/service/translation-localization" },
         { name: "Transcription Services", href: "/service/transcription-services" },
         { name: "Voice & Speech Data Collection", href: "/service/voice-data-collection" },
-        { name: "Data Collection & AI Datasets", href: "/service/data-collection" },
-        { name: "Data Validation & QA", href: "/service/data-quality-assurance" },
-        { name: "Digital Publishing", href: "/service/digital-publishing" },
-        { name: "AI Agents & Automation", href: "/service/ai-agents-automation" },
       ],
       features: [
-        {
-          icon: Code2,
-          title: "Software Development",
-          description: "Custom, cloud-native software engineering.",
-        },
         {
           icon: Stethoscope,
           title: "Medical AI",
@@ -169,26 +155,6 @@ export const navItems: NavItem[] = [
           icon: AudioLines,
           title: "Voice & Speech Data Collection",
           description: "Enterprise speech datasets for voice AI and conversational AI.",
-        },
-        {
-          icon: Database,
-          title: "Data Collection & AI Datasets",
-          description: "Custom datasets, crowdsourcing, and synthetic data for AI training.",
-        },
-        {
-          icon: ShieldCheck,
-          title: "Data Validation & QA",
-          description: "Annotation QA, dataset validation, and accuracy benchmarking at scale.",
-        },
-        {
-          icon: BookOpen,
-          title: "Digital Publishing",
-          description: "XML-first publishing, eBook conversion, and accessible EPUB & PDF.",
-        },
-        {
-          icon: Bot,
-          title: "AI Agents & Automation",
-          description: "Autonomous agents that execute enterprise workflows end-to-end.",
         },
       ],
       cta: { label: "Explore all services", href: "/services" },

@@ -5,7 +5,7 @@ import type { MegaContent } from "./navConfig";
 
 export default function MegaMenuIntro({ content }: { content: MegaContent }) {
   const ctaClassName =
-    "group mt-8 lg:mt-auto lg:pt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green-600 hover:text-brand-green-700 transition-colors w-fit";
+    "group mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green-600 hover:text-brand-green-700 transition-colors w-fit";
   const ctaArrow = (
     <ArrowUpRight
       size={16}

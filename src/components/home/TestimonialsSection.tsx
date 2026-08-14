@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { useParallax } from "@/hooks/useParallax";
 import { testimonials, type Testimonial } from "./testimonials";
 
 const AUTOPLAY_DELAY = 7000;
@@ -47,24 +48,22 @@ function TestimonialCard({ item }: { item: Testimonial }) {
       </p>
 
       <div className="mt-7 border-t border-slate-100 pt-5">
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex min-w-0 items-center gap-2">
-            <img
-              src={item.avatar}
-              alt={item.name}
-              className="h-11 w-11 shrink-0 rounded-full object-cover shadow-md ring-4 ring-white"
-            />
-            <div className="min-w-0">
-              <p className="truncate text-sm font-bold text-slate-900">{item.name}</p>
-              <p className="truncate text-xs text-slate-500">{item.position}</p>
-            </div>
+        <div className="flex items-center gap-2">
+          <img
+            src={item.avatar}
+            alt={item.name}
+            className="h-11 w-11 shrink-0 rounded-full object-cover shadow-md ring-4 ring-white"
+          />
+          <div className="min-w-0">
+            <p className="text-sm font-bold text-slate-900">{item.name}</p>
+            <p className="text-xs text-slate-500">{item.position}</p>
           </div>
-          <div className="hidden shrink-0 items-center gap-1.5 text-slate-400 sm:flex">
-            <CompanyIcon size={16} strokeWidth={2} aria-hidden="true" />
-            <span className="text-xs font-bold tracking-tight whitespace-nowrap">
-              {item.company}
-            </span>
-          </div>
+        </div>
+        <div className="mt-3 flex items-center gap-1.5 text-slate-400">
+          <CompanyIcon size={16} strokeWidth={2} aria-hidden="true" />
+          <span className="text-xs font-bold tracking-tight text-slate-600">
+            {item.company}
+          </span>
         </div>
       </div>
     </motion.div>
@@ -72,6 +71,8 @@ function TestimonialCard({ item }: { item: Testimonial }) {
 }
 
 export default function TestimonialsSection() {
+  const { ref: mapRef, y: mapY } = useParallax(16);
+
   const groups = useMemo(() => {
     const chunks: Testimonial[][] = [];
     for (let i = 0; i < testimonials.length; i += CARDS_PER_GROUP) {
@@ -136,17 +137,25 @@ export default function TestimonialsSection() {
         }}
       />
 
-      {/* dotted world map */}
+      {/* dotted world map — subtle scroll parallax on the inner layer only; Framer Motion
+          owns the whole `transform` property once given a style motion value, so the
+          -translate-x-1/2 centering has to live on a separate wrapper. */}
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-0 h-[40rem] w-[56rem] -translate-x-1/2 opacity-40"
-        style={{
-          backgroundImage: "radial-gradient(#2563EB 1.4px, transparent 1.4px)",
-          backgroundSize: "15px 15px",
-          WebkitMaskImage: "radial-gradient(ellipse 60% 55% at 50% 0%, black 40%, transparent 75%)",
-          maskImage: "radial-gradient(ellipse 60% 55% at 50% 0%, black 40%, transparent 75%)",
-        }}
-      />
+      >
+        <motion.div
+          ref={mapRef}
+          style={{
+            y: mapY,
+            backgroundImage: "radial-gradient(#2563EB 1.4px, transparent 1.4px)",
+            backgroundSize: "15px 15px",
+            WebkitMaskImage: "radial-gradient(ellipse 60% 55% at 50% 0%, black 40%, transparent 75%)",
+            maskImage: "radial-gradient(ellipse 60% 55% at 50% 0%, black 40%, transparent 75%)",
+          }}
+          className="h-full w-full"
+        />
+      </div>
 
       <motion.div
         aria-hidden
@@ -169,13 +178,17 @@ export default function TestimonialsSection() {
 
       <Container className="relative z-10">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/25 bg-orange-50 px-4 py-1 text-xs font-bold tracking-[0.2em] text-orange-500 uppercase sm:text-sm">
-            Testimonials
-          </span> 
+          <div className="flex items-center justify-center gap-3" aria-hidden="true">
+            <span className="h-px w-8 bg-orange-500/50" />
+            <span className="text-xs font-bold tracking-[0.2em] text-orange-500 uppercase sm:text-sm">
+              Testimonials
+            </span>
+            <span className="h-px w-8 bg-orange-500/50" />
+          </div>
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-            Trusted by <span className="text-brand-blue-500">Innovators Worldwide</span> 
+            Trusted by <span className="text-brand-blue-500">Innovators Worldwide</span>
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-500 sm:text-lg">
+          <p className="mt-6 text-base leading-relaxed text-slate-500 sm:text-lg">
             See why global enterprises trust Bigwigs Technologies for high-quality AI
             data solutions.
           </p>
@@ -236,19 +249,23 @@ export default function TestimonialsSection() {
               <ArrowRight size={18} />
             </button>
           </div>
-          <div className="mt-10 flex items-center justify-center gap-2">
+          <div className="mt-10 flex items-center justify-center">
             {groups.map((_, i) => (
               <button
                 key={i}
                 type="button"
                 onClick={() => handleManualNav(() => goTo(i))}
                 aria-label={`Go to testimonial group ${i + 1}`}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  i === groupIndex
-                    ? "w-8 bg-brand-blue-500"
-                    : "w-2.5 bg-slate-300 hover:bg-slate-400"
-                }`}
-              />
+                className="group flex h-11 w-11 items-center justify-center"
+              >
+                <span
+                  className={`block h-2.5 rounded-full transition-all duration-300 ${
+                    i === groupIndex
+                      ? "w-8 bg-brand-blue-500"
+                      : "w-2.5 bg-slate-300 group-hover:bg-slate-400"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>

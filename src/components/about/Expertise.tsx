@@ -7,7 +7,7 @@ const RADIUS = 36;
 
 export default function Expertise() {
   return (
-    <section className="relative w-full overflow-hidden py-10 lg:py-4">
+    <section className="relative w-full overflow-hidden bg-slate-50/70 py-10 lg:py-4">
       <motion.div
         aria-hidden
         className="pointer-events-none absolute right-0 top-1/2 h-[32rem] w-[32rem] -translate-y-1/2 translate-x-1/4 rounded-full bg-brand-blue-500/[0.1] blur-[130px]"

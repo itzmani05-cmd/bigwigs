@@ -28,7 +28,7 @@ function MilestoneCard({
 
 export default function JourneyTimeline() {
   return (
-    <section className="relative w-full overflow-hidden py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-violet-50/50 via-white to-white py-10 lg:py-12">
       <Container className="relative z-10">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">

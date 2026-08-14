@@ -1,6 +1,6 @@
 import { Users, Layers, UsersRound, Award } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import StatCounter from "./StatCounter";
+import StatCounter from "@/components/ui/StatCounter";
 
 interface Stat {
   icon: LucideIcon;

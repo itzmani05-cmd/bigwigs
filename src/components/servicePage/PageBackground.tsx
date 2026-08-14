@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const PARTICLES = [
   { left: "8%", top: "14%", size: 3, tone: "blue", delay: "0s", duration: "8s" },
   { left: "22%", top: "62%", size: 2, tone: "orange", delay: "1.2s", duration: "9s" },
@@ -23,7 +25,13 @@ interface PageBackgroundProps {
 
 export default function PageBackground({ tint = "37,99,235" }: PageBackgroundProps) {
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-white">
+    <motion.div
+      aria-hidden
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-white"
+    >
       {/* blueprint grid + dot matrix */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-60" />
       <div
@@ -66,6 +74,6 @@ export default function PageBackground({ tint = "37,99,235" }: PageBackgroundPro
           }}
         />
       ))}
-    </div>
+    </motion.div>
   );
 }

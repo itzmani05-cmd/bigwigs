@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import ScrollingText from "@/components/ui/ScrollingText";
+import { sectionVariants, viewportOnce } from "@/lib/motion";
 
 const items = [
   "GIS & Geospatial Mapping",
@@ -11,8 +13,14 @@ const items = [
 
 export default function DomainTicker() {
   return (
-    <div className="relative bg-white border-y border-slate-100 py-5">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={sectionVariants}
+      className="relative bg-white border-y border-slate-100 py-5"
+    >
       <ScrollingText items={items} direction="left" className="text-slate-500" />
-    </div>
+    </motion.div>
   );
 }

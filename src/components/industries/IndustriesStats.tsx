@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { Users, ListChecks, Globe2, ShieldCheck, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
+import StatCounter from "@/components/ui/StatCounter";
 
 interface Stat {
   icon: LucideIcon;
@@ -20,32 +20,6 @@ const STATS: Stat[] = [
   { icon: Globe2, value: 50, suffix: "+", label: "Global Clients", color: "text-violet-500", bg: "bg-violet-50" },
   { icon: ShieldCheck, value: 99.5, decimals: 1, suffix: "%", label: "Quality Accuracy", color: "text-orange-500", bg: "bg-orange-50" },
 ];
-
-function StatValue({ value, decimals = 0, prefix = "", suffix }: { value: number; decimals?: number; prefix?: string; suffix: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { duration: 1600, bounce: 0 });
-
-  useEffect(() => {
-    if (isInView) motionValue.set(value);
-  }, [isInView, value, motionValue]);
-
-  useEffect(() => {
-    const unsubscribe = springValue.on("change", (latest) => {
-      if (ref.current) ref.current.textContent = `${prefix}${latest.toFixed(decimals)}${suffix}`;
-    });
-    return unsubscribe;
-  }, [springValue, decimals, prefix, suffix]);
-
-  return (
-    <span ref={ref}>
-      {prefix}
-      {(0).toFixed(decimals)}
-      {suffix}
-    </span>
-  );
-}
 
 export default function IndustriesStats() {
   return (
@@ -71,7 +45,7 @@ export default function IndustriesStats() {
                 <stat.icon size={22} strokeWidth={1.75} />
               </span>
               <span className={`text-3xl font-extrabold tracking-tight sm:text-4xl ${stat.color}`}>
-                <StatValue value={stat.value} decimals={stat.decimals} suffix={stat.suffix} />
+                <StatCounter value={stat.value} decimals={stat.decimals} suffix={stat.suffix} />
               </span>
               <span className="text-sm font-medium text-slate-500">{stat.label}</span>
             </motion.div>

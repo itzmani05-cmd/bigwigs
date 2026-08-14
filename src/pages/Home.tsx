@@ -4,6 +4,7 @@ import AboutSection from "@/components/home/AboutSection";
 import CoreServicesSection from "@/components/home/CoreServicesSection";
 import WhyChooseSection from "@/components/home/WhyChooseSection";
 import IndustriesSection from "@/components/home/IndustriesSection";
+import GlobalDeliverySection from "@/components/home/GlobalDeliverySection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <CoreServicesSection />
       <WhyChooseSection />
       <IndustriesSection />
+      <GlobalDeliverySection />
       <TestimonialsSection />
     </main>
   );

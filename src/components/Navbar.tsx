@@ -55,9 +55,13 @@ export default function Navbar() {
   return (
     <MotionConfig reducedMotion="user">
       <header
-        className={`sticky top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ease-out ${
+        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
           heroVisible ? "translate-y-0" : "-translate-y-full"
-        } ${scrolled ? "border-b border-slate-100 shadow-[0_1px_0_0_rgba(15,23,42,0.05)]" : "border-b border-transparent"}`}
+        } ${
+          scrolled
+            ? "bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-[0_1px_0_0_rgba(15,23,42,0.05)]"
+            : "bg-white border-b border-transparent"
+        }`}
       >
         <div className="mx-auto max-w-[1400px] px-4 lg:px-8 flex items-center justify-between h-18 lg:h-20">
           <HashLink href="#home" className="flex items-center group shrink-0">

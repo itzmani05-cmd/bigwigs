@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Rocket, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
+import { ctaVariants, viewportOnce } from "@/lib/motion";
 
 const CUBES = [
   { top: "18%", left: "8%", size: 18, duration: 14, delay: 0 },
@@ -38,7 +39,11 @@ export default function CTASection({
   className = "",
 }: CTASectionProps) {
   const card = (
-    <div
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={ctaVariants}
       className={`relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#03132f] via-[#0b1f45] to-[#0F172A] p-6 sm:p-10 md:p-12 lg:p-14 ${className}`}
     >
       <div
@@ -157,7 +162,9 @@ export default function CTASection({
             className="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-5 py-3 text-center text-sm font-semibold text-white shadow-[0_10px_15px_-8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 select-none sm:w-auto sm:px-6"
           >
             <span>{primaryAction.label}</span>
-            {primaryAction.showArrow !== false && <ArrowRight size={16} className="shrink-0" />}
+            {primaryAction.showArrow !== false && (
+              <ArrowRight size={16} className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+            )}
           </MagneticButton>
           {secondaryAction && (
             <MagneticButton
@@ -165,12 +172,14 @@ export default function CTASection({
               className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10 select-none sm:w-auto sm:px-6"
             >
               <span>{secondaryAction.label}</span>
-              {secondaryAction.showArrow && <ArrowRight size={16} className="shrink-0" />}
+              {secondaryAction.showArrow && (
+                <ArrowRight size={16} className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+              )}
             </MagneticButton>
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 
   if (!withContainer) return card;

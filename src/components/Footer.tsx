@@ -100,14 +100,11 @@ const linkGroups: LinkGroup[] = [
   {
     heading: "Our Services",
     links: [
-      { name: "Software Development", href: "/service/software-development" },
-      { name: "Medical Image Annotation", href: "/service/healthcare-ai" },
       { name: "AI Data Annotation", href: "/service/ai-data-annotation" },
       { name: "Generative AI Services", href: "/service/generative-ai" },
-      { name: "Translation & Localization", href: "/service/translation-localization" },
       { name: "Transcription Services", href: "/service/transcription-services" },
       { name: "Voice & Speech Data Collection", href: "/service/voice-data-collection" },
-      { name: "Data Collection & AI Datasets", href: "/service/data-collection" },
+      { name: "Software Development", href: "/service/software-development" },
       { name: "Data Validation & QA", href: "/service/data-quality-assurance" },
       { name: "Digital Publishing", href: "/service/digital-publishing" },
       { name: "AI Agents & Automation", href: "/service/ai-agents-automation" },

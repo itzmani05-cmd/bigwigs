@@ -1,6 +1,16 @@
+import { motion } from "framer-motion";
+import { useParallax } from "@/hooks/useParallax";
+
 export default function AboutBackground() {
+  const { ref, y } = useParallax(24);
+
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <motion.div
+      ref={ref}
+      style={{ y }}
+      className="absolute inset-0 overflow-hidden pointer-events-none"
+      aria-hidden="true"
+    >
       {/* Layer 2: atmospheric gradient glows, flowing lower-left (green) to upper-right (blue) */}
       <div className="absolute -bottom-60 -left-40 w-[560px] h-[560px] rounded-full bg-brand-green-400/25 blur-[110px] animate-drift-a" />
       <div className="absolute top-[38%] left-[26%] w-[420px] h-[420px] rounded-full bg-cyan-400/20 blur-[120px] animate-drift-b" />
@@ -79,6 +89,6 @@ export default function AboutBackground() {
           opacity: 0.3,
         }}
       />
-    </div>
+    </motion.div>
   );
 }

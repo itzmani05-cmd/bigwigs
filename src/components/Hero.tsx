@@ -1,7 +1,7 @@
-import { ArrowRight, Image, Box, Eye, MessageSquare, Users, ListChecks, Globe2, ShieldCheck } from "lucide-react";
+import { ArrowRight, Users, ShieldCheck, Globe2, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
-import heroIllustration from "@/assests/bgHero.png";
+import HeroVisual from "@/components/hero/HeroVisual";
 import googleLogo from "@/assests/google.png";
 import youtubeLogo from "@/assests/youtube.png";
 
@@ -32,19 +32,19 @@ const descriptionVariants = {
   },
 } as const;
 
-const featuresVariants = {
+const statsVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: 0.3, ease: [0.215, 0.61, 0.355, 1] },
+    transition: { duration: 0.7, delay: 0.35, ease: [0.215, 0.61, 0.355, 1] },
   },
 } as const;
 
 const buttonsVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.4 },
+    transition: { staggerChildren: 0.12, delayChildren: 0.28 },
   },
 } as const;
 
@@ -57,48 +57,22 @@ const buttonVariants = {
   },
 } as const;
 
-const serviceFeatures = [
-  {
-    icon: Image,
-    label: (
-      <>
-        AI Data
-        <br />
-        Annotation
-      </>
-    ),
+const illustrationVariants = {
+  hidden: { opacity: 0, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.9, delay: 0.15, ease: [0.215, 0.61, 0.355, 1] },
   },
-  {
-    icon: Box,
-    label: (
-      <>
-        LiDAR & 3D
-        <br />
-        Annotation
-      </>
-    ),
-  },
-  {
-    icon: Eye,
-    label: (
-      <>
-        Computer
-        <br />
-        Vision
-      </>
-    ),
-  },
-  {
-    icon: MessageSquare,
-    label: (
-      <>
-        NLP & Data
-        <br />
-        Processing
-      </>
-    ),
-  },
+} as const;
+
+const stats = [
+  { icon: Users, value: "12+", label: "Years Experience" },
+  { icon: ShieldCheck, value: "ISO 27001", label: "Certified" },
+  { icon: Globe2, value: "Global", label: "Delivery" },
+  { icon: Star, value: "99%", label: "Client Satisfaction" },
 ];
+
 const trustedLogos = [
   { name: "Google", logo: googleLogo },
   { name: "YouTube", logo: youtubeLogo },
@@ -107,143 +81,120 @@ const trustedLogos = [
   { name: "Google", logo: googleLogo },
 ];
 
-const stats = [
-  { icon: Users, value: "75+", label: "Expert Team" },
-  { icon: ListChecks, value: "10M+", label: "Tasks Completed" },
-  { icon: Globe2, value: "50+", label: "Global Clients" },
-  { icon: ShieldCheck, value: "99.5%", label: "Quality Accuracy" },
-];
-
 export default function Hero() {
   return (
-    <section id="home" className="relative w-full bg-[#03132f]">
-      <div className="relative w-full lg:min-h-[480px]">
-        <div
-          style={{ backgroundImage: `url(${heroIllustration})` }}
-          className="absolute inset-0 hidden bg-cover bg-center lg:block lg:bg-[position:67%_center]"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-[#03132f] via-[#03132f]/85 to-[#03132f]/25 lg:via-[#03132f]/70 lg:to-[#03132f]/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#03132f]/90 via-transparent to-[#03132f]/40" />
-
-        <div className="relative z-10 mx-auto flex lg:min-h-[450px] max-w-[1360px] items-center px-4 pt-14 pb-6 sm:px-10 sm:pt-16 lg:px-10 lg:py-0">
-          <div className="flex w-full flex-col items-start gap-3 text-left lg:w-[45%] lg:pr-6">
+    <section id="home" className="relative w-full overflow-hidden bg-white">
+      <div className="mx-auto max-w-[1360px] px-4 pt-4 pb-10 sm:px-8 lg:px-10 lg:pt-6 lg:pb-14">
+        <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-[0.8fr_1fr] lg:gap-8">
+          <div className="flex flex-col items-start gap-4 text-left">
             <motion.span
               variants={eyebrowVariants}
               initial="hidden"
               animate="visible"
-              className="text-[10px] sm:text-base font-semibold uppercase tracking-[0.15em] text-orange-400"
+              className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600"
             >
-              Transforming Data Into
+              AI. Data. Technology. Impact.
             </motion.span>
 
             <motion.h1
               variants={headingVariants}
               initial="hidden"
               animate="visible"
-              className="text-3xl sm:text-4xl lg:text-[50px] xl:text-[55px] font-extrabold uppercase tracking-tight leading-[1.05] text-white"
+              className="text-4xl font-extrabold leading-[1.02] tracking-[-0.03em] text-slate-900 sm:text-5xl lg:text-[72px]"
             >
-              Intelligent
+              From data
               <br />
-              <span className="bg-gradient-to-r from-sky-400 via-blue-400 to-blue-500 bg-clip-text text-transparent">
-                AI Solutions
-              </span>
+              <span className="text-brand-blue-600">to impact.</span>
             </motion.h1>
-
-            <span aria-hidden className="h-1 w-16 rounded-full bg-orange-500" />
 
             <motion.p
               variants={descriptionVariants}
               initial="hidden"
               animate="visible"
-              className="max-w-[450px] text-sm sm:text-base leading-relaxed text-slate-200"
+              className="max-w-[440px] text-lg font-medium text-slate-700"
             >
-              High-quality training data that powers the world&apos;s AI and
-              Machine Learning innovations.
+              We build AI and software that transform businesses.
             </motion.p>
 
-            <motion.div
-              variants={featuresVariants}
+            <motion.p
+              variants={descriptionVariants}
               initial="hidden"
               animate="visible"
-              className="hidden sm:grid sm:grid-cols-2 gap-x-6 gap-y-3 mt-2 lg:mt-4 lg:flex lg:w-fit lg:max-w-full lg:flex-nowrap lg:items-center lg:gap-0"
+              className="max-w-[460px] text-sm leading-relaxed text-slate-500 sm:text-base"
             >
-              {serviceFeatures.map(({ icon: Icon, label }, i) => (
-                <div key={i} className="flex items-center lg:shrink-0">
-                  {i !== 0 && (
-                    <span
-                      aria-hidden
-                      className="hidden h-6 w-px shrink-0 bg-white/15 lg:mx-4 lg:block"
-                    />
-                  )}
-                  <div className="flex items-center gap-2">
-                    <Icon size={24} className="shrink-0 text-[#7f9bba]" strokeWidth={1.5} />
-                    <span className="text-xs leading-[1.25] font-normal text-[#d8e0ea] lg:text-[13px]">
-                      {label}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
+              Partner with Bigwigs Technologies to unlock the power of your
+              data, automate operations, and deliver measurable business
+              outcomes at scale.
+            </motion.p>
 
             <motion.div
               variants={buttonsVariants}
               initial="hidden"
               animate="visible"
-              className="flex flex-wrap items-center gap-3 pt-3"
+              className="flex flex-wrap items-center gap-3 pt-2"
             >
               <motion.div variants={buttonVariants} className="w-full sm:w-auto">
                 <MagneticButton
-                  href="#services"
-                  className="flex w-full sm:w-auto min-w-[150px] items-center justify-center gap-2 rounded-lg bg-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_15px_-8px_rgba(249,115,22,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 select-none"
+                  href="#contact"
+                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-[#0b1742] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_24px_-10px_rgba(11,23,66,0.55)] transition-colors duration-300 hover:bg-[#132a63] select-none"
                 >
-                  <span>Explore Services</span>
+                  <span>Book a Free Consultation</span>
                   <ArrowRight size={16} />
                 </MagneticButton>
               </motion.div>
               <motion.div variants={buttonVariants} className="w-full sm:w-auto">
                 <MagneticButton
-                  href="#contact"
-                  className="flex w-full sm:w-auto min-w-[150px] items-center justify-center gap-2 rounded-lg border border-white/40 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/10 select-none"
+                  href="#services"
+                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg border border-[#0b1742]/25 bg-white px-5 py-3 text-sm font-semibold text-[#0b1742] transition-colors duration-300 hover:border-[#0b1742]/50 hover:bg-slate-50 select-none"
                 >
-                  <span>Get a Quote</span>
+                  <span>Explore Our Services</span>
                   <ArrowRight size={16} />
                 </MagneticButton>
               </motion.div>
             </motion.div>
+
+            <motion.div
+              variants={statsVariants}
+              initial="hidden"
+              animate="visible"
+              className="grid w-full grid-cols-2 gap-x-6 gap-y-5 pt-8 sm:grid-cols-4 sm:gap-x-4"
+            >
+              {stats.map(({ icon: Icon, value, label }) => (
+                <div key={label} className="flex flex-col items-start gap-1.5">
+                  <Icon size={20} className="text-brand-blue-600" strokeWidth={1.75} />
+                  <span className="text-sm font-extrabold tracking-tight text-slate-900 sm:text-base">
+                    {value}
+                  </span>
+                  <span className="text-xs leading-snug text-slate-500">{label}</span>
+                </div>
+              ))}
+            </motion.div>
           </div>
+
+          <motion.div
+            variants={illustrationVariants}
+            initial="hidden"
+            animate="visible"
+            className="relative mx-auto aspect-[3/2] w-full max-w-[620px] sm:aspect-[6/5] lg:max-w-none"
+          >
+            <HeroVisual />
+          </motion.div>
         </div>
       </div>
 
-      <div className="relative w-full bg-white">
-        <div className="mx-auto flex max-w-[1400px] flex-col items-center gap-8 px-4 py-3 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-10 lg:py-1.5">
-          <div className="flex flex-col items-center lg:items-start">
-            <span className="text-xs font-semibold uppercase tracking-[0.1em] pt-3.5 text-slate-700">
-              Trusted by Innovators
-            </span>
-            <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-1 lg:justify-start">
-              {trustedLogos.map((brand) => (
-                <img
-                  key={brand.name}
-                  src={brand.logo}
-                  alt={brand.name}
-                  className="h-12 w-auto max-w-[150px] object-contain opacity-50 grayscale transition-opacity duration-300 hover:opacity-90"
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="grid w-full grid-cols-2 gap-y-6 sm:grid-cols-4 sm:gap-y-0 sm:divide-x sm:divide-slate-200 lg:w-auto">
-            {stats.map(({ icon: Icon, value, label }) => (
-              <div key={label} className="flex flex-col items-center px-2 text-center sm:px-6">
-                 <div key={label} className="flex flex-row items-center px-5 text-center sm:px-6">
-                  <Icon size={18} className="text-orange-500" strokeWidth={1.75} />
-                  <span className="text-base sm:text-xl pl-1 font-extrabold tracking-tight text-[#03132f]">
-                    {value}
-                  </span>
-                </div>
-                <span className="text-xs sm:text-sm text-slate-500">{label}</span>
-              </div>
+      <div className="relative w-full border-t border-slate-100 bg-white">
+        <div className="mx-auto flex max-w-[1360px] flex-col items-center gap-5 px-4 py-6 sm:px-8 lg:px-10">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+            Trusted by Global Enterprises
+          </span>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            {trustedLogos.map((brand, i) => (
+              <img
+                key={`${brand.name}-${i}`}
+                src={brand.logo}
+                alt={brand.name}
+                className="h-9 w-auto max-w-[130px] object-contain opacity-45 grayscale transition-opacity duration-300 hover:opacity-90"
+              />
             ))}
           </div>
         </div>

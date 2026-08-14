@@ -4,7 +4,7 @@ import ourTeamImage from "@/assests/about/ourteams.jpg";
 
 export default function WhoWeAre() {
   return (
-    <section className="relative w-full overflow-hidden py-14 lg:py-20">
+    <section className="relative w-full overflow-hidden bg-white py-14 lg:py-20">
       <Container className="relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

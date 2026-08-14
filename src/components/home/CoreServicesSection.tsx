@@ -92,10 +92,9 @@ export default function CoreServicesSection() {
             AI-powered solutions that drive innovation and business impact.
           </p>
         </div>
-        <div className="mt-16">
+        <div className="mt-4">
           <ServicesShowcase />
         </div>
-
       </Container>
     </section>
   );

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
-import StatCounter from "@/components/home/StatCounter";
+import StatCounter from "@/components/ui/StatCounter";
 import SectionBackdrop from "./SectionBackdrop";
 
 export interface Stat {

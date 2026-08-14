@@ -1,101 +1,78 @@
 import { motion } from "framer-motion";
-import { Target, Eye } from "lucide-react";
+import { Target, Eye, Gem, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
+
+interface Pillar {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  accent: string;
+}
+
+const pillars: Pillar[] = [
+  {
+    icon: Target,
+    title: "Our Mission",
+    description: "Deliver AI-powered solutions that create measurable business impact.",
+    accent: "#2563EB",
+  },
+  {
+    icon: Eye,
+    title: "Our Vision",
+    description: "Be the most trusted AI data partner for global enterprises.",
+    accent: "#F97316",
+  },
+  {
+    icon: Gem,
+    title: "Our Values",
+    description: "Innovation, integrity, and excellence in everything we deliver.",
+    accent: "#8B5CF6",
+  },
+];
 
 export default function MissionVision() {
   return (
-    <section className="relative w-full overflow-hidden py-14 lg:py-20">
-      <Container className="relative z-10">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {/* Mission */}
-          <div className="relative">
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute -inset-6 rounded-[36px] bg-brand-blue-500/[0.09] blur-[70px]"
-              animate={{ opacity: [0.4, 0.85, 0.4] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-              className="glass-card relative overflow-hidden rounded-[28px] p-8 sm:p-10"
-            >
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-blue-50/60 via-transparent to-transparent"
-              />
-              <svg
-                aria-hidden
-                className="pointer-events-none absolute -bottom-10 -right-10 h-48 w-48 opacity-30"
-                viewBox="0 0 200 200"
-                fill="none"
-              >
-                <path d="M0 140 C 50 100, 90 180, 140 130 S 220 60, 260 110" stroke="#2563EB" strokeWidth="1.5" />
-                <path d="M0 170 C 50 130, 90 210, 140 160 S 220 90, 260 140" stroke="#2563EB" strokeWidth="1" opacity="0.6" />
-              </svg>
+    <section className="relative w-full overflow-hidden bg-white py-14 lg:py-20">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-0 h-[28rem] w-[36rem] -translate-x-1/2 rounded-full bg-brand-blue-500/[0.06] blur-[100px]"
+      />
 
-              <motion.span
-                className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white text-brand-blue-500 shadow-[0_10px_30px_-12px_rgba(37,99,235,0.35)]"
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+      <Container className="relative z-10 max-w-[1100px]">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {pillars.map((pillar, i) => {
+            const Icon = pillar.icon;
+            return (
+              <motion.div
+                key={pillar.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
+                whileHover={{ y: -4 }}
+                className="group relative min-h-[205px] rounded-[20px] border border-[#E5EAF2] bg-white p-7 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-shadow duration-300 ease-out hover:border-[#D6DEEA] hover:shadow-[0_16px_40px_rgba(15,23,42,0.1)]"
               >
-                <Target size={28} strokeWidth={1.75} />
-              </motion.span>
-              <h3 className="relative mt-6 text-2xl font-extrabold tracking-tight text-slate-900">
-                Our Mission
-              </h3>
-              <p className="relative mt-3 max-w-md text-base leading-relaxed text-slate-500">
-                Our mission is to leverage our expertise in composite products to deliver high quality services inspired by creativity and innovation. We dream to be the go-to BPO organization that tailors our services to match our client requirements in the most effective way.
-              </p>
-            </motion.div>
-          </div>
+                {/* top accent line, overlapping the card's top border */}
+                <span
+                  aria-hidden
+                  className="absolute -top-px left-7 h-[2px] w-12 rounded-full"
+                  style={{ backgroundColor: pillar.accent }}
+                />
 
-          {/* Vision */}
-          <div className="relative">
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute -inset-6 rounded-[36px] bg-orange-500/[0.09] blur-[70px]"
-              animate={{ opacity: [0.4, 0.85, 0.4] }}
-              transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            />
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
-              className="glass-card relative overflow-hidden rounded-[28px] p-8 sm:p-10"
-            >
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-orange-50/60 via-transparent to-transparent"
-              />
-              <svg
-                aria-hidden
-                className="pointer-events-none absolute -bottom-10 -right-10 h-48 w-48 opacity-30"
-                viewBox="0 0 200 200"
-                fill="none"
-              >
-                <path d="M0 140 C 50 100, 90 180, 140 130 S 220 60, 260 110" stroke="#F97316" strokeWidth="1.5" />
-                <path d="M0 170 C 50 130, 90 210, 140 160 S 220 90, 260 140" stroke="#F97316" strokeWidth="1" opacity="0.6" />
-              </svg>
+                <span
+                  className="flex h-12 w-12 items-center justify-center rounded-full transition-shadow duration-300 group-hover:shadow-[0_0_0_6px_rgba(0,0,0,0.02)]"
+                  style={{ backgroundColor: `${pillar.accent}1A`, color: pillar.accent }}
+                >
+                  <Icon size={21} strokeWidth={1.8} />
+                </span>
 
-              <motion.span
-                className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white text-orange-500 shadow-[0_10px_30px_-12px_rgba(249,115,22,0.35)]"
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              >
-                <Eye size={28} strokeWidth={1.75} />
-              </motion.span>
-              <h3 className="relative mt-6 text-2xl font-extrabold tracking-tight text-slate-900">
-                Our Vision
-              </h3>
-              <p className="relative mt-3 max-w-md text-base leading-relaxed text-slate-500">
-                Our vision is to become the standard of excellence in customer services and inspire other brands to do the same. We envision to provide the best services and use effective strategies to inspire and implement solutions to various business needs.
-              </p>
-            </motion.div>
-          </div>
+                <h3 className="mt-[18px] text-lg font-bold text-[#0F172A]">{pillar.title}</h3>
+                <p className="mt-2 max-w-[220px] text-[15px] leading-[1.6] font-normal text-[#64748B]">
+                  {pillar.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </Container>
     </section>

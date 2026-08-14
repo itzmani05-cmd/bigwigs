@@ -1,33 +1,9 @@
-import { useEffect, useRef, type ReactNode } from "react";
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import type { ReactNode } from "react";
+import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SpotlightCard from "./SpotlightCard";
-
-function StatValue({ value, decimals = 0, suffix = "" }: { value: number; decimals?: number; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { duration: 1600, bounce: 0 });
-
-  useEffect(() => {
-    if (isInView) motionValue.set(value);
-  }, [isInView, value, motionValue]);
-
-  useEffect(() => {
-    const unsubscribe = springValue.on("change", (latest) => {
-      if (ref.current) ref.current.textContent = `${latest.toFixed(decimals)}${suffix}`;
-    });
-    return unsubscribe;
-  }, [springValue, decimals, suffix]);
-
-  return (
-    <span ref={ref}>
-      {(0).toFixed(decimals)}
-      {suffix}
-    </span>
-  );
-}
+import StatCounter from "@/components/ui/StatCounter";
 
 export interface KpiItem {
   value: number;
@@ -88,7 +64,7 @@ export default function BusinessBenefitsSection({
                 {stat.isStatic ? (
                   stat.staticText
                 ) : (
-                  <StatValue value={stat.value} suffix={stat.suffix} />
+                  <StatCounter value={stat.value} suffix={stat.suffix} />
                 )}
               </span>
               <span className="mt-3 text-sm font-medium uppercase tracking-wide text-slate-500">

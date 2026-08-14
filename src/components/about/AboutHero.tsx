@@ -106,15 +106,12 @@ export default function AboutHero() {
           </motion.div>
 
           <div className="relative hidden lg:mr-10 lg:block">
-            {/* ambient glow behind the image */}
             <motion.div
               aria-hidden
               className="pointer-events-none absolute -inset-6 rounded-[36px] bg-brand-blue-500/15 blur-[60px]"
               animate={{ opacity: [0.5, 0.9, 0.5] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             />
-
-            {/* subtle orbit rings */}
             <motion.div
               aria-hidden
               className="pointer-events-none absolute -inset-10 rounded-full border border-dashed border-brand-blue-300/40"
@@ -127,8 +124,6 @@ export default function AboutHero() {
               animate={{ rotate: -360 }}
               transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
             />
-
-            {/* floating particles */}
             <motion.span
               aria-hidden
               className="pointer-events-none absolute -left-3 top-[20%] h-2 w-2 rounded-full bg-brand-blue-400 shadow-[0_0_10px_3px_rgba(37,99,235,0.5)]"

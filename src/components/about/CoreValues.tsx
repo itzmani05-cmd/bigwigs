@@ -4,7 +4,7 @@ import { coreValues } from "./coreValuesData";
 
 export default function CoreValues() {
   return (
-    <section className="relative w-full overflow-hidden py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-brand-blue-50/50 via-white to-white py-10 lg:py-12">
       <Container className="relative z-10">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">

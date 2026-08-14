@@ -108,7 +108,7 @@ function ShowcaseCard({ service, showConnector }: { service: CoreService; showCo
           <span aria-hidden className={`mt-1 block h-1 w-8 rounded-full ${s.underline}`} />
         </div>
 
-        <div className="relative mt-3 flex h-20 items-end justify-center">
+        <div className="relative mt-1 flex h-20 items-end justify-center">
           <span
             aria-hidden
             className={`absolute top-0 h-16 w-16 rounded-full border border-dashed opacity-40 ${s.cardBorder}`}
@@ -200,7 +200,7 @@ function ShowcaseCard({ service, showConnector }: { service: CoreService; showCo
 }
 
 const arrowButtonClass =
-  "group flex h-12 w-12 items-center justify-center rounded-full border border-[#E5E7EB] bg-white shadow-lg transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-40 enabled:hover:-translate-y-0.5 enabled:hover:border-[#2563EB] enabled:hover:bg-[#2563EB] lg:h-14 lg:w-14";
+  "group flex h-11 w-11 items-center justify-center rounded-full border border-[#E5E7EB] bg-white shadow-lg transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-40 enabled:hover:-translate-y-0.5 enabled:hover:border-[#2563EB] enabled:hover:bg-[#2563EB] lg:h-14 lg:w-14";
 
 export default function ServicesShowcase() {
   const visibleCount = useVisibleCount();
@@ -235,7 +235,7 @@ export default function ServicesShowcase() {
           className={arrowButtonClass}
         >
           <ArrowLeft
-            size={22}
+            size={18}
             strokeWidth={2}
             className="text-slate-500 transition-colors duration-300 group-enabled:group-hover:text-white"
           />
@@ -249,7 +249,7 @@ export default function ServicesShowcase() {
           className={arrowButtonClass}
         >
           <ArrowRight
-            size={22}
+            size={18}
             strokeWidth={2}
             className="text-brand-blue-500 transition-colors duration-300 group-enabled:group-hover:text-white"
           />

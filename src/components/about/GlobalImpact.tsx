@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { Users, ListChecks, Globe2, Target, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
+import StatCounter from "@/components/ui/StatCounter";
 
 interface Stat {
   icon: LucideIcon;
@@ -18,29 +18,9 @@ const stats: Stat[] = [
   { icon: Target, value: 99.5, decimals: 1, suffix: "%", label: "Quality Accuracy" },
 ];
 
-function ImpactCounter({ value, decimals = 0, suffix }: { value: number; decimals?: number; suffix: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { duration: 1600, bounce: 0 });
-
-  useEffect(() => {
-    if (isInView) motionValue.set(value);
-  }, [isInView, value, motionValue]);
-
-  useEffect(() => {
-    const unsubscribe = springValue.on("change", (latest) => {
-      if (ref.current) ref.current.textContent = `${latest.toFixed(decimals)}${suffix}`;
-    });
-    return unsubscribe;
-  }, [springValue, suffix, decimals]);
-
-  return <span ref={ref}>{(0).toFixed(decimals)}{suffix}</span>;
-}
-
 export default function GlobalImpact() {
   return (
-    <section className="relative w-full overflow-hidden py-14 lg:py-20">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-brand-blue-50/60 via-white to-white py-14 lg:py-20">
       <motion.div
         aria-hidden
         className="pointer-events-none absolute -bottom-32 left-1/2 h-80 w-[34rem] -translate-x-1/2 rounded-full bg-brand-blue-500/[0.1] blur-[120px]"
@@ -74,7 +54,7 @@ export default function GlobalImpact() {
                   className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl"
                   style={{ textShadow: "0 0 26px rgba(37,99,235,0.22)" }}
                 >
-                  <ImpactCounter value={stat.value} decimals={stat.decimals} suffix={stat.suffix} />
+                  <StatCounter value={stat.value} decimals={stat.decimals} suffix={stat.suffix} />
                 </span>
                 <span className="mt-1 text-sm font-medium text-slate-500">{stat.label}</span>
               </motion.div>

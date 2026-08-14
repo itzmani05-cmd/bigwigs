@@ -14,7 +14,7 @@ export default function Process() {
   const handleComplete = () => setActiveIndex((prev) => (prev + 1) % total);
 
   return (
-    <section className="relative w-full overflow-hidden py-14 lg:py-20">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-violet-50/50 via-white to-white py-14 lg:py-20">
       <motion.div
         aria-hidden
         className="pointer-events-none absolute -bottom-28 -left-20 h-80 w-80 rounded-full bg-brand-blue-500/[0.08] blur-[110px]"

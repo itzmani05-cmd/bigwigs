@@ -134,11 +134,11 @@ export const coreServices: CoreService[] = [
     capabilities: [
       "LLM Data Preparation",
       "Prompt Engineering",
-      "Retrieval-Augmented Generation (RAG)",
       "AI Chatbots",
       "AI Agents",
-      "Knowledge Base Solutions",
       "AI Workflow Automation",
+      "Knowledge Base Solutions",
+      "Retrieval-Augmented Generation (RAG)",
     ],
     ctaLabel: "Explore GenAI",
     href: "/service/generative-ai",
