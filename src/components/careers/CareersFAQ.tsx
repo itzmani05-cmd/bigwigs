@@ -2,13 +2,15 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import Container from "@/components/ui/Container";
+import SectionBackdrop from "@/components/servicePage/SectionBackdrop";
 import { faqItems } from "./faqData";
 
 export default function CareersFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative w-full overflow-hidden py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-brand-blue-50/70 via-brand-blue-50/25 to-white py-10 lg:py-12">
+      <SectionBackdrop />
       <Container className="relative z-10">
         <div className="mx-auto max-w-xl text-center">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
@@ -23,7 +25,7 @@ export default function CareersFAQ() {
           {faqItems.map((item, i) => {
             const isOpen = openIndex === i;
             return (
-              <div key={item.question} className="glass-card overflow-hidden rounded-2xl">
+              <div key={item.question} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]">
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : i)}

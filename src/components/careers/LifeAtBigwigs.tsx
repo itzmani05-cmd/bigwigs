@@ -6,7 +6,7 @@ import { lifeFeatures } from "./lifeAtBigwigsData";
 
 export default function LifeAtBigwigs() {
   return (
-    <section className="relative w-full overflow-hidden py-14 lg:py-20">
+    <section id="life-at-bigwigs" className="relative w-full scroll-mt-24 overflow-hidden py-14 lg:py-20">
       <Container className="relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-14">
           <motion.div
@@ -38,7 +38,7 @@ export default function LifeAtBigwigs() {
               </span>
               <span aria-hidden className="h-px w-8 bg-brand-blue-500/40" />
             </div>
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="mt-4 text-[clamp(1.375rem,6.5vw,1.875rem)] font-extrabold leading-[1.2] tracking-tight text-slate-900 sm:text-4xl sm:leading-[1.15]">
               A Place Where You Belong
               <br />
               And Make An Impact

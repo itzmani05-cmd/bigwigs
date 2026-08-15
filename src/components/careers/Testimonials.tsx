@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { User } from "lucide-react";
 import Container from "@/components/ui/Container";
 import logo from "@/assests/logo.png";
 import { testimonials } from "./testimonialsData";
+
+const DOT_GRID = Array.from({ length: 24 });
 
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
@@ -29,40 +31,31 @@ export default function Testimonials() {
       />
 
       <Container className="relative z-10">
-        <div className="mx-auto max-w-xl text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
-            Our Team
-          </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Hear From Our Team
-          </h2>
+        <div className="relative">
+          <div className="mx-auto max-w-xl text-center">
+            <div className="flex items-center justify-center gap-3">
+              <span aria-hidden className="h-px w-8 bg-brand-blue-200" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
+                Our Team
+              </span>
+              <span aria-hidden className="h-px w-8 bg-brand-blue-200" />
+            </div>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+              Hear From <span className="text-brand-blue-500">Our Team</span>
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-slate-500 sm:text-base">
+              Real stories from real people who are building, growing, and making an
+              impact at Bigwigs Technologies.
+            </p>
+          </div>
         </div>
 
         <div
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="relative mx-auto mt-12 max-w-3xl"
+          className="relative mx-auto mt-10 max-w-4xl"
         >
-          <div className="mb-4 flex items-center justify-end gap-2">
-            <button
-              type="button"
-              onClick={() => goTo(index - 1)}
-              aria-label="Previous testimonial"
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white/70 text-slate-500 backdrop-blur-sm transition-colors duration-200 hover:border-brand-blue-500 hover:text-brand-blue-600 sm:h-10 sm:w-10"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <button
-              type="button"
-              onClick={() => goTo(index + 1)}
-              aria-label="Next testimonial"
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white/70 text-slate-500 backdrop-blur-sm transition-colors duration-200 hover:border-brand-blue-500 hover:text-brand-blue-600 sm:h-10 sm:w-10"
-            >
-              <ChevronRight size={18} />
-            </button>
-          </div>
-
-          <div className="relative min-h-[300px] overflow-hidden sm:min-h-[280px]">
+          <div className="relative min-h-[420px] overflow-hidden sm:min-h-[300px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
@@ -70,30 +63,50 @@ export default function Testimonials() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -30 }}
                 transition={{ duration: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
-                className="glass-card flex flex-col items-center gap-5 rounded-[28px] p-6 text-center sm:p-10"
+                className="relative overflow-hidden rounded-[28px] border border-slate-300 bg-white p-6 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:p-10 lg:p-12"
               >
-                <Quote size={32} strokeWidth={1.5} className="text-brand-blue-200" />
-                <p className="max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-                  &ldquo;{active.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <img
-                    src={active.photo}
-                    alt={active.name}
-                    className="h-12 w-12 rounded-full object-cover ring-2 ring-white"
-                  />
-                  <div className="text-left">
-                    <p className="text-sm font-bold text-slate-900">{active.name}</p>
-                    <p className="text-xs text-slate-500">
-                      {active.role} &middot; {active.department}
-                    </p>
-                  </div>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute left-6 top-6 grid grid-cols-4 gap-1.5 opacity-50 sm:left-9 sm:top-9"
+                >
+                  {DOT_GRID.map((_, i) => (
+                    <span key={i} className="h-1 w-1 rounded-full bg-slate-300" />
+                  ))}
                 </div>
-                <div className="mt-1 flex items-center gap-1.5 opacity-70">
-                  <img src={logo} alt="Bigwigs Technologies" className="h-4 w-auto object-contain" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-slate-500">
-                    Bigwigs Technologies
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -right-0 -top-0 select-none font-serif text-[120px] leading-none text-slate-100"
+                >
+                  &rdquo;
+                </span>
+
+                <div className="relative pl-8 sm:pl-16">
+                  <span aria-hidden className="font-serif text-5xl leading-none text-brand-blue-500 sm:text-6xl">
+                    &ldquo;
                   </span>
+                  <p className="mt-1 max-w-xl text-xl font-medium leading-snug text-slate-900 sm:text-xl">
+                    {active.quote}
+                  </p>
+
+                  <div className="mt-4 h-px w-16 bg-slate-200" />
+
+                  <div className="mt-4 flex items-center gap-4">
+                    <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-500">
+                      <User size={26} strokeWidth={1.75} />
+                    </span>
+                    <div>
+                      <p className="text-base font-bold text-slate-900">{active.name}</p>
+                      <p className="text-sm text-slate-500">
+                        {active.role} &middot; {active.department}
+                      </p>
+                      <div className="mt-2 flex items-center gap-1.5 opacity-70">
+                        <img src={logo} alt="Bigwigs Technologies" className="h-4 w-auto object-contain" />
+                        <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-slate-500">
+                          Bigwigs Technologies
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>

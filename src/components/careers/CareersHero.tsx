@@ -1,14 +1,41 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Brain, Code2, BarChart3, Users2, Rocket } from "lucide-react";
 import Container from "@/components/ui/Container";
-import MagneticButton from "@/components/ui/MagneticButton";
-import careersRightImage from "@/assests/aboutRightSide.png";
-import trustedPic1 from "@/assests/trusted/pic1.jpg";
-import trustedPic2 from "@/assests/trusted/pic2.jpg";
-import trustedPic3 from "@/assests/trusted/pic3.jpg";
-import trustedPic4 from "@/assests/trusted/pic4.jpg";
+import { Link } from "react-router-dom";
+import logo from "@/assests/logo.png";
 
-const AVATARS = [trustedPic1, trustedPic2, trustedPic3, trustedPic4];
+const ORBIT_CARDS = [
+  {
+    icon: Brain,
+    title: "AI & Innovation",
+    className: "left-1/2 top-5 -translate-x-1/2",
+    delay: 0,
+  },
+  {
+    icon: Code2,
+    title: "Engineering Excellence",
+    className: "left-[-20%] top-[27%]",
+    delay: 0.6,
+  },
+  {
+    icon: BarChart3,
+    title: "Growth & Learning",
+    className: "right-[-16%] top-[32%]",
+    delay: 1.2,
+  },
+  {
+    icon: Users2,
+    title: "Great Culture",
+    className: "left-0 bottom-18",
+    delay: 1.8,
+  },
+  {
+    icon: Rocket,
+    title: "Make Impact",
+    className: "right-0 bottom-5",
+    delay: 2.4,
+  },
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -35,7 +62,7 @@ export default function CareersHero() {
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -bottom-32 -right-20 h-[24rem] w-[24rem] rounded-full bg-orange-400/[0.08] blur-[120px]"
+        className="pointer-events-none absolute -bottom-32 -right-20 h-[24rem] w-[24rem] rounded-full bg-violet-400/[0.08] blur-[120px]"
         animate={{ opacity: [0.4, 0.8, 0.4] }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
@@ -46,116 +73,85 @@ export default function CareersHero() {
             <motion.div variants={itemVariants} className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
-                Careers
+                Careers At Bigwigs
               </span>
-              <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="mt-5 text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-5xl lg:text-[44px] xl:text-5xl"
+              className="mt-5 text-[clamp(1.5rem,7.5vw,2.25rem)] font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-5xl sm:leading-[1.12] lg:text-[44px] xl:text-5xl"
             >
-              Build The Future
+              Build Your Career.
               <br />
-              Of{" "}
-              <span className="text-blue-500">
-                Artificial Intelligence
-              </span>
+              Build The Future.
+              <br />
+              <span className="text-blue-500">Together.</span>
             </motion.h1>
 
             <motion.p variants={itemVariants} className="mt-6 max-w-lg text-base leading-relaxed text-slate-500 sm:text-lg">
-              Join Bigwigs Technologies and work with engineers, AI specialists,
-              designers, and innovators building intelligent products for global
-              enterprises.
+              Join a team of passionate engineers, AI experts, designers, and
+              innovators building intelligent products that empower businesses
+              globally.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="mt-8 flex flex-wrap items-center gap-4">
-              <MagneticButton
-                href="#open-positions"
-                  magnetic={false}
-                className="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
+            <motion.div variants={itemVariants} className="mt-7 flex flex-wrap items-center gap-4">
+              <Link
+                to="/apply"
+                className="inline-flex items-center gap-2 rounded-lg bg-brand-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-700 select-none"
               >
-                <span>View Open Positions</span>
+                <span>Apply Now</span>
                 <ArrowRight size={16} />
-              </MagneticButton>
-              <MagneticButton
-                href="#why-join"
-                  magnetic={false}
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500 hover:text-brand-blue-600 select-none"
-              >
-                <span>Join Our Team</span>
-                <ArrowRight size={16} />
-              </MagneticButton>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="mt-9 flex items-center gap-3">
-              <div className="flex -space-x-3">
-                {AVATARS.map((avatar, i) => (
-                  <img
-                    key={avatar}
-                    src={avatar}
-                    alt="Bigwigs Technologies employee"
-                    className="h-9 w-9 rounded-full object-cover ring-2 ring-white"
-                    style={{ zIndex: AVATARS.length - i }}
-                  />
-                ))}
-              </div>
-              <p className="text-sm leading-snug text-slate-500">
-                Trusted by passionate innovators
-                <br />
-                worldwide.
-              </p>
+              </Link>
             </motion.div>
           </motion.div>
 
-          <div className="relative hidden lg:mr-10 lg:block">
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute -inset-6 rounded-[36px] bg-brand-blue-500/15 blur-[60px]"
-              animate={{ opacity: [0.5, 0.9, 0.5] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute -inset-10 rounded-full border border-dashed border-brand-blue-300/40"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute -inset-16 hidden rounded-full border border-dashed border-brand-blue-200/30 sm:block"
-              animate={{ rotate: -360 }}
-              transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.span
-              aria-hidden
-              className="pointer-events-none absolute -left-3 top-[20%] h-2 w-2 rounded-full bg-brand-blue-400 shadow-[0_0_10px_3px_rgba(37,99,235,0.5)]"
-              animate={{ y: [0, -12, 0], opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.span
-              aria-hidden
-              className="pointer-events-none absolute -right-4 bottom-[24%] h-1.5 w-1.5 rounded-full bg-orange-400 shadow-[0_0_10px_3px_rgba(249,115,22,0.5)]"
-              animate={{ y: [0, -10, 0], opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            />
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-              className="relative aspect-[3/2] overflow-hidden rounded-[28px] border border-white/10 bg-[#03132f] shadow-[0_40px_90px_-30px_rgba(7,27,70,0.5)]"
-            >
-              <img
-                src={careersRightImage}
-                alt="Bigwigs Technologies AI workspace with holographic data visualization"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-out hover:scale-105"
-              />
+          <div className="relative hidden md:block">
+            <div className="relative mx-auto aspect-square w-full max-w-[480px]">
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#03132f]/60 via-transparent to-[#03132f]/20"
+                className="pointer-events-none absolute bottom-0 left-1/2 h-16 w-56 -translate-x-1/2 translate-y-1/2 rounded-full bg-brand-blue-500/30 blur-[50px]"
               />
-            </motion.div>
+
+              <motion.div
+                aria-hidden
+                className="pointer-events-none absolute inset-[7%] rounded-full border border-dashed border-brand-blue-300/60"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div
+                aria-hidden
+                className="pointer-events-none absolute inset-[20%] rounded-full border border-dashed border-brand-blue-300/60"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+              />
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+                className="absolute left-1/2 top-1/2 z-10 flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-brand-blue-200 bg-gradient-to-br from-white via-brand-blue-50 to-brand-blue-100/60 shadow-[0_20px_50px_-15px_rgba(37,99,235,0.35)]"
+              >
+                <img src={logo} alt="Bigwigs Technologies" className="h-14 w-auto object-contain" />
+              </motion.div>
+
+              {ORBIT_CARDS.map((card, i) => (
+                <motion.div
+                  key={card.title}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: [0, -8, 0] }}
+                  transition={{
+                    opacity: { duration: 0.5, delay: 0.3 + i * 0.1 },
+                    y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: card.delay },
+                  }}
+                  className={`absolute z-20 inline-flex items-center gap-2.5 whitespace-nowrap rounded-2xl border border-slate-100 bg-white px-3.5 py-2.5 shadow-[0_16px_35px_-18px_rgba(15,23,42,0.25)] ${card.className}`}
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-blue-50 text-brand-blue-500">
+                    <card.icon size={16} strokeWidth={1.75} />
+                  </span>
+                  <span className="text-sm font-semibold leading-tight text-slate-900">{card.title}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </Container>

@@ -5,10 +5,7 @@ export default function CareersCTA() {
     <CTASection
       heading={
         <>
-          Ready To Shape{" "}
-          <span className="text-blue-800">
-            The Future?
-          </span>
+          Ready To Shape The Future Of AI?
         </>
       }
       description="Become part of Bigwigs Technologies and help build intelligent AI solutions that impact millions worldwide."

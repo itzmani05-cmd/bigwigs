@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
+import SectionBackdrop from "@/components/servicePage/SectionBackdrop";
 import { hiringSteps } from "./hiringProcessData";
 
 export default function HiringProcess() {
   return (
-    <section className="relative w-full overflow-hidden py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-slate-50/70 py-10 lg:py-12">
+      <SectionBackdrop />
       <Container className="relative z-10">
         <div className="mx-auto max-w-xl text-center">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
@@ -16,7 +18,7 @@ export default function HiringProcess() {
         </div>
 
         {/* mobile / tablet: vertical stepper */}
-        <div className="relative mt-10 lg:hidden">
+        <div className="relative mt-10 xl:hidden">
           <div
             aria-hidden
             className="absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-brand-blue-200 via-brand-blue-400 to-brand-blue-200"
@@ -38,7 +40,7 @@ export default function HiringProcess() {
                   >
                     <Icon size={20} strokeWidth={1.75} />
                   </span>
-                  <div className="glass-card min-w-0 flex-1 rounded-2xl px-5 py-4">
+                  <div className="min-w-0 flex-1 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]">
                     <h3 className="text-sm font-bold text-slate-900">{step.title}</h3>
                     <p className="mt-1 text-sm leading-relaxed text-slate-500">{step.description}</p>
                   </div>
@@ -49,7 +51,7 @@ export default function HiringProcess() {
         </div>
 
         {/* desktop: horizontal timeline */}
-        <div className="relative mt-16 hidden lg:block">
+        <div className="relative mt-16 hidden xl:block">
           <div
             aria-hidden
             className="absolute left-0 right-0 top-7 h-2 -translate-y-1/2 rounded-full bg-brand-blue-400/25 blur-md"
