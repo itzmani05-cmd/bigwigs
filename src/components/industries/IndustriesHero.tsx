@@ -14,8 +14,6 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } },
 } as const;
 
-const TRUSTED_LOGOS = ["Venkat Prabhu", "Vijay", "Rajesh", ];
-
 const FLOATING_BADGES = [
   { icon: Building2, label: "Smart Cities", sub: "Traffic Intelligence", position: "left-[4%] top-[10%]", delay: 0 },
   { icon: Car, label: "Automotive", sub: "Autonomous Driving", position: "right-[4%] top-[14%]", delay: 0.5 },
@@ -62,8 +60,7 @@ export default function IndustriesHero() {
               Powering{" "}
               <span className="text-blue-500">
                 AI
-              </span>{" "}
-              Across
+              </span> Across 
               <br />
               Every Industry
             </motion.h1>
@@ -76,38 +73,14 @@ export default function IndustriesHero() {
             </motion.p>
 
             <motion.div variants={itemVariants} className="mt-7 flex flex-wrap items-center gap-4">
-              <MagneticButton
-                href="#industries-grid"
-                magnetic={false}
-                className="inline-flex items-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 select-none"
-              >
-                <span>Explore Solutions</span>
-                <ArrowRight size={16} />
-              </MagneticButton>
-              <MagneticButton
-                href="#contact"
-                magnetic={false}
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-6 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500 hover:text-brand-blue-600 select-none"
-              >
-                <span>Talk To Experts</span>
-                <ArrowRight size={16} />
-              </MagneticButton>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="mt-10">
-              <p className="text-xs font-bold uppercase tracking-[0.15em] text-slate-400">
-                Trusted By Innovators Worldwide
-              </p>
-              <div className="mt-3 flex flex-wrap items-center gap-x-8 gap-y-3">
-                {TRUSTED_LOGOS.map((name) => (
-                  <span
-                    key={name}
-                    className="text-lg font-extrabold tracking-tight text-slate-300 grayscale transition-colors duration-300 hover:text-slate-500"
-                  >
-                    {name}
-                  </span>
-                ))}
-              </div>
+               <MagneticButton
+                  href="/demo"
+                  magnetic={false}
+                  className="inline-flex items-center gap-2 rounded-lg bg-brand-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
+                >
+                  <span>Book a Demo</span>
+                  <ArrowRight size={16} />
+                </MagneticButton>
             </motion.div>
           </motion.div>
 

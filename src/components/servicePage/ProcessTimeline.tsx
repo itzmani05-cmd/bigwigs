@@ -35,11 +35,15 @@ export default function ProcessTimeline({
           transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
           className="mx-auto max-w-xl text-center"
         >
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">{eyebrow}</span>
+          <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
+              {eyebrow}
+            </span>
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+          </div>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">{heading}</h2>
         </motion.div>
-
-        {/* mobile / tablet: vertical stepper */}
         <div className="relative mt-10 lg:hidden">
           <motion.div
             aria-hidden

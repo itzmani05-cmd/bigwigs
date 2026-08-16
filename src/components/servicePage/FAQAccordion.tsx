@@ -27,8 +27,14 @@ export default function FAQAccordion({
       <SectionBackdrop />
       <Container className="relative z-10">
         <div className="mx-auto max-w-xl text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">{eyebrow}</span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">{heading}</h2>
+          <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
+              Frequently Asked Questions
+            </span>
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+          </div>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-black sm:text-4xl lg:text-5xl">{heading}</h2>
         </div>
 
         <div className="mx-auto mt-10 flex max-w-2xl flex-col gap-3">

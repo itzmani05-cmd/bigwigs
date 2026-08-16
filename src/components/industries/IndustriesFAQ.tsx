@@ -10,11 +10,13 @@ export default function IndustriesFAQ() {
   return (
     <section className="relative w-full overflow-hidden py-14 lg:py-12">
       <Container className="relative z-10">
-        <div className="max-w-xl text-left">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
-            Frequently Asked Questions
-          </span>
-        </div>
+        <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
+              What Drives Us
+            </span>
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+          </div>
 
         <div className="mt-8 flex flex-col gap-3">
           {industriesFaqItems.map((item, i) => {

@@ -14,7 +14,7 @@ const itemVariants = {
 } as const;
 
 const STATS = [
-  { value: "6+", label: "Industries Served" },
+  { value: "10+", label: "Industries Served" },
   { value: "50M+", label: "Data Points Annotated" },
   { value: "98%+", label: "Avg. QA Accuracy" },
 ];
@@ -40,13 +40,13 @@ export default function CaseStudiesHero() {
           animate="visible"
           className="mx-auto max-w-3xl text-center"
         >
-          <motion.div variants={itemVariants} className="flex items-center justify-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
+           <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
               Case Studies
             </span>
-            <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
-          </motion.div>
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+          </div>
 
           <motion.h1
             variants={itemVariants}
@@ -63,14 +63,14 @@ export default function CaseStudiesHero() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <MagneticButton
-              href="#contact"
-              magnetic={false}
-              className="inline-flex items-center gap-2 rounded-lg bg-orange-400 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
-            >
-              <span>Talk To Our Experts</span>
-              <ArrowRight size={16} />
-            </MagneticButton>
+             <MagneticButton
+                            href="/demo"
+                                           magnetic={false}
+                                           className="inline-flex items-center gap-2 rounded-lg bg-brand-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
+                                         >
+                                           <span>Talk to an Experts</span>
+                                           <ArrowRight size={16} />
+                                         </MagneticButton>
             <MagneticButton
               href="#contact"
               magnetic={false}

@@ -1,5 +1,4 @@
 import { FileCheck2 } from "lucide-react";
-import CaseStudiesBackground from "@/components/caseStudies/CaseStudiesBackground";
 import CaseStudiesHero from "@/components/caseStudies/CaseStudiesHero";
 import FeaturedCaseStudies from "@/components/caseStudies/FeaturedCaseStudies";
 import SectionDivider from "@/components/careers/SectionDivider";
@@ -11,9 +10,7 @@ export default function CaseStudies() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <CaseStudiesBackground />
       <CaseStudiesHero />
-      <SectionDivider />
       <FeaturedCaseStudies />
       <SectionDivider />
       <CTASection

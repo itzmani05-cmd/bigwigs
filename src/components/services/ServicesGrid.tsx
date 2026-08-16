@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
-import { servicesGrid } from "./servicesGridData";
+import { servicesGrid, SERVICE_COLOR_THEME } from "./servicesGridData";
 
 export default function ServicesGrid() {
   return (
@@ -25,38 +25,42 @@ export default function ServicesGrid() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {servicesGrid.map((item, i) => (
-            <motion.div
-              key={item.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: (i % 6) * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
-            >
-              <Link
-                to={item.href}
-                className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-2 hover:border-slate-300 hover:shadow-[0_32px_70px_-20px_rgba(37,99,235,0.28)]"
+          {servicesGrid.map((item, i) => {
+            const theme = SERVICE_COLOR_THEME[item.color];
+            return (
+              <motion.div
+                key={item.name}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: (i % 6) * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
               >
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute -inset-px z-20 rounded-[28px] opacity-0 shadow-[0_0_0_1px_rgba(37,99,235,0.3),0_0_40px_4px_rgba(37,99,235,0.18)] transition-opacity duration-300 group-hover:opacity-100"
-                />
-
-                <span
-                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-[0_10px_20px_-8px_rgba(15,23,42,0.4)] transition-transform duration-500 group-hover:scale-110 ${item.iconGradient}`}
+                <Link
+                  to={item.href}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_45px_-24px_rgba(15,23,42,0.18)]"
                 >
-                  <item.icon size={20} strokeWidth={1.75} />
-                </span>
+                  <item.icon
+                    aria-hidden
+                    size={140}
+                    strokeWidth={1}
+                    className={`pointer-events-none absolute -bottom-6 -right-6 opacity-[0.06] transition-transform duration-500 group-hover:scale-110 ${theme.text}`}
+                  />
 
-                <h3 className="mt-4 text-base font-bold text-slate-900">{item.name}</h3>
-                <p className="mt-1.5 flex-1 text-sm leading-relaxed text-slate-500">{item.description}</p>
-                <span className="group/link mt-3 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-brand-blue-600 transition-colors duration-300 hover:text-brand-blue-700">
-                  Learn More
-                  <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
-              </Link>
-            </motion.div>
-          ))}
+                  <span className={`relative flex h-12 w-12 items-center justify-center rounded-2xl ${theme.badgeBg}`}>
+                    <item.icon size={22} strokeWidth={1.75} className={theme.text} />
+                  </span>
+                  <span aria-hidden className={`relative mt-4 block h-1 w-6 rounded-full ${theme.bar}`} />
+
+                  <h3 className="relative mt-4 text-lg font-bold text-slate-900">{item.name}</h3>
+                  <p className="relative mt-2 flex-1 text-sm leading-relaxed text-slate-500">{item.description}</p>
+                  <span className="relative mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-blue-600 transition-colors duration-300 group-hover:text-blue-700">
+                    Learn More
+                    <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </Container>
     </section>

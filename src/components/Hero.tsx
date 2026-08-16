@@ -80,7 +80,7 @@ const stats = [
 export default function Hero() {
   return (
     <section id="home" className="relative w-full overflow-hidden bg-white">
-      <div className="mx-auto max-w-[1360px] px-4 pt-4 pb-4 sm:px-8 lg:px-10 lg:pt-6 lg:pb-10">
+      <div className="mx-auto max-w-[1360px] px-4 pt-4 pb-2 sm:px-8 lg:px-10 lg:pt-6 lg:pb-10">
         <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[3fr_2fr] md:gap-8">
           <div className="flex flex-col items-start gap-3 text-left">
             <motion.span
@@ -96,9 +96,9 @@ export default function Hero() {
               variants={headingVariants}
               initial="hidden"
               animate="visible"
-              className="text-4xl font-extrabold leading-[1.02] tracking-[-0.03em] text-slate-900 sm:text-5xl lg:text-[72px]"
+              className="text-4xl font-extrabold leading-[1.01] tracking-[-0.03em] text-slate-900 sm:text-5xl lg:text-[66px]"
             >
-              Building Intelligent Solutions for a 
+              Building Intelligent <br/>Solutions for a 
               <br />
               <span className="text-brand-blue-600">Global Future</span>
             </motion.h1>
@@ -122,17 +122,17 @@ export default function Hero() {
             >
               <motion.div variants={buttonVariants} className="w-full sm:w-auto">
                 <MagneticButton
-                  href="#contact"
+                  href="/demo"
                   magnetic={false}
                   className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-blue-700 px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_24px_-10px_rgba(11,23,66,0.55)] transition-colors duration-300 hover:bg-blue-600 select-none"
                 >
-                  <span>Book a Free Consultation</span>
+                  <span>Talk to an Expert</span>
                   <ArrowRight size={16} />
                 </MagneticButton>
               </motion.div>
               <motion.div variants={buttonVariants} className="w-full sm:w-auto">
                 <MagneticButton
-                  href="#services"
+                  href="/services"
                   magnetic={false}
                   className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg border border-[#0b1742]/25 bg-white px-5 py-3 text-sm font-semibold text-[#0b1742] transition-colors duration-300 hover:border-[#0b1742]/50 hover:bg-slate-50 select-none"
                 >
@@ -155,7 +155,7 @@ export default function Hero() {
       </div>
 
       <div className="relative w-full border-t border-slate-100 bg-white">
-        <div className="mx-auto grid max-w-[1380px] grid-cols-1 items-center gap-6 px-4 py-5 sm:grid-cols-[45%_55%] sm:gap-4 sm:px-7 sm:py-2 lg:gap-6 lg:px-8">
+        <div className="mx-auto grid max-w-[1380px] grid-cols-1 items-center gap-6 px-4 pb-4 pt-2 sm:grid-cols-[45%_55%] sm:gap-8 sm:px-7 sm:py-2 lg:gap-12 lg:px-8">
           <motion.div
             variants={statsVariants}
             initial="hidden"
@@ -182,18 +182,22 @@ export default function Hero() {
           ))}
           </motion.div>
 
-          <div className="flex flex-col items-start gap-3 border-t border-slate-100 pt-5 sm:items-end sm:gap-2 sm:border-l sm:border-t-0 sm:pl-6 sm:pr-6 sm:pt-0">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+          <div className="flex flex-col items-start gap-4 pr-2 pt-5 sm:items-end sm:gap-2 sm:border-l sm:border-t-0 sm:pl-12 sm:pt-0">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-900">
               Trusted by Global Enterprises
             </span>
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 sm:justify-end">
+            <div className="flex flex-wrap items-center gap-2 sm:justify-end">
               {trustedPartnerLogos.map((logo) => (
-                <img
+                <span
                   key={logo}
-                  src={logo}
-                  alt="Bigwigs Technologies partner logo"
-                  className="h-6 w-auto max-w-[100px] object-contain sm:h-8 sm:max-w-[120px]"
-                />
+                  className="flex h-8 items-center justify-center rounded-lg px-4 sm:h-12"
+                >
+                  <img
+                    src={logo}
+                    alt="Bigwigs Technologies partner logo"
+                    className="h-5 w-auto max-w-[90px] object-contain sm:h-6 sm:max-w-[100px]"
+                  />
+                </span>
               ))}
             </div>
           </div>

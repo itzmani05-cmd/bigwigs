@@ -135,31 +135,38 @@ export default function HeroVisualAnimation() {
   return (
     <div
       ref={containerRef}
-      className="relative h-full w-full overflow-hidden rounded-[28px] p-2.5 sm:p-3"
+      className="relative h-full w-full overflow-hidden rounded-[28px] p-2.5  sm:p-3"
     >
-      <div className="relative grid h-full w-full grid-cols-2 grid-rows-2 gap-3 sm:gap-3.5 lg:gap-4">
+      <div className="relative grid h-full w-full grid-cols-2 grid-rows-2 gap-3 sm:grid-cols-4 sm:grid-rows-3 sm:gap-3.5 lg:gap-4">
         <Tile
           images={pickSequence(0, 3)}
-          interval={6500}
+          interval={6000}
           delay={0}
           paused={paused}
           priority
-          className="col-span-1 row-span-2"
+          className="col-span-1 row-span-2 sm:col-span-2 sm:row-span-3"
         />
         <Tile
           images={pickSequence(1, 3)}
-          interval={5200}
+          interval={5000}
           delay={900}
           paused={paused}
           priority
-          className="col-span-1 row-span-1"
+          className="col-span-1 row-span-1 sm:col-span-2 sm:row-span-2"
         />
         <Tile
-          images={pickSequence(2, 3)}
-          interval={4300}
-          delay={1600}
+          images={pickSequence(4, 3)}
+          interval={5800}
+          delay={1200}
           paused={paused}
-          className="col-span-1 row-span-1"
+          className="hidden sm:block sm:col-span-2 sm:row-span-1"
+        />
+        <Tile
+          images={pickSequence(5, 3)}
+          interval={4300}
+          delay={500}
+          paused={paused}
+          className="col-span-1 row-span-1 sm:hidden"
         />
       </div>
     </div>
