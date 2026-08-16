@@ -61,7 +61,7 @@ const pillars: Pillar[] = [
 
 export default function MissionVision() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-14 lg:py-20">
+    <section id="mission-vision" className="relative w-full scroll-mt-24 overflow-hidden bg-white py-14 lg:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-0 h-[28rem] w-[36rem] -translate-x-1/2 rounded-full bg-brand-blue-500/[0.06] blur-[100px]"

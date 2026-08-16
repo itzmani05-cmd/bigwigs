@@ -161,9 +161,9 @@ const linkGroups: LinkGroup[] = [
 ];
 
 const LEGAL_LINKS = [
-  { name: "Privacy Policy", href: "#" },
-  { name: "Terms of Service", href: "#" },
-  { name: "Cookie Policy", href: "#" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms of Service", href: "/terms-of-service" },
+  { name: "Cookie Policy", href: "/cookie-policy" },
 ];
 
 export default function Footer() {
@@ -374,12 +374,12 @@ export default function Footer() {
             {LEGAL_LINKS.map((link, i) => (
               <span key={link.name} className="flex items-center gap-4">
                 {i > 0 && <span className="text-[#1F2937]">|</span>}
-                <a
+                <HashLink
                   href={link.href}
                   className={`text-xs text-[#A1A1AA] transition-colors duration-200 hover:text-white ${focusRing}`}
                 >
                   {link.name}
-                </a>
+                </HashLink>
               </span>
             ))}
           </div>

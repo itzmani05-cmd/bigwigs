@@ -6,10 +6,10 @@ import {
   Workflow,
   BarChart3,
   Languages,
-  Users,
-  CalendarDays,
-  Building2,
   BadgeCheck,
+  BookOpen,
+  Target,
+  Sparkles,
   Car,
   ShoppingCart,
   Landmark,
@@ -18,15 +18,10 @@ import {
   Truck,
   Mic,
   AudioLines,
-  BookOpen,
   GraduationCap,
   Scale,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import ourTeamImage from "@/assests/about/ourteams.jpg";
-import eventsImage from "@/assests/about/events.jpg";
-import locationImage from "@/assests/about/location.jpg";
-import certificationImage from "@/assests/about/certification.jpg";
 import healthCareImg from "@/assests/industries/healthCare.png";
 import automotiveImg from "@/assests/industries/Automotive.png";
 import retailImg from "@/assests/industries/Retail.png";
@@ -65,37 +60,33 @@ export const navItems: NavItem[] = [
     mega: {
       title: "About BigWigs",
       description:
-        "Get to know the team, culture, and credentials behind our enterprise AI work.",
+        "Get to know the story, values, and credentials behind our enterprise AI work.",
       links: [
-        { name: "Our Team", href: "/team" },
-        { name: "Events", href: "/events" },
-        { name: "Locations", href: "/locations" },
+        { name: "Our Story", href: "/about#our-story" },
+        { name: "Mission & Vision", href: "/about#mission-vision" },
+        { name: "Our Expertise", href: "/about#expertise" },
         { name: "Certifications", href: "/about#certifications" },
       ],
       features: [
         {
-          icon: Users,
-          title: "Our Team",
-          description: "Meet the engineers and researchers behind BigWigs.",
-          image: ourTeamImage,
+          icon: BookOpen,
+          title: "Our Story",
+          description: "How BigWigs got started and where we're headed.",
         },
         {
-          icon: CalendarDays,
-          title: "Events",
-          description: "Webinars, meetups, and conferences we host or attend.",
-          image: eventsImage,
+          icon: Target,
+          title: "Mission & Vision",
+          description: "What drives us, and the standard we hold ourselves to.",
         },
         {
-          icon: Building2,
-          title: "Locations",
-          description: "Where we operate and deliver enterprise AI.",
-          image: locationImage,
+          icon: Sparkles,
+          title: "Our Expertise",
+          description: "The domains and technologies we go deep on.",
         },
         {
           icon: BadgeCheck,
           title: "Certifications",
           description: "Compliance and quality credentials we hold.",
-          image: certificationImage,
         },
       ],
       cta: { label: "Learn more about us", href: "/about" },

@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { announceCookieConsentVisibility } from "@/hooks/useCookieConsentVisible";
+import HashLink from "@/components/ui/HashLink";
 
 const STORAGE_KEY = "bigwigs-cookie-consent";
 
@@ -68,13 +69,13 @@ export default function CookieConsent() {
         <p className="text-center text-sm leading-relaxed text-slate-300 sm:text-left">
           We use cookies to allow us to remember you. To find out more about the cookies we
           use, see our{" "}
-          <a href="#" className="font-bold text-white underline underline-offset-2">
+          <HashLink href="/privacy-policy" className="font-bold text-white underline underline-offset-2">
             Privacy Policy
-          </a>{" "}
+          </HashLink>{" "}
           and{" "}
-          <a href="#" className="font-bold text-white underline underline-offset-2">
+          <HashLink href="/cookie-policy" className="font-bold text-white underline underline-offset-2">
             Cookie Policy
-          </a>
+          </HashLink>
           .
         </p>
 

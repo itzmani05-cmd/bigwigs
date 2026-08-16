@@ -17,6 +17,9 @@ import PublishingMediaSolutions from "@/pages/PublishingMediaSolutions";
 import Careers from "@/pages/Careers";
 import Apply from "@/pages/Apply";
 import Demo from "@/pages/Demo";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsOfService from "@/pages/TermsOfService";
+import CookiePolicy from "@/pages/CookiePolicy";
 import CaseStudies from "@/pages/CaseStudies";
 import CaseStudyDetail from "@/pages/CaseStudyDetail";
 import SoftwareDevelopment from "@/pages/SoftwareDevelopment";
@@ -30,6 +33,7 @@ import DigitalPublishing from "@/pages/DigitalPublishing";
 import AiDataAnnotation from "@/pages/AiDataAnnotation";
 import GenerativeAI from "@/pages/GenerativeAi";
 import AIAgentsAutomation from "@/pages/AiAgentsAutomation";
+import NotFound from "@/pages/NotFound";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollToHash from "@/components/ScrollToHash";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -59,6 +63,9 @@ export default function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
 
           {/* Case Studies */}
           <Route path="/case-studies" element={<CaseStudies />} />
@@ -77,6 +84,8 @@ export default function App() {
           <Route path="/service/ai-data-annotation" element={<AiDataAnnotation />} />
           <Route path="/service/generative-ai" element={<GenerativeAI />} />
           <Route path="/service/ai-agents-automation" element={<AIAgentsAutomation />} />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

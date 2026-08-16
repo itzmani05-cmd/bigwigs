@@ -24,7 +24,7 @@ export default function NotFound() {
   useDocumentTitle("Page Not Found | Bigwigs Technologies");
 
   return (
-    <div className="relative flex min-h-[50vh] w-full items-center overflow-x-hidden py-20">
+    <div className="relative flex min-h-[50vh] w-full items-center overflow-x-hidden pb-20 pt-8">
       <PageBackground />
 
       <Container className="relative z-10">

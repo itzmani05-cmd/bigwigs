@@ -4,7 +4,7 @@ import Container from "@/components/ui/Container";
 
 export default function OurStory() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-orange-50/70 via-orange-50/25 to-white py-10 lg:py-12">
+    <section id="our-story" className="relative w-full scroll-mt-24 overflow-hidden bg-gradient-to-b from-orange-50/70 via-orange-50/25 to-white py-10 lg:py-12">
       <motion.div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-blue-500/[0.07] blur-[120px]"
