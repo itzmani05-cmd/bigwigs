@@ -1,40 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import DashboardPanelSection from "@/components/industryPage/DashboardPanelSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   governmentHero,
   governmentChallenges,
-  governmentSolutions,
-  digitalGovernmentPlatforms,
-  documentProcessing,
-  aiDataServices,
-  smartCitySolutions,
-  softwareDashboard,
-  communicationAccessibility,
-  publishingSecurity,
-  governmentWhoWeServe,
-  governmentBusinessBenefits,
-  governmentWhyUs,
-  governmentUseCases,
-  governmentProcess,
+  governmentCapabilities,
+  governmentProcessSteps,
   governmentFaq,
   governmentBottomCta,
-} from "@/components/industryPage/content/government";
+} from "@/components/servicePage/content/government";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function GovernmentPublicSectorSolutions() {
@@ -42,40 +19,46 @@ export default function GovernmentPublicSectorSolutions() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...governmentHero} />
-      <GlowDivider />
-      <ChallengesSection {...governmentChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...governmentSolutions} />
-      <GlowDivider />
-      <NumberedListWorkflowSection eyebrow="Digital Government Platforms" {...digitalGovernmentPlatforms} />
-      <GlowDivider />
-      <MarqueeWorkflowSection eyebrow="Intelligent Document Processing" {...documentProcessing} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="AI Data Services" {...aiDataServices} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="Smart City Solutions" {...smartCitySolutions} />
-      <GlowDivider />
-      <DashboardPanelSection eyebrow="Government Software Development" {...softwareDashboard} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Multilingual Communication & Accessibility" {...communicationAccessibility} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Digital Publishing & Security" {...publishingSecurity} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...governmentWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...governmentBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Choose Bigwigs?" {...governmentWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...governmentUseCases} />
-      <GlowDivider />
-      <ProcessSection eyebrow="Our Delivery Process" {...governmentProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...governmentFaq} />
+      <ServiceDetailHero {...governmentHero} />
 
-      <CTASection {...governmentBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={governmentChallenges.eyebrow}
+          heading={governmentChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={governmentChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={governmentCapabilities.eyebrow}
+          heading={governmentCapabilities.heading}
+          headerAlign="center"
+          items={governmentCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Five Stages. No Guesswork."
+          steps={governmentProcessSteps}
+          desktopColumnsClassName="grid-cols-5"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={governmentFaq} />
+
+      <ClosingCta
+        heading={governmentBottomCta.heading}
+        description={governmentBottomCta.description}
+        primary={governmentBottomCta.primaryAction}
+        secondary={governmentBottomCta.secondaryAction}
+      />
     </main>
   );
 }

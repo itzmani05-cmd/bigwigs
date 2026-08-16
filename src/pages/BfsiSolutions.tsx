@@ -1,37 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import DashboardPanelSection from "@/components/industryPage/DashboardPanelSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   bfsiHero,
   bfsiChallenges,
-  bfsiSolutions,
-  idp,
-  bfsiAiSolutions,
-  bfsiSoftwareDashboard,
-  bfsiAccessibilityLanguage,
-  bfsiWhoWeServe,
-  bfsiBusinessBenefits,
-  bfsiWhyUs,
-  bfsiUseCases,
-  bfsiCaseStudy,
-  bfsiProcess,
+  bfsiCapabilities,
+  bfsiProcessSteps,
   bfsiFaq,
   bfsiBottomCta,
-} from "@/components/industryPage/content/bfsi";
+} from "@/components/servicePage/content/bfsi";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function BfsiSolutions() {
@@ -39,36 +19,46 @@ export default function BfsiSolutions() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...bfsiHero} />
-      <GlowDivider />
-      <ChallengesSection {...bfsiChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...bfsiSolutions} />
-      <GlowDivider />
-      <NumberedListWorkflowSection eyebrow="Intelligent Document Processing" {...idp} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="AI & Machine Learning Solutions" {...bfsiAiSolutions} />
-      <GlowDivider />
-      <DashboardPanelSection eyebrow="Software Development" {...bfsiSoftwareDashboard} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Language & Accessibility" {...bfsiAccessibilityLanguage} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...bfsiWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...bfsiBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Choose Bigwigs?" {...bfsiWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...bfsiUseCases} />
-      <GlowDivider />
-      <CaseStudySection eyebrow="Case Study" {...bfsiCaseStudy} />
-      <GlowDivider />
-      <ProcessSection {...bfsiProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...bfsiFaq} />
+      <ServiceDetailHero {...bfsiHero} />
 
-      <CTASection {...bfsiBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={bfsiChallenges.eyebrow}
+          heading={bfsiChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={bfsiChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={bfsiCapabilities.eyebrow}
+          heading={bfsiCapabilities.heading}
+          headerAlign="center"
+          items={bfsiCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Six Stages. No Guesswork."
+          steps={bfsiProcessSteps}
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={bfsiFaq} />
+
+      <ClosingCta
+        heading={bfsiBottomCta.heading}
+        description={bfsiBottomCta.description}
+        primary={bfsiBottomCta.primaryAction}
+        secondary={bfsiBottomCta.secondaryAction}
+      />
     </main>
   );
 }

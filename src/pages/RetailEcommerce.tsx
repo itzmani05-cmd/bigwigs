@@ -1,41 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import DashboardPanelSection from "@/components/industryPage/DashboardPanelSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   retailHero,
   retailChallenges,
-  retailSolutions,
-  catalogManagement,
-  computerVision,
-  softwareDashboard,
-  documentProcessing,
-  predictiveAnalytics,
-  voiceLanguageAccessibility,
-  retailWhoWeServe,
-  retailBusinessBenefits,
-  retailWhyUs,
-  retailUseCases,
-  retailCaseStudy,
-  retailProcess,
+  retailCapabilities,
+  retailProcessSteps,
   retailFaq,
   retailBottomCta,
-} from "@/components/industryPage/content/retail";
+} from "@/components/servicePage/content/retail";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function RetailEcommerce() {
@@ -43,40 +19,46 @@ export default function RetailEcommerce() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...retailHero} />
-      <GlowDivider />
-      <ChallengesSection {...retailChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...retailSolutions} />
-      <GlowDivider />
-      <NumberedListWorkflowSection eyebrow="AI Product Catalog Management" {...catalogManagement} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="Computer Vision for Retail" {...computerVision} />
-      <GlowDivider />
-      <DashboardPanelSection eyebrow="Retail Software Development" {...softwareDashboard} />
-      <GlowDivider />
-      <MarqueeWorkflowSection eyebrow="Intelligent Document Processing" {...documentProcessing} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="Predictive Analytics" {...predictiveAnalytics} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Voice, Language & Accessibility" {...voiceLanguageAccessibility} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...retailWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...retailBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Choose Bigwigs?" {...retailWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...retailUseCases} />
-      <GlowDivider />
-      <CaseStudySection eyebrow="Case Study" {...retailCaseStudy} />
-      <GlowDivider />
-      <ProcessSection {...retailProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...retailFaq} />
+      <ServiceDetailHero {...retailHero} />
 
-      <CTASection {...retailBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={retailChallenges.eyebrow}
+          heading={retailChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={retailChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={retailCapabilities.eyebrow}
+          heading={retailCapabilities.heading}
+          headerAlign="center"
+          items={retailCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Five Stages. No Guesswork."
+          steps={retailProcessSteps}
+          desktopColumnsClassName="grid-cols-5"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={retailFaq} />
+
+      <ClosingCta
+        heading={retailBottomCta.heading}
+        description={retailBottomCta.description}
+        primary={retailBottomCta.primaryAction}
+        secondary={retailBottomCta.secondaryAction}
+      />
     </main>
   );
 }

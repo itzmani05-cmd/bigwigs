@@ -1,38 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import DashboardPanelSection from "@/components/industryPage/DashboardPanelSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
-  voiceDataHero,
+  voiceHero,
   voiceChallenges,
-  voiceSolutions,
-  speechWakeWordCollection,
-  accentsLanguages,
-  speechAnnotationQa,
-  voiceApplications,
-  voiceWorkflow,
-  voiceWhoWeServe,
-  voiceBusinessBenefits,
-  voiceWhyUs,
-  voiceUseCases,
-  voiceCaseStudy,
-  voiceProcess,
+  voiceCapabilities,
+  voiceProcessSteps,
   voiceFaq,
   voiceBottomCta,
-} from "@/components/industryPage/content/voiceDataCollection";
+} from "@/components/servicePage/content/voiceDataCollection";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function VoiceDataCollection() {
@@ -40,38 +19,46 @@ export default function VoiceDataCollection() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...voiceDataHero} />
-      <GlowDivider />
-      <ChallengesSection {...voiceChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...voiceSolutions} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Speech & Wake Word Collection" {...speechWakeWordCollection} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Accents & Languages" {...accentsLanguages} />
-      <GlowDivider />
-      <DashboardPanelSection eyebrow="Speech Annotation & Quality Assurance" {...speechAnnotationQa} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="AI Dataset Applications" {...voiceApplications} />
-      <GlowDivider />
-      <MarqueeWorkflowSection eyebrow="Voice Data Collection Process" {...voiceWorkflow} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...voiceWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...voiceBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Bigwigs" {...voiceWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...voiceUseCases} />
-      <GlowDivider />
-      <CaseStudySection eyebrow="Case Study" {...voiceCaseStudy} />
-      <GlowDivider />
-      <ProcessSection eyebrow="Our Delivery Process" {...voiceProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...voiceFaq} />
+      <ServiceDetailHero {...voiceHero} />
 
-      <CTASection {...voiceBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={voiceChallenges.eyebrow}
+          heading={voiceChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={voiceChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={voiceCapabilities.eyebrow}
+          heading={voiceCapabilities.heading}
+          headerAlign="center"
+          items={voiceCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Six Stages. No Guesswork."
+          steps={voiceProcessSteps}
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={voiceFaq} />
+
+      <ClosingCta
+        heading={voiceBottomCta.heading}
+        description={voiceBottomCta.description}
+        primary={voiceBottomCta.primaryAction}
+        secondary={voiceBottomCta.secondaryAction}
+      />
     </main>
   );
 }

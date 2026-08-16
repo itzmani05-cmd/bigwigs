@@ -17,8 +17,8 @@ export default function CaseStudies() {
         icon={FileCheck2}
         heading="Ready To Build Your Own Success Story?"
         description="Partner with Bigwigs Technologies to build intelligent, scalable, and secure AI solutions tailored for your business."
-        primaryAction={{ label: "Talk To Experts", href: "#contact" }}
-        secondaryAction={{ label: "Request A Quote", href: "#contact", showArrow: true }}
+        primaryAction={{ label: "Talk To Experts", href: "/demo" }}
+        secondaryAction={{ label: "Request A Quote", href: "/demo", showArrow: true }}
       />
     </main>
   );

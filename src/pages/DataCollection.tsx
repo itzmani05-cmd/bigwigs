@@ -1,42 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import DashboardPanelSection from "@/components/industryPage/DashboardPanelSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   dataCollectionHero,
   dataCollectionChallenges,
-  dataCollectionSolutions,
-  imageDataCollection,
-  videoDataCollection,
-  audioSpeechData,
-  textAndDocumentDatasets,
-  multilingualAndSynthetic,
-  dataPreparation,
-  participantRecruitment,
-  dataCollectionWhoWeServe,
-  dataCollectionBusinessBenefits,
-  dataCollectionWhyUs,
-  dataCollectionUseCases,
-  dataCollectionCaseStudy,
-  dataCollectionProcess,
+  dataCollectionCapabilities,
+  dataCollectionProcessSteps,
   dataCollectionFaq,
   dataCollectionBottomCta,
-} from "@/components/industryPage/content/dataCollection";
+} from "@/components/servicePage/content/dataCollection";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function DataCollection() {
@@ -44,42 +19,46 @@ export default function DataCollection() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...dataCollectionHero} />
-      <GlowDivider />
-      <ChallengesSection {...dataCollectionChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...dataCollectionSolutions} />
-      <GlowDivider />
-      <NumberedListWorkflowSection eyebrow="Image Data Collection" {...imageDataCollection} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="Video Data Collection" {...videoDataCollection} />
-      <GlowDivider />
-      <DashboardPanelSection eyebrow="Audio & Speech Data" {...audioSpeechData} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="Text & Document Datasets" {...textAndDocumentDatasets} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Multilingual & Synthetic Data" {...multilingualAndSynthetic} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="Data Preparation" {...dataPreparation} />
-      <GlowDivider />
-      <MarqueeWorkflowSection eyebrow="Participant Recruitment" {...participantRecruitment} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...dataCollectionWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...dataCollectionBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Bigwigs" {...dataCollectionWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...dataCollectionUseCases} />
-      <GlowDivider />
-      <CaseStudySection eyebrow="Case Study" {...dataCollectionCaseStudy} />
-      <GlowDivider />
-      <ProcessSection eyebrow="Data Collection Workflow" {...dataCollectionProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...dataCollectionFaq} />
+      <ServiceDetailHero {...dataCollectionHero} />
 
-      <CTASection {...dataCollectionBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={dataCollectionChallenges.eyebrow}
+          heading={dataCollectionChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={dataCollectionChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={dataCollectionCapabilities.eyebrow}
+          heading={dataCollectionCapabilities.heading}
+          headerAlign="center"
+          items={dataCollectionCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Five Stages Between Planning and Delivery"
+          steps={dataCollectionProcessSteps}
+          desktopColumnsClassName="grid-cols-5"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={dataCollectionFaq} />
+
+      <ClosingCta
+        heading={dataCollectionBottomCta.heading}
+        description={dataCollectionBottomCta.description}
+        primary={dataCollectionBottomCta.primaryAction}
+        secondary={dataCollectionBottomCta.secondaryAction}
+      />
     </main>
   );
 }

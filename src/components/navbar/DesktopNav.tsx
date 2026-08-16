@@ -50,10 +50,28 @@ interface DesktopNavProps {
   activeHash: string;
 }
 
+const CLOSE_DELAY_MS = 280;
+
 export default function DesktopNav({ items, pathname, activeHash }: DesktopNavProps) {
   const [openMega, setOpenMega] = useState<string | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const closeTimeoutRef = useRef<number | null>(null);
+
+  const clearCloseTimeout = () => {
+    if (closeTimeoutRef.current !== null) {
+      window.clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
+
+  const scheduleClose = () => {
+    clearCloseTimeout();
+    closeTimeoutRef.current = window.setTimeout(() => {
+      setOpenMega(null);
+      setHoveredIndex(null);
+    }, CLOSE_DELAY_MS);
+  };
 
   useEffect(() => {
     if (!openMega) return;
@@ -64,18 +82,25 @@ export default function DesktopNav({ items, pathname, activeHash }: DesktopNavPr
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [openMega]);
 
+  useEffect(() => {
+    clearCloseTimeout();
+    setOpenMega(null);
+    setHoveredIndex(null);
+  }, [pathname]);
+
+  useEffect(() => clearCloseTimeout, []);
+
   const activeItem = items.find((item) => item.name === openMega);
 
   return (
     <div
       ref={containerRef}
       className="hidden lg:block"
-      onMouseLeave={() => {
-        setOpenMega(null);
-        setHoveredIndex(null);
-      }}
+      onMouseEnter={clearCloseTimeout}
+      onMouseLeave={scheduleClose}
       onBlur={(e) => {
         if (!containerRef.current?.contains(e.relatedTarget as Node)) {
+          clearCloseTimeout();
           setOpenMega(null);
         }
       }}
@@ -92,6 +117,7 @@ export default function DesktopNav({ items, pathname, activeHash }: DesktopNavPr
               key={item.name}
               className="relative"
               onMouseEnter={() => {
+                clearCloseTimeout();
                 setHoveredIndex(index);
                 setOpenMega(item.mega ? item.name : null);
               }}

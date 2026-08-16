@@ -70,7 +70,7 @@ export const navItems: NavItem[] = [
         { name: "Our Team", href: "/team" },
         { name: "Events", href: "/events" },
         { name: "Locations", href: "/locations" },
-        { name: "Certifications", href: "/certifications" },
+        { name: "Certifications", href: "/about#certifications" },
       ],
       features: [
         {

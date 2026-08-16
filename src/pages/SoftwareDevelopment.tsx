@@ -1,39 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   softwareHero,
   softwareChallenges,
-  softwareSolutions,
-  enterpriseSystems,
-  webAndDesign,
-  mobileDevelopment,
-  integrationAndCloud,
-  qualityAssurance,
-  softwareWhoWeServe,
-  softwareBusinessBenefits,
-  softwareWhyUs,
-  softwareUseCases,
-  softwareCaseStudy,
-  softwareProcess,
+  softwareCapabilities,
+  softwareProcessSteps,
   softwareFaq,
   softwareBottomCta,
-} from "@/components/industryPage/content/softwareDevelopment";
+} from "@/components/servicePage/content/softwareDevelopment";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function SoftwareDevelopment() {
@@ -41,38 +19,46 @@ export default function SoftwareDevelopment() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...softwareHero} />
-      <GlowDivider />
-      <ChallengesSection {...softwareChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...softwareSolutions} />
-      <GlowDivider />
-      <NumberedListWorkflowSection eyebrow="Enterprise Systems" {...enterpriseSystems} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="Web Development & UI/UX" {...webAndDesign} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="Mobile Development" {...mobileDevelopment} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="API Integration & Cloud DevOps" {...integrationAndCloud} />
-      <GlowDivider />
-      <MarqueeWorkflowSection eyebrow="Quality Assurance" {...qualityAssurance} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...softwareWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...softwareBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Choose Bigwigs?" {...softwareWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...softwareUseCases} />
-      <GlowDivider />
-      <CaseStudySection eyebrow="Case Study" {...softwareCaseStudy} />
-      <GlowDivider />
-      <ProcessSection eyebrow="Software Development Life Cycle" {...softwareProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...softwareFaq} />
+      <ServiceDetailHero {...softwareHero} />
 
-      <CTASection {...softwareBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={softwareChallenges.eyebrow}
+          heading={softwareChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={softwareChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={softwareCapabilities.eyebrow}
+          heading={softwareCapabilities.heading}
+          headerAlign="center"
+          items={softwareCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Six Stages. No Guesswork."
+          steps={softwareProcessSteps}
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={softwareFaq} />
+
+      <ClosingCta
+        heading={softwareBottomCta.heading}
+        description={softwareBottomCta.description}
+        primary={softwareBottomCta.primaryAction}
+        secondary={softwareBottomCta.secondaryAction}
+      />
     </main>
   );
 }

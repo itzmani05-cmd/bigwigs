@@ -49,7 +49,7 @@ export default function MobileNav({ id, items, isOpen, onClose }: MobileNavProps
                 <div className="flex items-center justify-between">
                   <HashLink
                     href={item.href}
-                    onClick={() => !item.mega && onClose()}
+                    onClick={onClose}
                     className="flex-1 text-base font-semibold text-slate-700 hover:text-brand-green-500 py-3 transition-colors"
                   >
                     {item.name}

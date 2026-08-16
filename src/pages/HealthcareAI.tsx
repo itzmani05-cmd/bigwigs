@@ -1,38 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import DashboardPanelSection from "@/components/industryPage/DashboardPanelSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   healthcareAiHero,
   healthcareAiChallenges,
-  healthcareAiSolutions,
-  medicalImageAnnotation,
-  clinicalNlp,
-  healthcareApplications,
-  healthcareSoftware,
-  complianceSecurity,
-  healthcareAiWhoWeServe,
-  healthcareAiBusinessBenefits,
-  healthcareAiWhyUs,
-  healthcareAiUseCases,
-  healthcareAiCaseStudy,
-  healthcareAiProcess,
+  healthcareAiCapabilities,
+  healthcareAiProcessSteps,
   healthcareAiFaq,
   healthcareAiBottomCta,
-} from "@/components/industryPage/content/healthcareAi";
+} from "@/components/servicePage/content/healthcareAi";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function HealthcareAI() {
@@ -40,38 +19,46 @@ export default function HealthcareAI() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...healthcareAiHero} />
-      <GlowDivider />
-      <ChallengesSection {...healthcareAiChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...healthcareAiSolutions} />
-      <GlowDivider />
-      <NumberedListWorkflowSection eyebrow="Medical Image Annotation" {...medicalImageAnnotation} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="Clinical NLP" {...clinicalNlp} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="Healthcare AI Applications" {...healthcareApplications} />
-      <GlowDivider />
-      <DashboardPanelSection eyebrow="Healthcare Software" {...healthcareSoftware} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="Compliance & Security" {...complianceSecurity} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries" {...healthcareAiWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...healthcareAiBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Bigwigs" {...healthcareAiWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...healthcareAiUseCases} />
-      <GlowDivider />
-      <CaseStudySection eyebrow="Success Story" {...healthcareAiCaseStudy} />
-      <GlowDivider />
-      <ProcessSection eyebrow="Healthcare AI Workflow" {...healthcareAiProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...healthcareAiFaq} />
+      <ServiceDetailHero {...healthcareAiHero} />
 
-      <CTASection {...healthcareAiBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={healthcareAiChallenges.eyebrow}
+          heading={healthcareAiChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={healthcareAiChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={healthcareAiCapabilities.eyebrow}
+          heading={healthcareAiCapabilities.heading}
+          headerAlign="center"
+          items={healthcareAiCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Six Stages. Clinical to Production."
+          steps={healthcareAiProcessSteps}
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={healthcareAiFaq} />
+
+      <ClosingCta
+        heading={healthcareAiBottomCta.heading}
+        description={healthcareAiBottomCta.description}
+        primary={healthcareAiBottomCta.primaryAction}
+        secondary={healthcareAiBottomCta.secondaryAction}
+      />
     </main>
   );
 }

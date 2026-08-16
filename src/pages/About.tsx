@@ -6,6 +6,7 @@ import JourneyTimeline from "@/components/about/JourneyTimeline";
 import WhyBigwigs from "@/components/about/WhyBigwigs";
 import Expertise from "@/components/about/Expertise";
 import GlobalImpact from "@/components/about/GlobalImpact";
+import CertificationsGrid from "@/components/certifications/CertificationsGrid";
 
 import AboutCTA from "@/components/about/AboutCTA";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
@@ -23,6 +24,7 @@ export default function About() {
       <WhyBigwigs />
       <Expertise />
       <GlobalImpact />
+      <CertificationsGrid />
       <AboutCTA />
     </main>
   );

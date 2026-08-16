@@ -40,13 +40,13 @@ export default function CertificationsHero() {
           animate="visible"
           className="mx-auto max-w-3xl text-center"
         >
-          <motion.div variants={itemVariants} className="flex items-center justify-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
+          <div className="flex items-center justify-center gap-3">
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
               Certifications
             </span>
-            <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
-          </motion.div>
+            <span aria-hidden className="h-px w-8 bg-orange-500/50" />
+          </div>
 
           <motion.h1
             variants={itemVariants}

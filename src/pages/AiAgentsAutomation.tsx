@@ -1,41 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import DashboardPanelSection from "@/components/industryPage/DashboardPanelSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
-  aiAgentsHero,
-  aiAgentsChallenges,
-  aiAgentsSolutions,
-  whatAreAiAgents,
-  assistantsAndCustomerService,
-  departmentAgents,
-  multiAgentEcosystem,
-  agentRag,
-  workflowAutomation,
-  agentArchitecture,
-  aiAgentsWhoWeServe,
-  aiAgentsBusinessBenefits,
-  aiAgentsWhyUs,
-  aiAgentsUseCases,
-  aiAgentsCaseStudy,
-  aiAgentsProcess,
-  aiAgentsFaq,
-  aiAgentsBottomCta,
-} from "@/components/industryPage/content/aiAgentsAutomation";
+  agentsHero,
+  agentsChallenges,
+  agentsCapabilities,
+  agentsProcessSteps,
+  agentsFaq,
+  agentsBottomCta,
+} from "@/components/servicePage/content/aiAgentsAutomation";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function AiAgentsAutomation() {
@@ -43,42 +19,46 @@ export default function AiAgentsAutomation() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...aiAgentsHero} />
-      <GlowDivider />
-      <ChallengesSection {...aiAgentsChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...aiAgentsSolutions} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="What Are AI Agents?" {...whatAreAiAgents} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Enterprise Assistants & Customer Service" {...assistantsAndCustomerService} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Sales · HR · Finance Agents" {...departmentAgents} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="Multi-Agent Ecosystem" {...multiAgentEcosystem} />
-      <GlowDivider />
-      <DashboardPanelSection eyebrow="Retrieval-Augmented Generation" {...agentRag} />
-      <GlowDivider />
-      <MarqueeWorkflowSection eyebrow="Workflow Automation" {...workflowAutomation} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="AI Agent Architecture" {...agentArchitecture} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...aiAgentsWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...aiAgentsBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Bigwigs" {...aiAgentsWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...aiAgentsUseCases} />
-      <GlowDivider />
-      <CaseStudySection eyebrow="Case Study" {...aiAgentsCaseStudy} />
-      <GlowDivider />
-      <ProcessSection eyebrow="Our Delivery Process" {...aiAgentsProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...aiAgentsFaq} />
+      <ServiceDetailHero {...agentsHero} />
 
-      <CTASection {...aiAgentsBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={agentsChallenges.eyebrow}
+          heading={agentsChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={agentsChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={agentsCapabilities.eyebrow}
+          heading={agentsCapabilities.heading}
+          headerAlign="center"
+          items={agentsCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Six Stages to a Production AI Workforce"
+          steps={agentsProcessSteps}
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={agentsFaq} />
+
+      <ClosingCta
+        heading={agentsBottomCta.heading}
+        description={agentsBottomCta.description}
+        primary={agentsBottomCta.primaryAction}
+        secondary={agentsBottomCta.secondaryAction}
+      />
     </main>
   );
 }

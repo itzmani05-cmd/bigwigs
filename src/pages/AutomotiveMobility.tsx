@@ -1,41 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import DashboardPanelSection from "@/components/industryPage/DashboardPanelSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   automotiveHero,
   automotiveChallenges,
-  automotiveSolutions,
-  annotation,
-  sensorProcessing,
-  computerVision,
-  softwareDashboard,
-  documentProcessing,
-  evMobility,
-  automotiveWhoWeServe,
-  automotiveBusinessBenefits,
-  automotiveWhyUs,
-  automotiveUseCases,
-  automotiveCaseStudy,
-  automotiveProcess,
+  automotiveCapabilities,
+  automotiveProcessSteps,
   automotiveFaq,
   automotiveBottomCta,
-} from "@/components/industryPage/content/automotive";
+} from "@/components/servicePage/content/automotive";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function AutomotiveMobility() {
@@ -43,40 +19,46 @@ export default function AutomotiveMobility() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...automotiveHero} />
-      <GlowDivider />
-      <ChallengesSection {...automotiveChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...automotiveSolutions} />
-      <GlowDivider />
-      <NumberedListWorkflowSection eyebrow="Autonomous Driving Data Annotation" {...annotation} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="LiDAR & Sensor Data Processing" {...sensorProcessing} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="Computer Vision Solutions" {...computerVision} />
-      <GlowDivider />
-      <DashboardPanelSection eyebrow="Software Development" {...softwareDashboard} />
-      <GlowDivider />
-      <MarqueeWorkflowSection eyebrow="Intelligent Document Processing" {...documentProcessing} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="EV & Smart Mobility" {...evMobility} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...automotiveWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...automotiveBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Choose Bigwigs?" {...automotiveWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...automotiveUseCases} />
-      <GlowDivider />
-      <CaseStudySection eyebrow="Case Study" {...automotiveCaseStudy} />
-      <GlowDivider />
-      <ProcessSection {...automotiveProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...automotiveFaq} />
+      <ServiceDetailHero {...automotiveHero} />
 
-      <CTASection {...automotiveBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={automotiveChallenges.eyebrow}
+          heading={automotiveChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={automotiveChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={automotiveCapabilities.eyebrow}
+          heading={automotiveCapabilities.heading}
+          headerAlign="center"
+          items={automotiveCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Five Stages. No Guesswork."
+          steps={automotiveProcessSteps}
+          desktopColumnsClassName="grid-cols-5"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={automotiveFaq} />
+
+      <ClosingCta
+        heading={automotiveBottomCta.heading}
+        description={automotiveBottomCta.description}
+        primary={automotiveBottomCta.primaryAction}
+        secondary={automotiveBottomCta.secondaryAction}
+      />
     </main>
   );
 }

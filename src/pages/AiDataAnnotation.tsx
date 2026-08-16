@@ -1,40 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   annotationHero,
   annotationChallenges,
-  annotationSolutions,
-  whyAnnotationMatters,
-  imageAnnotation,
-  videoAndLidar,
-  advancedAnnotation,
-  ocrDocumentAi,
-  dataLabelingValidation,
-  annotationWhoWeServe,
-  annotationBusinessBenefits,
-  annotationWhyUs,
-  annotationUseCases,
-  annotationCaseStudy,
-  annotationProcess,
+  annotationCapabilities,
+  annotationProcessSteps,
   annotationFaq,
   annotationBottomCta,
-} from "@/components/industryPage/content/aiDataAnnotation";
+} from "@/components/servicePage/content/aiDataAnnotation";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function AiDataAnnotation() {
@@ -42,40 +19,46 @@ export default function AiDataAnnotation() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...annotationHero} />
-      <GlowDivider />
-      <ChallengesSection {...annotationChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...annotationSolutions} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="Why AI Data Annotation Matters" {...whyAnnotationMatters} />
-      <GlowDivider />
-      <NumberedListWorkflowSection eyebrow="Image Annotation" {...imageAnnotation} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Video & LiDAR Annotation" {...videoAndLidar} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Advanced Annotation" {...advancedAnnotation} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="OCR & Document AI" {...ocrDocumentAi} />
-      <GlowDivider />
-      <MarqueeWorkflowSection eyebrow="Data Labeling & Validation" {...dataLabelingValidation} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...annotationWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...annotationBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Bigwigs" {...annotationWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...annotationUseCases} />
-      <GlowDivider />
-      <CaseStudySection eyebrow="Case Study" {...annotationCaseStudy} />
-      <GlowDivider />
-      <ProcessSection eyebrow="Our Workflow" {...annotationProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...annotationFaq} />
+      <ServiceDetailHero {...annotationHero} />
 
-      <CTASection {...annotationBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={annotationChallenges.eyebrow}
+          heading={annotationChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={annotationChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={annotationCapabilities.eyebrow}
+          heading={annotationCapabilities.heading}
+          headerAlign="center"
+          items={annotationCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Six Stages. No Guesswork."
+          steps={annotationProcessSteps}
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={annotationFaq} />
+
+      <ClosingCta
+        heading={annotationBottomCta.heading}
+        description={annotationBottomCta.description}
+        primary={annotationBottomCta.primaryAction}
+        secondary={annotationBottomCta.secondaryAction}
+      />
     </main>
   );
 }

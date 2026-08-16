@@ -1,40 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import DashboardPanelSection from "@/components/industryPage/DashboardPanelSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   educationHero,
   educationChallenges,
-  educationSolutions,
-  lms,
-  aiLearning,
-  contentPublishing,
-  accessibilityServices,
-  dataLanguage,
-  studentInfoSystems,
-  assessmentExamination,
-  educationWhoWeServe,
-  educationBusinessBenefits,
-  educationWhyUs,
-  educationUseCases,
-  educationProcess,
+  educationCapabilities,
+  educationProcessSteps,
   educationFaq,
   educationBottomCta,
-} from "@/components/industryPage/content/education";
+} from "@/components/servicePage/content/education";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function EducationElearningSolutions() {
@@ -42,40 +19,46 @@ export default function EducationElearningSolutions() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...educationHero} />
-      <GlowDivider />
-      <ChallengesSection {...educationChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...educationSolutions} />
-      <GlowDivider />
-      <NumberedListWorkflowSection eyebrow="Learning Management Systems (LMS)" {...lms} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="AI-Powered Learning Solutions" {...aiLearning} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Educational Content & Digital Publishing" {...contentPublishing} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="Accessibility Services" {...accessibilityServices} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="AI Data Services & Language Services" {...dataLanguage} />
-      <GlowDivider />
-      <DashboardPanelSection eyebrow="Student Information Systems" {...studentInfoSystems} />
-      <GlowDivider />
-      <MarqueeWorkflowSection eyebrow="Assessment & Examination Solutions" {...assessmentExamination} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...educationWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...educationBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Choose Bigwigs?" {...educationWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...educationUseCases} />
-      <GlowDivider />
-      <ProcessSection eyebrow="Our Delivery Process" {...educationProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...educationFaq} />
+      <ServiceDetailHero {...educationHero} />
 
-      <CTASection {...educationBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={educationChallenges.eyebrow}
+          heading={educationChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={educationChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={educationCapabilities.eyebrow}
+          heading={educationCapabilities.heading}
+          headerAlign="center"
+          items={educationCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Five Stages. Discovery to Support."
+          steps={educationProcessSteps}
+          desktopColumnsClassName="grid-cols-5"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={educationFaq} />
+
+      <ClosingCta
+        heading={educationBottomCta.heading}
+        description={educationBottomCta.description}
+        primary={educationBottomCta.primaryAction}
+        secondary={educationBottomCta.secondaryAction}
+      />
     </main>
   );
 }

@@ -1,41 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
-  generativeAiHero,
-  generativeAiChallenges,
-  generativeAiSolutions,
-  generativeAiEcosystem,
-  largeLanguageModels,
-  promptEngineering,
-  chatbotsAndAgents,
-  retrievalAugmentedGeneration,
-  documentIntelligence,
-  workflowAutomation,
-  generativeAiWhoWeServe,
-  generativeAiBusinessBenefits,
-  generativeAiWhyUs,
-  generativeAiUseCases,
-  generativeAiCaseStudy,
-  generativeAiProcess,
-  generativeAiFaq,
-  generativeAiBottomCta,
-} from "@/components/industryPage/content/generativeAi";
+  genAiHero,
+  genAiChallenges,
+  genAiCapabilities,
+  genAiProcessSteps,
+  genAiFaq,
+  genAiBottomCta,
+} from "@/components/servicePage/content/generativeAi";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function GenerativeAi() {
@@ -43,42 +19,46 @@ export default function GenerativeAi() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...generativeAiHero} />
-      <GlowDivider />
-      <ChallengesSection {...generativeAiChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...generativeAiSolutions} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="Generative AI Ecosystem" {...generativeAiEcosystem} />
-      <GlowDivider />
-      <NumberedListWorkflowSection eyebrow="Large Language Models" {...largeLanguageModels} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="Prompt Engineering" {...promptEngineering} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="AI Chatbots & AI Agents" {...chatbotsAndAgents} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="Retrieval-Augmented Generation" {...retrievalAugmentedGeneration} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="Document Intelligence" {...documentIntelligence} />
-      <GlowDivider />
-      <MarqueeWorkflowSection eyebrow="AI Workflow Automation" {...workflowAutomation} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...generativeAiWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...generativeAiBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Bigwigs" {...generativeAiWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...generativeAiUseCases} />
-      <GlowDivider />
-      <CaseStudySection eyebrow="Case Study" {...generativeAiCaseStudy} />
-      <GlowDivider />
-      <ProcessSection eyebrow="Our Delivery Process" {...generativeAiProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...generativeAiFaq} />
+      <ServiceDetailHero {...genAiHero} />
 
-      <CTASection {...generativeAiBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={genAiChallenges.eyebrow}
+          heading={genAiChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={genAiChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={genAiCapabilities.eyebrow}
+          heading={genAiCapabilities.heading}
+          headerAlign="center"
+          items={genAiCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Six Stages. No Guesswork."
+          steps={genAiProcessSteps}
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={genAiFaq} />
+
+      <ClosingCta
+        heading={genAiBottomCta.heading}
+        description={genAiBottomCta.description}
+        primary={genAiBottomCta.primaryAction}
+        secondary={genAiBottomCta.secondaryAction}
+      />
     </main>
   );
 }

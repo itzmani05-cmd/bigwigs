@@ -1,40 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import ChallengesSection from "@/components/industryPage/ChallengesSection";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import SplitFeatureListSection from "@/components/industryPage/SplitFeatureListSection";
-import DashboardPanelSection from "@/components/industryPage/DashboardPanelSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import WhyUsSection from "@/components/industryPage/WhyUsSection";
-import UseCasesCarousel from "@/components/industryPage/UseCasesCarousel";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   manufacturingHero,
   manufacturingChallenges,
-  manufacturingSolutions,
-  computerVisionInspection,
-  predictiveMaintenance,
-  aiDataServices,
-  softwareDashboard,
-  documentProcessing,
-  dataAnalytics,
-  safetyAccessibility,
-  manufacturingWhoWeServe,
-  manufacturingBusinessBenefits,
-  manufacturingWhyUs,
-  manufacturingUseCases,
-  manufacturingProcess,
+  manufacturingCapabilities,
+  manufacturingProcessSteps,
   manufacturingFaq,
   manufacturingBottomCta,
-} from "@/components/industryPage/content/manufacturing";
+} from "@/components/servicePage/content/manufacturing";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function ManufacturingIndustrialSolutions() {
@@ -42,40 +19,46 @@ export default function ManufacturingIndustrialSolutions() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...manufacturingHero} />
-      <GlowDivider />
-      <ChallengesSection {...manufacturingChallenges} />
-      <GlowDivider />
-      <SolutionsSection {...manufacturingSolutions} />
-      <GlowDivider />
-      <NumberedListWorkflowSection eyebrow="Computer Vision for Quality Inspection" {...computerVisionInspection} />
-      <GlowDivider />
-      <ChecklistWorkflowSection eyebrow="Predictive Maintenance" {...predictiveMaintenance} />
-      <GlowDivider />
-      <SplitFeatureListSection eyebrow="AI Data Services" {...aiDataServices} />
-      <GlowDivider />
-      <DashboardPanelSection eyebrow="Industrial Software Development" {...softwareDashboard} />
-      <GlowDivider />
-      <MarqueeWorkflowSection eyebrow="Intelligent Document Processing" {...documentProcessing} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="AI Data Collection & Industrial Analytics" {...dataAnalytics} />
-      <GlowDivider />
-      <TwoFeatureCardsSection eyebrow="Worker Safety & Accessibility" {...safetyAccessibility} />
-      <GlowDivider />
-      <WhoWeServeSection eyebrow="Industries We Serve" {...manufacturingWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection eyebrow="Business Benefits" {...manufacturingBusinessBenefits} />
-      <GlowDivider />
-      <WhyUsSection eyebrow="Why Choose Bigwigs?" {...manufacturingWhyUs} />
-      <GlowDivider />
-      <UseCasesCarousel eyebrow="Sample Use Cases" {...manufacturingUseCases} />
-      <GlowDivider />
-      <ProcessSection eyebrow="Our Delivery Process" {...manufacturingProcess} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...manufacturingFaq} />
+      <ServiceDetailHero {...manufacturingHero} />
 
-      <CTASection {...manufacturingBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={manufacturingChallenges.eyebrow}
+          heading={manufacturingChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={manufacturingChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={manufacturingCapabilities.eyebrow}
+          heading={manufacturingCapabilities.heading}
+          headerAlign="center"
+          items={manufacturingCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Five Stages. No Guesswork."
+          steps={manufacturingProcessSteps}
+          desktopColumnsClassName="grid-cols-5"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={manufacturingFaq} />
+
+      <ClosingCta
+        heading={manufacturingBottomCta.heading}
+        description={manufacturingBottomCta.description}
+        primary={manufacturingBottomCta.primaryAction}
+        secondary={manufacturingBottomCta.secondaryAction}
+      />
     </main>
   );
 }

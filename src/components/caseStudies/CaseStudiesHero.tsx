@@ -40,7 +40,7 @@ export default function CaseStudiesHero() {
           animate="visible"
           className="mx-auto max-w-3xl text-center"
         >
-           <div className="flex items-center justify-center gap-3">
+          <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
               Case Studies

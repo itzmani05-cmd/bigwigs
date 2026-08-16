@@ -1,31 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   dataQaHero,
-  dataQaSolutions,
-  dataQaAnnotationQuality,
-  dataQaMediaValidation,
-  dataQaWorkflow,
-  dataQaContinuousImprovement,
-  dataQaSecurityIntegrity,
-  dataQaWhoWeServe,
-  dataQaBusinessBenefits,
-  dataQaCaseStudy,
+  dataQaChallenges,
+  dataQaCapabilities,
+  dataQaProcessSteps,
   dataQaFaq,
   dataQaBottomCta,
-} from "@/components/industryPage/content/dataQualityAssurance";
+} from "@/components/servicePage/content/dataQualityAssurance";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function DataQualityAssurance() {
@@ -33,30 +19,46 @@ export default function DataQualityAssurance() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...dataQaHero} />
-      <GlowDivider />
-      <SolutionsSection {...dataQaSolutions} />
-      <GlowDivider />
-      <NumberedListWorkflowSection {...dataQaAnnotationQuality} />
-      <GlowDivider />
-      <TwoFeatureCardsSection {...dataQaMediaValidation} />
-      <GlowDivider />
-      <ProcessSection {...dataQaWorkflow} />
-      <GlowDivider />
-      <MarqueeWorkflowSection {...dataQaContinuousImprovement} />
-      <GlowDivider />
-      <ChecklistWorkflowSection {...dataQaSecurityIntegrity} />
-      <GlowDivider />
-      <WhoWeServeSection {...dataQaWhoWeServe} />
-      <GlowDivider />
-      <BusinessBenefitsSection {...dataQaBusinessBenefits} />
-      <GlowDivider />
-      <CaseStudySection {...dataQaCaseStudy} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...dataQaFaq} />
+      <ServiceDetailHero {...dataQaHero} />
 
-      <CTASection {...dataQaBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={dataQaChallenges.eyebrow}
+          heading={dataQaChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={dataQaChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={dataQaCapabilities.eyebrow}
+          heading={dataQaCapabilities.heading}
+          headerAlign="center"
+          items={dataQaCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Five Stages. Zero Guesswork."
+          steps={dataQaProcessSteps}
+          desktopColumnsClassName="grid-cols-5"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={dataQaFaq} />
+
+      <ClosingCta
+        heading={dataQaBottomCta.heading}
+        description={dataQaBottomCta.description}
+        primary={dataQaBottomCta.primaryAction}
+        secondary={dataQaBottomCta.secondaryAction}
+      />
     </main>
   );
 }

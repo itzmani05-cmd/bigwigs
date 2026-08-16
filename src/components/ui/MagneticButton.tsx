@@ -1,6 +1,7 @@
 import type { MouseEvent, ReactNode } from "react";
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useHashLink } from "@/hooks/useHashLink";
 
 interface MagneticButtonProps {
   as?: "a" | "button";
@@ -29,6 +30,7 @@ export default function MagneticButton({
   children,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLElement | null>(null);
+  const hashLink = useHashLink(href ?? "");
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const springX = useSpring(x, { stiffness: 300, damping: 20, mass: 0.5 });
@@ -68,7 +70,14 @@ export default function MagneticButton({
   }
 
   return (
-    <motion.a href={href} onClick={onClick} {...sharedProps}>
+    <motion.a
+      href={hashLink.href}
+      onClick={(e: MouseEvent<HTMLAnchorElement>) => {
+        onClick?.();
+        hashLink.onClick(e);
+      }}
+      {...sharedProps}
+    >
       {children}
     </motion.a>
   );

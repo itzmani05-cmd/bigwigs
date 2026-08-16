@@ -1,32 +1,17 @@
-import IndustriesBackground from "@/components/industries/IndustriesBackground";
-import GlowDivider from "@/components/industryPage/GlowDivider";
-import CTASection from "@/components/ui/CTASection";
-import IndustryHero from "@/components/industryPage/IndustryHero";
-import SolutionsSection from "@/components/industryPage/SolutionsSection";
-import TwoFeatureCardsSection from "@/components/industryPage/TwoFeatureCardsSection";
-import ChecklistWorkflowSection from "@/components/industryPage/ChecklistWorkflowSection";
-import MarqueeWorkflowSection from "@/components/industryPage/MarqueeWorkflowSection";
-import NumberedListWorkflowSection from "@/components/industryPage/NumberedListWorkflowSection";
-import WhoWeServeSection from "@/components/industryPage/WhoWeServeSection";
-import ProcessSection from "@/components/industryPage/ProcessSection";
-import BusinessBenefitsSection from "@/components/industryPage/BusinessBenefitsSection";
-import CaseStudySection from "@/components/industryPage/CaseStudySection";
-import FaqSection from "@/components/industryPage/FaqSection";
+import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
+import IconGridSection from "@/components/servicePage/IconGridSection";
+import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import FAQAccordion from "@/components/servicePage/FAQAccordion";
+import ClosingCta from "@/components/servicePage/ClosingCta";
+import FullScreenSection from "@/components/servicePage/FullScreenSection";
 import {
   translationHero,
-  translationSolutions,
-  documentAndSoftwareLocalization,
-  websiteLocalization,
-  marketingLocalization,
-  technicalTranslation,
-  languagesSupported,
-  translationWhoWeServe,
-  translationProcess,
-  translationBusinessBenefits,
-  translationCaseStudy,
+  translationChallenges,
+  translationCapabilities,
+  translationProcessSteps,
   translationFaq,
   translationBottomCta,
-} from "@/components/industryPage/content/translationLocalization";
+} from "@/components/servicePage/content/translationLocalization";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 export default function TranslationLocalization() {
@@ -34,32 +19,46 @@ export default function TranslationLocalization() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
-      <IndustriesBackground />
-      <IndustryHero {...translationHero} />
-      <GlowDivider />
-      <SolutionsSection {...translationSolutions} />
-      <GlowDivider />
-      <TwoFeatureCardsSection {...documentAndSoftwareLocalization} />
-      <GlowDivider />
-      <ChecklistWorkflowSection {...websiteLocalization} />
-      <GlowDivider />
-      <MarqueeWorkflowSection {...marketingLocalization} />
-      <GlowDivider />
-      <NumberedListWorkflowSection {...technicalTranslation} />
-      <GlowDivider />
-      <TwoFeatureCardsSection {...languagesSupported} />
-      <GlowDivider />
-      <WhoWeServeSection {...translationWhoWeServe} />
-      <GlowDivider />
-      <ProcessSection {...translationProcess} />
-      <GlowDivider />
-      <BusinessBenefitsSection {...translationBusinessBenefits} />
-      <GlowDivider />
-      <CaseStudySection eyebrow="Case Study" {...translationCaseStudy} />
-      <GlowDivider />
-      <FaqSection eyebrow="Frequently Asked Questions" {...translationFaq} />
+      <ServiceDetailHero {...translationHero} />
 
-      <CTASection {...translationBottomCta} />
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={translationChallenges.eyebrow}
+          heading={translationChallenges.heading}
+          headerAlign="center"
+          align="center"
+          items={translationChallenges.items}
+          columnsClassName="grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={translationCapabilities.eyebrow}
+          heading={translationCapabilities.heading}
+          headerAlign="center"
+          items={translationCapabilities.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <ProcessTimeline
+          eyebrow="How We Work"
+          heading="Five Stages. Every Language."
+          steps={translationProcessSteps}
+          desktopColumnsClassName="grid-cols-5"
+        />
+      </FullScreenSection>
+
+      <FAQAccordion items={translationFaq} />
+
+      <ClosingCta
+        heading={translationBottomCta.heading}
+        description={translationBottomCta.description}
+        primary={translationBottomCta.primaryAction}
+        secondary={translationBottomCta.secondaryAction}
+      />
     </main>
   );
 }
