@@ -114,7 +114,7 @@ export default function DemoForm() {
 
   if (isSubmitted) {
     return (
-      <div className="flex flex-col items-center rounded-[28px] border border-gray-500 bg-gray-900 px-6 py-16 text-center shadow-sm sm:px-10">
+      <div className="flex flex-col items-center rounded-[28px] border border-gray-300 bg-white px-6 py-16 text-center shadow-sm sm:px-10">
         <motion.span
           initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -152,19 +152,7 @@ export default function DemoForm() {
   }
 
   return (
-    <div className="overflow-hidden rounded-[28px] border border-gray-300 bg-white p-6 sm:p-10 lg:p-12 shadow-sm">
-      <div>
-        <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
-          Demo Request Form
-        </span>
-        <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-          Schedule My Demo
-        </h2>
-        <p className="mt-3 text-base leading-relaxed text-slate-500">
-          Fill in your details and our team will get in touch to confirm your demo.
-        </p>
-      </div>
-
+    <div className="overflow-hidden rounded-[28px] border border-gray-300 bg-white p-6 sm:p-10 lg:p-12 lg:pt-2 shadow-sm">
       <form noValidate onSubmit={handleSubmit} className="mt-10 flex flex-col gap-10">
         <FormSection icon={User} title="Your Details">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">

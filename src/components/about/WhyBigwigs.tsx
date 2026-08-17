@@ -19,7 +19,7 @@ export default function WhyBigwigs() {
           </h2>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {whyBigwigsFeatures.map((feature, i) => {
             const Icon = feature.icon;
             return (

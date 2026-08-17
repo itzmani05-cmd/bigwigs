@@ -19,7 +19,7 @@ export default function Industries() {
         eyebrow="How We Work"
         heading="Six Stages. Every Industry."
         steps={industriesProcessSteps}
-        desktopColumnsClassName="grid-cols-6"
+        desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
       />
       <FAQAccordion items={industriesFaqItems} />
 

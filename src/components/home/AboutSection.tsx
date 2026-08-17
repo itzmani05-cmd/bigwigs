@@ -212,7 +212,7 @@ export default function AboutSection() {
                   </div>
                 </motion.div>
               ))}
-            </div>i 
+            </div>
           </div>
           <div className="relative pb-8  lg:pb-10 lg:pl-6">
             {SERVICE_CHIPS.map((chip) => (

@@ -76,7 +76,7 @@ export default function ResumeUpload({ file, onChange, error }: ResumeUploadProp
               type="button"
               onClick={() => onChange(null)}
               aria-label="Remove file"
-              className="ml-2 flex h-6 w-6 items-center justify-center rounded-full text-slate-400 transition-colors duration-200 hover:bg-slate-100 hover:text-rose-500"
+              className="ml-2 flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors duration-200 hover:bg-slate-100 hover:text-rose-500"
             >
               <X size={14} />
             </button>

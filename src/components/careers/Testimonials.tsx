@@ -120,10 +120,15 @@ export default function Testimonials() {
               type="button"
               onClick={() => goTo(i)}
               aria-label={`Go to testimonial ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === index ? "w-6 bg-brand-blue-500" : "w-1.5 bg-slate-300 hover:bg-slate-400"
-              }`}
-            />
+              className="flex h-8 w-8 items-center justify-center"
+            >
+              <span
+                aria-hidden
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === index ? "w-6 bg-brand-blue-500" : "w-1.5 bg-slate-300 hover:bg-slate-400"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </Container>

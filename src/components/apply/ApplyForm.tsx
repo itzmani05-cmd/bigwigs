@@ -4,7 +4,6 @@ import {
   User,
   Mail,
   Phone,
-  MessageSquare,
   CheckCircle2,
   ArrowRight,
   Loader2,
@@ -22,8 +21,6 @@ interface ApplyFormState {
   lastName: string;
   email: string;
   phone: string;
-  coverLetter: string;
-  whyJoin: string;
   consent: boolean;
 }
 
@@ -32,8 +29,6 @@ const EMPTY_FORM: ApplyFormState = {
   lastName: "",
   email: "",
   phone: "",
-  coverLetter: "",
-  whyJoin: "",
   consent: false,
 };
 
@@ -85,17 +80,10 @@ export default function ApplyForm() {
     setSubmitError(null);
     setIsSubmitting(true);
 
-    const appendix = [form.whyJoin && `Why join Bigwigs Technologies: ${form.whyJoin}`]
-      .filter(Boolean)
-      .join("\n");
-
-    const coverLetter = [form.coverLetter, appendix].filter(Boolean).join("\n\n---\n\n");
-
     const payload = new FormData();
     payload.set("fullName", `${form.firstName} ${form.lastName}`.trim());
     payload.set("email", form.email);
     payload.set("phone", form.phone);
-    if (coverLetter) payload.set("coverLetter", coverLetter);
     if (resume) payload.set("resume", resume);
 
     try {
@@ -153,16 +141,7 @@ export default function ApplyForm() {
   }
 
   return (
-    <div className="overflow-hidden rounded-[28px] border border-gray-300 bg-white p-6 sm:p-10 lg:p-12 shadow-sm">
-      <div>
-        <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
-          Application Form
-        </span>
-        <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Apply Now</h2>
-        <p className="mt-3 text-base leading-relaxed text-slate-500">
-          Fill in your details and our recruitment team will get back to you shortly.
-        </p>
-      </div>
+    <div className="overflow-hidden rounded-[28px] border border-gray-300 bg-white p-6 sm:p-10 lg:p-12 lg:pt-2 shadow-sm">
 
       <form noValidate onSubmit={handleSubmit} className="mt-10 flex flex-col gap-10">
         <FormSection icon={User} title="Personal Information">
@@ -214,27 +193,6 @@ export default function ApplyForm() {
 
         <FormSection icon={CheckCircle2} title="Resume">
           <ResumeUpload file={resume} onChange={setResume} error={resumeError} />
-        </FormSection>
-
-        <FormSection icon={MessageSquare} title="Additional Information">
-          <div className="flex flex-col gap-5">
-            <FormField
-              as="textarea"
-              label="Cover Letter"
-              name="coverLetter"
-              value={form.coverLetter}
-              onChange={(v) => setField("coverLetter", v)}
-              placeholder="Tell us a bit about yourself..."
-            />
-            <FormField
-              as="textarea"
-              label="Why do you want to join Bigwigs Technologies?"
-              name="whyJoin"
-              value={form.whyJoin}
-              onChange={(v) => setField("whyJoin", v)}
-              placeholder="Share what excites you about this opportunity..."
-            />
-          </div>
         </FormSection>
 
         {submitError && (
