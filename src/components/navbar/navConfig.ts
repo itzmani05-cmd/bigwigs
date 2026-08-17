@@ -30,6 +30,10 @@ import manufacturingImg from "@/assests/industries/Manufacturing.png";
 import agricultureImg from "@/assests/industries/Agriculture.png";
 import smartCitiesImg from "@/assests/industries/SmartCities.png";
 import logisticsImg from "@/assests/industries/Drones.png";
+import missionVisionImg from "@/assests/aboutNavbar/Mission&Vission.png";
+import ourStoryImg from "@/assests/aboutNavbar/ourStory.png";
+import ourExpertiseImg from "@/assests/aboutNavbar/OurExpertise.png";
+import certificationsImg from "@/assests/aboutNavbar/Certifications.png";
 
 export interface MegaFeature {
   icon: LucideIcon;
@@ -72,21 +76,25 @@ export const navItems: NavItem[] = [
           icon: BookOpen,
           title: "Our Story",
           description: "How BigWigs got started and where we're headed.",
+          image: ourStoryImg,
         },
         {
           icon: Target,
           title: "Mission & Vision",
           description: "What drives us, and the standard we hold ourselves to.",
+          image: missionVisionImg,
         },
         {
           icon: Sparkles,
           title: "Our Expertise",
           description: "The domains and technologies we go deep on.",
+          image: ourExpertiseImg,
         },
         {
           icon: BadgeCheck,
           title: "Certifications",
           description: "Compliance and quality credentials we hold.",
+          image: certificationsImg,
         },
       ],
       cta: { label: "Learn more about us", href: "/about" },

@@ -182,7 +182,7 @@ export default function Hero() {
           ))}
           </motion.div>
 
-          <div className="flex flex-col items-start gap-4 pr-2 pt-5 sm:items-end sm:gap-2 sm:border-l sm:border-t-0 sm:pl-12 sm:pt-0">
+          <div className="flex flex-col items-start gap-4 pr-2 pt-5 sm:items-end sm:gap-2 sm:pl-12 sm:pr-6 sm:pt-0 lg:pr-10">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-900">
               Trusted by Global Enterprises
             </span>

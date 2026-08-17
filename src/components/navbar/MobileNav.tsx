@@ -5,7 +5,7 @@ import { ChevronDown, LogOut, ShieldCheck, Briefcase, User, UserPlus, Phone } fr
 
 import HashLink from "@/components/ui/HashLink";
 import type { NavItem } from "./navConfig";
-import { ctaItem, demoItem } from "./navConfig";
+import { ctaItem } from "./navConfig";
 
 function initialsOf(name: string): string {
   return name
@@ -110,17 +110,10 @@ export default function MobileNav({ id, items, isOpen, onClose }: MobileNavProps
             <HashLink
               href={ctaItem.href}
               onClick={onClose}
-              className="mt-3 flex items-center justify-center gap-1.5 px-5 py-3 rounded-full text-sm font-semibold border-2 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-colors select-none"
+              className="mt-3 flex items-center justify-center gap-1.5 px-5 py-3 rounded-full text-sm font-semibold text-white bg-slate-900 transition-colors select-none"
             >
               <Phone size={16} />
               {ctaItem.name}
-            </HashLink>
-            <HashLink
-              href={demoItem.href}
-              onClick={onClose}
-              className="mt-3 flex items-center justify-center gap-1.5 px-5 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-brand-green-500 to-brand-blue-500 shadow-md shadow-brand-blue-500/20 transition-all duration-300 select-none"
-            >
-              {demoItem.name}
             </HashLink>
           </div>
         </motion.div>
