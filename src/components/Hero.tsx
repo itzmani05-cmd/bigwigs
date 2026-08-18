@@ -1,13 +1,48 @@
+import { useEffect, useState } from "react";
 import { ArrowRight, Users, ShieldCheck, Globe2, Star } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
 import HeroVisualAnimation from "@/components/hero/HeroVisualAnimation";
+import appenLogo from "/data/trustedPartners/AppenLogo.png";
+import imeritLogo from "/data/trustedPartners/ImeritLogo.jpeg";
+import ivisionLogo from "/data/trustedPartners/IvisionLogo.png";
+import bigwigsPartnerLogo from "/data/trustedPartners/Logo.jpeg";
+import prudentLogo from "/data/trustedPartners/PrudentLogo.png";
+import tictagLogo from "/data/trustedPartners/TictagLogo.png";
+import wiseplLogo from "/data/trustedPartners/WiseplLogo.jpeg";
+import u2dLogo from "/data/trustedPartners/u2d-logo.png";
 
-const partnerLogoModules = import.meta.glob("/data/trustedPartners/*", {
-  eager: true,
-  import: "default",
-}) as Record<string, string>;
-const trustedPartnerLogos = Object.values(partnerLogoModules);
+interface PartnerLogo {
+  src: string;
+  name: string;
+  /** max-height only — width is left to scale via object-contain, capped by a shared max-w safety net. */
+  maxHClass: string;
+}
+
+// Each source file bakes in a different amount of transparent padding around
+// its mark (e.g. Prudent/Tictag/ivision are ~45-60% empty canvas), so a single
+// shared max-h would make those logos look much smaller than Appen/u2d, which
+// are already tightly cropped. max-h is tuned per logo so the actual glyphs
+// land at a consistent visual height instead of a consistent canvas height.
+const partnerLogos: PartnerLogo[] = [
+  { src: appenLogo, name: "Appen", maxHClass: "max-h-[16px] sm:max-h-[23px]" },
+  { src: imeritLogo, name: "iMerit", maxHClass: "max-h-[17px] sm:max-h-[25px]" },
+  { src: ivisionLogo, name: "ivision", maxHClass: "max-h-[36px] sm:max-h-[53px]" },
+  { src: bigwigsPartnerLogo, name: "Partner", maxHClass: "max-h-[18px] sm:max-h-[26px]" },
+  { src: prudentLogo, name: "Prudent Partners", maxHClass: "max-h-[30px] sm:max-h-[43px]" },
+  { src: tictagLogo, name: "Tictag", maxHClass: "max-h-[30px] sm:max-h-[44px]" },
+  { src: wiseplLogo, name: "WISEPL", maxHClass: "max-h-[19px] sm:max-h-[28px]" },
+  { src: u2dLogo, name: "UP2DATEZ", maxHClass: "max-h-[15px] sm:max-h-[23px]" },
+];
+
+// Show a handful of logos at a time and rotate through the rest so the row
+// stays compact instead of shrinking every logo to fit them all at once.
+const LOGOS_PER_GROUP = 4;
+const LOGO_ROTATION_MS = 2000;
+const trustedPartnerLogoGroups = Array.from(
+  { length: Math.ceil(partnerLogos.length / LOGOS_PER_GROUP) },
+  (_, i) => partnerLogos.slice(i * LOGOS_PER_GROUP, i * LOGOS_PER_GROUP + LOGOS_PER_GROUP)
+);
 
 const eyebrowVariants = {
   hidden: { opacity: 0, y: 16 },
@@ -78,11 +113,21 @@ const stats = [
 ];
 
 export default function Hero() {
+  const [logoGroupIndex, setLogoGroupIndex] = useState(0);
+
+  useEffect(() => {
+    if (trustedPartnerLogoGroups.length <= 1) return;
+    const id = window.setInterval(() => {
+      setLogoGroupIndex((i) => (i + 1) % trustedPartnerLogoGroups.length);
+    }, LOGO_ROTATION_MS);
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
     <section id="home" className="relative w-full overflow-hidden bg-white">
-      <div className="mx-auto max-w-[1440px] px-4 pt-4 pb-2 sm:px-8 lg:px-10 lg:pt-6 lg:pb-10">
-        <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[3fr_2fr] md:gap-8 xl:grid-cols-[1fr_1.05fr] xl:gap-12 2xl:gap-16">
-          <div className="flex flex-col items-start gap-3 text-left">
+      <div className="mx-auto max-w-[1500px] px-4 pt-4 pb-2 sm:px-8 lg:px-10 xl:px-12 lg:pt-6 lg:pb-10">
+        <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[3fr_2fr] md:gap-8 min-[1440px]:grid-cols-[0.95fr_1.05fr] min-[1440px]:gap-14 2xl:gap-16">
+          <div className="flex flex-col items-start gap-3 text-left min-[1440px]:max-w-[620px]">
             <motion.span
               variants={eyebrowVariants}
               initial="hidden"
@@ -147,7 +192,7 @@ export default function Hero() {
             variants={illustrationVariants}
             initial="hidden"
             animate="visible"
-            className="relative mx-auto aspect-[3/2] w-full max-w-[620px] sm:aspect-[6/5] lg:max-w-none"
+            className="relative mx-auto aspect-[3/2] w-full max-w-[620px] sm:aspect-[6/5] lg:max-w-none min-[1440px]:mx-0 min-[1440px]:max-w-[720px] min-[1440px]:justify-self-end"
           >
             <HeroVisualAnimation />
           </motion.div>
@@ -155,7 +200,7 @@ export default function Hero() {
       </div>
 
       <div className="relative w-full border-t border-slate-100 bg-white">
-        <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-6 px-4 pb-4 pt-2 sm:grid-cols-[45%_55%] sm:gap-8 sm:px-8 sm:py-2 lg:gap-12 lg:px-10">
+        <div className="mx-auto grid max-w-[1500px] grid-cols-1 items-center gap-6 px-4 pb-4 pt-2 sm:grid-cols-[45%_55%] sm:gap-8 sm:px-8 sm:py-2 lg:gap-12 lg:px-10 xl:px-12">
           <motion.div
             variants={statsVariants}
             initial="hidden"
@@ -186,20 +231,29 @@ export default function Hero() {
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-900">
               Trusted by Global Enterprises
             </span>
-            <div className="flex flex-wrap items-center gap-2 sm:justify-end">
-              {trustedPartnerLogos.map((logo) => (
-                <span
-                  key={logo}
-                  className="flex h-8 items-center justify-center rounded-lg px-4 sm:h-12"
-                >
-                  <img
-                    src={logo}
-                    alt="Bigwigs Technologies partner logo"
-                    className="h-5 w-auto max-w-[90px] object-contain sm:h-6 sm:max-w-[100px]"
-                  />
-                </span>
-              ))}
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={logoGroupIndex}
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="flex flex-wrap items-center gap-x-1 gap-y-2 sm:justify-end"
+              >
+                {trustedPartnerLogoGroups[logoGroupIndex].map((logo) => (
+                  <span
+                    key={logo.src}
+                    className="flex h-11 w-24 shrink-0 items-center justify-center rounded-lg sm:h-16 sm:w-32"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className={`h-auto w-auto max-w-[90px] object-contain sm:max-w-[130px] ${logo.maxHClass}`}
+                    />
+                  </span>
+                ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

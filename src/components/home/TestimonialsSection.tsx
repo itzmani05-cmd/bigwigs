@@ -49,11 +49,13 @@ function TestimonialCard({ item }: { item: Testimonial }) {
 
       <div className="mt-7 border-t border-slate-100 pt-5">
         <div className="flex items-center gap-2">
-          <img
-            src={item.avatar}
-            alt={item.name}
-            className="h-11 w-11 shrink-0 rounded-full object-cover shadow-md ring-4 ring-white"
-          />
+          <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full shadow-md ring-4 ring-white sm:h-14 sm:w-14">
+            <img
+              src={item.avatar}
+              alt={item.name}
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
           <div className="min-w-0">
             <p className="text-sm font-bold text-slate-900">{item.name}</p>
             <p className="text-xs text-slate-500">{item.position}</p>
