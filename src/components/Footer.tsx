@@ -101,7 +101,7 @@ const CONTACT_GROUPS: ContactGroup[] = [
     heading: "Business Enquiries",
     details: [
       { icon: Phone, lines: ["+91 93447 69914"], href: "tel:+919344769914" },
-      { icon: Mail, lines: ["info@bigwigsfolks.in"], href: "mailto:info@bigwigsfolks.in" },
+      { icon: Mail, lines: ["vignesh@bigwigstech.com"], href: "mailto:vignesh@bigwigstech.com" },
       { icon: Clock, lines: ["Monday – Sunday | 24/7"] },
     ],
   },

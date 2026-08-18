@@ -80,8 +80,8 @@ const stats = [
 export default function Hero() {
   return (
     <section id="home" className="relative w-full overflow-hidden bg-white">
-      <div className="mx-auto max-w-[1360px] px-4 pt-4 pb-2 sm:px-8 lg:px-10 lg:pt-6 lg:pb-10">
-        <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[3fr_2fr] md:gap-8">
+      <div className="mx-auto max-w-[1440px] px-4 pt-4 pb-2 sm:px-8 lg:px-10 lg:pt-6 lg:pb-10">
+        <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[3fr_2fr] md:gap-8 xl:grid-cols-[1fr_1.05fr] xl:gap-12 2xl:gap-16">
           <div className="flex flex-col items-start gap-3 text-left">
             <motion.span
               variants={eyebrowVariants}
@@ -155,7 +155,7 @@ export default function Hero() {
       </div>
 
       <div className="relative w-full border-t border-slate-100 bg-white">
-        <div className="mx-auto grid max-w-[1380px] grid-cols-1 items-center gap-6 px-4 pb-4 pt-2 sm:grid-cols-[45%_55%] sm:gap-8 sm:px-7 sm:py-2 lg:gap-12 lg:px-8">
+        <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-6 px-4 pb-4 pt-2 sm:grid-cols-[45%_55%] sm:gap-8 sm:px-8 sm:py-2 lg:gap-12 lg:px-10">
           <motion.div
             variants={statsVariants}
             initial="hidden"
