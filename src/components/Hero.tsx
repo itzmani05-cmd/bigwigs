@@ -125,9 +125,9 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative w-full overflow-hidden bg-white">
-      <div className="mx-auto max-w-[1500px] px-4 pt-4 pb-2 sm:px-8 lg:px-10 xl:px-12 lg:pt-6 lg:pb-10">
+      <div className="mx-auto max-w-[1500px] 2xl:max-w-[1800px] px-4 pt-4 pb-2 sm:px-8 lg:px-10 xl:px-12 lg:pt-6 lg:pb-10">
         <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[3fr_2fr] md:gap-8 min-[1440px]:grid-cols-[0.95fr_1.05fr] min-[1440px]:gap-14 2xl:gap-16">
-          <div className="flex flex-col items-start gap-3 text-left min-[1440px]:max-w-[620px]">
+          <div className="flex flex-col items-start gap-3 text-left min-[1440px]:max-w-[620px] 2xl:max-w-[740px]">
             <motion.span
               variants={eyebrowVariants}
               initial="hidden"
@@ -192,7 +192,7 @@ export default function Hero() {
             variants={illustrationVariants}
             initial="hidden"
             animate="visible"
-            className="relative mx-auto aspect-[3/2] w-full max-w-[620px] sm:aspect-[6/5] lg:max-w-none min-[1440px]:mx-0 min-[1440px]:max-w-[720px] min-[1440px]:justify-self-end"
+            className="relative mx-auto aspect-[3/2] w-full max-w-[620px] sm:aspect-[6/5] lg:max-w-none min-[1440px]:mx-0 min-[1440px]:max-w-[720px] min-[1440px]:justify-self-end 2xl:max-w-[860px]"
           >
             <HeroVisualAnimation />
           </motion.div>
@@ -200,7 +200,7 @@ export default function Hero() {
       </div>
 
       <div className="relative w-full border-t border-slate-100 bg-white">
-        <div className="mx-auto grid max-w-[1500px] grid-cols-1 items-center gap-6 px-4 pb-4 pt-2 sm:grid-cols-[45%_55%] sm:gap-8 sm:px-8 sm:py-2 lg:gap-12 lg:px-10 xl:px-12">
+        <div className="mx-auto grid max-w-[1500px] 2xl:max-w-[1800px] grid-cols-1 items-center gap-6 px-4 pb-4 pt-2 sm:grid-cols-[45%_55%] sm:gap-8 sm:px-8 sm:py-2 lg:gap-12 lg:px-10 xl:px-12">
           <motion.div
             variants={statsVariants}
             initial="hidden"

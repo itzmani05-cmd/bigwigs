@@ -46,7 +46,7 @@ export default function Navbar() {
             : "bg-white border-b border-transparent"
         }`}
       >
-        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8 flex items-center justify-between h-19 lg:h-21">
+        <div className="mx-auto max-w-[1500px] 2xl:max-w-[1800px] px-4 sm:px-6 lg:px-8 flex items-center justify-between h-19 lg:h-21">
           <HashLink href="/" className="flex items-center group shrink-0">
             <img
               src="/assets/Logo.png"
