@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 const LAST_UPDATED = "August 16, 2026";
 
@@ -97,10 +98,11 @@ const SECTIONS: Section[] = [
 ];
 
 export default function PrivacyPolicy() {
-  useDocumentTitle("Privacy Policy | Bigwigs Technologies");
+  const meta = getRouteMeta("/privacy-policy");
 
   return (
     <main className="relative w-full overflow-x-hidden bg-white py-16 lg:py-20">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <Container>
         <div className="mx-auto max-w-3xl">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">

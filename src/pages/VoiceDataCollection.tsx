@@ -12,13 +12,15 @@ import {
   voiceFaq,
   voiceBottomCta,
 } from "@/components/servicePage/content/voiceDataCollection";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function VoiceDataCollection() {
-  useDocumentTitle("Voice & Speech Data Collection | Bigwigs Technologies");
+  const meta = getRouteMeta("/service/voice-data-collection");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...voiceHero} />
 
       <FullScreenSection>

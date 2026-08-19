@@ -12,13 +12,15 @@ import {
   retailFaq,
   retailBottomCta,
 } from "@/components/servicePage/content/retail";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function RetailEcommerce() {
-  useDocumentTitle("Retail & E-Commerce Solutions | Bigwigs Technologies");
+  const meta = getRouteMeta("/industries/retail-ecommerce");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...retailHero} />
 
       <FullScreenSection>

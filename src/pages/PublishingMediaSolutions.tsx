@@ -12,13 +12,15 @@ import {
   industryPublishingFaq,
   industryPublishingBottomCta,
 } from "@/components/servicePage/content/industryPublishing";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function PublishingMediaSolutions() {
-  useDocumentTitle("Publishing & Media Solutions | Bigwigs Technologies");
+  const meta = getRouteMeta("/industries/publishing-media-solutions");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...industryPublishingHero} />
 
       <FullScreenSection>

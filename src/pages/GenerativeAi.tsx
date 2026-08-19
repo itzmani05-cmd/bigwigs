@@ -12,13 +12,15 @@ import {
   genAiFaq,
   genAiBottomCta,
 } from "@/components/servicePage/content/generativeAi";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function GenerativeAi() {
-  useDocumentTitle("Generative AI Services | Bigwigs Technologies");
+  const meta = getRouteMeta("/service/generative-ai");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...genAiHero} />
 
       <FullScreenSection>

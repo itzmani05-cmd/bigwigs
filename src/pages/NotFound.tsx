@@ -3,7 +3,7 @@ import { ArrowRight, Code2, Stethoscope, Sparkles, Boxes } from "lucide-react";
 import PageBackground from "@/components/servicePage/PageBackground";
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
 
 const OPTIONAL_LINKS = [
   { label: "Home", href: "/" },
@@ -21,10 +21,14 @@ const DESTINATIONS = [
 ];
 
 export default function NotFound() {
-  useDocumentTitle("Page Not Found | Bigwigs Technologies");
-
   return (
     <div className="relative flex min-h-[50vh] w-full items-center overflow-x-hidden pb-20 pt-8">
+      <SEO
+        title="Page Not Found | Bigwigs Technologies"
+        description="The page you're looking for doesn't exist or has moved."
+        canonical="/404"
+        noIndex
+      />
       <PageBackground />
 
       <Container className="relative z-10">

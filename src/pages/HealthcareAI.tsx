@@ -12,13 +12,15 @@ import {
   healthcareAiFaq,
   healthcareAiBottomCta,
 } from "@/components/servicePage/content/healthcareAi";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function HealthcareAI() {
-  useDocumentTitle("Healthcare AI | Bigwigs Technologies");
+  const meta = getRouteMeta("/service/healthcare-ai");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...healthcareAiHero} />
 
       <FullScreenSection>

@@ -9,13 +9,15 @@ import GlobalImpact from "@/components/about/GlobalImpact";
 import CertificationsGrid from "@/components/certifications/CertificationsGrid";
 
 import AboutCTA from "@/components/about/AboutCTA";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function About() {
-  useDocumentTitle("About Us | Bigwigs Technologies");
+  const meta = getRouteMeta("/about");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <AboutHero />
       <WhoWeAre />
       <OurStory />

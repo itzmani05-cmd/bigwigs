@@ -22,9 +22,9 @@ export default function ApplyIntro() {
         <span className="text-xs pb-9 font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
           CAREERS AT BIGWIGS
         </span>
-        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
+        <h1 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
           Build Your Future With Bigwigs
-        </h2>
+        </h1>
         <p className="mt-4 text-base leading-relaxed text-slate-500">
           Become part of an innovative team building intelligent AI solutions
           for global enterprises. We believe in continuous learning,

@@ -12,13 +12,15 @@ import {
   automotiveFaq,
   automotiveBottomCta,
 } from "@/components/servicePage/content/automotive";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function AutomotiveMobility() {
-  useDocumentTitle("Automotive & Mobility Solutions | Bigwigs Technologies");
+  const meta = getRouteMeta("/industries/automotive-mobility");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...automotiveHero} />
 
       <FullScreenSection>

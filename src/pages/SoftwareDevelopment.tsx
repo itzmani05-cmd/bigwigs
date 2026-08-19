@@ -12,13 +12,15 @@ import {
   softwareFaq,
   softwareBottomCta,
 } from "@/components/servicePage/content/softwareDevelopment";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function SoftwareDevelopment() {
-  useDocumentTitle("Software Development | Bigwigs Technologies");
+  const meta = getRouteMeta("/service/software-development");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...softwareHero} />
 
       <FullScreenSection>

@@ -12,13 +12,15 @@ import {
   agentsFaq,
   agentsBottomCta,
 } from "@/components/servicePage/content/aiAgentsAutomation";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function AiAgentsAutomation() {
-  useDocumentTitle("AI Agents & Intelligent Automation | Bigwigs Technologies");
+  const meta = getRouteMeta("/service/ai-agents-automation");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...agentsHero} />
 
       <FullScreenSection>

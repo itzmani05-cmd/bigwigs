@@ -89,6 +89,7 @@ function Tile({ images, interval, delay, className, paused, priority }: TileProp
         ref={layerARef}
         src={images[0]}
         alt=""
+        aria-hidden
         className="absolute inset-0 h-full w-full object-cover"
         loading={priority ? "eager" : "lazy"}
       />

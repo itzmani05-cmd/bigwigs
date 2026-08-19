@@ -4,13 +4,40 @@
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" type="image/png" href="/image.png" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BigWigs Technologies | Enterprise AI &amp; Software Architectures</title>
+
+    <!--
+      Static fallback only — every route sets its own title/description/OG/Twitter
+      tags at runtime via src/components/seo/SEO.tsx (react-helmet-async). This
+      block is what non-JS crawlers and link-preview bots see, since this SPA
+      serves the same index.html for every route (see vercel.json rewrite).
+    -->
+    <title>Bigwigs Technologies | Enterprise AI, Data &amp; Software Engineering</title>
     <meta
       name="description"
-      content="Empowering modern enterprises with state-of-the-art AI infrastructures, intelligent agents, and next-generation software architectures."
+      content="Partner with Bigwigs Technologies to unlock the power of your data, automate operations, and deliver measurable business outcomes at scale."
     />
+    <meta property="og:site_name" content="Bigwigs Technologies" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bigwigs Technologies | Enterprise AI, Data &amp; Software Engineering" />
+    <meta
+      property="og:description"
+      content="Partner with Bigwigs Technologies to unlock the power of your data, automate operations, and deliver measurable business outcomes at scale."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bigwigs Technologies | Enterprise AI, Data &amp; Software Engineering" />
+    <meta
+      name="twitter:description"
+      content="Partner with Bigwigs Technologies to unlock the power of your data, automate operations, and deliver measurable business outcomes at scale."
+    />
+    <meta name="twitter:image" content="/og-image.png" />
   </head>
   <body class="min-h-full flex flex-col bg-white">
     <div id="root"></div>

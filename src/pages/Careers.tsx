@@ -5,13 +5,15 @@ import HiringProcess from "@/components/careers/HiringProcess";
 import Testimonials from "@/components/careers/Testimonials";
 import CareersFAQ from "@/components/careers/CareersFAQ";
 import CareersCTA from "@/components/careers/CareersCTA";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function Careers() {
-  useDocumentTitle("Careers | Bigwigs Technologies");
+  const meta = getRouteMeta("/careers");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <CareersHero />
       <LifeAtBigwigs />
       <HiringProcess />

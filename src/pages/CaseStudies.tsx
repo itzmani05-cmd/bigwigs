@@ -3,13 +3,15 @@ import CaseStudiesHero from "@/components/caseStudies/CaseStudiesHero";
 import FeaturedCaseStudies from "@/components/caseStudies/FeaturedCaseStudies";
 import SectionDivider from "@/components/careers/SectionDivider";
 import CTASection from "@/components/ui/CTASection";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function CaseStudies() {
-  useDocumentTitle("Case Studies | Bigwigs Technologies");
+  const meta = getRouteMeta("/case-studies");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <CaseStudiesHero />
       <FeaturedCaseStudies />
       <SectionDivider />

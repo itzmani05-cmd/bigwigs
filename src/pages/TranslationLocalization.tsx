@@ -12,13 +12,15 @@ import {
   translationFaq,
   translationBottomCta,
 } from "@/components/servicePage/content/translationLocalization";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function TranslationLocalization() {
-  useDocumentTitle("Translation & Localization | Bigwigs Technologies");
+  const meta = getRouteMeta("/service/translation-localization");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...translationHero} />
 
       <FullScreenSection>

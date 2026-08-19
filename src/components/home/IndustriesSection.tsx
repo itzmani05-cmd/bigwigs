@@ -36,7 +36,7 @@ function IndustryCard({ industry, index }: { industry: Industry; index: number }
         {imageOk && (
           <img
             src={industry.image}
-            alt=""
+            alt={`${industry.name} solutions by Bigwigs Technologies`}
             onError={() => setImageOk(false)}
             className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />

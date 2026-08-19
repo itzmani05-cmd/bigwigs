@@ -12,13 +12,15 @@ import {
   dataCollectionFaq,
   dataCollectionBottomCta,
 } from "@/components/servicePage/content/dataCollection";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function DataCollection() {
-  useDocumentTitle("Data Collection & AI Datasets | Bigwigs Technologies");
+  const meta = getRouteMeta("/service/data-collection");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...dataCollectionHero} />
 
       <FullScreenSection>

@@ -12,13 +12,15 @@ import {
   manufacturingFaq,
   manufacturingBottomCta,
 } from "@/components/servicePage/content/manufacturing";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function ManufacturingIndustrialSolutions() {
-  useDocumentTitle("Manufacturing & Industrial Solutions | Bigwigs Technologies");
+  const meta = getRouteMeta("/industries/manufacturing-industrial-solutions");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...manufacturingHero} />
 
       <FullScreenSection>

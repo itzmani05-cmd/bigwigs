@@ -12,13 +12,15 @@ import {
   bfsiFaq,
   bfsiBottomCta,
 } from "@/components/servicePage/content/bfsi";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function BfsiSolutions() {
-  useDocumentTitle("Banking, Financial Services & Insurance | Bigwigs Technologies");
+  const meta = getRouteMeta("/industries/bfsi-solutions");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...bfsiHero} />
 
       <FullScreenSection>

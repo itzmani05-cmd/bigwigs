@@ -6,7 +6,8 @@ import IconGridSection from "@/components/servicePage/IconGridSection";
 import StatsBar from "@/components/servicePage/StatsBar";
 import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
 import FAQAccordion from "@/components/servicePage/FAQAccordion";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 const whyChooseItems = [
   { icon: Award, title: "Senior Delivery Teams", description: "Experienced engineers and specialists on every engagement, not junior teams learning on your budget." },
@@ -52,10 +53,11 @@ const servicesFaq = [
 ];
 
 export default function Services() {
-  useDocumentTitle("Services | Bigwigs Technologies");
+  const meta = getRouteMeta("/services");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServicesHero />
       <ServicesGrid />
       <ProcessTimeline

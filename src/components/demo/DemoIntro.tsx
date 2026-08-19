@@ -24,9 +24,9 @@ export default function DemoIntro() {
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
           Book Your Demo
         </span>
-        <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
+        <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
           See Bigwigs Technologies in Action
-        </h2>
+        </h1>
         <p className="mt-4 text-base leading-relaxed text-slate-500">
           Tell us about your project and we'll walk you through how our AI, data, and
           automation solutions can fit your business — tailored to your industry and goals.

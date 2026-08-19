@@ -6,13 +6,15 @@ import FAQAccordion from "@/components/servicePage/FAQAccordion";
 import CTASection from "@/components/ui/CTASection";
 import { industriesProcessSteps } from "@/components/industries/industriesProcessData";
 import { industriesFaqItems } from "@/components/industries/industriesFaqData";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function Industries() {
-  useDocumentTitle("Industries | Bigwigs Technologies");
+  const meta = getRouteMeta("/industries");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <IndustriesHero />
       <IndustriesGrid />
       <ProcessTimeline

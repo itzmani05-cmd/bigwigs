@@ -12,13 +12,15 @@ import {
   dataQaFaq,
   dataQaBottomCta,
 } from "@/components/servicePage/content/dataQualityAssurance";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function DataQualityAssurance() {
-  useDocumentTitle("Data Validation & Quality Assurance | Bigwigs Technologies");
+  const meta = getRouteMeta("/service/data-quality-assurance");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...dataQaHero} />
 
       <FullScreenSection>

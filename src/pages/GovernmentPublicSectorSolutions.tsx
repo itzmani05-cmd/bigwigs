@@ -12,13 +12,15 @@ import {
   governmentFaq,
   governmentBottomCta,
 } from "@/components/servicePage/content/government";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function GovernmentPublicSectorSolutions() {
-  useDocumentTitle("Government & Public Sector Solutions | Bigwigs Technologies");
+  const meta = getRouteMeta("/industries/government-public-sector-solutions");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...governmentHero} />
 
       <FullScreenSection>

@@ -12,13 +12,15 @@ import {
   publishingFaq,
   publishingBottomCta,
 } from "@/components/servicePage/content/digitalPublishing";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function DigitalPublishing() {
-  useDocumentTitle("Digital Publishing Services | Bigwigs Technologies");
+  const meta = getRouteMeta("/service/digital-publishing");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...publishingHero} />
 
       <FullScreenSection>

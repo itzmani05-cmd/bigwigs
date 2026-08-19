@@ -15,15 +15,12 @@ import RelatedCaseStudies from "@/components/caseStudies/detail/RelatedCaseStudi
 import SectionDivider from "@/components/careers/SectionDivider";
 import CTASection from "@/components/ui/CTASection";
 import { getCaseStudyBySlug } from "@/components/caseStudies/caseStudiesData";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
 export default function CaseStudyDetail() {
   const { slug } = useParams<{ slug: string }>();
   const study = slug ? getCaseStudyBySlug(slug) : undefined;
-
-  useDocumentTitle(
-    study ? `${study.title} | Bigwigs Technologies` : "Case Studies | Bigwigs Technologies"
-  );
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
@@ -35,6 +32,19 @@ export default function CaseStudyDetail() {
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO
+        title={`${study.title} | Bigwigs Technologies`}
+        description={study.shortDescription}
+        canonical={`/case-studies/${study.slug}`}
+        ogImage={study.coverImage}
+        ogType="article"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Case Studies", path: "/case-studies" },
+          { name: study.industry },
+        ]}
+      />
       <CaseStudiesBackground />
       <CaseStudyHero study={study} />
       <SectionDivider />

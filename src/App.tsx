@@ -38,10 +38,14 @@ import CookieConsent from "@/components/CookieConsent";
 import ScrollToHash from "@/components/ScrollToHash";
 import ScrollToTop from "@/components/ScrollToTop";
 import ChatBot from "@/components/chatbot/ChatBot";
+import OrganizationJsonLd from "@/components/seo/OrganizationJsonLd";
+import WebSiteJsonLd from "@/components/seo/WebSiteJsonLd";
 
 export default function App() {
   return (
     <MotionConfig reducedMotion="user">
+      <OrganizationJsonLd />
+      <WebSiteJsonLd />
       <ScrollToHash />
       <Navbar />
       <main className="flex-grow">

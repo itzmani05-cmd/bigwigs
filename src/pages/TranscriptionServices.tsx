@@ -12,13 +12,15 @@ import {
   transcriptionFaq,
   transcriptionBottomCta,
 } from "@/components/servicePage/content/transcriptionServices";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import SEO from "@/components/seo/SEO";
+import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function TranscriptionServices() {
-  useDocumentTitle("Transcription Services | Bigwigs Technologies");
+  const meta = getRouteMeta("/service/transcription-services");
 
   return (
     <main className="relative w-full overflow-x-hidden">
+      <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServiceDetailHero {...transcriptionHero} />
 
       <FullScreenSection>
