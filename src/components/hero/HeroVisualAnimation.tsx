@@ -3,30 +3,34 @@ import { useReducedMotion } from "framer-motion";
 import gsap from "gsap";
 
 /**
- * All images in data/video/, discovered automatically and sorted numerically
- * (images1.jfif, images2.jfif, ... images10.jfif) rather than alphabetically.
+ * Images in data/video/, grouped by their filename prefix (LongSize/MediumSize/SmallSize)
+ * and sorted numerically within each group, so each hero tile only cycles through images
+ * whose aspect ratio matches its own shape.
  */
-const imageModules = import.meta.glob("/data/video/*.jfif", {
+const imageModules = import.meta.glob("/data/video/*.{jpg,jfif}", {
   eager: true,
   import: "default",
 }) as Record<string, string>;
 
-const heroImages = Object.entries(imageModules)
-  .sort(([a], [b]) => {
-    const na = parseInt(a.match(/(\d+)/)?.[1] ?? "0", 10);
-    const nb = parseInt(b.match(/(\d+)/)?.[1] ?? "0", 10);
-    return na - nb;
-  })
-  .map(([, url]) => url);
+function loadGroup(prefix: string): string[] {
+  return Object.entries(imageModules)
+    .filter(([path]) => path.includes(`/${prefix}`))
+    .sort(([a], [b]) => {
+      const na = parseInt(a.match(/(\d+)/)?.[1] ?? "0", 10);
+      const nb = parseInt(b.match(/(\d+)/)?.[1] ?? "0", 10);
+      return na - nb;
+    })
+    .map(([, url]) => url);
+}
 
-/** Picks a stable subset of images for a tile, starting at `offset` and stepping by `stride`. */
-function pickSequence(offset: number, stride: number) {
-  if (heroImages.length === 0) return [];
-  const seq: string[] = [];
-  for (let i = 0; i < heroImages.length; i++) {
-    seq.push(heroImages[(offset + i * stride) % heroImages.length]);
-  }
-  return seq;
+const longImages = loadGroup("LongSize");
+const mediumImages = loadGroup("MediumSize");
+const smallImages = loadGroup("SmallSize");
+
+/** Rotates a group's images so a tile can start its crossfade sequence partway through. */
+function pickSequence(images: string[], offset: number) {
+  if (images.length === 0) return [];
+  return images.map((_, i) => images[(offset + i) % images.length]);
 }
 
 interface TileProps {
@@ -85,7 +89,7 @@ function Tile({ images, interval, delay, className, paused, priority }: TileProp
         ref={layerARef}
         src={images[0]}
         alt=""
-        className="absolute inset-0 h-full w-full object-contain"
+        className="absolute inset-0 h-full w-full object-cover"
         loading={priority ? "eager" : "lazy"}
       />
       <img
@@ -139,7 +143,7 @@ export default function HeroVisualAnimation() {
     >
       <div className="relative grid h-full w-full grid-cols-2 grid-rows-2 gap-3 sm:grid-cols-4 sm:grid-rows-3 sm:gap-3.5 lg:gap-4">
         <Tile
-          images={pickSequence(0, 3)}
+          images={pickSequence(longImages, 0)}
           interval={6000}
           delay={0}
           paused={paused}
@@ -147,7 +151,7 @@ export default function HeroVisualAnimation() {
           className="col-span-1 row-span-2 sm:col-span-2 sm:row-span-3"
         />
         <Tile
-          images={pickSequence(1, 3)}
+          images={pickSequence(mediumImages, 0)}
           interval={5000}
           delay={900}
           paused={paused}
@@ -155,14 +159,14 @@ export default function HeroVisualAnimation() {
           className="col-span-1 row-span-1 sm:col-span-2 sm:row-span-2"
         />
         <Tile
-          images={pickSequence(4, 3)}
+          images={pickSequence(smallImages, 0)}
           interval={5800}
           delay={1200}
           paused={paused}
           className="hidden sm:block sm:col-span-2 sm:row-span-1"
         />
         <Tile
-          images={pickSequence(5, 3)}
+          images={pickSequence(smallImages, 5)}
           interval={4300}
           delay={500}
           paused={paused}
