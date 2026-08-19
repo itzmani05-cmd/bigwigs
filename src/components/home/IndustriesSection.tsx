@@ -76,16 +76,6 @@ export default function IndustriesSection() {
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/40 via-white/50 to-transparent"
       />
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.035]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#0F172A 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-        }}
-      />
-
       {/* dotted world map — very subtle scroll parallax. Split into a positioning wrapper
           (Tailwind's -translate-x-1/2) and an inner motion layer: Framer Motion writes the
           whole `transform` property when given a style motion value, which would silently

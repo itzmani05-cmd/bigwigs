@@ -1,21 +1,5 @@
-import { motion } from "framer-motion";
-import {
-  Globe2,
-  Users,
-  Clock,
-  Building2,
-  Smile,
-  type LucideIcon,
-} from "lucide-react";
 import Container from "@/components/ui/Container";
 import globalDeliveryMap from "@/assests/worldMap.png";
-
-
-interface Stat {
-  icon: LucideIcon;
-  value: string;
-  label: string;
-}
 
 interface Node {
   id: string;
@@ -23,16 +7,6 @@ interface Node {
   y: number;
   isHub?: boolean;
 }
-
-/** Coordinates aligned to the red pin markers already baked into worldMap.jpg (2000x1143 space). */
-const NODES: Node[] = [
-  { id: "na", x: 360, y: 385 },
-  { id: "sa", x: 545, y: 690 },
-  { id: "eu", x: 1160, y: 305 },
-  { id: "in", x: 1465, y: 515, isHub: true },
-  { id: "as", x: 1480, y: 290 },
-  { id: "au", x: 1695, y: 825 },
-];
 
 export default function GlobalDeliverySection() {
   return (
@@ -68,43 +42,10 @@ export default function GlobalDeliverySection() {
             src={globalDeliveryMap}
             alt=""
             aria-hidden
-            className="max-h-full h-[500px] w-full select-none rounded-2xl"
+            className="w-full select-none rounded-2xl aspect-[1672/941]"
             draggable={false}
           />
 
-          <svg
-            aria-hidden
-            viewBox="0 0 2000 1143"
-            className="absolute inset-0 h-full w-full"
-          >
-            {/* pulsing rings on every node */}
-            {NODES.map((n, i) => (
-              <circle
-                key={`pulse-${n.id}`}
-                cx={n.x}
-                cy={n.y}
-                r={n.isHub ? 18 : 13}
-                fill="none"
-                stroke="#2563eb"
-                strokeWidth="2.5"
-              >
-                <animate
-                  attributeName="r"
-                  values={`${n.isHub ? 18 : 13};${n.isHub ? 42 : 32};${n.isHub ? 18 : 13}`}
-                  dur="3.2s"
-                  begin={`${i * 0.35}s`}
-                  repeatCount="indefinite"
-                />
-                <animate
-                  attributeName="opacity"
-                  values="0.5;0;0.5"
-                  dur="3.2s"
-                  begin={`${i * 0.35}s`}
-                  repeatCount="indefinite"
-                />
-              </circle>
-            ))}
-          </svg>
         </div>
       </Container>
     </section>
