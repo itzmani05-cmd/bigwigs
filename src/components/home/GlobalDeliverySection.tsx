@@ -8,7 +8,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
-import globalDeliveryMap from "@/assests/globalDeliveryMap.png";
+import globalDeliveryMap from "@/assests/worldMap.png";
 
 
 interface Stat {
@@ -17,8 +17,6 @@ interface Stat {
   label: string;
 }
 
-
-
 interface Node {
   id: string;
   x: number;
@@ -26,23 +24,15 @@ interface Node {
   isHub?: boolean;
 }
 
+/** Coordinates aligned to the red pin markers already baked into worldMap.jpg (2000x1143 space). */
 const NODES: Node[] = [
-  { id: "na", x: 330, y: 172 },
-  { id: "sa", x: 479, y: 350 },
-  { id: "eu", x: 711, y: 129 },
-  { id: "in", x: 1025, y: 255, isHub: true },
-  { id: "as", x: 1100, y: 178 },
-  { id: "au", x: 1259, y: 391 },
+  { id: "na", x: 360, y: 385 },
+  { id: "sa", x: 545, y: 690 },
+  { id: "eu", x: 1160, y: 305 },
+  { id: "in", x: 1465, y: 515, isHub: true },
+  { id: "as", x: 1480, y: 290 },
+  { id: "au", x: 1695, y: 825 },
 ];
-
-const HUB = NODES.find((n) => n.isHub)!;
-const SPOKES = NODES.filter((n) => !n.isHub);
-
-function buildPath(from: Node, to: Node) {
-  const midX = (from.x + to.x) / 2;
-  const liftY = Math.min(from.y, to.y) - 55;
-  return `M ${from.x},${from.y} Q ${midX},${liftY} ${to.x},${to.y}`;
-}
 
 export default function GlobalDeliverySection() {
   return (
@@ -78,42 +68,29 @@ export default function GlobalDeliverySection() {
             src={globalDeliveryMap}
             alt=""
             aria-hidden
-            className="w-full select-none rounded-2xl"
+            className="max-h-full h-[500px] w-full select-none rounded-2xl"
             draggable={false}
           />
 
           <svg
             aria-hidden
-            viewBox="0 0 1536 445"
+            viewBox="0 0 2000 1143"
             className="absolute inset-0 h-full w-full"
           >
-            <defs>
-              {SPOKES.map((n) => (
-                <path key={n.id} id={`spoke-${n.id}`} d={buildPath(n, HUB)} fill="none" />
-              ))}
-              <filter id="mapGlow" x="-200%" y="-200%" width="500%" height="500%">
-                <feGaussianBlur stdDeviation="1.2" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-
             {/* pulsing rings on every node */}
             {NODES.map((n, i) => (
               <circle
                 key={`pulse-${n.id}`}
                 cx={n.x}
                 cy={n.y}
-                r={n.isHub ? 9 : 6}
+                r={n.isHub ? 18 : 13}
                 fill="none"
                 stroke="#2563eb"
-                strokeWidth="1.5"
+                strokeWidth="2.5"
               >
                 <animate
                   attributeName="r"
-                  values={`${n.isHub ? 9 : 6};${n.isHub ? 26 : 18};${n.isHub ? 9 : 6}`}
+                  values={`${n.isHub ? 18 : 13};${n.isHub ? 42 : 32};${n.isHub ? 18 : 13}`}
                   dur="3.2s"
                   begin={`${i * 0.35}s`}
                   repeatCount="indefinite"
@@ -123,29 +100,6 @@ export default function GlobalDeliverySection() {
                   values="0.5;0;0.5"
                   dur="3.2s"
                   begin={`${i * 0.35}s`}
-                  repeatCount="indefinite"
-                />
-              </circle>
-            ))}
-
-            {/* particles traveling each spoke toward/from the India hub */}
-            {SPOKES.map((n, i) => (
-              <circle key={`p-${n.id}`} r="3" fill="#2563eb" filter="url(#mapGlow)">
-                <animateMotion
-                  dur="3s"
-                  begin={`${i * 0.5}s`}
-                  repeatCount="indefinite"
-                  keyPoints="0;1"
-                  keyTimes="0;1"
-                >
-                  <mpath href={`#spoke-${n.id}`} xlinkHref={`#spoke-${n.id}`} />
-                </animateMotion>
-                <animate
-                  attributeName="opacity"
-                  values="0;1;1;0"
-                  keyTimes="0;0.15;0.85;1"
-                  dur="3s"
-                  begin={`${i * 0.5}s`}
                   repeatCount="indefinite"
                 />
               </circle>
