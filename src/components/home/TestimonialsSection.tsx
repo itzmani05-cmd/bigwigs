@@ -25,8 +25,15 @@ const groupVariants = {
   }),
 };
 
-function TestimonialCard({ item }: { item: Testimonial }) {
+const AVATAR_COLORS = [
+  "bg-brand-blue-500",
+  "bg-orange-500",
+  "bg-brand-green-500",
+];
+
+function TestimonialCard({ item, index }: { item: Testimonial; index: number }) {
   const CompanyIcon = item.companyIcon;
+  const avatarColor = AVATAR_COLORS[index % AVATAR_COLORS.length];
 
   return (
     <motion.div
@@ -49,12 +56,11 @@ function TestimonialCard({ item }: { item: Testimonial }) {
 
       <div className="mt-7 border-t border-slate-100 pt-5">
         <div className="flex items-center gap-2">
-          <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full shadow-md ring-4 ring-white sm:h-14 sm:w-14">
-            <img
-              src={item.avatar}
-              alt={item.name}
-              className="h-full w-full object-cover object-center"
-            />
+          <div
+            aria-hidden="true"
+            className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-bold text-white shadow-md ring-4 ring-white sm:h-14 sm:w-14 sm:text-lg ${avatarColor}`}
+          >
+            {item.name.charAt(0).toUpperCase()}
           </div>
           <div className="min-w-0">
             <p className="text-sm font-bold text-slate-900">{item.name}</p>
@@ -225,8 +231,8 @@ export default function TestimonialsSection() {
                 exit="exit"
                 className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8"
               >
-                {groups[groupIndex].map((item) => (
-                  <TestimonialCard key={item.id} item={item} />
+                {groups[groupIndex].map((item, i) => (
+                  <TestimonialCard key={item.id} item={item} index={i} />
                 ))}
               </motion.div>
             </AnimatePresence>

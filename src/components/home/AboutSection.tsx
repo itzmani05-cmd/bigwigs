@@ -36,25 +36,22 @@ interface Pillar {
 
 const PILLARS: Pillar[] = [
   {
-    icon: Target,
     title: "Our Mission",
-    description: "Deliver AI-powered solutions that create measurable business impact.",
+    description: "Our mission is to leverage our expertise in composite products to deliver high quality services inspired by creativity and innovation. We dream to be the go-to BPO organization that tailors our services to match our client requirements in the most effective way.",
     iconBg: "bg-brand-blue-50",
     iconText: "text-brand-blue-600",
     underline: "bg-brand-blue-500",
     illustration: mountainFlagIllustration,
   },
   {
-    icon: Eye,
     title: "Our Vision",
-    description: "Be the most trusted AI data partner for global enterprises.",
+    description: "Our vision is to become the standard of excellence in customer services and inspire other brands to do the same. We envision to provide the best services and use effective strategies to inspire and implement solutions to various business needs",
     iconBg: "bg-purple-50",
     iconText: "text-purple-600",
     underline: "bg-purple-500",
     illustration: telescopeIllustration,
   },
   {
-    icon: Gem,
     title: "Our Values",
     description: "Innovation, integrity, and excellence in everything we deliver.",
     iconBg: "bg-orange-50",
@@ -129,9 +126,6 @@ export default function AboutSection() {
                 />
 
                 <div className="relative z-10">
-                  <span className={`flex h-12 w-12 items-center justify-center rounded-full ${pillar.iconBg} ${pillar.iconText}`}>
-                    <pillar.icon size={20} strokeWidth={1.75} />
-                  </span>
                   <h3 className="mt-4 text-sm font-bold text-slate-900">{pillar.title}</h3>
                   <span aria-hidden className={`mt-2 block h-0.5 w-6 rounded-full ${pillar.underline}`} />
                   <p className="mt-3 text-xs leading-relaxed text-slate-500">

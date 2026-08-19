@@ -1,9 +1,4 @@
 import { Building2, Briefcase, Globe2, Tag, Landmark, type LucideIcon } from "lucide-react";
-import avatarRamesh from "@/assests/trusted/pic1.jpg";
-import avatarAnkitha from "@/assests/trusted/pic2.jpg";
-import avatarNina from "@/assests/trusted/pic4.jpg";
-import avatarWayney from "@/assests/trusted/pic7.jpg";
-import avatarShahjahan from "@/assests/trusted/pic5.jpg";
 
 export interface Testimonial {
   id: string;
@@ -12,7 +7,6 @@ export interface Testimonial {
   position: string;
   company: string;
   companyIcon: LucideIcon;
-  avatar: string;
 }
 
 export const testimonials: Testimonial[] = [
@@ -24,7 +18,6 @@ export const testimonials: Testimonial[] = [
     position: "Project Manager",
     company: "Letsify Sigma4Solutions",
     companyIcon: Building2,
-    avatar: avatarRamesh,
   },
   {
     id: "t-2",
@@ -34,7 +27,6 @@ export const testimonials: Testimonial[] = [
     position: "Project Head",
     company: "GTS",
     companyIcon: Briefcase,
-    avatar: avatarAnkitha,
   },
   
   {
@@ -45,7 +37,6 @@ export const testimonials: Testimonial[] = [
     position: "Project Manager",
     company: "TicTag",
     companyIcon: Tag,
-    avatar: avatarWayney,
   },
   {
     id: "t-4",
@@ -55,7 +46,6 @@ export const testimonials: Testimonial[] = [
     position: "Vendor Manager",
     company: "Appen China",
     companyIcon: Globe2,
-    avatar: avatarNina,
   },
   {
     id: "t-5",
@@ -65,6 +55,5 @@ export const testimonials: Testimonial[] = [
     position: "CEO",
     company: "WisePL Private Limited",
     companyIcon: Landmark,
-    avatar: avatarShahjahan,
   },
 ];
