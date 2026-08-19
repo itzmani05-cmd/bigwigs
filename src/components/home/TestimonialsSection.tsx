@@ -134,17 +134,6 @@ export default function TestimonialsSection() {
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/60 via-white to-white"
       />
 
-      {/* thin grid lines */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.035]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#0F172A 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-        }}
-      />
-
       {/* dotted world map — subtle scroll parallax on the inner layer only; Framer Motion
           owns the whole `transform` property once given a style motion value, so the
           -translate-x-1/2 centering has to live on a separate wrapper. */}

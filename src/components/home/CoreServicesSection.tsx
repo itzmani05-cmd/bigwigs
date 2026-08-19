@@ -12,16 +12,6 @@ export default function CoreServicesSection() {
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white to-white"
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.035]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#0F172A 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-        }}
-      />
-
       {/* dotted pattern, top-right */}
       <div
         aria-hidden

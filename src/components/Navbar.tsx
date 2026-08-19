@@ -11,7 +11,6 @@ import HashLink from "@/components/ui/HashLink";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [heroVisible, setHeroVisible] = useState(true);
   const [activeHash, setActiveHash] = useState(() => window.location.hash);
   const { pathname, hash } = useLocation();
   useEffect(() => {
@@ -35,20 +34,6 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const hero = document.getElementById("home");
-    if (!hero) {
-      setHeroVisible(true);
-      return;
-    }
-    const observer = new IntersectionObserver(
-      ([entry]) => setHeroVisible(entry.isIntersecting),
-      { threshold: 0 }
-    );
-    observer.observe(hero);
-    return () => observer.disconnect();
-  }, [pathname]);
-
-  useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
 
@@ -56,8 +41,6 @@ export default function Navbar() {
     <MotionConfig reducedMotion="user">
       <header
         className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
-          heroVisible ? "translate-y-0" : "-translate-y-full"
-        } ${
           scrolled
             ? "bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-[0_1px_0_0_rgba(15,23,42,0.05)]"
             : "bg-white border-b border-transparent"

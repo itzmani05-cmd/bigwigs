@@ -27,7 +27,7 @@ function ShowcaseCard({ service, index }: { service: CoreService; index: number 
       className="h-full"
     >
       <div
-        className={`group flex h-full flex-col border bg-white p-5 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(37,99,235,0.2)] sm:p-7 ${s.cardBorder} ${s.cardBorderHover}`}
+        className={`group flex h-full flex-col border-3 border-{iconGlow} bg-white p-5 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(37,99,235,0.2)] sm:p-7 ${s.cardBorder} ${s.cardBorderHover}`}
         style={{ clipPath: CARD_CLIP }}
       >
         <div>
@@ -57,10 +57,9 @@ function ShowcaseCard({ service, index }: { service: CoreService; index: number 
             <motion.span
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className={`relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br text-white ${s.iconGradient}`}
-              style={{ boxShadow: `0 14px 28px -10px ${s.iconGlow}` }}
+              className={`relative flex h-14 w-14 items-center justify-center ${s.capabilityIcon}`}
             >
-              <Icon size={26} strokeWidth={1.75} />
+              <Icon size={34} strokeWidth={1.5} />
             </motion.span>
           )}
         </div>
