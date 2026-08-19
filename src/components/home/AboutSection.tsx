@@ -39,7 +39,7 @@ export default function AboutSection() {
   return (
     <section
       id="about-bigwigs"
-      className="relative scroll-mt-6 overflow-hidden bg-white py-8 lg:py-10"
+      className="relative scroll-mt-6 overflow-hidden bg-slate-50 py-8 lg:py-10"
     >
       <Container className="relative z-10">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">

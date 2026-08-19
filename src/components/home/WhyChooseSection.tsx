@@ -61,10 +61,8 @@ interface Stat {
 
 const stats: Stat[] = [
   { icon: Users, value: "12+", label: "Years in Business" },
-  { icon: Globe2, value: "25+", label: "Countries Served" },
   { icon: Database, value: "100M+", label: "Images Annotated" },
   { icon: Star, value: "500+", label: "Successful Projects" },
-  { icon: Target, value: "99.5%", label: "Quality Accuracy" },
 ];
 
 export default function WhyChooseSection() {
@@ -73,15 +71,6 @@ export default function WhyChooseSection() {
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/60 via-white to-white"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.035]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#0F172A 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-        }}
       />
       <div
         aria-hidden
@@ -121,8 +110,7 @@ export default function WhyChooseSection() {
               <span className="text-brand-blue-500">Driving Impact.</span>
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-500 sm:text-lg">
-              We combine deep domain expertise, advanced technology, and a client-first
-              approach to deliver solutions that create real business value.
+              We combine deep domain expertise, advanced technology, and a client-first approach to deliver solutions that create business value.
             </p>
 
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -135,13 +123,14 @@ export default function WhyChooseSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.5, delay: i * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
-                    className="rounded-2xl border border-slate-100 border-b-[3px] border-b-brand-blue-500 bg-white p-5 shadow-[0_16px_40px_-30px_rgba(15,23,42,0.25)] transition-transform duration-300 hover:-translate-y-1"
+                    className="rounded-xl border border-slate-100 border-b-[2px] border-b-brand-blue-500 bg-white p-4 shadow-[0_16px_40px_-30px_rgba(15,23,42,0.25)] transition-transform duration-300 hover:-translate-y-1"
                   >
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-600">
-                      <Icon size={21} strokeWidth={1.75} />
-                    </span>
-                    <h2 className="mt-3 text-[15px] font-bold text-slate-900">{feature.title}</h2>
-                    <span aria-hidden className="mt-2 block h-0.5 w-6 rounded-full bg-brand-blue-500" />
+                    <div className="flex items-center gap-2 ">
+                       <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue-50 ">
+                        <Icon size={18} strokeWidth={1.5} />
+                      </span>
+                      <h2 className=" mt-2 text-[15px] font-bold text-slate-900">{feature.title}</h2>
+                    </div>
                     <p className="mt-2 text-xs leading-relaxed text-slate-500">
                       {feature.description}
                     </p>
