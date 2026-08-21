@@ -60,6 +60,19 @@ export default function Services() {
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <ServicesHero />
       <ServicesGrid />
+
+      <StatsBar stats={servicesStats} />
+
+      <IconGridSection
+        eyebrow="Why Choose Us"
+        heading="Why Enterprises Partner With Bigwigs"
+        headerAlign="center"
+        align="center"
+        items={whyChooseItems}
+        columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        titleSize="md"
+      />
+
       <ProcessTimeline
         eyebrow="How We Work"
         heading="Five Stages. Every Engagement."

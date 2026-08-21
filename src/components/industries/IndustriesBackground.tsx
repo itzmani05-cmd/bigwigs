@@ -21,15 +21,6 @@ export default function IndustriesBackground() {
       />
 
       <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#0F172A 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-        }}
-      />
-
-      <div
         className="absolute left-1/2 top-0 h-[42rem] w-[68rem] -translate-x-1/2 opacity-40"
         style={{
           backgroundImage: "radial-gradient(#2563EB 1.2px, transparent 1.2px)",

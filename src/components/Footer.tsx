@@ -249,9 +249,9 @@ export default function Footer() {
               <img
                 src={FooterLogo}
                 alt="Bigwigs Technologies Logo"
-                width={190}
-                height={65}
-                className="h-12 w-auto object-contain sm:h-14"
+                width={200}
+                height={75}
+                className="h-19 w-auto object-contain sm:h-21"
               />
             </HashLink>
           

@@ -17,6 +17,7 @@ import PublishingMediaSolutions from "@/pages/PublishingMediaSolutions";
 import Careers from "@/pages/Careers";
 import Apply from "@/pages/Apply";
 import Demo from "@/pages/Demo";
+import Contact from "@/pages/Contact";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import CookiePolicy from "@/pages/CookiePolicy";
@@ -67,6 +68,7 @@ export default function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />

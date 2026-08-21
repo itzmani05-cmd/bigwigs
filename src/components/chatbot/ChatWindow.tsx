@@ -105,7 +105,7 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
           type="button"
           onClick={onClose}
           aria-label="Close chat"
-          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white/80 transition-colors duration-200 hover:bg-white/15 hover:text-white"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white/80 transition-colors duration-200 hover:bg-white/15 hover:text-white"
         >
           <X size={16} strokeWidth={2} />
         </button>
@@ -139,7 +139,7 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
             onClick={sendMessage}
             disabled={!input.trim() || isLoading}
             aria-label="Send message"
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-blue-500 text-white transition-colors duration-200 hover:bg-brand-blue-600 disabled:cursor-not-allowed disabled:opacity-40"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-blue-500 text-white transition-colors duration-200 hover:bg-brand-blue-600 disabled:cursor-not-allowed disabled:opacity-40"
           >
             <Send size={15} strokeWidth={2} />
           </button>

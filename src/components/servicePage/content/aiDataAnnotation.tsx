@@ -49,7 +49,7 @@ export const annotationChallenges = {
 
 export const annotationCapabilities = {
   eyebrow: "What's Included",
-  heading: "Nine Ways We Help You Train Reliable AI",
+  heading: "Seven Ways We Help You Train Reliable AI",
   items: [
     { icon: Camera, title: "Image Annotation", description: "Bounding boxes, polygons, and masks." },
     { icon: Video, title: "Video Annotation", description: "Frame-by-frame tracking across footage." },

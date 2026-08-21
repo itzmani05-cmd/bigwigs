@@ -1,10 +1,9 @@
 import { Globe2 } from "lucide-react";
 import IndustriesHero from "@/components/industries/IndustriesHero";
 import IndustriesGrid from "@/components/industries/IndustriesGrid";
-import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
+import IndustriesProcessTimeline from "@/components/industries/IndustriesProcessTimeline";
 import FAQAccordion from "@/components/servicePage/FAQAccordion";
 import CTASection from "@/components/ui/CTASection";
-import { industriesProcessSteps } from "@/components/industries/industriesProcessData";
 import { industriesFaqItems } from "@/components/industries/industriesFaqData";
 import SEO from "@/components/seo/SEO";
 import { getRouteMeta } from "@/lib/seo/routes";
@@ -17,12 +16,7 @@ export default function Industries() {
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
       <IndustriesHero />
       <IndustriesGrid />
-      <ProcessTimeline
-        eyebrow="How We Work"
-        heading="Six Stages. Every Industry."
-        steps={industriesProcessSteps}
-        desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
-      />
+      <IndustriesProcessTimeline />
       <FAQAccordion items={industriesFaqItems} />
 
       <CTASection

@@ -9,7 +9,6 @@ interface Certification {
   title: string;
   description: string;
   badge: string;
-  points: string[];
 }
 
 const CERTIFICATIONS: Certification[] = [
@@ -19,12 +18,6 @@ const CERTIFICATIONS: Certification[] = [
     description:
       "Certifies that our information security management system (ISMS) meets the international standard for protecting client data — covering confidentiality, integrity, and availability across every engagement.",
     badge: iso27001Badge,
-    points: [
-      "Data confidentiality & access control",
-      "Risk assessment & treatment",
-      "Secure infrastructure & operations",
-      "Continuous security monitoring",
-    ],
   },
   {
     code: "ISO 9001:2015",
@@ -32,12 +25,6 @@ const CERTIFICATIONS: Certification[] = [
     description:
       "Certifies that our quality management system consistently delivers services that meet client requirements and regulatory standards — from data annotation to enterprise software delivery.",
     badge: iso9001Badge,
-    points: [
-      "Consistent service quality",
-      "Structured process governance",
-      "Customer-focused delivery",
-      "Continuous improvement",
-    ],
   },
 ];
 
@@ -78,19 +65,7 @@ export default function CertificationsGrid() {
 
               <p className="mt-5 text-lg font-extrabold tracking-tight text-slate-900">{cert.code}</p>
               <p className="text-sm font-semibold text-slate-500">{cert.title}</p>
-
               <p className="mt-4 text-sm leading-relaxed text-slate-500">{cert.description}</p>
-
-              <span className="mt-6 h-px w-full bg-slate-200" aria-hidden="true" />
-
-              <ul className="mt-6 grid w-full grid-cols-1 gap-3 text-left sm:grid-cols-2">
-                {cert.points.map((point) => (
-                  <li key={point} className="flex items-start gap-2 text-sm text-slate-700">
-                    <CheckCircle2 size={17} strokeWidth={1.75} className="mt-0.5 shrink-0 text-brand-blue-500" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </div>

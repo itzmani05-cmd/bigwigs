@@ -23,6 +23,21 @@ interface IconGridProps {
   hoverable?: boolean;
 }
 
+/** Maps each `columnsClassName` grid-cols string used across the service/industry
+ *  pages to an equivalent flex-basis width (same breakpoints, gap-5 = 1.25rem
+ *  accounted for). Lets the grid become a wrapping flexbox so a non-multiple
+ *  item count (e.g. 7 items at 4 columns) centers its last row instead of
+ *  leaving it stuck to the left with an empty gap. Falls back to the raw
+ *  grid-cols classes for any string outside this known set. */
+const WIDTH_BY_COLUMNS: Record<string, string> = {
+  "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4":
+    "w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.9375rem)]",
+  "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4":
+    "w-[calc(50%-0.625rem)] sm:w-[calc(33.333%-0.834rem)] lg:w-[calc(25%-0.9375rem)]",
+  "grid-cols-2 sm:grid-cols-3 lg:grid-cols-6":
+    "w-[calc(50%-0.625rem)] sm:w-[calc(33.333%-0.834rem)] lg:w-[calc(16.667%-1.042rem)]",
+};
+
 export default function IconGrid({
   items,
   columnsClassName = "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4",
@@ -35,9 +50,10 @@ export default function IconGrid({
   const isCenter = align === "center";
   const toneClass = ICON_TONES[iconTone];
   const shapeClass = iconShape === "circle" ? "rounded-full" : "rounded-xl";
+  const widthClass = WIDTH_BY_COLUMNS[columnsClassName];
 
   return (
-    <div className={`grid gap-5 ${columnsClassName}`}>
+    <div className={widthClass ? "flex flex-wrap justify-center gap-5" : `grid gap-5 ${columnsClassName}`}>
       {items.map((item, i) => {
         const Icon = item.icon;
         const hasDescription = Boolean(item.description);
@@ -48,7 +64,7 @@ export default function IconGrid({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, delay: (i % 6) * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-            className={`rounded-[24px] border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] ${hoverable ? "hover:bg-slate-50" : ""} ${
+            className={`rounded-[24px] border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] ${hoverable ? "hover:bg-slate-50" : ""} ${widthClass ?? ""} ${
               isCenter ? "flex flex-col items-center gap-3 px-5 py-7 text-center" : "flex flex-col gap-4 p-6"
             }`}
           >

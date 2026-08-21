@@ -19,18 +19,6 @@ export default function SectionBackdrop() {
             "radial-gradient(circle at 15% 0%, rgba(37,99,235,0.05), transparent 45%), radial-gradient(circle at 85% 100%, rgba(37,99,235,0.05), transparent 45%)",
         }}
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#0F172A 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-          maskImage: "radial-gradient(circle at 50% 40%, black 0%, transparent 75%)",
-          WebkitMaskImage: "radial-gradient(circle at 50% 40%, black 0%, transparent 75%)",
-        }}
-      />
-
       {/* dotted cluster, top-right */}
       <div
         aria-hidden

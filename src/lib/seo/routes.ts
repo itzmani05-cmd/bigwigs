@@ -74,6 +74,13 @@ export const ROUTES: RouteMeta[] = [
     priority: 0.6,
   },
   {
+    path: "/contact",
+    title: "Contact Us | Bigwigs Technologies",
+    description:
+      "Get in touch with Bigwigs Technologies. Share your project details and our team will get back to you shortly to discuss how we can help your business grow.",
+    priority: 0.6,
+  },
+  {
     path: "/privacy-policy",
     title: "Privacy Policy | Bigwigs Technologies",
     description: "Read how Bigwigs Technologies collects, uses, and protects your personal data.",

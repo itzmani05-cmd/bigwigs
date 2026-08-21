@@ -30,6 +30,9 @@ import manufacturingImg from "@/assests/industries/Manufacturing.png";
 import agricultureImg from "@/assests/industries/Agriculture.png";
 import smartCitiesImg from "@/assests/industries/SmartCities.png";
 import logisticsImg from "@/assests/industries/Drones.png";
+import educationImg from "@/assests/industries/Education.png";
+import governmentImg from "@/assests/industries/Government.png";
+import publishingImg from "@/assests/industries/Publishing.png";
 import missionVisionImg from "@/assests/aboutNavbar/Mission&Vission.png";
 import ourStoryImg from "@/assests/aboutNavbar/ourStory.png";
 import ourExpertiseImg from "@/assests/aboutNavbar/OurExpertise.png";
@@ -195,16 +198,19 @@ export const navItems: NavItem[] = [
           icon: GraduationCap,
           title: "Education & eLearning",
           description: "LMS platforms, AI tutoring, digital publishing, accessibility.",
+          image: educationImg,
         },
         {
           icon: Scale,
           title: "Government & Public Sector",
           description: "Digital government platforms, smart cities, secure citizen services.",
+          image: governmentImg,
         },
         {
           icon: BookOpen,
           title: "Publishing & Media",
           description: "XML-first publishing, AI content tagging, accessible EPUB & PDF.",
+          image: publishingImg,
         },
       ],
       cta: { label: "Explore all industries", href: "/industries" },

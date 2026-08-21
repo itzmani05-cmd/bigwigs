@@ -30,7 +30,7 @@ export default function JourneyTimeline() {
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-b from-violet-50/70 via-violet-50/25 to-white py-10 lg:py-12">
       <Container className="relative z-10">
-        <div className="mx-auto max-w-xl text-center">
+        <div className="mx-auto  text-center">
           <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -42,7 +42,7 @@ export default function JourneyTimeline() {
             Our Journey
           </h2>
           <p className="mt-3 text-base leading-relaxed text-slate-500 sm:text-lg">
-            From a bold idea to a trusted global AI partner — a timeline of
+            From a bold idea to a trusted global AI partner <br/> a timeline of
             milestones that shaped who we are today.
           </p>
         </div>

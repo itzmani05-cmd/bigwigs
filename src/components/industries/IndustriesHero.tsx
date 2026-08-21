@@ -1,8 +1,21 @@
 import { motion } from "framer-motion";
-import { ArrowRight, HeartPulse, Car, Factory, Landmark, Building2 } from "lucide-react";
+import {
+  ArrowRight,
+  HeartPulse,
+  Car,
+  Factory,
+  Landmark,
+  Building2,
+  ShieldCheck,
+  Cpu,
+  Globe2,
+  BarChart3,
+  type LucideIcon,
+} from "lucide-react";
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
-import heroImage from "@/assests/bgHero.png";
+
+const logoMark = "/apple-touch-icon.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -14,17 +27,112 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } },
 } as const;
 
-const FLOATING_BADGES = [
-  { icon: Building2, label: "Smart Cities", sub: "Traffic Intelligence", position: "left-[4%] top-[10%]", delay: 0 },
-  { icon: Car, label: "Automotive", sub: "Autonomous Driving", position: "right-[4%] top-[14%]", delay: 0.5 },
-  { icon: HeartPulse, label: "Healthcare", sub: "AI Diagnostics", position: "left-[6%] bottom-[26%]", delay: 1 },
-  { icon: Factory, label: "Manufacturing", sub: "Smart Automation", position: "right-[6%] top-[46%]", delay: 1.5 },
-  { icon: Landmark, label: "Financial Services", sub: "Risk & Fraud Detection", position: "left-[10%] bottom-[6%]", delay: 2 },
+interface FloatingBadge {
+  icon: LucideIcon;
+  label: string;
+  sub: string;
+  position: string;
+  delay: number;
+  iconBg: string;
+  iconText: string;
+  underline: string;
+}
+
+const FLOATING_BADGES: FloatingBadge[] = [
+  {
+    icon: Building2,
+    label: "Smart Cities",
+    sub: "AI-driven solutions for smarter & safer cities.",
+    position: "left-[2%] top-[8%]",
+    delay: 0,
+    iconBg: "bg-violet-100",
+    iconText: "text-violet-600",
+    underline: "bg-violet-500",
+  },
+  {
+    icon: Car,
+    label: "Automotive",
+    sub: "Driving innovation with intelligent mobility.",
+    position: "right-[2%] top-[6%]",
+    delay: 0.5,
+    iconBg: "bg-brand-blue-100",
+    iconText: "text-brand-blue-600",
+    underline: "bg-brand-blue-500",
+  },
+  {
+    icon: HeartPulse,
+    label: "Healthcare",
+    sub: "AI-powered diagnostics for better outcomes.",
+    position: "-left-[2%] top-[42%]",
+    delay: 1,
+    iconBg: "bg-emerald-100",
+    iconText: "text-emerald-600",
+    underline: "bg-emerald-500",
+  },
+  {
+    icon: Factory,
+    label: "Manufacturing",
+    sub: "Smart automation for industry 4.0.",
+    position: "right-0 top-[54%]",
+    delay: 1.5,
+    iconBg: "bg-orange-100",
+    iconText: "text-orange-600",
+    underline: "bg-orange-500",
+  },
+  {
+    icon: Landmark,
+    label: "Financial Services",
+    sub: "Risk intelligence & fraud detection with AI.",
+    position: "left-[6%] top-[78%]",
+    delay: 2,
+    iconBg: "bg-amber-100",
+    iconText: "text-amber-600",
+    underline: "bg-amber-500",
+  },
+];
+
+interface TrustItem {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  iconBg: string;
+  iconText: string;
+}
+
+const TRUST_ITEMS: TrustItem[] = [
+  {
+    icon: ShieldCheck,
+    title: "Enterprise Grade Security",
+    description: "Your data is always protected with top-tier security.",
+    iconBg: "bg-violet-100",
+    iconText: "text-violet-600",
+  },
+  {
+    icon: Cpu,
+    title: "Scalable AI Solutions",
+    description: "Built to scale with your business needs.",
+    iconBg: "bg-emerald-100",
+    iconText: "text-emerald-600",
+  },
+  {
+    icon: Globe2,
+    title: "Industry Expertise",
+    description: "Deep domain knowledge across multiple industries.",
+    iconBg: "bg-brand-blue-100",
+    iconText: "text-brand-blue-600",
+  },
+  {
+    icon: BarChart3,
+    title: "Measurable Impact",
+    description: "Delivering real business outcomes with AI.",
+    iconBg: "bg-orange-100",
+    iconText: "text-orange-600",
+  },
 ];
 
 export default function IndustriesHero() {
   return (
-    <section className="relative w-full overflow-hidden pt-10 pb-10 lg:pt-10 lg:pb-12">
+    <section className="relative w-full overflow-hidden pt-5 pb-14 lg:pt-7 lg:pb-16">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white/40 to-transparent"
@@ -43,98 +151,126 @@ export default function IndustriesHero() {
       />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-11 lg:grid-cols-[45%_55%] lg:gap-7">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[50%_50%] lg:gap-10">
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
-            <motion.div variants={itemVariants} className="flex items-center gap-2">
+            <motion.div
+              variants={itemVariants}
+              className="inline-flex items-center gap-2 rounded-full  py-1.5"
+            >
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
-              <span className="text-xs font-bold uppercase tracking-[0.2em]  text-orange-500 sm:text-sm">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
                 Industries
               </span>
-              <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="mt-2 text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-5xl lg:text-[44px] xl:text-5xl"
+              className="mt-4 text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-5xl lg:text-[44px] xl:text-5xl"
             >
-              Powering{" "}
+              Building the <br/> Intelligence Behind{" "}<br/>
               <span className="text-blue-500">
-                AI
-              </span> Across 
-              <br />
-              Every Industry
+                 Tomorrow’s Industries
+              </span>{" "}
             </motion.h1>
 
             <motion.p variants={itemVariants} className="mt-4 max-w-lg text-base leading-relaxed text-slate-500 sm:text-lg">
-              Bigwigs Technologies delivers enterprise AI data services, software
-              engineering, Generative AI, and digital transformation solutions
-              across healthcare, automotive, finance, manufacturing,
-              agriculture, retail, logistics, and smart cities.
+              We deliver enterprise AI data services, software engineering,
+              Generative AI, and digital transformation solutions across
+              healthcare, automotive, finance, manufacturing, agriculture,
+              retail, logistics, and smart cities.
             </motion.p>
 
             <motion.div variants={itemVariants} className="mt-7 flex flex-wrap items-center gap-4">
-               <MagneticButton
-                  href="/demo"
-                  magnetic={false}
-                  className="inline-flex items-center gap-2 rounded-lg bg-brand-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
-                >
-                  <span>Book a Demo</span>
-                  <ArrowRight size={16} />
-                </MagneticButton>
+              <MagneticButton
+                href="/demo"
+                magnetic={false}
+                className="inline-flex items-center gap-2 rounded-lg bg-blue-500 hover:bg-blue-700 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-8px_rgba(124,58,237,0.5)] select-none"
+              >
+                <span>Book a Demo</span>
+                <ArrowRight size={16} />
+              </MagneticButton>
             </motion.div>
           </motion.div>
 
-          <div className="relative hidden lg:mr-10 lg:block">
-            <motion.div
+          <div className="relative hidden aspect-[4/3] lg:block">
+            <div
               aria-hidden
-              className="pointer-events-none absolute -inset-6 rounded-[36px] bg-brand-blue-500/15 blur-[60px]"
-              animate={{ opacity: [0.5, 0.9, 0.5] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              className="pointer-events-none absolute inset-0 opacity-60"
+              style={{
+                backgroundImage: "radial-gradient(#2563EB 1.4px, transparent 1.4px)",
+                backgroundSize: "16px 16px",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 55% 55% at 50% 50%, black 35%, transparent 75%)",
+                maskImage: "radial-gradient(ellipse 55% 55% at 50% 50%, black 35%, transparent 75%)",
+              }}
             />
             <motion.div
               aria-hidden
-              className="pointer-events-none absolute -inset-10 rounded-full border border-dashed border-brand-blue-300/40"
+              className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-brand-blue-300/50"
               animate={{ rotate: 360 }}
-              transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            />
+            <motion.div
+              aria-hidden
+              className="pointer-events-none absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-violet-300/50"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
             />
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
+              initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-              className="relative aspect-[3/2] overflow-hidden rounded-[28px] border border-white/10 bg-[#03132f] shadow-[0_40px_90px_-30px_rgba(7,27,70,0.5)]"
+              className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white p-6 shadow-[0_20px_50px_-20px_rgba(37,99,235,0.4)]"
             >
-              <img
-                src={heroImage}
-                alt="Bigwigs Technologies AI perception system detecting vehicles, pedestrians, and infrastructure across a connected smart city"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#03132f]/70 via-transparent to-[#03132f]/20"
-              />
-
-              {FLOATING_BADGES.map((badge) => (
-                <motion.div
-                  key={badge.label}
-                  className={`absolute z-20 hidden items-center gap-2 rounded-2xl border border-white/15 bg-white/10 px-3 py-2 shadow-[0_16px_30px_-16px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:flex ${badge.position}`}
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: badge.delay }}
-                >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-blue-500/20 text-brand-blue-300">
-                    <badge.icon size={14} strokeWidth={1.75} />
-                  </span>
-                  <span className="leading-tight">
-                    <span className="block text-[10px] font-bold uppercase tracking-wide text-white">
-                      {badge.label}
-                    </span>
-                    <span className="block text-[9px] text-slate-300">{badge.sub}</span>
-                  </span>
-                </motion.div>
-              ))}
+              <img src={logoMark} alt="" aria-hidden className="h-full w-full object-contain" />
             </motion.div>
+
+            {FLOATING_BADGES.map((badge) => (
+              <motion.div
+                key={badge.label}
+                className={`absolute z-20 w-[210px] rounded-2xl border border-slate-100 bg-white p-3.5 shadow-[0_20px_40px_-20px_rgba(15,23,42,0.25)] ${badge.position}`}
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: badge.delay }}
+              >
+                <div className="flex items-start gap-3">
+                  <span
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${badge.iconBg} ${badge.iconText}`}
+                  >
+                    <badge.icon size={18} strokeWidth={1.75} />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-sm font-bold text-slate-900">{badge.label}</p>
+                    <p className="mt-0.5 text-xs leading-snug text-slate-500">{badge.sub}</p>
+                  </div>
+                </div>
+                <span aria-hidden className={`mt-2.5 block h-0.5 w-8 rounded-full ${badge.underline}`} />
+              </motion.div>
+            ))}
           </div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+          className="mt-12 grid grid-cols-1 gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:p-8"
+        >
+          {TRUST_ITEMS.map((item) => (
+            <div key={item.title} className="flex items-start gap-3">
+              <span
+                className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full ${item.iconBg} ${item.iconText}`}
+              >
+                <item.icon size={18} strokeWidth={1.75} />
+              </span>
+              <div className="min-w-0">
+                <h3 className="text-sm font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-1 text-xs leading-relaxed text-slate-500">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </Container>
     </section>
   );

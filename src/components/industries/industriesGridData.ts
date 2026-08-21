@@ -20,6 +20,9 @@ import manufacturingImg from "@/assests/industries/Manufacturing.png";
 import agricultureImg from "@/assests/industries/Agriculture.png";
 import smartCitiesImg from "@/assests/industries/SmartCities.png";
 import logisticsImg from "@/assests/industries/Drones.png";
+import educationImg from "@/assests/industries/Education.png";
+import governmentImg from "@/assests/industries/Government.png";
+import publishingImg from "@/assests/industries/Publishing.png";
 
 export interface IndustryCardItem {
   icon: LucideIcon;
@@ -97,6 +100,7 @@ export const industriesGrid: IndustryCardItem[] = [
     icon: GraduationCap,
     name: "Education & eLearning",
     description: "LMS platforms, AI tutoring, digital publishing, accessibility.",
+    image: educationImg,
     iconGradient: "from-violet-500 to-fuchsia-500",
     href: "/industries/education-elearning-solutions",
   },
@@ -104,6 +108,7 @@ export const industriesGrid: IndustryCardItem[] = [
     icon: GovernmentIcon,
     name: "Government & Public Sector",
     description: "Digital government platforms, smart cities, secure citizen services.",
+    image: governmentImg,
     iconGradient: "from-brand-blue-500 to-indigo-500",
     href: "/industries/government-public-sector-solutions",
   },
@@ -111,6 +116,7 @@ export const industriesGrid: IndustryCardItem[] = [
     icon: PublishingIcon,
     name: "Publishing & Media",
     description: "XML-first publishing, AI content tagging, accessible EPUB & PDF.",
+    image: publishingImg,
     iconGradient: "from-cyan-500 to-brand-blue-500",
     href: "/industries/publishing-media-solutions",
   },

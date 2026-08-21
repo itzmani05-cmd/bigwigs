@@ -19,15 +19,6 @@ export default function CaseStudiesBackground() {
         }}
       />
 
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#0F172A 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-        }}
-      />
-
       <div className="animate-drift-a absolute -left-32 -top-32 h-[36rem] w-[36rem] rounded-full bg-brand-blue-500/[0.07] blur-[140px]" />
       <div className="animate-drift-b absolute -right-40 top-[28%] h-[32rem] w-[32rem] rounded-full bg-violet-400/[0.06] blur-[150px]" />
       <div className="animate-drift-c absolute bottom-[6%] left-1/3 h-[28rem] w-[28rem] rounded-full bg-brand-green-400/[0.05] blur-[140px]" />
