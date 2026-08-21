@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Network Globe — Reusable Component</title>
+<style>
+  html,body{margin:0;height:100%;background:#05070f;}
+  #stage{width:100%;height:100vh;position:relative;}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+
+<script>
+/*
+  createNetworkGlobe(container, options)
+  ---------------------------------------------------------
+  Dependency-free animated particle globe on <canvas>: a wireframe
+  sphere, a Fibonacci-distributed particle field, and periodic
+  great-circle "data flow" arcs with a traveling glow.
+
+  Requirement: `container` needs position:relative (or absolute/fixed)
+  — the canvas fills it via position:absolute internally.
+
+  Usage:
+    const globe = createNetworkGlobe(document.getElementById('stage'), {
+      particleColor: '150,190,255'   // any option below is optional
+    });
+    // later, e.g. on unmount:
+    globe.destroy();
+
+  All options (shown with defaults):
+    particleCount   440     number of points on the sphere
+    rotationSpeed   0.10    radians/sec of auto-rotation
+    tilt            -0.28   fixed X-axis tilt, radians
+    radiusRatio     0.33    globe radius as a fraction of min(width,height)
+    centerX         0.5     horizontal center, 0–1 of container width
+    centerY         0.5     vertical center, 0–1 of container height
+    particleColor   '150,190,255'   "r,g,b" string
+    ringColor       '110,150,230'   "r,g,b" string (wireframe)
+    arcColor        '140,185,255'   "r,g,b" string (flight arcs)
+    maxArcs         5       concurrent arcs
+    arcIntervalSec  1.1     seconds between new arcs
+*/
+function createNetworkGlobe(container, opts) {
+  opts = opts || {};
+  var particleCount  = opts.particleCount  || 440;
+  var rotationSpeed  = opts.rotationSpeed  || 0.10;
+  var tilt           = opts.tilt           != null ? opts.tilt : -0.28;
+  var radiusRatio    = opts.radiusRatio    || 0.33;
+  var centerX        = opts.centerX        != null ? opts.centerX : 0.5;
+  var centerY        = opts.centerY        != null ? opts.centerY : 0.5;
+  var particleColor  = opts.particleColor  || '150,190,255';
+  var ringColor      = opts.ringColor      || '110,150,230';
+  var arcColor       = opts.arcColor       || '140,185,255';
+  var maxArcs        = opts.maxArcs        || 5;
+  var arcIntervalSec = opts.arcIntervalSec || 1.1;
+
+  var canvas = document.createElement('canvas');
+  canvas.style.position = 'absolute';
+  canvas.style.inset = '0';
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
+  canvas.style.display = 'block';
+  container.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+  var W = 0, H = 0, DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+  function resize() {
+    var rect = container.getBoundingClientRect();
+    W = canvas.width = Math.round(rect.width * DPR);
+    H = canvas.height = Math.round(rect.height * DPR);
+  }
+
+  // Fibonacci sphere point distribution
+  var basePoints = [];
+  for (var i = 0; i < particleCount; i++) {
+    var y = 1 - (i / (particleCount - 1)) * 2;
+    var rY = Math.sqrt(Math.max(0, 1 - y * y));
+    var theta = Math.PI * (1 + Math.sqrt(5)) * i;
+    basePoints.push({ x: Math.cos(theta) * rY, y: y, z: Math.sin(theta) * rY });
+  }
+
+  // Wireframe: 6 meridians + 4 parallels
+  var rings = [];
+  var RING_SEG = 56;
+  for (var m = 0; m < 6; m++) {
+    var lon = (m / 6) * Math.PI;
+    var ring = [];
+    for (var s = 0; s <= RING_SEG; s++) {
+      var t = (s / RING_SEG) * Math.PI * 2;
+      ring.push({ x: Math.sin(t) * Math.cos(lon), y: Math.cos(t), z: Math.sin(t) * Math.sin(lon) });
+    }
+    rings.push(ring);
+  }
+  for (var l = 1; l < 4; l++) {
+    var lat = (l / 4) * Math.PI - Math.PI / 2;
+    var rY2 = Math.cos(lat), yv = Math.sin(lat);
+    var ring2 = [];
+    for (var s2 = 0; s2 <= RING_SEG; s2++) {
+      var t2 = (s2 / RING_SEG) * Math.PI * 2;
+      ring2.push({ x: Math.cos(t2) * rY2, y: yv, z: Math.sin(t2) * rY2 });
+    }
+    rings.push(ring2);
+  }
+
+  function rot(p, ry, rx) {
+    var x = p.x * Math.cos(ry) - p.z * Math.sin(ry);
+    var z = p.x * Math.sin(ry) + p.z * Math.cos(ry);
+    var y = p.y * Math.cos(rx) - z * Math.sin(rx);
+    var z2 = p.y * Math.sin(rx) + z * Math.cos(rx);
+    return { x: x, y: y, z: z2 };
+  }
+
+  function proj(p, cx, cy, R) {
+    var persp = 2.6;
+    var f = persp / (persp - p.z);
+    return { x: cx + p.x * R * f, y: cy + p.y * R * f, z: p.z, f: f };
+  }
+
+  var rotY = 0.5;
+  var arcs = [];
+  var arcTimer = 0;
+
+  function randPoint() { return basePoints[Math.floor(Math.random() * basePoints.length)]; }
+
+  function slerp(a, b, t) {
+    var dot = a.x * b.x + a.y * b.y + a.z * b.z;
+    dot = Math.max(-1, Math.min(1, dot));
+    var theta = Math.acos(dot) * t;
+    var relx = b.x - a.x * dot, rely = b.y - a.y * dot, relz = b.z - a.z * dot;
+    var len = Math.sqrt(relx * relx + rely * rely + relz * relz) || 1;
+    relx /= len; rely /= len; relz /= len;
+    return {
+      x: a.x * Math.cos(theta) + relx * Math.sin(theta),
+      y: a.y * Math.cos(theta) + rely * Math.sin(theta),
+      z: a.z * Math.cos(theta) + relz * Math.sin(theta)
+    };
+  }
+
+  var running = true;
+  var lastT = performance.now();
+  var rafId = null;
+
+  function frame(now) {
+    if (!running) return;
+    var dt = Math.min(0.05, (now - lastT) / 1000);
+    lastT = now;
+    rafId = requestAnimationFrame(frame);
+    if (!W || !H) return;
+
+    ctx.clearRect(0, 0, W, H);
+    var cx = W * centerX, cy = H * centerY, R = Math.min(W, H) * radiusRatio;
+    rotY += dt * rotationSpeed;
+
+    ctx.lineWidth = 1 * DPR;
+    for (var ri = 0; ri < rings.length; ri++) {
+      var ring = rings[ri];
+      ctx.beginPath();
+      for (var pi = 0; pi < ring.length; pi++) {
+        var r = rot(ring[pi], rotY, tilt);
+        var pr = proj(r, cx, cy, R);
+        if (pi === 0) ctx.moveTo(pr.x, pr.y); else ctx.lineTo(pr.x, pr.y);
+      }
+      ctx.strokeStyle = 'rgba(' + ringColor + ',0.16)';
+      ctx.stroke();
+    }
+
+    arcTimer += dt;
+    if (arcTimer > arcIntervalSec && arcs.length < maxArcs) {
+      arcTimer = 0;
+      arcs.push({ a: randPoint(), b: randPoint(), t: 0 });
+    }
+    for (var ai = 0; ai < arcs.length; ai++) {
+      var arc = arcs[ai];
+      arc.t += dt * 0.5;
+      var steps = 36;
+      var upto = Math.max(1, Math.floor(steps * Math.min(arc.t, 1)));
+      ctx.beginPath();
+      for (var si = 0; si <= upto; si++) {
+        var tt = si / steps;
+        var sp = slerp(arc.a, arc.b, tt);
+        var lift = 1 + Math.sin(tt * Math.PI) * 0.22;
+        sp = { x: sp.x * lift, y: sp.y * lift, z: sp.z * lift };
+        var r2 = rot(sp, rotY, tilt);
+        var pr2 = proj(r2, cx, cy, R);
+        if (si === 0) ctx.moveTo(pr2.x, pr2.y); else ctx.lineTo(pr2.x, pr2.y);
+      }
+      var fade = Math.sin(Math.min(arc.t, 1) * Math.PI);
+      ctx.strokeStyle = 'rgba(' + arcColor + ',' + (0.55 * fade) + ')';
+      ctx.lineWidth = 1.4 * DPR;
+      ctx.stroke();
+
+      if (arc.t <= 1) {
+        var spd = slerp(arc.a, arc.b, arc.t);
+        var liftd = 1 + Math.sin(arc.t * Math.PI) * 0.22;
+        spd = { x: spd.x * liftd, y: spd.y * liftd, z: spd.z * liftd };
+        var rd = rot(spd, rotY, tilt);
+        var prd = proj(rd, cx, cy, R);
+        ctx.beginPath();
+        ctx.fillStyle = '#bcd6ff';
+        ctx.shadowColor = 'rgba(' + arcColor + ',0.9)';
+        ctx.shadowBlur = 10 * DPR;
+        ctx.arc(prd.x, prd.y, 2.4 * DPR, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+    arcs = arcs.filter(function (a) { return a.t < 1.15; });
+
+    var projected = [];
+    for (var bi = 0; bi < basePoints.length; bi++) {
+      var rb = rot(basePoints[bi], rotY, tilt);
+      projected.push(proj(rb, cx, cy, R));
+    }
+    projected.sort(function (a, b) { return a.z - b.z; });
+    for (var vi = 0; vi < projected.length; vi++) {
+      var p = projected[vi];
+      var front = p.z > -0.1;
+      var alpha = front ? 0.35 + p.f * 0.25 : 0.10;
+      var size = (front ? 1.6 : 0.9) * DPR;
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(' + particleColor + ',' + alpha + ')';
+      ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  function onResize() { resize(); }
+  window.addEventListener('resize', onResize);
+  resize();
+  rafId = requestAnimationFrame(frame);
+
+  return {
+    canvas: canvas,
+    destroy: function () {
+      running = false;
+      if (rafId) cancelAnimationFrame(rafId);
+      window.removeEventListener('resize', onResize);
+      if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
+    }
+  };
+}
+
+// --- Demo: drop it on the #stage div above ---
+createNetworkGlobe(document.getElementById('stage'), {
+  particleColor: '150,190,255',
+  ringColor: '110,150,230',
+  arcColor: '140,185,255'
+});
+</script>
+</body>
+</html>

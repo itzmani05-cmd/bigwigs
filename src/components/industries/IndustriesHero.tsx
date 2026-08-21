@@ -30,7 +30,6 @@ const itemVariants = {
 interface FloatingBadge {
   icon: LucideIcon;
   label: string;
-  sub: string;
   position: string;
   delay: number;
   iconBg: string;
@@ -42,7 +41,6 @@ const FLOATING_BADGES: FloatingBadge[] = [
   {
     icon: Building2,
     label: "Smart Cities",
-    sub: "AI-driven solutions for smarter & safer cities.",
     position: "left-[2%] top-[8%]",
     delay: 0,
     iconBg: "bg-violet-100",
@@ -52,7 +50,6 @@ const FLOATING_BADGES: FloatingBadge[] = [
   {
     icon: Car,
     label: "Automotive",
-    sub: "Driving innovation with intelligent mobility.",
     position: "right-[2%] top-[6%]",
     delay: 0.5,
     iconBg: "bg-brand-blue-100",
@@ -62,7 +59,6 @@ const FLOATING_BADGES: FloatingBadge[] = [
   {
     icon: HeartPulse,
     label: "Healthcare",
-    sub: "AI-powered diagnostics for better outcomes.",
     position: "-left-[2%] top-[42%]",
     delay: 1,
     iconBg: "bg-emerald-100",
@@ -72,7 +68,6 @@ const FLOATING_BADGES: FloatingBadge[] = [
   {
     icon: Factory,
     label: "Manufacturing",
-    sub: "Smart automation for industry 4.0.",
     position: "right-0 top-[54%]",
     delay: 1.5,
     iconBg: "bg-orange-100",
@@ -82,7 +77,6 @@ const FLOATING_BADGES: FloatingBadge[] = [
   {
     icon: Landmark,
     label: "Financial Services",
-    sub: "Risk intelligence & fraud detection with AI.",
     position: "left-[6%] top-[78%]",
     delay: 2,
     iconBg: "bg-amber-100",
@@ -153,10 +147,7 @@ export default function IndustriesHero() {
       <Container className="relative z-10">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[50%_50%] lg:gap-10">
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center gap-2 rounded-full  py-1.5"
-            >
+            <motion.div variants={itemVariants} className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
                 Industries
@@ -167,10 +158,9 @@ export default function IndustriesHero() {
               variants={itemVariants}
               className="mt-4 text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-5xl lg:text-[44px] xl:text-5xl"
             >
-              Building the <br/> Intelligence Behind{" "}<br/>
-              <span className="text-blue-500">
-                 Tomorrow’s Industries
-              </span>{" "}
+              Building the <br/>Intelligence Behind{" "}
+              <br className="hidden sm:block" />
+              <span className="text-blue-500">Tomorrow&rsquo;s Industries</span>
             </motion.h1>
 
             <motion.p variants={itemVariants} className="mt-4 max-w-lg text-base leading-relaxed text-slate-500 sm:text-lg">
@@ -190,6 +180,30 @@ export default function IndustriesHero() {
                 <ArrowRight size={16} />
               </MagneticButton>
             </motion.div>
+
+            {/* mobile/tablet*/}
+            <motion.div
+              variants={itemVariants}
+              className="mt-9 flex flex-wrap justify-center gap-4 lg:hidden"
+            >
+              {FLOATING_BADGES.map((badge) => (
+                <div
+                  key={badge.label}
+                  className="w-full rounded-2xl border border-slate-100 bg-white p-3.5 shadow-[0_16px_36px_-24px_rgba(15,23,42,0.2)] sm:w-[calc(50%-0.5rem)]"
+                >
+                  <div className="flex items-start gap-3">
+                    <span
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${badge.iconBg} ${badge.iconText}`}
+                    >
+                      <badge.icon size={18} strokeWidth={1.75} />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-sm font-bold text-slate-900">{badge.label}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
 
           <div className="relative hidden aspect-[4/3] lg:block">
@@ -206,13 +220,13 @@ export default function IndustriesHero() {
             />
             <motion.div
               aria-hidden
-              className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-brand-blue-300/50"
+              className="pointer-events-none absolute left-1/2 top-1/2 h-52 w-52 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-brand-blue-300/50 xl:h-64 xl:w-64"
               animate={{ rotate: 360 }}
               transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
             />
             <motion.div
               aria-hidden
-              className="pointer-events-none absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-violet-300/50"
+              className="pointer-events-none absolute left-1/2 top-1/2 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-violet-300/50 xl:h-44 xl:w-44"
               animate={{ rotate: -360 }}
               transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
             />
@@ -221,7 +235,7 @@ export default function IndustriesHero() {
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-              className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white p-6 shadow-[0_20px_50px_-20px_rgba(37,99,235,0.4)]"
+              className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white p-4 shadow-[0_20px_50px_-20px_rgba(37,99,235,0.4)] xl:h-28 xl:w-28 xl:p-6"
             >
               <img src={logoMark} alt="" aria-hidden className="h-full w-full object-contain" />
             </motion.div>
@@ -229,22 +243,21 @@ export default function IndustriesHero() {
             {FLOATING_BADGES.map((badge) => (
               <motion.div
                 key={badge.label}
-                className={`absolute z-20 w-[210px] rounded-2xl border border-slate-100 bg-white p-3.5 shadow-[0_20px_40px_-20px_rgba(15,23,42,0.25)] ${badge.position}`}
+                className={`absolute z-20 w-[170px] rounded-2xl border border-slate-100 bg-white p-3 shadow-[0_20px_40px_-20px_rgba(15,23,42,0.25)] xl:w-[210px] xl:p-3.5 ${badge.position}`}
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: badge.delay }}
               >
-                <div className="flex items-start gap-3">
+                <div className="flex items-center gap-3">
                   <span
                     className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${badge.iconBg} ${badge.iconText}`}
                   >
                     <badge.icon size={18} strokeWidth={1.75} />
                   </span>
-                  <div className="min-w-0">
-                    <p className="text-sm font-bold text-slate-900">{badge.label}</p>
-                    <p className="mt-0.5 text-xs leading-snug text-slate-500">{badge.sub}</p>
-                  </div>
+
+                  <p className="text-sm font-bold text-slate-900">
+                    {badge.label}
+                  </p>
                 </div>
-                <span aria-hidden className={`mt-2.5 block h-0.5 w-8 rounded-full ${badge.underline}`} />
               </motion.div>
             ))}
           </div>
