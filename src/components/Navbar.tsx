@@ -46,7 +46,7 @@ export default function Navbar() {
             : "bg-white border-b border-transparent"
         }`}
       >
-        <div className="mx-auto max-w-[1500px] 2xl:max-w-[1800px] px-4 sm:px-6 lg:px-8 flex items-center justify-between h-19 lg:h-21">
+        <div className="mx-auto max-w-[1500px] 2xl:max-w-[1800px] min-[1920px]:max-w-[2200px] px-4 sm:px-6 lg:px-8 flex items-center justify-between h-19 lg:h-21">
           <HashLink href="/" className="flex items-center group shrink-0">
             <img
               src="/assets/Logo.png"
@@ -62,7 +62,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <HashLink
               href={ctaItem.href}
-              className="inline-flex items-center justify-center gap-2 border hover:border-slate-200 text-slate-700 px-5 py-2.5 rounded-md text-sm font-semibold transition-all duration-300 hover:border-slate-900 bg-slate-900 text-white"
+              className="inline-flex items-center justify-center gap-2 border hover:border-slate-200 text-slate-700 px-5 py-2.5 rounded-md text-sm min-[1920px]:text-base font-semibold transition-all duration-300 hover:border-slate-900 bg-slate-900 text-white"
             >
               <Phone size={16} />
               Contact us

@@ -12,7 +12,7 @@ export interface JourneyMilestone {
 export const journeyMilestones: JourneyMilestone[] = [
   {
     icon: Rocket,
-    year: "2018",
+    year: "2013",
     title: "Company Founded",
     color: "text-brand-blue-500",
     bg: "bg-brand-blue-50",

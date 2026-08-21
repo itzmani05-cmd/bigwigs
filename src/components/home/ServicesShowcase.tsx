@@ -24,7 +24,7 @@ function ShowcaseCard({ service, index }: { service: CoreService; index: number 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5, delay: (index % 6) * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
-      className="h-full"
+      className="h-full w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
     >
       <div
         className={`group flex h-full flex-col border-3 border-{iconGlow} bg-white p-5 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(37,99,235,0.2)] sm:p-7 ${s.cardBorder} ${s.cardBorderHover}`}
@@ -127,7 +127,7 @@ function ShowcaseCard({ service, index }: { service: CoreService; index: number 
 
 export default function ServicesShowcase() {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="flex flex-wrap justify-center gap-6">
       {coreServices.map((service, i) => (
         <ShowcaseCard key={service.id} service={service} index={i} />
       ))}

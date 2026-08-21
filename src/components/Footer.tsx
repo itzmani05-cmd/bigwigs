@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import HashLink from "@/components/ui/HashLink";
+import FooterLogo from "@/assests/FooterLogo.png";
 
 const focusRing =
   "outline-none rounded-sm focus-visible:ring-2 focus-visible:ring-brand-blue-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]";
@@ -246,13 +247,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-12">
           {/* Column 1 — brand */}
           <div className="sm:col-span-2 lg:col-span-4">
-            <HashLink href="#home" className={`inline-flex w-fit ${focusRing}`}>
+            <HashLink href="/" className={`inline-flex w-fit ${focusRing}`}>
               <img
-                src="/assets/Logo.png"
+                src={FooterLogo}
                 alt="Bigwigs Technologies Logo"
-                width={180}
-                height={60}
-                className="h-12 w-auto object-contain brightness-150 drop-shadow-[0_0_10px_rgba(37,99,235,0.3)] sm:h-14"
+                width={190}
+                height={65}
+                className="h-12 w-auto object-contain sm:h-14"
               />
             </HashLink>
           

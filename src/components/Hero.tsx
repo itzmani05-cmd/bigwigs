@@ -125,14 +125,14 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative w-full overflow-hidden bg-white">
-      <div className="mx-auto max-w-[1500px] 2xl:max-w-[1800px] px-4 pt-4 pb-2 sm:px-8 lg:px-10 xl:px-12 lg:pt-6 lg:pb-10">
+      <div className="mx-auto max-w-[1500px] 2xl:max-w-[1800px] min-[1920px]:max-w-[2200px] px-4 pt-4 pb-2 sm:px-8 lg:px-10 xl:px-12 lg:pt-6 lg:pb-10">
         <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-[3fr_2fr] md:gap-8 min-[1440px]:grid-cols-[0.95fr_1.05fr] min-[1440px]:gap-14 2xl:gap-16">
           <div className="flex flex-col items-start gap-3 text-left min-[1440px]:max-w-[620px] 2xl:max-w-[740px]">
             <motion.span
               variants={eyebrowVariants}
               initial="hidden"
               animate="visible"
-              className="text-xs pl-1 font-bold  tracking-[0.1em] text-brand-blue-400"
+              className="text-xs min-[1920px]:text-sm pl-1 font-bold  tracking-[0.1em] text-brand-blue-400"
             >
               AI. Data. Digital Engineering.
             </motion.span>
@@ -141,7 +141,7 @@ export default function Hero() {
               variants={headingVariants}
               initial="hidden"
               animate="visible"
-              className="text-4xl font-extrabold leading-[1.01] tracking-[-0.03em] text-slate-900 sm:text-5xl lg:text-[66px]"
+              className="text-4xl font-extrabold leading-[1.01] tracking-[-0.03em] text-slate-900 sm:text-5xl lg:text-[66px] min-[1920px]:text-[78px]"
             >
               Building Intelligent <br/>Solutions for a 
               <br />
@@ -152,7 +152,7 @@ export default function Hero() {
               variants={descriptionVariants}
               initial="hidden"
               animate="visible"
-              className="max-w-[460px] text-sm leading-relaxed text-slate-500 sm:text-base"
+              className="max-w-[460px] text-sm leading-relaxed text-slate-500 sm:text-base min-[1920px]:max-w-[560px] min-[1920px]:text-lg"
             >
               Partner with Bigwigs Technologies to unlock the power of your
               data, automate operations, and deliver measurable business
@@ -169,7 +169,7 @@ export default function Hero() {
                 <MagneticButton
                   href="/demo"
                   magnetic={false}
-                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-blue-700 px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_24px_-10px_rgba(11,23,66,0.55)] transition-colors duration-300 hover:bg-blue-600 select-none"
+                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-blue-700 px-5 py-3 text-sm min-[1920px]:text-base font-semibold text-white shadow-[0_14px_24px_-10px_rgba(11,23,66,0.55)] transition-colors duration-300 hover:bg-blue-600 select-none"
                 >
                   <span>Talk to an Expert</span>
                   <ArrowRight size={16} />
@@ -179,7 +179,7 @@ export default function Hero() {
                 <MagneticButton
                   href="/services"
                   magnetic={false}
-                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg border border-[#0b1742]/25 bg-white px-5 py-3 text-sm font-semibold text-[#0b1742] transition-colors duration-300 hover:border-[#0b1742]/50 hover:bg-slate-50 select-none"
+                  className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg border border-[#0b1742]/25 bg-white px-5 py-3 text-sm min-[1920px]:text-base font-semibold text-[#0b1742] transition-colors duration-300 hover:border-[#0b1742]/50 hover:bg-slate-50 select-none"
                 >
                   <span>Explore Our Services</span>
                   <ArrowRight size={16} />
@@ -200,7 +200,7 @@ export default function Hero() {
       </div>
 
       <div className="relative w-full border-t border-slate-100 bg-white">
-        <div className="mx-auto grid max-w-[1500px] 2xl:max-w-[1800px] grid-cols-1 items-center gap-6 px-4 pb-4 pt-2 sm:grid-cols-[45%_55%] sm:gap-8 sm:px-8 sm:py-2 lg:gap-12 lg:px-10 xl:px-12">
+        <div className="mx-auto grid max-w-[1500px] 2xl:max-w-[1800px] min-[1920px]:max-w-[2200px] grid-cols-1 items-center gap-6 px-4 pb-4 pt-2 sm:grid-cols-[45%_55%] sm:gap-8 sm:px-8 sm:py-2 lg:gap-12 lg:px-10 xl:px-12">
           <motion.div
             variants={statsVariants}
             initial="hidden"
@@ -215,12 +215,12 @@ export default function Hero() {
                   className="text-brand-blue-600"
                   strokeWidth={1.75}
                 />
-                <span className="text-sm font-extrabold tracking-tight text-slate-900 sm:text-base">
+                <span className="text-sm font-extrabold tracking-tight text-slate-900 sm:text-base min-[1920px]:text-lg">
                   {value}
                 </span>
               </div>
 
-              <span className="text-xs leading-snug text-slate-500">
+              <span className="text-xs leading-snug text-slate-500 min-[1920px]:text-sm">
                 {label}
               </span>
             </div>
@@ -228,7 +228,7 @@ export default function Hero() {
           </motion.div>
 
           <div className="flex flex-col items-start gap-4 pr-2 pt-5 sm:items-end sm:gap-2 sm:pl-12 sm:pr-6 sm:pt-0 lg:pr-10">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-900">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-900 min-[1920px]:text-sm">
               Trusted by Global Enterprises
             </span>
             <AnimatePresence mode="wait">

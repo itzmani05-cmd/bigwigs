@@ -27,7 +27,7 @@ function NavTrigger({ item, isActive, isOpen, onFocus }: NavTriggerProps) {
       aria-haspopup={item.mega ? "true" : undefined}
       aria-expanded={item.mega ? isOpen : undefined}
       aria-controls={item.mega ? `mega-${slug(item.name)}` : undefined}
-      className={`relative z-10 flex items-center gap-1 px-3 py-2.5 text-[15px] font-semibold tracking-[-0.01em] rounded-full transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-blue-500 focus-visible:outline-offset-2 ${
+      className={`relative z-10 flex items-center gap-1 px-3 py-2.5 text-[15px] min-[1920px]:text-base font-semibold tracking-[-0.01em] rounded-full transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-blue-500 focus-visible:outline-offset-2 ${
         isActive ? "text-brand-blue-600" : isOpen ? "text-slate-900" : "text-slate-500 hover:text-slate-900"
       }`}
     >
