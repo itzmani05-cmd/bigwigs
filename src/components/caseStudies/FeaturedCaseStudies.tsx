@@ -14,7 +14,7 @@ export default function FeaturedCaseStudies() {
     activeIndustry === "All" ? caseStudies : caseStudies.filter((study) => study.industry === activeIndustry);
 
   return (
-    <section id="featured-case-studies" className="relative w-full scroll-mt-24 overflow-hidden py-10 lg:py-12">
+    <section id="featured-case-studies" className="relative w-full scroll-mt-26 overflow-hidden py-10 lg:py-12 bg-slate-100">
       <Container className="relative z-10">
         <div className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">

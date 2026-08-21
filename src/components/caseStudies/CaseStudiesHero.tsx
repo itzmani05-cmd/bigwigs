@@ -21,7 +21,7 @@ const STATS = [
 
 export default function CaseStudiesHero() {
   return (
-    <section className="relative w-full overflow-hidden pt-10 pb-10 lg:pt-10 lg:pb-12">
+    <section className="relative w-full overflow-hidden pt-10 pb-12 lg:pt-10 lg:pb-16">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white/40 to-transparent"

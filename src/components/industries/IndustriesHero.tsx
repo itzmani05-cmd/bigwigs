@@ -50,7 +50,7 @@ const FLOATING_BADGES: FloatingBadge[] = [
   {
     icon: Car,
     label: "Automotive",
-    position: "right-[2%] top-[6%]",
+    position: "right-[12%] top-[10%]",
     delay: 0.5,
     iconBg: "bg-brand-blue-100",
     iconText: "text-brand-blue-600",
@@ -77,7 +77,7 @@ const FLOATING_BADGES: FloatingBadge[] = [
   {
     icon: Landmark,
     label: "Financial Services",
-    position: "left-[6%] top-[78%]",
+    position: "left-[16%] top-[73%]",
     delay: 2,
     iconBg: "bg-amber-100",
     iconText: "text-amber-600",
@@ -126,7 +126,7 @@ const TRUST_ITEMS: TrustItem[] = [
 
 export default function IndustriesHero() {
   return (
-    <section className="relative w-full overflow-hidden pt-5 pb-14 lg:pt-7 lg:pb-16">
+    <section className="relative w-full overflow-hidden pt-2 pb-10 lg:pt-3 lg:pb-12">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white/40 to-transparent"
@@ -145,7 +145,7 @@ export default function IndustriesHero() {
       />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[50%_50%] lg:gap-10">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[50%_50%] lg:gap-7">
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
             <motion.div variants={itemVariants} className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
@@ -158,7 +158,7 @@ export default function IndustriesHero() {
               variants={itemVariants}
               className="mt-4 text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-5xl lg:text-[44px] xl:text-5xl"
             >
-              Building the <br/>Intelligence Behind{" "}
+              Building Intelligence For{" "}
               <br className="hidden sm:block" />
               <span className="text-blue-500">Tomorrow&rsquo;s Industries</span>
             </motion.h1>
@@ -268,7 +268,7 @@ export default function IndustriesHero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-          className="mt-12 grid grid-cols-1 gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:p-8"
+          className="mt-2 grid grid-cols-1 gap-6 rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:p-8"
         >
           {TRUST_ITEMS.map((item) => (
             <div key={item.title} className="flex items-start gap-3">
