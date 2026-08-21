@@ -69,10 +69,8 @@ function YoutubeIcon({ className }: { className?: string }) {
 }
 
 const SOCIAL_LINKS = [
-  { Icon: LinkedInIcon, label: "LinkedIn", href: "#" },
-  { Icon: XIcon, label: "X (Twitter)", href: "#" },
-  { Icon: FacebookIcon, label: "Facebook", href: "#" },
-  { Icon: YoutubeIcon, label: "YouTube", href: "#" },
+  { Icon: LinkedInIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/bigwigs-technologies" },
+  { Icon: YoutubeIcon, label: "YouTube", href: "https://www.youtube.com/@vigneshragupathy9340" },
 ];
 
 interface ContactItem {

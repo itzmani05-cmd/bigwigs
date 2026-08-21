@@ -39,7 +39,7 @@ function TestimonialCard({ item, index }: { item: Testimonial; index: number }) 
     <motion.div
       whileHover={{ y: -6 }}
       transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
-      className="relative flex h-full flex-col rounded-[24px] border border-slate-200/70 bg-white/80 py-8 px-4 shadow-[0_20px_50px_-28px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-shadow duration-300 hover:border-brand-blue-500/30 hover:shadow-[0_32px_64px_-24px_rgba(37,99,235,0.2)]"
+      className="relative flex h-full w-full flex-col rounded-[24px] border border-slate-200/70 bg-white/80 py-8 px-4 shadow-[0_20px_50px_-28px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-shadow duration-300 hover:border-brand-blue-500/30 hover:shadow-[0_32px_64px_-24px_rgba(37,99,235,0.2)] md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.334rem)]"
     >
       <div className="flex items-start justify-between">
         <Quote
@@ -218,7 +218,7 @@ export default function TestimonialsSection() {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8"
+                className="flex flex-wrap justify-center gap-6 lg:gap-8"
               >
                 {groups[groupIndex].map((item, i) => (
                   <TestimonialCard key={item.id} item={item} index={i} />

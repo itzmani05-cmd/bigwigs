@@ -1,5 +1,14 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Users, Globe2, ListChecks, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Users,
+  Globe2,
+  ListChecks,
+  ShieldCheck,
+  Target,
+  Eye,
+  type LucideIcon,
+} from "lucide-react";
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
 
@@ -14,23 +23,40 @@ const STATS = [
 ];
 
 interface Pillar {
-  title: string;
+  number: string;
+  label: string;
   description: string;
+  icon: LucideIcon;
+  badgeBg: string;
+  badgeText: string;
   underline: string;
+  glow: string;
   illustration: string;
 }
 
 const PILLARS: Pillar[] = [
   {
-    title: "Our Mission",
-    description: "Our mission is to leverage our expertise in composite products to deliver high quality services inspired by creativity and innovation. We dream to be the go-to BPO organization that tailors our services to match our client requirements in the most effective way.",
+    number: "01",
+    label: "Our Mission",
+    description:
+      "Our mission is to leverage our expertise in composite products to deliver high quality services inspired by creativity and innovation. We dream to be the go-to BPO organization that tailors our services to match our client requirements in the most effective way.",
+    icon: Target,
+    badgeBg: "bg-brand-blue-50",
+    badgeText: "text-brand-blue-600",
     underline: "bg-brand-blue-500",
+    glow: "bg-brand-blue-400/20",
     illustration: mountainFlagIllustration,
   },
   {
-    title: "Our Vision",
-    description: "Our vision is to become the standard of excellence in customer services and inspire other brands to do the same. We envision to provide the best services and use effective strategies to inspire and implement solutions to various business needs",
+    number: "02",
+    label: "Our Vision",
+    description:
+      "Our vision is to become the standard of excellence in customer services and inspire other brands to do the same. We envision to provide the best services and use effective strategies to inspire and implement solutions to various business needs.",
+    icon: Eye,
+    badgeBg: "bg-purple-50",
+    badgeText: "text-purple-600",
     underline: "bg-purple-500",
+    glow: "bg-purple-400/20",
     illustration: telescopeIllustration,
   },
 ];
@@ -51,7 +77,7 @@ export default function AboutSection() {
               </span>
             </div>
 
-            <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl">
               Empowering Enterprises
               <br />
               <span className="text-brand-blue-500">with AI & Technology</span>
@@ -83,32 +109,59 @@ export default function AboutSection() {
               </MagneticButton>
             </div>
           </div>
-          <div className="flex flex-col gap-4 lg:order-2">
-            {PILLARS.map((pillar, i) => (
-              <motion.div
-                key={pillar.title}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-                className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.25)]"
-              >
-                <img
-                  src={pillar.illustration}
-                  alt=""
-                  aria-hidden
-                  className="pointer-events-none absolute -bottom-4 -right-4 h-24 w-24 object-contain opacity-15"
-                />
+          <div className="relative flex flex-col gap-8 lg:order-2">
+            {PILLARS.map((pillar, i) => {
+              const Icon = pillar.icon;
+              return (
+                <motion.div
+                  key={pillar.number}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
+                  className="relative flex gap-5 sm:gap-6"
+                >
+                  <div className="relative flex-1 overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.25)]">
+                    <div
+                      aria-hidden
+                      className={`pointer-events-none absolute -right-6 -top-6 h-40 w-40 rounded-full blur-3xl ${pillar.glow}`}
+                    />
 
-                <div className="relative z-10">
-                  <h3 className="text-base font-bold text-slate-900">{pillar.title}</h3>
-                  <span aria-hidden className={`mt-2 block h-0.5 w-8 rounded-full ${pillar.underline}`} />
-                  <p className="mt-3 text-sm leading-relaxed text-slate-500">
-                    {pillar.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                    <div className="relative z-10 flex items-start justify-between gap-4">
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span
+                            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${pillar.badgeBg} ${pillar.badgeText}`}
+                          >
+                            <Icon size={18} strokeWidth={1.75} />
+                          </span>
+                          <span
+                            className={`text-xs font-bold uppercase tracking-[0.15em] ${pillar.badgeText}`}
+                          >
+                            {pillar.label}
+                          </span>
+                        </div>
+
+                        <span
+                          aria-hidden
+                          className={`mt-2 block h-0.5 w-8 rounded-full ${pillar.underline}`}
+                        />
+                        <p className="mt-3 text-sm leading-relaxed text-slate-500">
+                          {pillar.description}
+                        </p>
+                      </div>
+
+                      <img
+                        src={pillar.illustration}
+                        alt=""
+                        aria-hidden
+                        className="hidden h-24 w-24 shrink-0 object-contain opacity-30 sm:block"
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
