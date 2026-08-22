@@ -1,9 +1,10 @@
+import { Fragment } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Code2, Workflow, ScanEye, Mic, Bot } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
-import heroImage from "@/assests/bgHero.png";
+import StatCounter from "@/components/ui/StatCounter";
+import ServiceOrbitVisual from "@/components/services/ServiceOrbitVisual";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -15,14 +16,11 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } },
 } as const;
 
-const TRUSTED_LOGOS = ["Venkat Prabhu", "Vijay", "Rajesh", "Suresh", "Karthik"];
-
-const FLOATING_BADGES = [
-  { icon: Code2, label: "Software", sub: "Cloud-Native Engineering", position: "left-[4%] top-[10%]", delay: 0 },
-  { icon: Workflow, label: "Generative AI", sub: "LLMs & AI Agents", position: "right-[4%] top-[14%]", delay: 0.5 },
-  { icon: ScanEye, label: "Data Annotation", sub: "Vision & LiDAR", position: "left-[6%] bottom-[26%]", delay: 1 },
-  { icon: Mic, label: "Transcription", sub: "Audio & Video", position: "right-[6%] top-[46%]", delay: 1.5 },
-  { icon: Bot, label: "AI Agents", sub: "Workflow Automation", position: "left-[10%] bottom-[6%]", delay: 2 },
+const heroStats = [
+  { value: 100, suffix: "+", label: "Projects Delivered" },
+  { value: 99.5, decimals: 1, suffix: "%", label: "Quality Benchmark" },
+  { value: 10, suffix: "+", label: "Industries Served" },
+  { value: 40, suffix: "%", label: "Faster Delivery" },
 ];
 
 export default function ServicesHero() {
@@ -46,7 +44,7 @@ export default function ServicesHero() {
       />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-11 lg:grid-cols-[45%_55%] lg:gap-7">
+        <div className="mx-auto grid max-w-[1360px] grid-cols-1 items-center gap-11 lg:grid-cols-[1fr_460px] lg:gap-16">
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
             <motion.div variants={itemVariants} className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
@@ -59,9 +57,9 @@ export default function ServicesHero() {
               variants={itemVariants}
               className="mt-2 text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-5xl lg:text-[44px] xl:text-5xl"
             >
-              Enterprise AI Services,
-              <br />
-              <span className="text-blue-500">Engineered to Scale</span>
+              AI-Native Services 
+              <br /> That Drive
+              <span className="text-blue-500"> Real Impact</span>
             </motion.h1>
 
             <motion.p variants={itemVariants} className="mt-4 max-w-lg text-base leading-relaxed text-slate-500 sm:text-lg">
@@ -79,60 +77,35 @@ export default function ServicesHero() {
                                <span>Book a Demo</span>
                                <ArrowRight size={16} />
                              </MagneticButton>
-              
+
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4 border-t border-slate-200 pt-6 sm:gap-x-8"
+            >
+              {heroStats.map((stat, i) => (
+                <Fragment key={stat.label}>
+                  {i > 0 && <span aria-hidden className="hidden h-9 w-px bg-slate-200 sm:block" />}
+                  <div>
+                    <div className="text-xl font-extrabold tracking-tight text-slate-900 sm:text-2xl">
+                      <StatCounter value={stat.value} suffix={stat.suffix} decimals={stat.decimals ?? 0} />
+                    </div>
+                    <div className="mt-0.5 text-xs font-medium text-slate-500">{stat.label}</div>
+                  </div>
+                </Fragment>
+              ))}
             </motion.div>
           </motion.div>
 
-          <div className="relative hidden lg:mr-10 lg:block">
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute -inset-6 rounded-[36px] bg-brand-blue-500/15 blur-[60px]"
-              animate={{ opacity: [0.5, 0.9, 0.5] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute -inset-10 rounded-full border border-dashed border-brand-blue-300/40"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-            />
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-              className="relative aspect-[3/2] overflow-hidden rounded-[28px] border border-white/10 bg-[#03132f] shadow-[0_40px_90px_-30px_rgba(7,27,70,0.5)]"
-            >
-              <img
-                src={heroImage}
-                alt="Bigwigs Technologies AI systems spanning software engineering, data annotation, and generative AI"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#03132f]/70 via-transparent to-[#03132f]/20"
-              />
-
-              {FLOATING_BADGES.map((badge) => (
-                <motion.div
-                  key={badge.label}
-                  className={`absolute z-20 hidden items-center gap-2 rounded-2xl border border-white/15 bg-white/10 px-3 py-2 shadow-[0_16px_30px_-16px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:flex ${badge.position}`}
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: badge.delay }}
-                >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-blue-500/20 text-brand-blue-300">
-                    <badge.icon size={14} strokeWidth={1.75} />
-                  </span>
-                  <span className="leading-tight">
-                    <span className="block text-[10px] font-bold uppercase tracking-wide text-white">
-                      {badge.label}
-                    </span>
-                    <span className="block text-[9px] text-slate-300">{badge.sub}</span>
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.215, 0.61, 0.355, 1] }}
+            className="hidden lg:block"
+          >
+            <ServiceOrbitVisual />
+          </motion.div>
         </div>
       </Container>
     </section>

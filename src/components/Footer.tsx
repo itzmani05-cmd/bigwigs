@@ -367,6 +367,16 @@ export default function Footer() {
           <p className="text-center text-xs text-[#A1A1AA] sm:text-left">
             © {year} Bigwigs Technologies Private Limited .
             <br className="sm:hidden" /> All Rights Reserved.
+            <br className="sm:hidden" />{" "}
+            Developed by{" "}
+            <a
+              href="https://www.manidevfolio.site/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-[#A1A1AA] underline decoration-white/20 underline-offset-2 transition-colors duration-200 hover:text-white ${focusRing}`}
+            >
+              Manikandan
+            </a>
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
