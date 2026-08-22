@@ -17,7 +17,7 @@ const itemVariants = {
 } as const;
 
 const heroStats = [
-  { value: 100, suffix: "+", label: "Projects Delivered" },
+  { value: 120, suffix: "+", label: "Projects Delivered" },
   { value: 99.5, decimals: 1, suffix: "%", label: "Quality Benchmark" },
   { value: 10, suffix: "+", label: "Industries Served" },
   { value: 40, suffix: "%", label: "Faster Delivery" },
@@ -89,7 +89,7 @@ export default function ServicesHero() {
                   {i > 0 && <span aria-hidden className="hidden h-9 w-px bg-slate-200 sm:block" />}
                   <div>
                     <div className="text-xl font-extrabold tracking-tight text-slate-900 sm:text-2xl">
-                      <StatCounter value={stat.value} suffix={stat.suffix} decimals={stat.decimals ?? 0} />
+                      <StatCounter value={stat.value} suffix={stat.suffix} decimals={stat.decimals ?? 0} immediate />
                     </div>
                     <div className="mt-0.5 text-xs font-medium text-slate-500">{stat.label}</div>
                   </div>

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
-import type { LucideIcon } from "lucide-react";
+import { ChevronRight, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionBackdrop from "./SectionBackdrop";
 
@@ -67,22 +67,26 @@ export default function ProcessTimeline({
                   className="relative flex items-start gap-5"
                 >
                   <span
-                    className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-brand-blue-50 text-brand-blue-600 shadow-[0_10px_20px_-8px_rgba(15,23,42,0.3)] transition-transform duration-300 hover:-translate-y-1 animate-particle-float"
+                    className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-white bg-brand-blue-50 text-brand-blue-600 shadow-[0_10px_20px_-8px_rgba(15,23,42,0.3)] animate-particle-float"
                     style={{ animationDelay: `${i * 0.4}s` }}
                   >
                     <Icon size={18} strokeWidth={1.75} />
                   </span>
                   {step.description ? (
                     <div className="min-w-0 flex-1 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]">
-                      <h3 className="text-sm font-bold text-slate-900">
-                        {i + 1}. {step.title}
-                      </h3>
+                      <span className="text-[11px] font-bold uppercase tracking-wide text-brand-blue-500/70">
+                        Step {i + 1}
+                      </span>
+                      <h3 className="mt-0.5 text-sm font-bold text-slate-900">{step.title}</h3>
                       <p className="mt-1 text-sm leading-relaxed text-slate-500">{step.description}</p>
                     </div>
                   ) : (
-                    <h3 className="pt-2 text-sm font-bold text-slate-900">
-                      {i + 1}. {step.title}
-                    </h3>
+                    <div className="min-w-0 flex-1 pt-2">
+                      <span className="text-[11px] font-bold uppercase tracking-wide text-brand-blue-500/70">
+                        Step {i + 1}
+                      </span>
+                      <h3 className="mt-0.5 text-sm font-bold text-slate-900">{step.title}</h3>
+                    </div>
                   )}
                 </motion.div>
               );
@@ -90,21 +94,12 @@ export default function ProcessTimeline({
           </div>
         </div>
 
-        {/* desktop: horizontal timeline */}
+        {/* desktop: connected step cards */}
         <div className="relative mt-16 hidden lg:block">
-          <motion.div
-            aria-hidden
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1, ease: [0.215, 0.61, 0.355, 1] }}
-            style={{ transformOrigin: "left" }}
-            className="absolute left-0 right-0 top-6 h-px -translate-y-1/2 bg-slate-200"
-          />
-
-          <div className={`grid gap-2 ${desktopColumnsClassName}`}>
+          <div className={`grid gap-6 ${desktopColumnsClassName}`}>
             {steps.map((step, i) => {
               const Icon = step.icon;
+              const isLast = i === steps.length - 1;
               return (
                 <motion.div
                   key={step.title}
@@ -112,17 +107,26 @@ export default function ProcessTimeline({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="flex flex-col items-center text-center"
+                  className="group relative flex flex-col items-center rounded-2xl border border-slate-200 bg-white px-4 py-7 text-center shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue-200/70 hover:shadow-[0_20px_45px_-24px_rgba(15,23,42,0.2)]"
                 >
+                  {!isLast && (
+                    <span
+                      aria-hidden
+                      className="absolute -right-3.5 top-1/2 z-20 hidden h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-300 shadow-sm xl:flex"
+                    >
+                      <ChevronRight size={14} strokeWidth={2} />
+                    </span>
+                  )}
                   <span
-                    className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-4 border-white bg-brand-blue-50 text-brand-blue-600 shadow-[0_10px_24px_-8px_rgba(15,23,42,0.35)] transition-transform duration-300 hover:-translate-y-1.5 hover:scale-105 animate-particle-float"
+                    className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-600 transition-transform duration-300 group-hover:scale-105 animate-particle-float"
                     style={{ animationDelay: `${i * 0.4}s` }}
                   >
                     <Icon size={20} strokeWidth={1.75} />
                   </span>
-                  <h3 className="mt-3.5 text-sm font-bold leading-tight text-slate-900">
-                    {i + 1}. {step.title}
-                  </h3>
+                  <span className="mt-4 text-[11px] font-bold uppercase tracking-wide text-brand-blue-500/70">
+                    Step {i + 1}
+                  </span>
+                  <h3 className="mt-1 text-sm font-bold leading-tight text-slate-900">{step.title}</h3>
                   {step.description && (
                     <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{step.description}</p>
                   )}

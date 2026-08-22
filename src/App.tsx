@@ -30,6 +30,7 @@ import TranscriptionServices from "@/pages/TranscriptionServices";
 import VoiceDataCollection from "@/pages/VoiceDataCollection";
 import DataCollection from "@/pages/DataCollection";
 import DataQualityAssurance from "@/pages/DataQualityAssurance";
+import Quality from "@/pages/Quality";
 import DigitalPublishing from "@/pages/DigitalPublishing";
 import AiDataAnnotation from "@/pages/AiDataAnnotation";
 import GenerativeAI from "@/pages/GenerativeAi";
@@ -86,6 +87,7 @@ export default function App() {
           <Route path="/service/voice-data-collection" element={<VoiceDataCollection />} />
           <Route path="/service/data-collection" element={<DataCollection />} />
           <Route path="/service/data-quality-assurance" element={<DataQualityAssurance />} />
+          <Route path="/quality" element={<Quality />} />
           <Route path="/service/digital-publishing" element={<DigitalPublishing />} />
           <Route path="/service/ai-data-annotation" element={<AiDataAnnotation />} />
           <Route path="/service/generative-ai" element={<GenerativeAI />} />

@@ -61,7 +61,6 @@ export default function Services() {
       <ServicesHero />
       <ServicesGrid />
 
-      <StatsBar stats={servicesStats} />
 
       <IconGridSection
         eyebrow="Why Choose Us"

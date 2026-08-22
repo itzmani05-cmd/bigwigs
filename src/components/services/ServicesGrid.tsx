@@ -2,11 +2,16 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
+import SectionBackdrop from "@/components/servicePage/SectionBackdrop";
 import { servicesGrid, SERVICE_COLOR_THEME } from "./servicesGridData";
 
 export default function ServicesGrid() {
   return (
-    <section id="services-grid" className="relative w-full scroll-mt-24 overflow-hidden bg-white py-14 lg:py-16">
+    <section
+      id="services-grid"
+      className="relative w-full scroll-mt-24 overflow-hidden bg-gradient-to-b from-brand-blue-50/50 via-white to-white py-14 lg:py-16"
+    >
+      <SectionBackdrop />
       <Container className="relative z-10">
         <div className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
@@ -24,7 +29,7 @@ export default function ServicesGrid() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 flex flex-wrap justify-center gap-6">
           {servicesGrid.map((item, i) => {
             const theme = SERVICE_COLOR_THEME[item.color];
             return (
@@ -34,6 +39,7 @@ export default function ServicesGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: (i % 6) * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
+                className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
               >
                 <Link
                   to={item.href}
@@ -49,11 +55,11 @@ export default function ServicesGrid() {
                   <span className={`relative flex h-12 w-12 items-center justify-center rounded-2xl ${theme.badgeBg}`}>
                     <item.icon size={22} strokeWidth={1.75} className={theme.text} />
                   </span>
-                  <span aria-hidden className={`relative mt-4 block h-1 w-6 rounded-full ${theme.bar}`} />
+                  <span aria-hidden className={`relative mt-4 block h-1 w-6 rounded-full transition-all duration-300 group-hover:w-10 ${theme.bar}`} />
 
                   <h3 className="relative mt-4 text-lg font-bold text-slate-900">{item.name}</h3>
                   <p className="relative mt-2 flex-1 text-sm leading-relaxed text-slate-500">{item.description}</p>
-                  <span className="relative mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-blue-600 transition-colors duration-300 group-hover:text-blue-700">
+                  <span className={`relative mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-semibold transition-all duration-300 group-hover:gap-2.5 ${theme.text}`}>
                     Learn More
                     <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
                   </span>

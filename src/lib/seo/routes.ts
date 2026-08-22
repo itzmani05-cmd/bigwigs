@@ -209,6 +209,13 @@ export const ROUTES: RouteMeta[] = [
     priority: 0.8,
   },
   {
+    path: "/quality",
+    title: "Quality Assurance | Bigwigs Technologies",
+    description:
+      "Multi-tier quality assurance built into every project — independent review teams, documented benchmarks, and full audit trails behind every dataset we deliver.",
+    priority: 0.7,
+  },
+  {
     path: "/service/digital-publishing",
     title: "Digital Publishing Services | Bigwigs Technologies",
     description:
