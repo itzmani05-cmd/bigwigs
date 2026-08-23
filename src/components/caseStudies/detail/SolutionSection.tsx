@@ -12,16 +12,16 @@ const FLOW_NODES = [
 
 export default function SolutionSection({ study }: { study: CaseStudy }) {
   return (
-    <section className="relative w-full overflow-hidden py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-brand-blue-50/50 via-brand-blue-50/10 to-white py-10 lg:py-12">
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[38%_62%] lg:gap-14">
+        <div className="mx-auto grid max-w-[1300px] grid-cols-1 items-center gap-12 lg:grid-cols-[38%_62%] lg:gap-14">
           {/* LEFT — abstract solution flow diagram */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-            className="glass-card relative mx-auto w-full max-w-[340px] rounded-[28px] p-8"
+            className="relative mx-auto w-full max-w-[340px] rounded-[28px] border border-slate-200 bg-white p-8 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]"
           >
             <div className="relative flex flex-col items-center gap-0">
               {FLOW_NODES.map((node, i) => (
@@ -66,7 +66,7 @@ export default function SolutionSection({ study }: { study: CaseStudy }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.4, delay: i * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="glass-card flex items-center gap-3 rounded-2xl px-5 py-4"
+                  className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]"
                 >
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-green-50 text-brand-green-600">
                     <CheckCircle2 size={17} strokeWidth={2} />

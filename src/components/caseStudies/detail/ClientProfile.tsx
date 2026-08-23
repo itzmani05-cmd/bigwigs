@@ -11,14 +11,14 @@ export default function ClientProfile({ study }: { study: CaseStudy }) {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-slate-50/70 py-10 lg:py-12">
       <Container className="relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
-          className="glass-card flex flex-col gap-8 rounded-[28px] p-8 sm:p-10 lg:flex-row lg:items-center lg:justify-between"
+          className="flex flex-col gap-8 rounded-[28px] border border-slate-200 bg-white p-8 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:p-10 lg:flex-row lg:items-center lg:justify-between"
         >
           <div className="flex items-center gap-5">
             <span

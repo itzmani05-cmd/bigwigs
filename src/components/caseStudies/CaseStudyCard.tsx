@@ -10,13 +10,8 @@ export default function CaseStudyCard({ study, index = 0 }: { study: CaseStudy; 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5, delay: (index % 6) * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
-      className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/60 bg-white/70 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_32px_70px_-20px_rgba(37,99,235,0.28)]"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-300 hover:shadow-[0_20px_45px_-24px_rgba(15,23,42,0.2)]"
     >
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -inset-px z-20 rounded-[28px] opacity-0 shadow-[0_0_0_1px_rgba(37,99,235,0.3),0_0_40px_4px_rgba(37,99,235,0.18)] transition-opacity duration-300 group-hover:opacity-100"
-      />
-
       <div className="relative h-44 w-full overflow-hidden">
         <img
           src={study.coverImage}
@@ -43,9 +38,9 @@ export default function CaseStudyCard({ study, index = 0 }: { study: CaseStudy; 
           {study.technologies.slice(0, 3).map((tech) => (
             <span
               key={tech}
-              className="rounded-full  pr-2.5 py-1 text-[11px] font-semibold text-orange-400"
+              className="rounded-full border border-orange-200 bg-orange-50 px-2.5 py-1 text-[11px] font-semibold text-orange-600"
             >
-              {tech} 
+              {tech}
             </span>
           ))}
         </div>

@@ -9,7 +9,7 @@ export default function ProjectOverview({ study }: { study: CaseStudy }) {
   return (
     <section className="relative w-full overflow-hidden py-10 lg:py-12">
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[42%_58%] lg:gap-14">
+        <div className="mx-auto grid max-w-[1300px] grid-cols-1 items-center gap-12 lg:grid-cols-[42%_58%] lg:gap-14">
           {/* LEFT — abstract project illustration */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
@@ -22,7 +22,7 @@ export default function ProjectOverview({ study }: { study: CaseStudy }) {
               aria-hidden
               className="pointer-events-none absolute inset-0 rounded-full bg-brand-blue-500/10 blur-[70px]"
             />
-            <div className="glass-card relative flex h-full w-full items-center justify-center rounded-[28px]">
+            <div className="relative flex h-full w-full items-center justify-center rounded-[28px] border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]">
               <span
                 aria-hidden
                 className="absolute inset-[14%] rounded-full border border-dashed border-brand-blue-200/60"
@@ -71,7 +71,7 @@ export default function ProjectOverview({ study }: { study: CaseStudy }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
-              className="glass-card relative mt-7 overflow-hidden rounded-[28px] p-8 sm:p-9"
+              className="relative mt-7 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-8 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:p-9"
             >
               <Quote size={36} className="text-brand-blue-500/15" strokeWidth={1.5} />
               <p className="mt-3 text-lg leading-relaxed text-slate-700 sm:text-xl">{study.overview}</p>

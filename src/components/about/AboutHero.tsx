@@ -37,7 +37,7 @@ export default function AboutHero() {
   return (
     <section className="relative w-full overflow-hidden bg-white pt-7 pb-10 lg:pt-10 lg:pb-14">
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[45%_55%] lg:gap-10">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-14 lg:grid-cols-[45%_55%] lg:gap-10">
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
             <motion.div variants={itemVariants} className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />

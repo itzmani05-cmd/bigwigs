@@ -5,7 +5,7 @@ import type { CaseStudy } from "../caseStudiesData";
 
 export default function ChallengesSection({ study }: { study: CaseStudy }) {
   return (
-    <section className="relative w-full overflow-hidden py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-orange-50/60 via-orange-50/15 to-white py-10 lg:py-12">
       <Container className="relative z-10">
         <div className="flex items-center gap-2">
           <AlertTriangle size={16} className="text-orange-500" />
@@ -27,7 +27,7 @@ export default function ChallengesSection({ study }: { study: CaseStudy }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
-                className="glass-card group relative flex items-start gap-4 overflow-hidden rounded-[24px] p-6"
+                className="group relative flex items-start gap-4 overflow-hidden rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-slate-300"
               >
                 <span
                   aria-hidden

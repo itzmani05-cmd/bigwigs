@@ -27,7 +27,7 @@ export default function TechnologiesUsed({ study }: { study: CaseStudy }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.4, delay: i * 0.04, ease: [0.215, 0.61, 0.355, 1] }}
-              className="glass-card rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition-transform duration-300 hover:-translate-y-1"
+              className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300"
             >
               {tech}
             </motion.span>

@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, Code2, BarChart3, Users2, Rocket } from "lucide-react";
+import { ArrowRight, Brain, Code2, BarChart3, Users2, Rocket, Target } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { Link } from "react-router-dom";
 import logo from "@/assests/logo.png";
+
+const HERO_POINTS = [
+  { icon: Users2, label: "Collaborate & Grow" },
+  { icon: Target, label: "Solve Real World Problems" },
+  { icon: Rocket, label: "Make An Impact" },
+];
 
 const ORBIT_CARDS = [
   {
@@ -68,7 +74,7 @@ export default function CareersHero() {
       />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[45%_55%] lg:gap-10">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-14 lg:grid-cols-[45%_55%] lg:gap-10">
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
             <motion.div variants={itemVariants} className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
@@ -93,6 +99,17 @@ export default function CareersHero() {
               innovators building intelligent products that empower businesses
               globally.
             </motion.p>
+
+            <motion.div variants={itemVariants} className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6">
+              {HERO_POINTS.map((point) => (
+                <div key={point.label} className="flex items-center gap-2.5">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-600">
+                    <point.icon size={16} strokeWidth={1.75} />
+                  </span>
+                  <span className="text-sm font-semibold text-slate-700">{point.label}</span>
+                </div>
+              ))}
+            </motion.div>
 
             <motion.div variants={itemVariants} className="mt-7 flex flex-wrap items-center gap-4">
               <Link

@@ -71,7 +71,7 @@ export default function GetInTouchSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-          className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_30px_70px_-30px_rgba(15,23,42,0.2)] lg:grid lg:grid-cols-[1.6fr_1fr]"
+          className="mx-auto max-w-[1300px] overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_30px_70px_-30px_rgba(15,23,42,0.2)] lg:grid lg:grid-cols-[1.6fr_1fr]"
         >
           {/* left: form */}
           <div className="p-6 sm:p-10 lg:p-12">

@@ -50,7 +50,7 @@ export default function CaseStudyHero({ study }: { study: CaseStudy }) {
           <span className="text-slate-400">{study.industry}</span>
         </nav>
 
-        <div className="mt-6 grid grid-cols-1 items-center gap-14 lg:grid-cols-[45%_55%] lg:gap-10">
+        <div className="mx-auto mt-6 grid max-w-[1400px] grid-cols-1 items-center gap-14 lg:grid-cols-[45%_55%] lg:gap-10">
           {/* LEFT */}
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
             <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-2.5">
@@ -128,7 +128,7 @@ export default function CaseStudyHero({ study }: { study: CaseStudy }) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
-                className="glass-card flex items-center gap-3 rounded-2xl p-4"
+                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-blue-50 text-brand-blue-500">
                   <Icon size={17} strokeWidth={1.75} />

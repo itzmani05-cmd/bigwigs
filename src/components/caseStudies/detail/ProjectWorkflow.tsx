@@ -15,7 +15,7 @@ export default function ProjectWorkflow({ study }: { study: CaseStudy }) {
   const columns = COLUMNS_BY_COUNT[study.workflow.length] ?? "lg:grid-cols-5";
 
   return (
-    <section className="relative w-full overflow-hidden py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-violet-50/60 via-violet-50/15 to-white py-10 lg:py-12">
       <Container className="relative z-10">
         <div className="mx-auto max-w-xl text-center">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
@@ -45,7 +45,7 @@ export default function ProjectWorkflow({ study }: { study: CaseStudy }) {
                 <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-4 border-white bg-brand-blue-500 text-sm font-bold text-white shadow-[0_10px_20px_-8px_rgba(37,99,235,0.5)]">
                   {i + 1}
                 </span>
-                <div className="glass-card min-w-0 flex-1 rounded-2xl px-5 py-4">
+                <div className="min-w-0 flex-1 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]">
                   <h3 className="text-sm font-bold text-slate-900">{step.title}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-slate-500">{step.description}</p>
                 </div>
@@ -84,7 +84,7 @@ export default function ProjectWorkflow({ study }: { study: CaseStudy }) {
                 <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border-4 border-white bg-brand-blue-500 text-sm font-bold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.45)]">
                   {i + 1}
                 </span>
-                <div className="glass-card mt-4 w-full rounded-2xl p-4">
+                <div className="mt-4 w-full rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]">
                   <h3 className="text-sm font-bold text-slate-900">{step.title}</h3>
                   <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{step.description}</p>
                 </div>

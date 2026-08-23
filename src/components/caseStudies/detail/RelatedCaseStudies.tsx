@@ -9,7 +9,7 @@ export default function RelatedCaseStudies({ study }: { study: CaseStudy }) {
   if (related.length === 0) return null;
 
   return (
-    <section className="relative w-full overflow-hidden py-10 lg:py-12">
+    <section className="relative w-full overflow-hidden bg-slate-50/70 py-10 lg:py-12">
       <Container className="relative z-10">
         <motion.div
           initial="hidden"

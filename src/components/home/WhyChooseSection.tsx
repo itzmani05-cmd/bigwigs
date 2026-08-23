@@ -103,7 +103,7 @@ export default function WhyChooseSection() {
       />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[2.3fr_1.3fr] lg:gap-8">
+        <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-10 lg:grid-cols-[2.3fr_1.3fr] lg:gap-8">
           <div>
             <div className="flex items-center gap-3" aria-hidden="true">
               <span className="text-xs font-bold tracking-[0.2em] text-orange-500 uppercase sm:text-sm">
