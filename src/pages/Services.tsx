@@ -7,6 +7,7 @@ import StatsBar from "@/components/servicePage/StatsBar";
 import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
 import FAQAccordion from "@/components/servicePage/FAQAccordion";
 import SEO from "@/components/seo/SEO";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { getRouteMeta } from "@/lib/seo/routes";
 
 const whyChooseItems = [
@@ -58,6 +59,7 @@ export default function Services() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Services" }]} />
       <ServicesHero />
       <ServicesGrid />
 
@@ -68,7 +70,7 @@ export default function Services() {
         headerAlign="center"
         align="center"
         items={whyChooseItems}
-        columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6"
         titleSize="md"
       />
 

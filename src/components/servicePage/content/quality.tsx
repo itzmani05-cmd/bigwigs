@@ -36,10 +36,10 @@ import {
 } from "lucide-react";
 
 export const qualityHero = {
-  eyebrow: "Quality Is Built Into Every Dataset",
+  eyebrow: "Quality Assurance At Its Finest",
   heading: (
     <>
-      Precision That <span className="text-blue-500">Powers Better AI</span>
+      Quality Is <span className="text-blue-500">Our Responsibility</span>
     </>
   ),
   description:

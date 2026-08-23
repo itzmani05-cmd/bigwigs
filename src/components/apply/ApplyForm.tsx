@@ -106,7 +106,7 @@ export default function ApplyForm() {
 
   if (isSubmitted) {
     return (
-      <div className="flex flex-col items-center rounded-[28px] border border-gray-300 bg-white px-6 py-16 text-center shadow-sm sm:px-10">
+      <div className="flex min-h-[70vh] flex-col items-center justify-center rounded-[28px] border border-gray-300 bg-white px-6 py-16 text-center shadow-sm sm:px-10">
         <motion.span
           initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}

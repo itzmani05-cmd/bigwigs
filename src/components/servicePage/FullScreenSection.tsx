@@ -5,13 +5,8 @@ interface FullScreenSectionProps {
   className?: string;
 }
 
-/** Centers a section's content within a full viewport-height block, so each
- *  section on the page reads as its own "screen" rather than blending into
- *  a long scroll. */
+/** Thin pass-through wrapper — section height now follows its content's
+ *  natural size instead of being stretched to fill a full viewport. */
 export default function FullScreenSection({ children, className = "" }: FullScreenSectionProps) {
-  return (
-    <div className={`flex min-h-dvh w-full flex-col justify-center ${className}`}>
-      {children}
-    </div>
-  );
+  return <div className={`w-full ${className}`}>{children}</div>;
 }

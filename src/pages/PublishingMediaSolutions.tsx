@@ -21,7 +21,7 @@ export default function PublishingMediaSolutions() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
-      <ServiceDetailHero {...industryPublishingHero} />
+      <ServiceDetailHero {...industryPublishingHero} category="Industries" />
 
       <FullScreenSection>
         <IconGridSection
@@ -49,7 +49,7 @@ export default function PublishingMediaSolutions() {
           eyebrow="How We Work"
           heading="Five Stages. Discovery to Optimization."
           steps={industryPublishingProcessSteps}
-          desktopColumnsClassName="grid-cols-5"
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-5"
         />
       </FullScreenSection>
 

@@ -21,7 +21,7 @@ export default function RetailEcommerce() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
-      <ServiceDetailHero {...retailHero} />
+      <ServiceDetailHero {...retailHero} category="Industries" />
 
       <FullScreenSection>
         <IconGridSection
@@ -49,7 +49,7 @@ export default function RetailEcommerce() {
           eyebrow="How We Work"
           heading="Five Stages. No Guesswork."
           steps={retailProcessSteps}
-          desktopColumnsClassName="grid-cols-5"
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-5"
         />
       </FullScreenSection>
 

@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionBackdrop from "@/components/servicePage/SectionBackdrop";
+import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import { faqItems } from "./faqData";
 
 export default function CareersFAQ() {
@@ -10,6 +11,7 @@ export default function CareersFAQ() {
 
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-b from-brand-blue-50/70 via-brand-blue-50/25 to-white py-10 lg:py-12">
+      <FaqJsonLd items={faqItems} />
       <SectionBackdrop />
       <Container className="relative z-10">
         <div className="mx-auto max-w-xl text-center">

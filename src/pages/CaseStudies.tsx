@@ -3,6 +3,7 @@ import CaseStudiesHero from "@/components/caseStudies/CaseStudiesHero";
 import FeaturedCaseStudies from "@/components/caseStudies/FeaturedCaseStudies";
 import CTASection from "@/components/ui/CTASection";
 import SEO from "@/components/seo/SEO";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function CaseStudies() {
@@ -11,6 +12,7 @@ export default function CaseStudies() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Case Studies" }]} />
       <CaseStudiesHero />
       <FeaturedCaseStudies />
       <CTASection

@@ -24,7 +24,7 @@ export default function IndustriesGrid() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6">
           {industriesGrid.map((item, i) => {
             const cardBody = (
               <>

@@ -1,0 +1,3338 @@
+[
+  {
+    "source": "src/components/about/AboutCTA.tsx",
+    "text": "Talk to Us Explore Our Services"
+  },
+  {
+    "source": "src/components/about/AboutHero.tsx#item0",
+    "text": "7+ Countries Served"
+  },
+  {
+    "source": "src/components/about/AboutHero.tsx#item1",
+    "text": "150+ Projects Delivered"
+  },
+  {
+    "source": "src/components/about/AboutHero.tsx#item2",
+    "text": "98% Client Retention"
+  },
+  {
+    "source": "src/components/about/AboutHero.tsx#item3",
+    "text": "10+ Years of Excellence"
+  },
+  {
+    "source": "src/components/about/AboutHero.tsx#item1",
+    "text": "Data Intelligence"
+  },
+  {
+    "source": "src/components/about/AboutHero.tsx#item2",
+    "text": "Software Engineering"
+  },
+  {
+    "source": "src/components/about/AboutHero.tsx#item3",
+    "text": "Industry Solutions"
+  },
+  {
+    "source": "src/components/about/AboutHero.tsx",
+    "text": "About Bigwigs Technologies Building Intelligence That Moves Businesses Forward We combine data, AI, and engineering excellence to create intelligent solutions that solve real-world problems and drive meaningful impact. Work With Us Explore Our Services Global network of Bigwigs Technologies AI and data operations"
+  },
+  {
+    "source": "src/components/about/EventsGallery.tsx",
+    "text": "Bigwigs Technologies team event Moments & Milestones Events At Bigwigs A look back at the celebrations, team outings, and get-togethers that make Bigwigs feel like home."
+  },
+  {
+    "source": "src/components/about/Expertise.tsx",
+    "text": "What We're Good At Our Expertise End-to-end AI and digital solutions that empower businesses to innovate, automate, and scale intelligently. Bigwigs Technologies Technologies"
+  },
+  {
+    "source": "src/components/about/expertiseData.ts#item0",
+    "text": "AI Data Annotation"
+  },
+  {
+    "source": "src/components/about/expertiseData.ts#item3",
+    "text": "Language Services"
+  },
+  {
+    "source": "src/components/about/expertiseData.ts#item4",
+    "text": "Software Development"
+  },
+  {
+    "source": "src/components/about/expertiseData.ts#item5",
+    "text": "Computer Vision"
+  },
+  {
+    "source": "src/components/about/GlobalImpact.tsx#item1",
+    "text": "Tasks Completed"
+  },
+  {
+    "source": "src/components/about/GlobalImpact.tsx#item3",
+    "text": "Quality Accuracy"
+  },
+  {
+    "source": "src/components/about/GlobalImpact.tsx",
+    "text": "By The Numbers Our Global Impact"
+  },
+  {
+    "source": "src/components/about/journey.ts#item0",
+    "text": "The Beginning Bigwigs Technologies begins its journey with a vision to deliver reliable technology and data-driven services to businesses worldwide."
+  },
+  {
+    "source": "src/components/about/journey.ts#item1",
+    "text": "Growth Expanded our team, capabilities, and service portfolio to support growing client requirements across technology and business processes."
+  },
+  {
+    "source": "src/components/about/journey.ts#item2",
+    "text": "Data & Technology Built stronger expertise in digital publishing, data processing, transcription, and technology-enabled business services."
+  },
+  {
+    "source": "src/components/about/journey.ts#item3",
+    "text": "AI Data Solutions Expanded into AI/ML data services, supporting computer vision and intelligent systems with high-quality training data."
+  },
+  {
+    "source": "src/components/about/journey.ts#item4",
+    "text": "Advanced Annotation Strengthened our capabilities in 2D/3D LiDAR, Radar, ADAS, GIS, segmentation, object detection, and keypoint annotation."
+  },
+  {
+    "source": "src/components/about/journey.ts#item5",
+    "text": "Diversification Expanded our service portfolio across AI data services, medical data annotation, ePublishing, PDF remediation, transcription, and BPO solutions."
+  },
+  {
+    "source": "src/components/about/journey.ts#item6",
+    "text": "The Next Chapter Building a stronger global presence with next-generation AI data, automation, and digital transformation services."
+  },
+  {
+    "source": "src/components/about/JourneyTimeline.tsx",
+    "text": "How Far We've Come Our Journey From a bold idea to a trusted global AI partner — a timeline of milestones that shaped who we are today."
+  },
+  {
+    "source": "src/components/about/MissionVision.tsx#item0",
+    "text": "Our Mission Our mission is to leverage our expertise in composite products to deliver high quality services inspired by creativity and innovation. We dream to be the go-to BPO organization that tailors our services to match our client requirements in the most effective way."
+  },
+  {
+    "source": "src/components/about/MissionVision.tsx#item1",
+    "text": "Our Vision Our vision is to become the standard of excellence in customer services and inspire other brands to do the same. We envision to provide the best services and use effective strategies to inspire and implement solutions to various business needs."
+  },
+  {
+    "source": "src/components/about/MissionVision.tsx#item2",
+    "text": "Our Values Innovation We continuously explore better ideas and emerging technologies. Integrity We build relationships through transparency, trust, and accountability. Excellence We are committed to delivering quality in everything we do."
+  },
+  {
+    "source": "src/components/about/MissionVision.tsx",
+    "text": "What Drives Us Mission, Vision & Values"
+  },
+  {
+    "source": "src/components/about/OurStory.tsx",
+    "text": "Our Story Founded with a vision to make advanced technology accessible and impactful, Bigwigs Technologies has grown into a trusted partner for organizations seeking reliable AI and software solutions. From supporting machine learning projects through data annotation to developing enterprise software and Generative AI applications, our journey has been guided by continuous innovation, quality, and customer success. Today, we serve clients across multiple industries, helping them solve complex business challenges through technology."
+  },
+  {
+    "source": "src/components/about/Process.tsx",
+    "text": "Our Process A proven six-step delivery framework that takes every engagement from discovery to ongoing support. Step"
+  },
+  {
+    "source": "src/components/about/processData.ts#item0",
+    "text": "Discover Understanding your business needs"
+  },
+  {
+    "source": "src/components/about/processData.ts#item1",
+    "text": "Plan Define strategy and engagement model"
+  },
+  {
+    "source": "src/components/about/processData.ts#item2",
+    "text": "Develop Execute with agility and best practices"
+  },
+  {
+    "source": "src/components/about/processData.ts#item3",
+    "text": "Quality Review Multi-level quality assurance"
+  },
+  {
+    "source": "src/components/about/processData.ts#item4",
+    "text": "Deploy Seamless delivery and integration"
+  },
+  {
+    "source": "src/components/about/processData.ts#item5",
+    "text": "Support Ongoing support and optimization"
+  },
+  {
+    "source": "src/components/about/WhoWeAre.tsx",
+    "text": "The Bigwigs Technologies team collaborating Who We Are Bigwigs Technologies is a technology-driven company delivering AI Data Services, Generative AI solutions, enterprise software development, healthcare AI, and multilingual content services. We partner with global organizations to transform raw data into intelligent business solutions through innovation, precision, and scalable delivery."
+  },
+  {
+    "source": "src/components/about/WhyBigwigs.tsx",
+    "text": "The Bigwigs Difference Why Bigwigs Technologies?"
+  },
+  {
+    "source": "src/components/about/whyBigwigsData.ts#item0",
+    "text": "Quality-Driven Delivery Multi-level quality assurance ensures accuracy, consistency, and reliability."
+  },
+  {
+    "source": "src/components/about/whyBigwigsData.ts#item1",
+    "text": "Scalable Teams Scale resources up or down based on your project needs seamlessly."
+  },
+  {
+    "source": "src/components/about/whyBigwigsData.ts#item2",
+    "text": "Secure Operations Enterprise-grade security with strict compliance and data protection."
+  },
+  {
+    "source": "src/components/about/whyBigwigsData.ts#item3",
+    "text": "Flexible Engagement Models Choose the model that fits: dedicated team, fixed price, or T&M."
+  },
+  {
+    "source": "src/components/about/whyBigwigsData.ts#item4",
+    "text": "Global Collaboration Working across time zones to deliver results faster and smarter."
+  },
+  {
+    "source": "src/components/apply/ApplyForm.tsx",
+    "text": "Application Submitted Successfully Thank you for applying. Our recruitment team will review your profile and contact you if your qualifications match our requirements. View More Open Positions I agree to the processing of my personal information for recruitment purposes according to the Privacy Policy. Submitting... Submit Application"
+  },
+  {
+    "source": "src/components/apply/ApplyIntro.tsx",
+    "text": "CAREERS AT BIGWIGS Build Your Future With Bigwigs Become part of an innovative team building intelligent AI solutions for global enterprises. We believe in continuous learning, collaboration, and creating technology that makes an impact."
+  },
+  {
+    "source": "src/components/apply/ResumeUpload.tsx",
+    "text": "Resume / CV (Optional) Click to upload or drag & drop PDF, DOC, DOCX · Max size 500KB Browse Files We accept PDF, DOC, and DOCX files up to 500KB."
+  },
+  {
+    "source": "src/components/careers/CareersCTA.tsx",
+    "text": "Ready To Shape The Future Of AI? Apply Now Contact HR"
+  },
+  {
+    "source": "src/components/careers/CareersFAQ.tsx",
+    "text": "Frequently Asked Questions"
+  },
+  {
+    "source": "src/components/careers/CareersHero.tsx#item0",
+    "text": "Collaborate & Grow"
+  },
+  {
+    "source": "src/components/careers/CareersHero.tsx#item1",
+    "text": "Solve Real World Problems"
+  },
+  {
+    "source": "src/components/careers/CareersHero.tsx#item0",
+    "text": "AI & Innovation"
+  },
+  {
+    "source": "src/components/careers/CareersHero.tsx#item1",
+    "text": "Engineering Excellence"
+  },
+  {
+    "source": "src/components/careers/CareersHero.tsx#item2",
+    "text": "Growth & Learning"
+  },
+  {
+    "source": "src/components/careers/CareersHero.tsx",
+    "text": "Careers At Bigwigs Build Your Career. Build The Future. Together. Join a team of passionate engineers, AI experts, designers, and innovators building intelligent products that empower businesses globally. Apply Now Bigwigs Technologies"
+  },
+  {
+    "source": "src/components/careers/faqData.ts#item0",
+    "text": "How does the hiring process work? Our process starts with an application review, followed by a technical assessment, one or more interviews with the team, and a final offer. We aim to keep every stage transparent and give you feedback along the way."
+  },
+  {
+    "source": "src/components/careers/faqData.ts#item1",
+    "text": "What technologies do you use? Our stack spans modern frontend frameworks, cloud-native backend services, and AI/ML tooling for data annotation, computer vision, and Generative AI — the exact tools vary by team and role."
+  },
+  {
+    "source": "src/components/careers/faqData.ts#item2",
+    "text": "Can freshers apply? Yes. Several of our roles, especially in Data Operations and Engineering, are open to freshers with strong fundamentals and a willingness to learn. We look for potential as much as experience."
+  },
+  {
+    "source": "src/components/careers/faqData.ts#item3",
+    "text": "Do you offer remote work? Many of our roles support remote or hybrid work. Each job listing specifies its location and work arrangement so you know what to expect before applying."
+  },
+  {
+    "source": "src/components/careers/faqData.ts#item4",
+    "text": "How long does recruitment take? Most candidates move through our process within two to three weeks, though timelines can vary depending on the role and interview scheduling."
+  },
+  {
+    "source": "src/components/careers/LifeAtBigwigs.tsx",
+    "text": "Life at Bigwigs Technologies — team collaborating Life At Bigwigs A Place Where You Belong And Make An Impact We believe great ideas come from collaboration, diverse perspectives, and a culture that empowers you to do your best work."
+  },
+  {
+    "source": "src/components/careers/lifeAtBigwigsData.ts#item0",
+    "text": "Collaborative Culture We work together, support each other, and win as a team."
+  },
+  {
+    "source": "src/components/careers/lifeAtBigwigsData.ts#item1",
+    "text": "Innovation First We encourage curiosity and embrace new ideas every day."
+  },
+  {
+    "source": "src/components/careers/lifeAtBigwigsData.ts#item2",
+    "text": "Employee Wellness We care about your health and provide wellness programs."
+  },
+  {
+    "source": "src/components/careers/lifeAtBigwigsData.ts#item3",
+    "text": "Open Communication Your voice matters and we build with transparency and trust."
+  },
+  {
+    "source": "src/components/careers/Testimonials.tsx",
+    "text": "Our Team Hear From Real stories from real people who are building, growing, and making an impact at Bigwigs Technologies. ” “ · Bigwigs Technologies"
+  },
+  {
+    "source": "src/components/careers/testimonialsData.ts#item0",
+    "text": "Arjun R. AI Engineer AI & Data Bigwigs gives me the freedom to explore new ideas and the support to turn them into impactful solutions."
+  },
+  {
+    "source": "src/components/careers/testimonialsData.ts#item1",
+    "text": "Sneha M. Product Designer Design The culture here is collaborative, inclusive, and growth-focused. I learn something new every day."
+  },
+  {
+    "source": "src/components/careers/testimonialsData.ts#item2",
+    "text": "Vikram S. Backend Developer Engineering Working on global projects here has accelerated my growth more than I ever imagined."
+  },
+  {
+    "source": "src/components/caseStudies/caseStudiesData.ts#item0",
+    "text": "Healthcare Scaling AI Data Annotation for a Computer Vision Project A HIPAA-compliant medical image annotation pipeline that trained a radiology triage model to flag critical findings in under two minutes. Medical Image Annotation DICOM Processing Global AI Technology Company The client needed a large volume of accurately annotated image datasets to train a computer vision model. Internal resources were insufficient to meet aggressive delivery timelines. Aggressive delivery timeline outpaced internal annotation capacity Radiology-grade accuracy required on every labeled study PHI-sensitive DICOM data demanded strict de-identification No existing multi-tier QA process for clinical-grade validation Bigwigs stood up a dedicated medical annotation pod combining radiology-trained annotators, a multi-tier QA review process, and an automated DICOM de-identification pipeline — giving the client a continuously validated, clinically defensible training dataset. Data Ingestion & De-identification Secure intake of DICOM studies with automated PHI stripping and audit logging. Annotation Protocol Design Clinical taxonomy and labeling guidelines co-developed with the client's lead radiologists. Multi-Tier Radiologist QA Every study passes through primary annotation, peer review, and a final radiologist sign-off. Model Training Handoff Structured export pipelines feeding directly into the client's training environment. Continuous Feedback Loop Model error analysis routed back into annotator retraining each sprint. DICOM De-identification Multi-Tier QA Review Model Validation Support CVAT OHIF Viewer pydicom Python Radiology-trained annotators QA leads Project manager ML liaison Annotation Accuracy 99.4% Inter-Annotator Agreement 97.2% QA Pass Rate 98.8% Avg. Turnaround Triage Speed 3.5x faster Critical findings flagged in under two minutes. Model Accuracy Gain +14% Improvement in diagnostic model precision. Radiologist Hours Saved 1,200+/mo Freed up for high-complexity cases."
+  },
+  {
+    "source": "src/components/caseStudies/caseStudiesData.ts#item1",
+    "text": "Automotive LiDAR & Sensor Fusion Annotation for Autonomous Driving A high-throughput 3D point cloud and camera-LiDAR fusion annotation pipeline built for a Tier-1 autonomous vehicle supplier. LiDAR Annotation Sensor Fusion Tier-1 Autonomous Vehicle Supplier A Tier-1 autonomous vehicle supplier needed millions of frames of synchronized camera and LiDAR data annotated to train perception models for highway and urban driving scenarios. Existing annotation throughput couldn't keep pace with the volume of sensor data generated by the test fleet, and cross-sensor labeling consistency between camera bounding boxes and 3D point cloud cuboids was inconsistent across vendors. Annotation throughput couldn't match test-fleet data volume Inconsistent camera-to-LiDAR label alignment across vendors No process for surfacing safety-critical edge cases Manual review couldn't scale to millions of frames Bigwigs built a dedicated 3D annotation team trained on multi-sensor calibration, introduced a fusion-aware QA layer that cross-validates camera and LiDAR labels against each other, and mined edge cases to prioritize the highest-value frames first. Multi-Sensor Calibration Review Verifying camera-LiDAR extrinsics before any frame enters the queue. 3D Point Cloud Labeling Cuboid annotation of vehicles, pedestrians, cyclists, and static obstacles. Camera-LiDAR Fusion QA Cross-sensor consistency checks between 2D boxes and 3D cuboids. Edge Case Mining Active-learning driven surfacing of rare and safety-critical scenarios. Model Feedback Integration Perception model failure cases routed back into annotation priorities. 3D LiDAR Annotation Camera-LiDAR Fusion Edge Case Curation Scenario Tagging SuperAnnotate Custom Fusion Pipeline Python ROS Bag Tooling 3D annotation specialists Sensor fusion QA Data scientist Delivery lead Point Cloud Accuracy 99.1% Cross-Sensor Consistency 96.5% QA Pass Rate 98.2% Frames Processed / Day Annotation Throughput 4.2x Increase after workflow re-engineering. Model mAP Improvement +11.3% On pedestrian and cyclist detection. Cost per Frame -38% Reduction via automation-assisted labeling."
+  },
+  {
+    "source": "src/components/caseStudies/caseStudiesData.ts#item2",
+    "text": "Retail Visual Product Recognition & Catalog Automation An automated pre-labeling and human-in-the-loop QA pipeline that cut catalog processing time by 65% for a global marketplace. Computer Vision Image Classification Global E-Commerce Marketplace A global e-commerce marketplace needed millions of seller-submitted product images classified, tagged, and mapped into a unified taxonomy to power visual search and recommendations. Inconsistent seller-submitted imagery and a fragmented internal taxonomy meant products were frequently mis-categorized, hurting search relevance and slowing time-to-list for new inventory. Inconsistent seller-submitted product imagery Fragmented taxonomy causing frequent mis-categorization Search relevance suffering from inaccurate tagging Slow time-to-list for new inventory Bigwigs redesigned the taxonomy in partnership with the client's catalog team, deployed a custom pre-labeling model to auto-tag high-confidence attributes, and layered human review only where model confidence dropped below threshold. Catalog Audit & Taxonomy Mapping Rebuilding the product taxonomy against real seller inventory. Bounding Box & Attribute Labeling Tagging product region, category, color, and material attributes. Automated Pre-Labeling Pipeline Model-assisted first-pass labeling to reduce manual load. Human-in-the-Loop QA Review focused on low-confidence and ambiguous predictions. Deployment Support Validation of tagged data against live search relevance metrics. Product Image Annotation Attribute Tagging Taxonomy Design Automated Pre-Labeling Label Studio CVAT Python Custom Pre-Labeling Models Category specialists QA analysts ML engineer Project manager Labeling Accuracy 98.9% Attribute Consistency 97.6% QA Pass Rate 99.0% Items Labeled / Day Catalog Processing Time -65% Reduction in time-to-list for new inventory. Search Relevance +22% Improvement in visual search accuracy. Manual Review Load -70% After pre-labeling automation went live."
+  },
+  {
+    "source": "src/components/caseStudies/caseStudiesData.ts#item3",
+    "text": "Finance Document Intelligence & Fraud Detection NLP An entity-annotation and OCR-correction pipeline powering a digital bank's fraud detection and compliance review models. Document AI Regional Digital Banking Platform A regional digital banking platform needed a labeled corpus of financial documents and transaction narratives to train NLP models for fraud pattern detection and automated compliance review. Scanned statements and correspondence had inconsistent OCR quality, and the client's compliance team couldn't manually label the volume of documents needed to reach production-grade model accuracy. Inconsistent OCR quality across scanned statements Compliance team couldn't scale manual labeling Insufficient labeled examples of known fraud typologies Production-grade accuracy required before model deployment Bigwigs combined an OCR correction pass with entity and intent annotation performed by reviewers trained on the client's compliance definitions, then layered fraud-pattern tagging to give the model labeled examples of known fraud typologies. Document Corpus Collection Aggregating statements, applications, and correspondence for labeling. Entity & Intent Annotation Tagging named entities, transaction intents, and risk indicators. OCR Correction Pipeline Human-verified correction of low-confidence OCR extractions. Fraud Pattern Labeling Tagging documents against known fraud typologies for supervised training. Model Validation Support Joint error analysis sessions with the client's data science team. Named Entity Annotation OCR Correction Fraud Pattern Tagging Intent Classification Label Studio Tesseract OCR spaCy Python NLP annotators Compliance-domain reviewers QA lead ML liaison Entity Extraction Accuracy 98.3% OCR Correction Rate 99.5% QA Pass Rate 98.6% Documents Processed / Day Fraud Detection Recall +27% Increase in flagged fraudulent transactions. Manual Review Time -54% Reduction in compliance team workload. False Positives -31% Drop in flagged legitimate transactions."
+  },
+  {
+    "source": "src/components/caseStudies/caseStudiesData.ts#item4",
+    "text": "Agriculture Satellite & Drone Crop Health Monitoring A geospatial segmentation pipeline fusing satellite and drone imagery to power early crop stress detection at scale. GIS & Geospatial Drone Imagery Precision Agriculture Technology Provider A precision agriculture technology provider needed field boundaries, crop types, and stress regions labeled across a multi-source imagery pipeline spanning satellite passes and drone flyovers. Aligning satellite and drone imagery at different resolutions and revisit rates made consistent field-level labeling difficult, and the client's agronomists couldn't scale manual review across every growing region. Satellite and drone imagery at mismatched resolutions Inconsistent revisit rates across imagery sources Agronomists couldn't scale review across every region Field-level labeling consistency was difficult to maintain Bigwigs built a geospatial annotation workflow combining GIS-trained analysts with agronomy-informed reviewers, standardizing field boundary and crop-stress labels across both imagery sources with rigorous geospatial alignment QA. Multi-Source Imagery Ingestion Aligning satellite passes and drone flyovers into a shared pipeline. Field Boundary & Crop Segmentation Semantic segmentation of parcels and crop types. Disease & Stress Region Labeling Tagging stress, disease, and irrigation anomalies with agronomist input. Geospatial QA & Validation Cross-checking annotations against ground-truth coordinates. Model Handoff & Field Testing Supporting validation against live field-scouting reports. Semantic Segmentation Geospatial Annotation Crop Health Tagging Field Boundary Mapping QGIS CVAT Python GDAL GIS analysts Agronomy-informed annotators QA lead Project manager Segmentation Accuracy (IoU) 94.8% Geospatial Alignment 99.2% QA Pass Rate 97.9% Hectares Processed / Week Yield Prediction Accuracy +19% Improvement in early-season forecasts. Field Scouting Time -58% Reduction via automated stress detection. Water Usage Efficiency +15% From targeted irrigation insights."
+  },
+  {
+    "source": "src/components/caseStudies/caseStudiesData.ts#item5",
+    "text": "Smart Cities Traffic & Public Safety Computer Vision A city-scale video annotation and object-tracking pipeline supporting real-time traffic and incident intelligence. Computer Vision Video Annotation Object Tracking Real-Time Analytics Metropolitan Transportation Authority A metropolitan transportation authority needed thousands of hours of multi-camera intersection footage annotated to train object-tracking and incident-detection models for its traffic management center. Footage volume from hundreds of intersections far outpaced the authority's internal review capacity, and existing labels lacked the temporal consistency required for reliable multi-frame object tracking. Footage volume from hundreds of intersections outpaced review capacity Existing labels lacked temporal consistency for tracking No unified taxonomy for incident-event tagging Manual review couldn't keep up with live camera feeds Bigwigs deployed a video annotation team specialized in multi-object tracking, introduced incident-event tagging aligned to the authority's response taxonomy, and validated tracking consistency across full video sequences rather than single frames. Multi-Camera Footage Ingestion Aggregating and indexing footage from intersection camera feeds. Object Detection & Tracking Annotation Frame-consistent labeling of vehicles, pedestrians, and cyclists. Incident Event Tagging Tagging collisions, near-misses, and congestion events. Edge Deployment QA Validating annotations against edge-model inference behavior. Live Monitoring Support Ongoing review cycles as new camera feeds came online. Video Frame Annotation Incident Tagging Edge Model Validation CVAT SuperAnnotate Python Custom Tracking Pipeline Video annotators Tracking QA analysts ML liaison Delivery lead Tracking Accuracy (MOTA) 93.6% Detection Precision 98.1% QA Pass Rate 98.4% Hours Annotated / Week 1,100 Incident Response Time -41% Faster detection-to-dispatch. Traffic Flow Optimization +17% Improvement at monitored intersections. False Alarm Rate -35% Reduction in system-generated alerts."
+  },
+  {
+    "source": "src/components/caseStudies/CaseStudiesHero.tsx#item0",
+    "text": "10+ Industries Served"
+  },
+  {
+    "source": "src/components/caseStudies/CaseStudiesHero.tsx#item1",
+    "text": "50M+ Data Points Annotated"
+  },
+  {
+    "source": "src/components/caseStudies/CaseStudiesHero.tsx#item2",
+    "text": "98%+ Avg. QA Accuracy"
+  },
+  {
+    "source": "src/components/caseStudies/CaseStudiesHero.tsx",
+    "text": "Case Studies Transforming Data Into AI Intelligence Explore how Bigwigs Technologies delivers high-quality AI data solutions across industries through scalable annotation, data collection, and digital transformation projects. Talk to an Experts Request A Quote"
+  },
+  {
+    "source": "src/components/caseStudies/detail/BusinessResults.tsx",
+    "text": "Business Results The Measurable Impact Beyond the delivery metrics, this engagement moved the needle on what could do with the data — faster decisions, fewer manual reviews, and a model pipeline built to scale."
+  },
+  {
+    "source": "src/components/caseStudies/detail/CaseStudyHero.tsx#item2",
+    "text": "Services Delivered"
+  },
+  {
+    "source": "src/components/caseStudies/detail/CaseStudyHero.tsx",
+    "text": "Case Studies Case Study"
+  },
+  {
+    "source": "src/components/caseStudies/detail/ChallengesSection.tsx",
+    "text": "The Challenge What Was Up Against"
+  },
+  {
+    "source": "src/components/caseStudies/detail/ClientProfile.tsx#item1",
+    "text": "Engagement Size"
+  },
+  {
+    "source": "src/components/caseStudies/detail/ProjectOverview.tsx",
+    "text": "Project Overview The Brief"
+  },
+  {
+    "source": "src/components/caseStudies/detail/ProjectWorkflow.tsx",
+    "text": "Implementation Process How We Delivered It"
+  },
+  {
+    "source": "src/components/caseStudies/detail/QualityMetrics.tsx",
+    "text": "Results Precision At Every Step"
+  },
+  {
+    "source": "src/components/caseStudies/detail/RelatedCaseStudies.tsx",
+    "text": "Related Case Studies More Success Stories"
+  },
+  {
+    "source": "src/components/caseStudies/detail/SolutionSection.tsx",
+    "text": "Our Solution How Bigwigs Delivered"
+  },
+  {
+    "source": "src/components/caseStudies/detail/TechnologiesUsed.tsx",
+    "text": "Technologies Used The Stack Behind It"
+  },
+  {
+    "source": "src/components/caseStudies/FeaturedCaseStudies.tsx",
+    "text": "Featured Case Studies Proven Results, Real Impact Every engagement is a partnership — browse how we’ve helped teams turn raw data into production-grade AI."
+  },
+  {
+    "source": "src/components/certifications/CertificationsGrid.tsx#item0",
+    "text": "Information Security Management Certifies that our information security management system (ISMS) meets the international standard for protecting client data — covering confidentiality, integrity, and availability across every engagement."
+  },
+  {
+    "source": "src/components/certifications/CertificationsGrid.tsx#item1",
+    "text": "Quality Management System Certifies that our quality management system consistently delivers services that meet client requirements and regulatory standards — from data annotation to enterprise software delivery."
+  },
+  {
+    "source": "src/components/certifications/CertificationsGrid.tsx",
+    "text": "Certifications Standards We're Certified Against Independently audited and certified, so enterprises can trust how we handle their data and deliver their projects."
+  },
+  {
+    "source": "src/components/certifications/CertificationsHero.tsx",
+    "text": "Certifications Certified For Quality & Security You Can Trust Bigwigs Technologies holds internationally recognized ISO certifications, reflecting our commitment to information security and consistent, high-quality delivery for every enterprise engagement. View Certifications Talk To Us"
+  },
+  {
+    "source": "src/components/chatbot/ChatWindow.tsx",
+    "text": "assistant Hi! I'm the Bigwigs AI assistant. Ask me anything about our services. user Bigwigs AI Assistant Online AI-generated from Bigwigs documentation."
+  },
+  {
+    "source": "src/components/contact/ContactHero.tsx",
+    "text": "Contact Us Let's Build Something Great Together Have a project in mind or a question about our services? Share a few details below and our team will get back to you shortly. +91 93447 69914 Book a Demo"
+  },
+  {
+    "source": "src/components/contact/ContactInfo.tsx#item0",
+    "text": "Call Us Business Enquiries +91 93447 69914 Career Enquiries +91 63824 73625"
+  },
+  {
+    "source": "src/components/contact/ContactInfo.tsx#item1",
+    "text": "Mail Us Business Enquiries vignesh@bigwigstech.com Career Enquiries hr@bigwigstech.com"
+  },
+  {
+    "source": "src/components/contact/ContactInfo.tsx",
+    "text": "Follow Us Stay updated with our latest news and stories."
+  },
+  {
+    "source": "src/components/contact/ContactMap.tsx",
+    "text": "Visit Our Office 2nd Floor, Vijaya Mini Hall, 206, Mathur, Tamil Nadu – 622515, India."
+  },
+  {
+    "source": "src/components/CookieConsent.tsx",
+    "text": "We use cookies to allow us to remember you. To find out more about the cookies we use, see our Privacy Policy Cookie Policy Accept"
+  },
+  {
+    "source": "src/components/demo/DemoForm.tsx",
+    "text": "Demo Request Received Thank you, Our team will reach out shortly to confirm your preferred date and time and get your personalized demo scheduled. Back To Home I agree to the Privacy Policy Submitting... Schedule My Demo"
+  },
+  {
+    "source": "src/components/demo/DemoIntro.tsx#item0",
+    "text": "+91 93447 69914"
+  },
+  {
+    "source": "src/components/demo/DemoIntro.tsx#item1",
+    "text": "info@bigwigsfolks.in"
+  },
+  {
+    "source": "src/components/demo/DemoIntro.tsx",
+    "text": "Business Enquiries Book Your Demo See Bigwigs Technologies in Action Tell us about your project and we'll walk you through how our AI, data, and automation solutions can fit your business — tailored to your industry and goals. Contact Us Bigwigs Technologies Private Limited 2nd Floor, Vijaya Mini Hall, 206, Mathur, Tamil Nadu – 622515, India."
+  },
+  {
+    "source": "src/components/Footer.tsx#item0",
+    "text": "Business Enquiries"
+  },
+  {
+    "source": "src/components/Footer.tsx#item1",
+    "text": "Interview & Career Enquiries"
+  },
+  {
+    "source": "src/components/Footer.tsx#item0",
+    "text": "Our Services AI Data Annotation Generative AI Services Transcription Services Voice & Speech Data Collection Software Development Data Validation & QA Digital Publishing AI Agents & Automation"
+  },
+  {
+    "source": "src/components/Footer.tsx#item1",
+    "text": "Industries We Serve Healthcare Automotive Retail & E-commerce Banking & Finance Manufacturing Education & eLearning Government & Public Sector Publishing & Media"
+  },
+  {
+    "source": "src/components/Footer.tsx#item2",
+    "text": "Company About Us Careers Certifications Case Studies Events Contact Us"
+  },
+  {
+    "source": "src/components/Footer.tsx#item1",
+    "text": "Terms of Service"
+  },
+  {
+    "source": "src/components/Footer.tsx",
+    "text": "Bigwigs Technologies Logo Contact Bigwigs Technologies Private Limited . All Rights Reserved. Developed by Manikandan"
+  },
+  {
+    "source": "src/components/Hero.tsx#item4",
+    "text": "Prudent Partners"
+  },
+  {
+    "source": "src/components/Hero.tsx#item0",
+    "text": "12+ Years Experience"
+  },
+  {
+    "source": "src/components/Hero.tsx#item1",
+    "text": "ISO 27001 Certified"
+  },
+  {
+    "source": "src/components/Hero.tsx#item2",
+    "text": "Global Delivery"
+  },
+  {
+    "source": "src/components/Hero.tsx#item3",
+    "text": "99% Client Satisfaction"
+  },
+  {
+    "source": "src/components/Hero.tsx",
+    "text": "AI. Data. Digital Engineering. Building Intelligent Solutions for a Global Future Partner with Bigwigs Technologies to unlock the power of your data, automate operations, and deliver measurable business outcomes at scale. Talk to an Expert Explore Our Services Trusted by Global Enterprises"
+  },
+  {
+    "source": "src/components/home/AboutSection.tsx#item1",
+    "text": "50+ Global Clients"
+  },
+  {
+    "source": "src/components/home/AboutSection.tsx#item2",
+    "text": "10M+ Tasks Completed"
+  },
+  {
+    "source": "src/components/home/AboutSection.tsx#item3",
+    "text": "99.5% Quality Accuracy"
+  },
+  {
+    "source": "src/components/home/AboutSection.tsx#item0",
+    "text": "Our Mission Our mission is to leverage our expertise in composite products to deliver high quality services inspired by creativity and innovation. We dream to be the go-to BPO organization that tailors our services to match our client requirements in the most effective way."
+  },
+  {
+    "source": "src/components/home/AboutSection.tsx#item1",
+    "text": "Our Vision Our vision is to become the standard of excellence in customer services and inspire other brands to do the same. We envision to provide the best services and use effective strategies to inspire and implement solutions to various business needs."
+  },
+  {
+    "source": "src/components/home/AboutSection.tsx",
+    "text": "About Bigwigs Technologies Empowering Enterprises with AI & Technology Bigwigs Technologies is a trusted AI Data Services and Technology partner helping global enterprises build intelligent products through AI data annotation, Generative AI, enterprise software development, healthcare AI, and multilingual data solutions. Work With Us Learn More About Us"
+  },
+  {
+    "source": "src/components/home/coreServices.ts#item0",
+    "text": "AI Data Annotation Accurate, scalable annotation services for computer vision and ML projects."
+  },
+  {
+    "source": "src/components/home/coreServices.ts#item1",
+    "text": "Generative AI & LLM Services Build intelligent applications powered by modern AI."
+  },
+  {
+    "source": "src/components/home/coreServices.ts#item2",
+    "text": "Software Development Design and build secure, scalable digital products."
+  },
+  {
+    "source": "src/components/home/coreServices.ts#item3",
+    "text": "Healthcare AI Technology solutions designed for healthcare and life sciences."
+  },
+  {
+    "source": "src/components/home/coreServices.ts#item4",
+    "text": "Language & Content Services High-quality multilingual support for global businesses."
+  },
+  {
+    "source": "src/components/home/CoreServicesSection.tsx",
+    "text": "Our Core Services Intelligent Solutions. Endless Possibilities. From high-quality training data to intelligent applications, we deliver AI-powered solutions that drive innovation and business impact."
+  },
+  {
+    "source": "src/components/home/GetInTouchSection.tsx",
+    "text": "Thanks, Your message has been received. Our team will get back to you shortly. Get In Touch Share Your Details Fill in the form and our team will get back to you shortly to discuss how we can help your business grow. Submitting... Submit Now"
+  },
+  {
+    "source": "src/components/home/GlobalDeliverySection.tsx",
+    "text": "Global Delivery Model Think Global. Deliver Anywhere. Our global delivery model combines the best talent, advanced technology, and agile processes to deliver exceptional results, anywhere in the world. Delivery locations: North America (On-site & Nearshore), South America (Nearshore Support), Europe (On-site & Nearshore), India (Global Delivery Hub), Asia (Delivery Center), Australia (Local Support)."
+  },
+  {
+    "source": "src/components/home/industries.ts#item0",
+    "text": "Automotive Powering autonomous driving with LiDAR annotation, sensor fusion, and ADAS datasets."
+  },
+  {
+    "source": "src/components/home/industries.ts#item1",
+    "text": "Healthcare Medical image annotation, clinical NLP, disease detection, and radiology AI data solutions."
+  },
+  {
+    "source": "src/components/home/industries.ts#item2",
+    "text": "Retail & E-commerce Image recognition, shelf monitoring, product categorization, and customer analytics."
+  },
+  {
+    "source": "src/components/home/industries.ts#item3",
+    "text": "Agriculture Precision farming using drone imagery, crop monitoring, and AI-powered yield prediction."
+  },
+  {
+    "source": "src/components/home/industries.ts#item4",
+    "text": "Manufacturing Computer vision for defect detection, quality inspection, and industrial automation."
+  },
+  {
+    "source": "src/components/home/industries.ts#item5",
+    "text": "Smart Cities Traffic analysis, GIS annotation, infrastructure monitoring, and urban intelligence."
+  },
+  {
+    "source": "src/components/home/industries.ts#item6",
+    "text": "Banking & Finance Fraud detection, OCR, document processing, and AI-driven risk assessment."
+  },
+  {
+    "source": "src/components/home/industries.ts#item7",
+    "text": "Robotics & Drones Vision datasets for robotics navigation, warehouse automation, and autonomous drones."
+  },
+  {
+    "source": "src/components/home/IndustriesSection.tsx",
+    "text": "Learn More Industries We Serve Powering AI Across Every Industry Delivering high-quality AI data solutions that accelerate innovation across healthcare, automotive, retail, finance, manufacturing, agriculture, and beyond. View All Industries Contact Us Get a Quote"
+  },
+  {
+    "source": "src/components/home/testimonials.ts#item0",
+    "text": "Great service that's on time agreed upon schedule. The communications staff and the service technicians are always willing to work around the customer's schedule. Hats off to them! Ramesh Letsify Sigma4Solutions"
+  },
+  {
+    "source": "src/components/home/testimonials.ts#item1",
+    "text": "We were very pleased with the quality and timeliness of the services you provided. Many thanks for that. It was great to work with the BigWigs Team and we will certainly come back to you in the future if we need annotation services. Ankitha Prasad"
+  },
+  {
+    "source": "src/components/home/testimonials.ts#item2",
+    "text": "We have had a positive experience working with Bigwigs Technologies. Their team is responsive, adaptable, and committed to maintaining quality throughout project execution. Their ability to understand requirements and deliver consistently has made them a valuable service partner. Wayney TicTag"
+  },
+  {
+    "source": "src/components/home/testimonials.ts#item3",
+    "text": "I have noticed that you and your team always work late for our project and sometimes even work during weekends or holiday. Thank you very much for your continued support for our project. It is appreciated because of your support and help that our project develops so quickly. In the future, let us work together to create a better tomorrow with higher quality, faster delivery, better management, and stronger cooperation! Nina Appen China"
+  },
+  {
+    "source": "src/components/home/testimonials.ts#item4",
+    "text": "Bigwigs Technologies has been a very reliable partner for us. Their communication is always clear, they understand our requirements well, and they consistently deliver quality work on time. We've had a great experience working with their team and are happy to recommend them. Shahjahan WisePL Private Limited"
+  },
+  {
+    "source": "src/components/home/TestimonialsSection.tsx",
+    "text": "“ ” Testimonials Trusted by Innovators Worldwide See why global enterprises trust Bigwigs Technologies for high-quality AI data solutions."
+  },
+  {
+    "source": "src/components/home/WhyChooseSection.tsx#item0",
+    "text": "Enterprise-Grade Security ISO 27001 certified with robust data security and compliance standards."
+  },
+  {
+    "source": "src/components/home/WhyChooseSection.tsx#item1",
+    "text": "High Quality & Accuracy Rigorous QA processes ensuring 99.5% accuracy in every deliverable."
+  },
+  {
+    "source": "src/components/home/WhyChooseSection.tsx#item2",
+    "text": "Scalable & Flexible Engagement models and teams that scale to match your business needs."
+  },
+  {
+    "source": "src/components/home/WhyChooseSection.tsx#item3",
+    "text": "Expert & Dedicated Teams Skilled professionals with deep domain knowledge and yoe."
+  },
+  {
+    "source": "src/components/home/WhyChooseSection.tsx#item4",
+    "text": "On-Time Delivery Agile processes to meet your deadlines."
+  },
+  {
+    "source": "src/components/home/WhyChooseSection.tsx#item5",
+    "text": "Transparent Communication Clear, consistent, and proactive communication at the project."
+  },
+  {
+    "source": "src/components/home/WhyChooseSection.tsx#item0",
+    "text": "12+ Years in Business"
+  },
+  {
+    "source": "src/components/home/WhyChooseSection.tsx#item1",
+    "text": "100M+ Images Annotated"
+  },
+  {
+    "source": "src/components/home/WhyChooseSection.tsx#item2",
+    "text": "500+ Successful Projects"
+  },
+  {
+    "source": "src/components/home/WhyChooseSection.tsx",
+    "text": "Why Choose Bigwigs Delivering Excellence. Building Trust. Driving Impact. We combine deep domain expertise, advanced technology, and a client-first approach to deliver solutions that create business value."
+  },
+  {
+    "source": "src/components/industries/expertiseNodesData.ts#item0",
+    "text": "AI Data Annotation"
+  },
+  {
+    "source": "src/components/industries/expertiseNodesData.ts#item1",
+    "text": "Computer Vision"
+  },
+  {
+    "source": "src/components/industries/expertiseNodesData.ts#item4",
+    "text": "Analytics & Insights"
+  },
+  {
+    "source": "src/components/industries/expertiseNodesData.ts#item5",
+    "text": "Software Development"
+  },
+  {
+    "source": "src/components/industries/expertiseNodesData.ts#item6",
+    "text": "Language Services"
+  },
+  {
+    "source": "src/components/industries/expertiseNodesData.ts#item7",
+    "text": "Cloud Solutions"
+  },
+  {
+    "source": "src/components/industries/industriesFaqData.ts#item0",
+    "text": "Which industries do you specialize in? We deliver AI data services and solutions across healthcare, automotive, retail, banking & finance, manufacturing, agriculture, smart cities, and logistics — with domain specialists for each vertical."
+  },
+  {
+    "source": "src/components/industries/industriesFaqData.ts#item1",
+    "text": "Can you build custom AI solutions? Yes. Beyond data services, we design and build custom computer vision, Generative AI, and analytics solutions tailored to your industry's workflows and compliance requirements."
+  },
+  {
+    "source": "src/components/industries/industriesFaqData.ts#item2",
+    "text": "Do you support enterprise deployments? We support enterprise-scale deployments end-to-end — from pilot to production — with dedicated project teams, SLAs, and integration into your existing infrastructure."
+  },
+  {
+    "source": "src/components/industries/industriesFaqData.ts#item3",
+    "text": "How do you ensure security? We follow strict data governance, access controls, and audit workflows, with secure delivery models designed for regulated industries such as healthcare and finance."
+  },
+  {
+    "source": "src/components/industries/industriesFaqData.ts#item4",
+    "text": "Can you handle large AI datasets? Yes. Our operations scale from pilot projects to tens of millions of annotated tasks, backed by elastic global teams and multi-layer quality assurance."
+  },
+  {
+    "source": "src/components/industries/IndustriesGrid.tsx",
+    "text": "Industries We Serve Industries We Transform Delivering AI-powered solutions tailored for every industry. Learn More"
+  },
+  {
+    "source": "src/components/industries/industriesGridData.ts#item0",
+    "text": "Healthcare Medical image annotation, clinical NLP, medical AI."
+  },
+  {
+    "source": "src/components/industries/industriesGridData.ts#item1",
+    "text": "Automotive ADAS, autonomous driving, LiDAR annotation."
+  },
+  {
+    "source": "src/components/industries/industriesGridData.ts#item2",
+    "text": "Retail & E-commerce Recommendation engine, OCR, customer analytics."
+  },
+  {
+    "source": "src/components/industries/industriesGridData.ts#item3",
+    "text": "Banking & Finance Fraud detection, risk analysis, document AI."
+  },
+  {
+    "source": "src/components/industries/industriesGridData.ts#item4",
+    "text": "Manufacturing Robotics, quality inspection, industrial AI."
+  },
+  {
+    "source": "src/components/industries/industriesGridData.ts#item5",
+    "text": "Agriculture Drone analytics, crop monitoring, satellite AI."
+  },
+  {
+    "source": "src/components/industries/industriesGridData.ts#item6",
+    "text": "Smart Cities GIS, traffic intelligence, urban analytics."
+  },
+  {
+    "source": "src/components/industries/industriesGridData.ts#item7",
+    "text": "Logistics & Supply Chain Warehouse automation, route optimization, supply chain AI."
+  },
+  {
+    "source": "src/components/industries/industriesGridData.ts#item8",
+    "text": "Education & eLearning LMS platforms, AI tutoring, digital publishing, accessibility."
+  },
+  {
+    "source": "src/components/industries/industriesGridData.ts#item9",
+    "text": "Government & Public Sector Digital government platforms, smart cities, secure citizen services."
+  },
+  {
+    "source": "src/components/industries/industriesGridData.ts#item10",
+    "text": "Publishing & Media XML-first publishing, AI content tagging, accessible EPUB & PDF."
+  },
+  {
+    "source": "src/components/industries/IndustriesHero.tsx#item4",
+    "text": "Financial Services"
+  },
+  {
+    "source": "src/components/industries/IndustriesHero.tsx#item0",
+    "text": "Enterprise Grade Security Your data is always protected with top-tier security."
+  },
+  {
+    "source": "src/components/industries/IndustriesHero.tsx#item1",
+    "text": "Scalable AI Solutions Built to scale with your business needs."
+  },
+  {
+    "source": "src/components/industries/IndustriesHero.tsx#item2",
+    "text": "Industry Expertise Deep domain knowledge across multiple industries."
+  },
+  {
+    "source": "src/components/industries/IndustriesHero.tsx#item3",
+    "text": "Measurable Impact Delivering real business outcomes with AI."
+  },
+  {
+    "source": "src/components/industries/IndustriesHero.tsx",
+    "text": "Industries Building Intelligence For Tomorrow’s Industries We deliver enterprise AI data services, software engineering, Generative AI, and digital transformation solutions across healthcare, automotive, finance, manufacturing, agriculture, retail, logistics, and smart cities. Book a Demo"
+  },
+  {
+    "source": "src/components/industries/industriesProcessData.ts#item0",
+    "text": "Discover Understand goals and requirements."
+  },
+  {
+    "source": "src/components/industries/industriesProcessData.ts#item1",
+    "text": "Analyze Assess data and define AI strategy."
+  },
+  {
+    "source": "src/components/industries/industriesProcessData.ts#item2",
+    "text": "Build Develop AI models and solutions."
+  },
+  {
+    "source": "src/components/industries/industriesProcessData.ts#item3",
+    "text": "Validate Test, evaluate, and ensure accuracy."
+  },
+  {
+    "source": "src/components/industries/industriesProcessData.ts#item4",
+    "text": "Deploy Seamless deployment in your environment."
+  },
+  {
+    "source": "src/components/industries/industriesProcessData.ts#item5",
+    "text": "Support Continuous support and optimization."
+  },
+  {
+    "source": "src/components/industries/IndustriesProcessTimeline.tsx",
+    "text": "How We Work Six Stages. Every Industry. A streamlined process that turns complex challenges into intelligent solutions with measurable impact."
+  },
+  {
+    "source": "src/components/industries/successStoriesData.ts#item0",
+    "text": "Healthcare Faster diagnosis support with AI annotation & NLP."
+  },
+  {
+    "source": "src/components/industries/successStoriesData.ts#item1",
+    "text": "Retail Improvement in product recognition accuracy."
+  },
+  {
+    "source": "src/components/industries/successStoriesData.ts#item2",
+    "text": "Automotive Of LiDAR frames annotated for autonomous driving."
+  },
+  {
+    "source": "src/components/industries/whyChooseData.ts#item0",
+    "text": "Enterprise Security SOC 2-aligned processes and strict data governance for regulated industries."
+  },
+  {
+    "source": "src/components/industries/whyChooseData.ts#item1",
+    "text": "Global Delivery"
+  },
+  {
+    "source": "src/components/industries/whyChooseData.ts#item2",
+    "text": "Dedicated Teams Domain specialists embedded with your product and engineering teams."
+  },
+  {
+    "source": "src/components/industries/whyChooseData.ts#item3",
+    "text": "99.5% Accuracy Multi-layer QA and audit workflows for production-grade AI data."
+  },
+  {
+    "source": "src/components/industries/whyChooseData.ts#item4",
+    "text": "Scalable Operations Elastic capacity that scales from pilot projects to millions of tasks."
+  },
+  {
+    "source": "src/components/industries/whyChooseData.ts#item5",
+    "text": "AI Expertise Deep experience across annotation, GenAI, and applied machine learning."
+  },
+  {
+    "source": "src/components/navbar/navConfig.ts#item1",
+    "text": "About About BigWigs Get to know the story, values, and credentials behind our enterprise AI work. Our Story Mission & Vision Our Expertise Certifications Events How BigWigs got started and where we're headed. What drives us, and the standard we hold ourselves to. The domains and technologies we go deep on. Compliance and quality credentials we hold. Celebrations, team outings, and moments from Bigwigs. Learn more about us"
+  },
+  {
+    "source": "src/components/navbar/navConfig.ts#item2",
+    "text": "Services What we build Enterprise AI systems engineered for accuracy, security, and scale — across every domain we serve. Medical Image Annotation AI Data Annotation Generative AI Services Translation & Localization Transcription Services Voice & Speech Data Collection Medical AI Clinically-aware imaging models & workflows. Image, video, LiDAR, and OCR annotation for computer vision. LLMs, AI agents, RAG, and intelligent workflow automation. Multilingual content, software, and web experiences. AI-assisted, human-reviewed audio and video transcription. Enterprise speech datasets for voice AI and conversational AI. Explore all services"
+  },
+  {
+    "source": "src/components/navbar/navConfig.ts#item3",
+    "text": "Industries Industries We Serve AI data solutions engineered for the operational realities of every industry we work in. Healthcare Retail & E-commerce Banking & Finance Manufacturing Education & eLearning Government & Public Sector Publishing & Media Medical image annotation, clinical NLP, medical AI. Recommendation engine, OCR, customer analytics. Fraud detection, risk analysis, document AI. Agriculture Drone analytics, crop monitoring, satellite AI. LMS platforms, AI tutoring, digital publishing, accessibility. Digital government platforms, smart cities, secure citizen services. XML-first publishing, AI content tagging, accessible EPUB & PDF. Explore all industries"
+  },
+  {
+    "source": "src/components/navbar/navConfig.ts",
+    "text": "Contact Us Book a Demo"
+  },
+  {
+    "source": "src/components/navbar/UserMenu.tsx",
+    "text": "My account Admin dashboard Employee portal Log out"
+  },
+  {
+    "source": "src/components/Navbar.tsx",
+    "text": "BigWigs Technologies Logo Contact us"
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item0",
+    "text": "Slow, Manual Request Handling"
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item1",
+    "text": "Overloaded Support Teams"
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item2",
+    "text": "Fragmented Enterprise Knowledge"
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item3",
+    "text": "Disconnected Business Workflows"
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item4",
+    "text": "AI Hallucination Risk"
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item5",
+    "text": "Data Privacy & Access Control"
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item0",
+    "text": "Enterprise AI Assistants Knowledge assistants across every department."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item1",
+    "text": "Customer Service Agents 24×7 support that resolves and escalates."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item2",
+    "text": "Sales & Marketing Agents Lead qualification and CRM updates."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item3",
+    "text": "HR & Recruitment Agents Screening, scheduling, onboarding."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item4",
+    "text": "Finance & Operations Agents Invoices and compliance monitored."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item5",
+    "text": "Multi-Agent Systems Specialized agents, one orchestrator."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item6",
+    "text": "Retrieval-Augmented Generation Agents grounded in your own data."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item7",
+    "text": "Workflow Automation Multi-step processes automated end-to-end."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item0",
+    "text": "Discover Goals, workflows, and success metrics defined."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item1",
+    "text": "Design Agent architecture scoped to your use case."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item2",
+    "text": "Prototype A working agent validated against real requests."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item3",
+    "text": "Build The full agent workforce built and integrated."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item4",
+    "text": "Test Accuracy, safety, and performance verified."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item5",
+    "text": "Deploy Live in production, monitored and supported."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item0",
+    "text": "Can AI Agents integrate with CRM and ERP? Yes. Agents connect to Salesforce, HubSpot, SAP, and similar systems via API, acting on records directly rather than just reading them."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item1",
+    "text": "Are AI Agents secure? Every agent runs under enterprise access controls, encrypted data handling, and audit logging appropriate to your compliance requirements."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item2",
+    "text": "Can AI Agents work alongside employees? Yes. Agents hand off to a human at the right moment — for approvals, exceptions, or anything outside their scope."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx#item3",
+    "text": "How do AI Agents use enterprise knowledge? Agents retrieve grounded answers from your documents and systems via RAG, so responses reflect your actual policies and data."
+  },
+  {
+    "source": "src/components/servicePage/content/aiAgentsAutomation.tsx",
+    "text": "AI Agents & Automation Autonomous AI That Works Like Your Best Employee AI agents that understand, reason, retrieve enterprise knowledge, and execute business operations with minimal human intervention. Schedule a Strategy Session Talk to Our Team What We Solve The Realities Enterprises Are Automating Away What's Included A Digital Workforce, Built Around Your Business Build Your Digital Workforce With Enterprise AI Agents Whether you're automating support, operations, HR, or finance, Bigwigs Technologies delivers secure, scalable AI Agent solutions."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item0",
+    "text": "Low-Quality Training Data"
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item1",
+    "text": "Inconsistent Labeling Standards"
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item2",
+    "text": "Slow Annotation Turnaround"
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item3",
+    "text": "Scaling Annotation Teams"
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item4",
+    "text": "Data Security & Confidentiality"
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item5",
+    "text": "Rising Annotation Costs"
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item0",
+    "text": "Image Annotation Bounding boxes, polygons, and masks."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item1",
+    "text": "Video Annotation Frame-by-frame tracking across footage."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item2",
+    "text": "LiDAR Annotation 3D point clouds for autonomous driving."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item3",
+    "text": "Semantic Segmentation Every pixel classified by object class."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item4",
+    "text": "Keypoint Annotation Pose and landmarks for tracking models."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item5",
+    "text": "OCR & Document AI Text and forms labeled for document AI."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item6",
+    "text": "Data Labeling & Validation Cleaning and validation before delivery."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item0",
+    "text": "Requirements Understand the model and taxonomy before scoping."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item1",
+    "text": "Assessment Review data volume, format, and quality."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item2",
+    "text": "Guidelines Documented standards that keep annotators aligned."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item3",
+    "text": "Pilot A small batch validates quality and throughput."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item4",
+    "text": "Production Full-scale annotation on the validated pipeline."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item5",
+    "text": "QA & Delivery Multi-level review before final delivery."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item0",
+    "text": "Which annotation formats do you support? We deliver in COCO, YOLO, Pascal VOC, KITTI, and any custom JSON or XML schema your training pipeline expects."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item1",
+    "text": "Can you scale large annotation projects? Yes. Our teams scale from a pilot batch to millions of objects a month without changing quality or format."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item2",
+    "text": "How do you ensure annotation quality? Every batch passes multi-level review — initial annotation, peer check, and senior QA sign-off — before delivery."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx#item3",
+    "text": "Can you handle confidential datasets? Yes. Confidential and regulated datasets are handled under signed NDAs with encrypted storage and controlled access."
+  },
+  {
+    "source": "src/components/servicePage/content/aiDataAnnotation.tsx",
+    "text": "AI Data Annotation Power Intelligent AI With High-Quality Data Enterprise-grade data annotation for Computer Vision, NLP, Speech AI, and Autonomous Driving — accurate, scalable, and built to train reliable models. Start Your Project Talk to Our Team What We Solve The Realities AI Teams Face What's Included Seven Ways We Help You Train Reliable AI Accelerate AI Innovation With Enterprise Annotation Whether you're building Computer Vision, Autonomous Driving, or Document AI, Bigwigs Technologies delivers secure, enterprise-grade annotation."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item0",
+    "text": "Autonomous Driving Development"
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item1",
+    "text": "Massive Sensor Data Processing"
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item2",
+    "text": "LiDAR & 3D Point Cloud Annotation"
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item3",
+    "text": "Road Object Detection"
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item4",
+    "text": "Vehicle Safety Validation"
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item5",
+    "text": "EV Software Integration"
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item0",
+    "text": "Autonomous Driving Annotation LiDAR, bounding box, and segmentation annotation."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item1",
+    "text": "Sensor Data Processing Camera, radar, and sensor fusion processing."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item2",
+    "text": "Computer Vision Solutions Object detection, lane keeping, driver monitoring."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item3",
+    "text": "AI Model Evaluation Ground truth validation and safety benchmarking."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item4",
+    "text": "Software Development Fleet, connected vehicle, and mobility platforms."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item5",
+    "text": "EV Solutions Charging, fleet, and battery-performance software."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item6",
+    "text": "Smart Mobility Solutions Connected fleet management and route optimization."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item7",
+    "text": "Data Collection Services Vehicle imagery and road scene data collection."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item0",
+    "text": "Discover Understand vehicle programs, AI objectives, and scope."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item1",
+    "text": "Design Define workflows, guidelines, and delivery plans."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item2",
+    "text": "Execute Deliver datasets and software through dedicated teams."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item3",
+    "text": "Validate Multi-level QA, testing, and performance reviews."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item4",
+    "text": "Deploy & Support Implementation support and ongoing improvements."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item0",
+    "text": "Do you support autonomous vehicle AI projects? Yes — LiDAR annotation, computer vision datasets, model evaluation, and AI data preparation for autonomous driving and ADAS."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item1",
+    "text": "Can you process multi-sensor datasets? Yes. We work with camera, LiDAR, radar, and other sensor data, including sensor fusion and synchronized annotation."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item2",
+    "text": "Do you build automotive software platforms? Yes — fleet management, mobility apps, connected vehicle platforms, and analytics dashboards."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx#item3",
+    "text": "What's your typical engagement model? Most start with a scoped pilot to validate quality and throughput, then scale into an ongoing partnership."
+  },
+  {
+    "source": "src/components/servicePage/content/automotive.tsx",
+    "text": "Automotive & Mobility Accelerating Mobility With Artificial Intelligence AI data services, software engineering, and automation for automotive OEMs, Tier-1 suppliers, and mobility providers. Schedule a Consultation Talk to Our Team What We Solve The Realities Automotive Teams Face What's Included One Mobility AI Practice, Every Discipline Drive the Future of Mobility with AI Whether you're building autonomous driving systems, EV solutions, or fleet management platforms, Bigwigs Technologies delivers the AI services to accelerate it."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item0",
+    "text": "Fraud & Cyber Threats"
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item1",
+    "text": "High Operational Costs"
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item2",
+    "text": "Manual Document Processes"
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item3",
+    "text": "Regulatory & Compliance Demands"
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item4",
+    "text": "Slow Customer Onboarding"
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item5",
+    "text": "Unstructured Financial Data"
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item0",
+    "text": "Intelligent Document Processing Automated loan, KYC, and claims extraction."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item1",
+    "text": "AI Data Annotation Labeled datasets for fraud and risk models."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item2",
+    "text": "AI & Machine Learning Fraud detection and credit risk models."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item3",
+    "text": "Software Development Secure banking and insurance platforms."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item4",
+    "text": "Customer Experience AI chatbots and virtual banking assistants."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item5",
+    "text": "Financial Data Services Collection, validation, and dataset prep."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item6",
+    "text": "Language Services Multilingual translation and transcription."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item7",
+    "text": "Security & Governance Access controls and audit trails built in."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item0",
+    "text": "Discover Understand goals and regulatory requirements."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item1",
+    "text": "Design Define architecture and delivery roadmap."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item2",
+    "text": "Develop Build, integrate, and validate against scope."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item3",
+    "text": "Test Comprehensive QA and functional validation."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item4",
+    "text": "Deploy Implementation, onboarding, and handoff."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item5",
+    "text": "Optimize Monitor and refine for continuous improvement."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item0",
+    "text": "Can you develop secure financial applications? Yes. We build enterprise-grade financial applications with strong security practices and scalable architecture."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item1",
+    "text": "Do you support AI projects in banking and insurance? Yes — AI data preparation, annotation, model evaluation support, and workflow automation."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item2",
+    "text": "Can you work with existing financial systems? Yes. We integrate with existing platforms and collaborate with internal technology teams."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx#item3",
+    "text": "Do you comply with financial industry regulations? Yes. Our BFSI engagements follow role-based access, confidentiality agreements, and audit trails throughout."
+  },
+  {
+    "source": "src/components/servicePage/content/bfsi.tsx",
+    "text": "Banking, Financial Services & Insurance Financial Innovation, Powered by AI-powered solutions and secure data services that accelerate digital transformation for banks, insurers, and fintechs. Schedule a Consultation Speak with Our Experts What We Solve The Realities Financial Institutions Face What's Included One Financial AI Practice, Every Discipline Accelerate Financial Innovation with AI Whether you're modernizing banking systems or automating insurance workflows, Bigwigs Technologies delivers scalable, secure solutions."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item0",
+    "text": "Fragmented Data Sources"
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item1",
+    "text": "Inconsistent Data Quality"
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item2",
+    "text": "Limited Demographic Diversity"
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item3",
+    "text": "Slow Dataset Delivery"
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item4",
+    "text": "Privacy & Consent Management"
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item5",
+    "text": "Rising Acquisition Costs"
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item0",
+    "text": "Image Data Collection Diverse, real-world images for computer vision."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item1",
+    "text": "Video Data Collection Motion-aware footage for vehicles and robotics."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item2",
+    "text": "Audio Data Collection Speech and environmental audio for speech AI."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item3",
+    "text": "Text Data Collection Conversational and domain text for NLP and LLMs."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item4",
+    "text": "Document Collection Invoices and records sourced at scale."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item5",
+    "text": "Multilingual Datasets Localized datasets across 50+ languages."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item6",
+    "text": "Synthetic Data Simulated environments for rare edge cases."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item7",
+    "text": "Data Preparation Cleaning, deduplication, and enrichment."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item8",
+    "text": "Participant Recruitment Global participants matched to your spec."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item0",
+    "text": "Plan Scope, spec, and target demographics defined."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item1",
+    "text": "Acquire Collection begins across your sources and regions."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item2",
+    "text": "Process Raw data cleaned and structured for annotation."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item3",
+    "text": "Validate Every batch checked against your accuracy spec."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item4",
+    "text": "Deliver Final dataset packaged on your schedule."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item0",
+    "text": "Can you collect data globally? Yes. We recruit participants and source data across 50+ countries, matching the regions, languages, and demographics your project requires."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item1",
+    "text": "Do you provide metadata? Every dataset ships with structured metadata — demographics, device, environment, and consent status."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item2",
+    "text": "Can you create custom datasets? Yes. Collection and preparation are scoped to your exact use case, whether computer vision, NLP, speech AI, or LLM training."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx#item3",
+    "text": "How do you ensure data quality? Every batch passes automated validation plus human review for accuracy and consistency before delivery."
+  },
+  {
+    "source": "src/components/servicePage/content/dataCollection.tsx",
+    "text": "Data Collection & AI Datasets Build Better AI With Better Data Collect, validate, and prepare high-quality datasets for computer vision, NLP, speech AI, and LLMs — at enterprise scale. Start Your Project Talk to Our Team What We Solve The Realities AI Teams Face Building Datasets What's Included Nine Ways We Build AI-Ready Datasets Power Your AI With Enterprise Data Whether you're building computer vision, LLMs, or speech AI, Bigwigs Technologies delivers secure, production-ready datasets."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item0",
+    "text": "Label Noise & Inconsistency"
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item1",
+    "text": "Lack of Audit Visibility"
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item2",
+    "text": "Data Security Risks"
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item3",
+    "text": "Slow QA Turnaround"
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item4",
+    "text": "Domain-Specific Errors"
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item5",
+    "text": "LLM Bias & Hallucination"
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item0",
+    "text": "Annotation Quality Review Boxes, masks, and labels checked against guideline."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item1",
+    "text": "Image Quality Validation Resolution, noise, and duplicates flagged."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item2",
+    "text": "Video Quality Assurance Frame integrity and continuity verified."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item3",
+    "text": "Audio Validation Clarity, speaker identity, and language confirmed."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item4",
+    "text": "Text Validation Grammar, entities, and classification checked."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item5",
+    "text": "Medical Data Validation Clinical labels reviewed against domain standards."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item6",
+    "text": "LLM Dataset Evaluation Bias and hallucination risk assessed."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item7",
+    "text": "Security & Data Integrity Encrypted handling with full audit trails."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item0",
+    "text": "Initial Review Every annotation checked against the guideline."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item1",
+    "text": "Peer Review A second reviewer verifies the batch."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item2",
+    "text": "Senior QA Review Senior reviewers resolve disputes and edge cases."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item3",
+    "text": "Final Audit A sample audit confirms delivery-ready quality."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item4",
+    "text": "Reporting Accuracy and error metrics delivered with the data."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item0",
+    "text": "Can your QA workflow be customized? Yes. Review depth, sampling rate, and escalation rules are configured to your project's risk tolerance and existing guideline."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item1",
+    "text": "Do you provide quality reports? Every project includes metrics reporting — accuracy, precision, recall, and turnaround — visible throughout delivery."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item2",
+    "text": "Can you validate third-party datasets? Yes. We run the same multi-level QA workflow on datasets collected or annotated outside Bigwigs, with full audit reporting."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx#item3",
+    "text": "How do you measure annotation quality? We track inter-annotator agreement, precision and recall against gold-standard samples, and acceptance rate across every batch."
+  },
+  {
+    "source": "src/components/servicePage/content/dataQualityAssurance.tsx",
+    "text": "Data Validation & Quality Assurance Trusted Data. Reliable AI. Multi-level validation and quality assurance for Computer Vision, NLP, Speech AI, and LLM datasets — before they ever reach your model. Request a QA Assessment Talk to Our Team What We Solve The Risks Hiding in Unvalidated Data What's Included Every Data Type, Validated to Its Own Standard Build AI Models With Trusted Data From annotation validation to LLM dataset evaluation, Bigwigs Technologies helps you deliver AI-ready datasets with confidence."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item0",
+    "text": "Legacy Archive Digitization"
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item1",
+    "text": "Non-Standard Content Structure"
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item2",
+    "text": "Accessibility Compliance Gaps"
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item3",
+    "text": "Cross-Format Fragmentation"
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item4",
+    "text": "Slow Production Cycles"
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item5",
+    "text": "Inconsistent Quality Control"
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item0",
+    "text": "eBook Conversion EPUB, MOBI, and every reader format."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item1",
+    "text": "XML & Structured Content DITA, DocBook, and JATS-compliant tagging."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item2",
+    "text": "Typesetting & Layout Books, journals, and reports, production-ready."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item3",
+    "text": "Content Digitization Legacy archives scanned, OCR'd, and searchable."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item4",
+    "text": "Accessibility Publishing Tagged PDFs and EPUBs for screen readers."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item5",
+    "text": "Educational Publishing Textbooks and courseware built for classrooms."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item6",
+    "text": "Scientific Publishing Research journals to academic standard."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item7",
+    "text": "Corporate Publishing Reports and manuals, produced at scale."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item0",
+    "text": "Assess Source files and target formats reviewed."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item1",
+    "text": "Prepare Structure and metadata mapped to spec."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item2",
+    "text": "Produce Conversion and typesetting at scale."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item3",
+    "text": "Validate Every file checked against format standards."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item4",
+    "text": "Deliver Final files in every format you need."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item0",
+    "text": "Do you support print and digital publishing? Yes. We produce for both — from print-ready typesetting to EPUB, MOBI, and every major digital reader format."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item1",
+    "text": "Can you convert legacy documents? Yes. Scanned archives are digitized with OCR, text extraction, and image enhancement before conversion."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item2",
+    "text": "Do you handle enterprise publishing projects? Yes. Our pipeline scales from a single title to full catalogs and ongoing publishing programs."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx#item3",
+    "text": "How do you ensure publishing quality? Every file passes structural, format, and accessibility validation before delivery."
+  },
+  {
+    "source": "src/components/servicePage/content/digitalPublishing.tsx",
+    "text": "Digital Publishing Services Content, Converted Into Digital Experiences AI-enabled publishing solutions to convert, structure, and distribute content across every digital platform. Discuss Your Project Talk to Our Team What We Solve The Realities Publishers Face What's Included One Publishing Pipeline, Every Format Modernize Your Publishing for the Digital Era Whether it's books, journals, or enterprise documentation, Bigwigs Technologies delivers secure, scalable digital publishing."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item0",
+    "text": "Growing Demand for Online Learning"
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item1",
+    "text": "Personalized Learning Requirements"
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item2",
+    "text": "Accessibility Compliance"
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item3",
+    "text": "Student Engagement"
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item4",
+    "text": "Multilingual Education"
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item5",
+    "text": "Large Volumes of Educational Content"
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item0",
+    "text": "Learning Management Systems Course management, assessments, and analytics."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item1",
+    "text": "AI-Powered Learning Adaptive, personalized learning experiences."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item2",
+    "text": "Educational Content Development Courseware, question banks, learning materials."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item3",
+    "text": "Digital Publishing EPUB, XML, and PDF conversion."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item4",
+    "text": "Accessibility Services Accessible PDFs, eBooks, and resources."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item5",
+    "text": "AI Data Services Datasets and annotation for education AI."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item6",
+    "text": "Language Services Translation, localization, and captioning."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item7",
+    "text": "Assessment & Examination Digital testing and AI-assisted evaluation."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item0",
+    "text": "Discover Understand learning objectives and requirements."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item1",
+    "text": "Design Solution architecture and instructional workflows."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item2",
+    "text": "Build Develop platforms, content, and AI datasets."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item3",
+    "text": "Validate Usability, QA, and accessibility testing."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item4",
+    "text": "Deploy Launch, train, and provide ongoing support."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item0",
+    "text": "Can you build custom Learning Management Systems (LMS)? Yes. We develop scalable LMS platforms with course management, assessments, reporting, and mobile access tailored to institutional needs."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item1",
+    "text": "Do you support educational publishers? Yes. We provide digital publishing, EPUB conversion, accessibility remediation, and content modernization services."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item2",
+    "text": "Can you make educational materials accessible? Yes. We remediate PDFs, presentations, and digital resources to work with assistive technologies and support inclusive learning."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx#item3",
+    "text": "Do you support multilingual learning programs? Yes. We translate, localize, and caption educational content so it reaches learners across every market and language."
+  },
+  {
+    "source": "src/components/servicePage/content/education.tsx",
+    "text": "Education & eLearning Solutions Learning, Powered by AI & Digital Innovation AI-driven learning platforms, digital publishing, and accessibility solutions built for institutions, EdTech companies, and publishers. Schedule a Consultation Talk to Our Team What We Solve The Realities Educational Organizations Face What's Included Eight Disciplines. One Education AI Practice. Shape the Future of Learning with AI Whether you're building a learning platform or modernizing educational content, Bigwigs Technologies delivers scalable EdTech solutions."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item0",
+    "text": "Fragmented Enterprise Knowledge"
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item1",
+    "text": "Manual, Repetitive Workflows"
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item2",
+    "text": "AI Hallucination Risk"
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item3",
+    "text": "Slow Document Processing"
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item4",
+    "text": "Data Privacy & Model Security"
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item5",
+    "text": "Slow AI Adoption Timelines"
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item0",
+    "text": "Large Language Models Enterprise LLMs fine-tuned on your own data."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item1",
+    "text": "Prompt Engineering Prompts designed and tested for reliable output."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item2",
+    "text": "AI Chatbots Conversational assistants across every channel."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item3",
+    "text": "AI Agents Autonomous agents that execute tasks end-to-end."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item4",
+    "text": "Retrieval-Augmented Generation Grounded answers from your own knowledge."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item5",
+    "text": "Document Intelligence Contracts and forms understood, not just scanned."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item6",
+    "text": "Workflow Automation Repetitive processes automated with AI."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item7",
+    "text": "Enterprise Integrations AI connected to the tools you run on."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item0",
+    "text": "Discover Goals, workflows, and success metrics defined."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item1",
+    "text": "Design Architecture scoped to your use case."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item2",
+    "text": "Prototype A working proof of concept, validated early."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item3",
+    "text": "Build The full solution built and integrated."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item4",
+    "text": "Test Accuracy and safety verified before launch."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item5",
+    "text": "Deploy Live in production, monitored at scale."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item0",
+    "text": "Can you build custom AI chatbots? Yes. Chatbots are built on your knowledge base and deployed across web, mobile, Slack, Teams, WhatsApp, and Messenger."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item1",
+    "text": "Do you support private enterprise data? Yes. RAG pipelines and fine-tuning run against your own documents — nothing trains public models."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item2",
+    "text": "Can you integrate AI with existing applications? Yes. We integrate with CRMs, ticketing systems, and ERPs via API, so AI fits into workflows you already run."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx#item3",
+    "text": "How secure are enterprise AI solutions? Every deployment includes encrypted data handling, access controls, and audit logging for enterprise compliance."
+  },
+  {
+    "source": "src/components/servicePage/content/generativeAi.tsx",
+    "text": "Generative AI Services Build Smarter Businesses With Generative AI LLMs, AI agents, RAG, and intelligent automation — deployed to accelerate operations and deliver better customer experiences. Request a Consultation Talk to Our AI Experts What We Solve The Realities Enterprises Face What's Included Eight Ways We Put Generative AI to Work Transform Every Workflow With Enterprise AI Whether you're building intelligent assistants or automating operations, Bigwigs Technologies delivers secure, production-ready Generative AI."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item0",
+    "text": "Legacy IT Infrastructure"
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item1",
+    "text": "Paper-Based Workflows"
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item2",
+    "text": "Citizen Service Delays"
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item3",
+    "text": "Regulatory Compliance Requirements"
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item4",
+    "text": "Cybersecurity Concerns"
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item5",
+    "text": "Budget & Resource Constraints"
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item0",
+    "text": "Digital Government Platforms Citizen portals and e-governance systems."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item1",
+    "text": "Intelligent Document Processing Automate document-heavy workflows end-to-end."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item2",
+    "text": "AI Data Services Datasets that power public sector AI."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item3",
+    "text": "Smart City Solutions Dashboards for transportation, utilities, safety."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item4",
+    "text": "Government Software Development Secure applications built for compliance."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item5",
+    "text": "Multilingual Communication Translation for diverse citizen populations."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item6",
+    "text": "Accessibility Services Inclusive access to public information."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item7",
+    "text": "Security & Compliance Governance built into every engagement."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item0",
+    "text": "Discover Assess goals, regulations, and stakeholder needs."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item1",
+    "text": "Design Define secure architecture and implementation plans."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item2",
+    "text": "Develop Build applications, datasets, and automation."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item3",
+    "text": "Validate QA, accessibility, and security testing."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item4",
+    "text": "Deploy & Support Deploy, train users, and monitor adoption."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item0",
+    "text": "Can you modernize legacy government applications? Yes — through application redevelopment, cloud migration support, workflow automation, and system integration."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item1",
+    "text": "Do you support accessibility compliance? Yes. We provide accessibility remediation, WCAG compliance support, and inclusive digital experience design."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item2",
+    "text": "Can you process large volumes of government records? Yes. Our intelligent document processing and AI data services digitize, classify, and validate records at scale."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx#item3",
+    "text": "How do you protect citizen data? Encryption at rest and in transit, role-based access controls, audit trails, and government-grade security governance."
+  },
+  {
+    "source": "src/components/servicePage/content/government.tsx",
+    "text": "Government & Public Sector Smarter Governance Through Secure Digital Transformation Secure, citizen-centric platforms that modernize legacy systems, automate administrative processes, and strengthen public sector cybersecurity. Schedule a Consultation Talk to Our Team What We Solve The Realities Public Sector Teams Face What's Included One Government AI Practice, Every Discipline Build Smarter Public Services with AI Whether you're modernizing citizen services, digitizing records, or improving accessibility, Bigwigs Technologies delivers secure, scalable solutions."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item0",
+    "text": "Growing Clinical Data"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item1",
+    "text": "Manual Documentation"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item2",
+    "text": "Medical Imaging Complexity"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item3",
+    "text": "Healthcare Workforce Shortage"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item4",
+    "text": "Interoperability Issues"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item5",
+    "text": "AI Adoption Challenges"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item0",
+    "text": "Medical Image Annotation Pixel-accurate labeling across X-ray, CT, MRI."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item1",
+    "text": "Clinical NLP Structured insight from clinical notes at scale."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item2",
+    "text": "Healthcare AI Solutions Diagnostic and clinical decision-support models."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item3",
+    "text": "Healthcare Software HIPAA-aware platforms and patient portals."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item4",
+    "text": "Medical Data Services Cleansing and structuring clinical datasets."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item5",
+    "text": "Document Processing Automated extraction from records and claims."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item6",
+    "text": "Healthcare Accessibility WCAG-compliant patient portals and forms."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item7",
+    "text": "Language Services Medical translation and transcription worldwide."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item0",
+    "text": "Assess Understand clinical goals and data landscape."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item1",
+    "text": "Collect Source compliant clinical and imaging data."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item2",
+    "text": "Annotate Expert-reviewed labeling across modalities."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item3",
+    "text": "Validate Cross-check against clinical guidelines."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item4",
+    "text": "Deploy Integrate into your care workflows."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item5",
+    "text": "Support Ongoing monitoring and iteration."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item0",
+    "text": "How do you support healthcare AI? We annotate medical imaging and clinical text, then build and deploy diagnostic, documentation, and operational AI models tailored to your care setting."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item1",
+    "text": "Can you build EHR systems? Yes — we design custom EHR and clinical workflow systems, and can integrate AI features into existing hospital platforms."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item2",
+    "text": "Are your services HIPAA compliant? Yes. Our healthcare engagements follow HIPAA-aligned data handling, with compliance built into our pipelines and team training."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx#item3",
+    "text": "What's a typical engagement timeline? Most healthcare engagements start with a scoped pilot within 2-4 weeks, then scale into ongoing partnerships."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcare.tsx",
+    "text": "Healthcare & Life Sciences Healthcare, Powered by AI & Digital Innovation Enterprise AI, intelligent automation, and healthcare data solutions for hospitals, pharma companies, and research institutions. Talk to Our Healthcare AI Experts Start Your Transformation What We Solve The Realities Healthcare Teams Face What's Included Eight Ways We Support Healthcare AI Transform Healthcare With Intelligent AI Whether you're building diagnostic AI, modernizing hospital platforms, or automating clinical documentation, Bigwigs Technologies delivers secure, scalable healthcare technology."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item0",
+    "text": "Diagnostic Turnaround Delays"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item1",
+    "text": "Unstructured Clinical Documentation"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item2",
+    "text": "Manual Medical Image Review"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item3",
+    "text": "Data Privacy & Compliance Risk"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item4",
+    "text": "Legacy EHR & EMR Systems"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item5",
+    "text": "Scaling Annotation Quality"
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item0",
+    "text": "Medical Image Annotation Radiology-grade labeling for MRI, CT, and X-ray."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item1",
+    "text": "Clinical NLP Structured insight from unstructured clinical notes."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item2",
+    "text": "Medical Data Annotation Curated, compliant datasets for clinical AI."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item3",
+    "text": "Diagnostic AI Decision-support models built with clinical experts."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item4",
+    "text": "Healthcare Software EHR, patient portals, and hospital systems."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item5",
+    "text": "Healthcare Chatbots Patient-facing assistants for triage and scheduling."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item6",
+    "text": "Medical OCR Digitizing prescriptions and lab reports."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item7",
+    "text": "Compliance & Security Encryption, access control, and audit trails."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item0",
+    "text": "Assess Clinical experts review scope and taxonomy."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item1",
+    "text": "Guidelines Documented, versioned annotation guidelines."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item2",
+    "text": "Pilot A small cohort validates quality and throughput."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item3",
+    "text": "Production Full-scale delivery against the validated pipeline."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item4",
+    "text": "Validate Clinical sign-off before data reaches your model."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item5",
+    "text": "Support Ongoing support as models and datasets evolve."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item0",
+    "text": "Can you annotate medical images? Yes — MRI, CT, X-ray, ultrasound, retinal, and histopathology imaging, annotated against clinical taxonomy and reviewed through multi-tier QA."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item1",
+    "text": "Do you build healthcare software? We build hospital dashboards, patient portals, EHR/EMR systems, telemedicine platforms, and healthcare mobile apps engineered around real clinical workflows."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item2",
+    "text": "Can you support international healthcare organizations? Yes. Our delivery model works across time zones, and workflows adapt to region-specific regulatory requirements."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx#item3",
+    "text": "How do you protect sensitive healthcare data? Encryption at rest and in transit, role-based access, full audit logging, and de-identification built into every workflow."
+  },
+  {
+    "source": "src/components/servicePage/content/healthcareAi.tsx",
+    "text": "Healthcare AI Smarter Healthcare, Powered by AI-driven solutions for hospitals, healthcare providers, and medical innovators that improve diagnosis, automate workflows, and enhance patient care. Discuss Your Project Contact Our Team What We Solve The Realities Healthcare Teams Face What's Included Eight Ways We Support Clinical AI Let's Build the Future of Intelligent Healthcare Whether you're developing AI-powered diagnostics or enterprise healthcare systems, we help you deliver secure, intelligent solutions."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item0",
+    "text": "Large-Scale Legacy Content Conversion"
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item1",
+    "text": "Multi-Format Publishing Requirements"
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item2",
+    "text": "Shorter Publishing Timelines"
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item3",
+    "text": "Accessibility Compliance"
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item4",
+    "text": "Metadata Management"
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item5",
+    "text": "Content Localization"
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item0",
+    "text": "Digital Publishing Services End-to-end publishing for books and journals."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item1",
+    "text": "AI-Assisted Publishing Classification, tagging, and indexing at scale."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item2",
+    "text": "Editorial & Content Services Copy editing and publication readiness."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item3",
+    "text": "Accessibility Solutions Compliant EPUB, PDF, and web publications."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item4",
+    "text": "Digital Asset Management Organized, versioned publishing assets."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item5",
+    "text": "Language & Localization Translation for global markets."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item6",
+    "text": "Document Processing Automated manuscript and contract workflows."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item7",
+    "text": "Publishing Software Custom CMS, DAM, and editorial platforms."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item0",
+    "text": "Discover Assess workflows, content types, and objectives."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item1",
+    "text": "Design Publishing architecture and metadata strategy."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item2",
+    "text": "Build Convert content and build AI datasets."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item3",
+    "text": "Validate Editorial, accessibility, and QA review."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item4",
+    "text": "Publish Deploy across channels and optimize."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item0",
+    "text": "Can you modernize legacy publishing workflows? Yes — we help publishers transition to XML-first, cloud-based, AI-assisted workflows while preserving content quality and consistency."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item1",
+    "text": "Do you provide accessibility remediation? Yes. We remediate PDFs, EPUBs, and educational materials to improve accessibility and support compliance with recognized standards."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item2",
+    "text": "Can you develop custom publishing platforms? Yes — CMS platforms, editorial workflow systems, digital asset management, and publishing automation tailored to your needs."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx#item3",
+    "text": "Do you support multilingual publishing? Yes. Translation and localization for books, journals, and educational materials across international markets."
+  },
+  {
+    "source": "src/components/servicePage/content/industryPublishing.tsx",
+    "text": "Publishing & Media Solutions Digital Publishing, Powered by AI & Automation Modernize legacy content, streamline editorial workflows, and deliver accessible, multilingual digital publications at scale. Schedule a Consultation Speak With Our Team What We Solve The Realities Publishers Face What's Included One Publishing AI Practice, Every Discipline Transform Publishing With AI & Digital Innovation Whether you're modernizing editorial workflows or building accessible publications, Bigwigs Technologies delivers the expertise to help you succeed."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item0",
+    "text": "Unplanned Equipment Downtime"
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item1",
+    "text": "Quality Control Inconsistencies"
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item2",
+    "text": "Manual Inspection Processes"
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item3",
+    "text": "Supply Chain Disruptions"
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item4",
+    "text": "Worker Safety Concerns"
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item5",
+    "text": "Legacy Manufacturing Systems"
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item0",
+    "text": "Computer Vision Inspection Catches defects across every production stage."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item1",
+    "text": "Predictive Maintenance Flags failures before they halt production."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item2",
+    "text": "Industrial Software Custom MES, inventory, and analytics apps."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item3",
+    "text": "Document Processing Automates manufacturing documentation end-to-end."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item4",
+    "text": "AI Data Collection Labeled datasets for industrial AI models."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item5",
+    "text": "Industrial Analytics AI-driven insight into yield and performance."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item6",
+    "text": "Worker Safety Solutions AI monitoring that improves floor safety."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item7",
+    "text": "Accessibility & Docs Accessible manuals for every team member."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item0",
+    "text": "Discover Assess operations, goals, and requirements."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item1",
+    "text": "Design Architecture, AI workflows, and roadmap."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item2",
+    "text": "Build Develop software and prepare AI datasets."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item3",
+    "text": "Validate QA, UAT, and performance testing."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item4",
+    "text": "Deploy & Optimize Launch, train users, monitor KPIs."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item0",
+    "text": "Can you integrate with our existing ERP or MES systems? Yes — we build integrations that work with your existing ERP, MES, and inventory systems with minimal disruption."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item1",
+    "text": "Do you support AI-powered quality inspection? Yes. We provide annotation, computer vision datasets, and software for automated visual inspection."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item2",
+    "text": "Can you build custom manufacturing dashboards? Yes — real-time dashboards covering production, quality, maintenance, and inventory KPIs."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx#item3",
+    "text": "How long does a typical deployment take? It depends on scope — a focused pilot can launch in weeks, a full factory rollout in a few months."
+  },
+  {
+    "source": "src/components/servicePage/content/manufacturing.tsx",
+    "text": "Manufacturing & Industrial Smart Manufacturing, Powered by AI & Automation AI-driven quality inspection, predictive maintenance, and factory software that keep production running smarter and safer. Schedule a Consultation Speak with Our Experts What We Solve The Realities Manufacturers Face What's Included Eight Disciplines, One Manufacturing AI Practice Build the Factory of the Future Whether you're deploying Industry 4.0 initiatives or AI-powered quality inspection, Bigwigs Technologies delivers scalable manufacturing solutions."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item4",
+    "text": "Verified Dataset"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item0",
+    "text": "High Annotation Accuracy"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item1",
+    "text": "Multi-Level Review"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item3",
+    "text": "Production-Ready Data"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item0",
+    "text": "Expert Annotation Teams Specialized teams trained to handle complex image, video, text, audio, and healthcare datasets with domain-specific guidelines."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item1",
+    "text": "Defined Quality Standards Every project begins with clear annotation guidelines, examples, edge cases, and measurable quality benchmarks."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item2",
+    "text": "Multi-Level Validation Annotations pass through multiple levels of review to identify inconsistencies, missed labels, and classification errors."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item3",
+    "text": "Continuous Improvement Quality metrics are continuously monitored so workflows can be refined as project requirements and datasets evolve."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item0",
+    "text": "Understand Project requirements, use cases, annotation guidelines and quality expectations are analyzed."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item1",
+    "text": "Annotate Trained specialists annotate datasets according to defined project guidelines."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item2",
+    "text": "Validate Quality reviewers inspect annotations for accuracy, consistency and guideline compliance."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item3",
+    "text": "Audit Senior quality teams perform additional sampling and dataset-level checks."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item4",
+    "text": "Improve Errors and recurring issues are analyzed and workflows are refined."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item5",
+    "text": "Deliver Validated, structured and production-ready datasets are delivered."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item0",
+    "text": "Annotation Review Our annotation teams follow project-specific guidelines and validate their work during the annotation process."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item1",
+    "text": "Quality Review Dedicated reviewers inspect annotated data and identify errors, inconsistencies and guideline violations."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item2",
+    "text": "Quality Audit Senior quality teams conduct sample-based and dataset-level audits to ensure the final output meets the agreed quality threshold."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item0",
+    "text": "High Accuracy Annotation output measured against gold-standard samples on every project."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item1",
+    "text": "Multi-Level Validation No dataset ships on a single reviewer's judgment."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item2",
+    "text": "Consistent Quality The same guideline, the same standard, across every batch."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item3",
+    "text": "Continuous Monitoring Quality metrics tracked throughout delivery, not just at the end."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item0",
+    "text": "AI Data Annotation Precise image, video, text, audio and sensor data annotation."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item1",
+    "text": "Generative AI & LLM Services Human evaluation, response quality assessment, data preparation and model evaluation."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item2",
+    "text": "Healthcare AI Structured and carefully reviewed medical datasets for AI and computer vision applications."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item3",
+    "text": "Software Development Code quality, testing, security and performance validation throughout development."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item4",
+    "text": "Language & Content Services Linguistic accuracy, consistency and contextual validation."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item5",
+    "text": "Transcription Services Accurate transcription with quality review and validation."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item0",
+    "text": "Medical Image Annotation"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item1",
+    "text": "Radiology Annotation"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item2",
+    "text": "Anatomical Segmentation"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item3",
+    "text": "Clinical Data Annotation"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item5",
+    "text": "Healthcare AI Evaluation"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item0",
+    "text": "Annotation Accuracy"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item2",
+    "text": "Review Completion"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item3",
+    "text": "Guideline Compliance"
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item0",
+    "text": "Higher Model Accuracy Clean and accurately labeled training data helps AI models learn from reliable signals."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item1",
+    "text": "Reduced Rework Early quality validation catches errors before they reach downstream AI workflows."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item2",
+    "text": "Faster Deployment Consistent datasets help teams move from experimentation toward production faster."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx#item3",
+    "text": "Scalable AI Operations A structured quality framework allows annotation projects to scale without sacrificing consistency."
+  },
+  {
+    "source": "src/components/servicePage/content/quality.tsx",
+    "text": "Quality Is Built Into Every Dataset Precision That Powers Better AI At Bigwigs Technologies, quality is not a final checkpoint — it is built into every stage of our data annotation and AI workflow. From initial guidelines to final validation, we combine human expertise, intelligent tools, and multi-level quality checks to deliver reliable, production-ready data. Talk to Our Experts What Makes Our Quality Different? Quality Designed for AI at Scale Quality Metrics Quality You Can Measure Quality Across Every Service Quality Across the AI Lifecycle Healthcare Quality Precision Matters When Data Impacts Healthcare Healthcare AI requires more than basic annotation. Our workflows focus on consistency, structured guidelines, careful review, and secure handling of sensitive datasets. Quality + Security Quality You Can Trust. Data You Can Protect. Quality Security Client-Specific Quality Benchmarks Your Standards. Our Quality Commitment. Quality Dashboard Complete Visibility Into Your Data Quality An illustrative sample of the kind of quality report shared with clients throughout delivery — actual figures vary by project. Talk to Our Team Why Quality Matters Better Data. Better Models. Better Outcomes. Let's Build AI on Data You Can Trust Whether you're building computer vision models, healthcare AI, LLM applications, or intelligent automation, Bigwigs can help transform raw data into high-quality AI-ready datasets. Start Your Project Talk to an AI Expert"
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item0",
+    "text": "Rising Customer Acquisition Costs"
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item1",
+    "text": "Inventory Optimization Challenges"
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item2",
+    "text": "Demand Forecasting Complexity"
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item3",
+    "text": "Fraud Prevention"
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item4",
+    "text": "Omnichannel Integration"
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item5",
+    "text": "Personalized Shopping Experiences"
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item0",
+    "text": "AI Product Catalog Management Accurate, enriched product data at scale."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item1",
+    "text": "Computer Vision for Retail Shelf monitoring and checkout automation."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item2",
+    "text": "Intelligent Document Processing Automated purchase orders and invoices."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item3",
+    "text": "AI-Powered Customer Experience Personalized recommendations and support."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item4",
+    "text": "Retail Software Development Custom e-commerce, POS, and inventory platforms."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item5",
+    "text": "Predictive Analytics Forecasting for demand, sales, and pricing."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item6",
+    "text": "Voice & Language Services Multilingual translation and conversational AI data."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item7",
+    "text": "Accessibility & Digital Content Accessible catalogs and inclusive content."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item0",
+    "text": "Discover Understand objectives and customer journeys."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item1",
+    "text": "Design Solution architecture and AI workflows."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item2",
+    "text": "Build Software, datasets, and integrations."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item3",
+    "text": "Validate Testing, QA, and performance tuning."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item4",
+    "text": "Launch Deploy, monitor, and keep improving."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item0",
+    "text": "Can you develop custom e-commerce platforms? Yes — scalable e-commerce platforms, marketplaces, mobile shopping apps, and retail management systems tailored to your requirements."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item1",
+    "text": "Do you support AI initiatives for retailers? Yes. AI data preparation, computer vision datasets, predictive analytics, and AI-powered customer engagement solutions."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item2",
+    "text": "Can you integrate with existing retail systems? Yes — ERP, CRM, payment gateways, inventory systems, and logistics platforms for seamless operations."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx#item3",
+    "text": "What's your typical engagement model? Most retail engagements start with a scoped pilot to validate quality, then scale into an ongoing partnership."
+  },
+  {
+    "source": "src/components/servicePage/content/retail.tsx",
+    "text": "Retail & E-Commerce Retail Experiences Powered by AI, automation, and modern software for retailers, marketplaces, and consumer brands — built to accelerate growth and delight customers. Schedule a Consultation Talk to Our Team What We Solve The Realities Retail Teams Face What's Included One Retail AI Practice, Every Discipline Build Smarter Retail Experiences with AI Whether you're launching a commerce platform or adopting AI-driven retail solutions, Bigwigs Technologies delivers the expertise to help you grow."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item0",
+    "text": "Slow Time-to-Market"
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item1",
+    "text": "Legacy System Constraints"
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item2",
+    "text": "Security & Compliance Gaps"
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item3",
+    "text": "Cross-Platform Fragmentation"
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item5",
+    "text": "Scaling Bottlenecks"
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item0",
+    "text": "Custom Software Development Systems built around your workflows."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item1",
+    "text": "Web Applications Fast, responsive platforms built to scale."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item2",
+    "text": "Mobile Apps Native and cross-platform, on every device."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item3",
+    "text": "Enterprise Systems ERP, CRM, and internal platforms."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item4",
+    "text": "API Integration Clean, documented connections across your stack."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item5",
+    "text": "Cloud & DevOps Cloud-native architecture with CI/CD automation."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item6",
+    "text": "UI/UX Design Interfaces designed for clarity first."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item7",
+    "text": "QA & Support Testing and support long after launch."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item0",
+    "text": "Discover Understand the problem before writing code."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item1",
+    "text": "Plan Scope, timeline, and architecture locked in."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item2",
+    "text": "Build Sprints with visible, reviewable progress."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item3",
+    "text": "Test Automated and manual QA before launch."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item4",
+    "text": "Ship Controlled releases with rollback plans."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item5",
+    "text": "Support Monitoring and iteration after launch."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item0",
+    "text": "Do you build software from scratch? Yes. Most engagements start with a clean architecture designed around your specific workflows, rather than adapting a generic template."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item1",
+    "text": "Can you modernize legacy systems? We regularly re-platform legacy applications onto modern, cloud-native architecture without disrupting day-to-day operations."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item2",
+    "text": "Do you integrate AI? Where it adds real value — from AI-assisted workflows to embedded generative AI features, built by teams working from the same roadmap."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx#item3",
+    "text": "How long does development take? It depends on scope — a focused module can ship in weeks, a full platform in a few months. You get a concrete timeline after discovery, not a guess."
+  },
+  {
+    "source": "src/components/servicePage/content/softwareDevelopment.tsx",
+    "text": "Software Development Digital Products That Scale With You Secure, scalable, cloud-native software — from custom enterprise applications to AI-powered platforms, engineered for long-term growth. Start Your Project Talk to Our Team What We Solve The Realities Engineering Teams Face What's Included One Engineering Practice, Every Discipline Let's Build Software That Powers the Future Whether you're launching a startup or modernizing enterprise applications, Bigwigs Technologies delivers secure, scalable software."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item0",
+    "text": "Slow, Manual Transcription"
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item1",
+    "text": "Overlapping Speakers"
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item2",
+    "text": "Multilingual & Accented Audio"
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item3",
+    "text": "Strict Compliance Requirements"
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item4",
+    "text": "Tight Turnaround Windows"
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item5",
+    "text": "Sensitive, Confidential Recordings"
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item0",
+    "text": "Audio Transcription Meetings, interviews, and podcasts as clean text."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item1",
+    "text": "Video Transcription Full transcripts and captions for any video."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item2",
+    "text": "Medical Transcription Clinical notes to healthcare documentation standards."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item3",
+    "text": "Legal Transcription Court-ready hearing and deposition transcripts."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item4",
+    "text": "Captioning & Subtitling Broadcast-ready closed captions and subtitles."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item5",
+    "text": "AI-Assisted Transcription Speech recognition plus expert human review."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item6",
+    "text": "Multilingual Transcription Source and translated text across 50+ languages."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item0",
+    "text": "Intake Audio quality and speaker count reviewed first."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item1",
+    "text": "Matching Routed to a transcriptionist with the right expertise."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item2",
+    "text": "AI Draft Speech recognition produces a first-pass transcript."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item3",
+    "text": "Review Experts verify accuracy, formatting, and terms."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item4",
+    "text": "Revisions Feedback incorporated before finalizing."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item5",
+    "text": "Delivery Delivered in your required format, on schedule."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item0",
+    "text": "Can you transcribe multiple speakers? Yes. Every transcript includes speaker identification and labeling, even for files with several overlapping speakers."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item1",
+    "text": "Do you provide timestamps? Timestamps are included by default, at intervals you choose — per speaker turn, per paragraph, or fixed time codes."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item2",
+    "text": "Can you deliver subtitles? Yes. Closed and open captions, subtitle translation, and files in SRT, VTT, SCC, TXT, or any custom format."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx#item3",
+    "text": "How is confidential data protected? All files are handled under signed NDAs with restricted access, encrypted storage, and secure disposal after delivery."
+  },
+  {
+    "source": "src/components/servicePage/content/transcriptionServices.tsx",
+    "text": "Transcription Services Every Conversation, Turned Into Actionable Text Accurate, searchable, multilingual transcription with AI-assisted drafting and expert human review — built for compliance, accessibility, and analytics. Request a Quote Talk to Our Team What We Solve The Realities Behind Every Recording What's Included Nine Ways We Turn Speech Into Text Turn Voice Into Business Intelligence Multilingual transcription, medical documentation, legal transcripts, or AI training datasets — delivered secure and enterprise-ready."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item0",
+    "text": "Inaccurate Machine Translation"
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item1",
+    "text": "Inconsistent Terminology"
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item2",
+    "text": "Software Localization Bugs"
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item3",
+    "text": "Messaging That Reads Translated"
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item4",
+    "text": "Lost Multilingual SEO"
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item5",
+    "text": "Confidential Document Handling"
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item0",
+    "text": "Document Translation Contracts, reports, and manuals, precisely translated."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item1",
+    "text": "Website Translation Full sites localized, content and SEO intact."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item2",
+    "text": "Software Localization UI strings, dates, and currencies per market."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item3",
+    "text": "Marketing Localization Campaigns that read native, not translated."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item4",
+    "text": "Technical Translation API docs and engineering content, by specialists."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item5",
+    "text": "Multilingual SEO Keywords and metadata localized per region."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item6",
+    "text": "AI Translation Support Machine translation, reviewed by native linguists."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item7",
+    "text": "Terminology Management Consistent glossaries across every language."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item0",
+    "text": "Analyze Scope, terminology, and target markets defined."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item1",
+    "text": "Translate Native linguists translate with full context."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item2",
+    "text": "Localize Formats, tone, and layout adapted per region."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item3",
+    "text": "Validate Independent review against your style guide."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item4",
+    "text": "Deliver Final content delivered on your timeline."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item0",
+    "text": "Do you translate technical documents? Yes — API documentation, engineering manuals, and scientific papers are translated by linguists with subject-matter background."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item1",
+    "text": "Can you localize websites? Yes. We handle content, layout, currencies, date formats, and right-to-left languages without a separate codebase per market."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item2",
+    "text": "Do you support multilingual SEO? Yes — keyword research, metadata, and on-page content are localized per region, not just translated word-for-word."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx#item3",
+    "text": "How do you ensure translation quality? Every translation passes through a native-speaker review against your terminology and style guide before delivery."
+  },
+  {
+    "source": "src/components/servicePage/content/translationLocalization.tsx",
+    "text": "Translation & Localization Speak Every Language, Reach Every Market Accurate translation, culturally relevant localization, and multilingual digital experiences across languages, regions, and industries. Request a Quote Talk to Our Team What We Solve The Realities of Going Multilingual What's Included Eight Ways We Help You Go Multilingual Expand Beyond Borders With Confidence Whether you're launching multilingual software or localizing enterprise documentation, we help you communicate with audiences worldwide."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item0",
+    "text": "Fragmented Accent Coverage"
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item1",
+    "text": "Noisy Recording Conditions"
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item2",
+    "text": "Wake Word False Positives"
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item3",
+    "text": "Overlapping Speaker Diarization"
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item4",
+    "text": "Voice Biometric Privacy"
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item5",
+    "text": "Multilingual Complexity"
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item0",
+    "text": "Speech Data Collection Read, spontaneous, and conversational speech."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item1",
+    "text": "Wake Word Collection Custom wake words across devices and rooms."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item2",
+    "text": "Accent & Dialect Collection Native speakers across regions and ages."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item3",
+    "text": "Multilingual Collection Voice data across 50+ languages."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item4",
+    "text": "Speech Annotation Segmentation, diarization, intent labeling."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item5",
+    "text": "Speaker Identification Datasets built for biometrics and auth."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item6",
+    "text": "Emotion Recognition Emotion-tagged data for sentiment AI."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item7",
+    "text": "AI Voice Dataset Creation End-to-end, ready for model training."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item0",
+    "text": "Requirement Analysis Target languages and accents defined up front."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item1",
+    "text": "Participant Recruitment Speakers sourced to match your spec."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item2",
+    "text": "Speech Collection Recordings captured in real-world conditions."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item3",
+    "text": "Annotation & Labeling Every file segmented and labeled."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item4",
+    "text": "Quality Assurance Audio and metadata validated at scale."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item5",
+    "text": "Delivery Dataset packaged in your required format."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item0",
+    "text": "Can you collect regional accents? Yes. We recruit native speakers by region, dialect, age, and gender so your dataset reflects real accent diversity."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item1",
+    "text": "Can you support enterprise-scale projects? Yes. Our pipelines scale from pilot batches to millions of speech samples across 30+ countries."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item2",
+    "text": "Do you provide annotated datasets? Every dataset can include segmentation, speaker diarization, timestamps, intent, and emotion annotation."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx#item3",
+    "text": "How do you ensure recording quality? Every file passes automated audio-quality scoring plus human review before delivery."
+  },
+  {
+    "source": "src/components/servicePage/content/voiceDataCollection.tsx",
+    "text": "Voice & Speech Data Collection Powering the Future of Voice AI Enterprise-grade speech datasets — collection, annotation, and validation for speech recognition, conversational AI, and voice assistants. Start Your Project Talk to Our Team What We Solve The Realities Behind Every Voice Dataset What's Included Nine Ways We Help You Build Voice AI Build Intelligent Voice AI With Enterprise Speech Data Whether you're building voice assistants or multilingual conversational AI, Bigwigs Technologies delivers secure, scalable speech datasets."
+  },
+  {
+    "source": "src/components/servicePage/FAQAccordion.tsx",
+    "text": "Frequently Asked Questions"
+  },
+  {
+    "source": "src/components/servicePage/QualityDashboardPreview.tsx",
+    "text": "Project Quality Illustrative Example"
+  },
+  {
+    "source": "src/components/services/serviceOrbitData.ts#item0",
+    "text": "AI & Data Solutions"
+  },
+  {
+    "source": "src/components/services/serviceOrbitData.ts#item1",
+    "text": "Software Development"
+  },
+  {
+    "source": "src/components/services/serviceOrbitData.ts#item3",
+    "text": "Language & Content Services"
+  },
+  {
+    "source": "src/components/services/serviceOrbitData.ts#item4",
+    "text": "Transcription Services"
+  },
+  {
+    "source": "src/components/services/serviceOrbitData.ts#item5",
+    "text": "Generative AI & LLM Services"
+  },
+  {
+    "source": "src/components/services/ServiceOrbitVisual.tsx",
+    "text": "Bigwigs Technologies"
+  },
+  {
+    "source": "src/components/services/ServicesGrid.tsx",
+    "text": "What We Build Services Engineered for Scale Enterprise AI systems engineered for accuracy, security, and scale — across every domain we serve. Learn More"
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts#item0",
+    "text": "Software Development Custom, cloud-native software engineering."
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts#item1",
+    "text": "Medical Image Annotation Clinically-aware imaging models & workflows."
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts#item2",
+    "text": "AI Data Annotation Image, video, LiDAR, and OCR annotation for computer vision."
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts#item3",
+    "text": "Generative AI Services LLMs, AI agents, RAG, and intelligent workflow automation."
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts#item4",
+    "text": "Translation & Localization Multilingual content, software, and web experiences."
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts#item5",
+    "text": "Transcription Services AI-assisted, human-reviewed audio and video transcription."
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts#item6",
+    "text": "Voice & Speech Data Collection Enterprise speech datasets for voice AI and conversational AI."
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts#item7",
+    "text": "Data Collection & AI Datasets Custom datasets, crowdsourcing, and synthetic data for AI training."
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts#item8",
+    "text": "Data Validation & QA Annotation QA, dataset validation, and accuracy benchmarking at scale."
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts#item9",
+    "text": "Digital Publishing XML-first publishing, eBook conversion, and accessible EPUB & PDF."
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts#item10",
+    "text": "AI Agents & Automation Autonomous agents that execute enterprise workflows end-to-end."
+  },
+  {
+    "source": "src/components/services/servicesGridData.ts",
+    "text": "text-blue-600 text-violet-600 text-fuchsia-600 text-emerald-600 text-orange-600 text-cyan-600 text-rose-600"
+  },
+  {
+    "source": "src/components/services/ServicesHero.tsx#item0",
+    "text": "Projects Delivered"
+  },
+  {
+    "source": "src/components/services/ServicesHero.tsx#item1",
+    "text": "Quality Benchmark"
+  },
+  {
+    "source": "src/components/services/ServicesHero.tsx#item2",
+    "text": "Industries Served"
+  },
+  {
+    "source": "src/components/services/ServicesHero.tsx#item3",
+    "text": "Faster Delivery"
+  },
+  {
+    "source": "src/components/services/ServicesHero.tsx",
+    "text": "Services AI-Native Services That Drive Real Impact From software engineering and Generative AI to data annotation, transcription, and autonomous agents — Bigwigs Technologies delivers the full stack of AI-native services behind every enterprise transformation. Book a Demo"
+  },
+  {
+    "source": "src/components/team/teamMembers.ts#item0",
+    "text": "Jane Doe Chief Executive Officer Leadership"
+  },
+  {
+    "source": "src/components/team/teamMembers.ts#item1",
+    "text": "John Smith Chief Technology Officer Leadership"
+  },
+  {
+    "source": "src/components/team/teamMembers.ts#item2",
+    "text": "Amara Bello VP of Engineering Leadership"
+  },
+  {
+    "source": "src/components/team/teamMembers.ts#item3",
+    "text": "Alex Kim Head of Computer Vision Engineering"
+  },
+  {
+    "source": "src/components/team/teamMembers.ts#item4",
+    "text": "Maria Chen Senior ML Engineer Engineering"
+  },
+  {
+    "source": "src/components/team/teamMembers.ts#item5",
+    "text": "Sam Patel Platform Engineer Engineering"
+  },
+  {
+    "source": "src/components/team/teamMembers.ts#item6",
+    "text": "Omar Farouk Full-Stack Engineer Engineering"
+  },
+  {
+    "source": "src/components/team/teamMembers.ts#item7",
+    "text": "Laura Gomez Lead Data Scientist Research"
+  },
+  {
+    "source": "src/components/team/teamMembers.ts#item8",
+    "text": "David Lee Research Scientist, GIS Research"
+  },
+  {
+    "source": "src/components/team/teamMembers.ts#item9",
+    "text": "Nina Rossi Research Scientist, Medical AI Research"
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item0",
+    "text": "Bigwigs Technologies | Enterprise AI, Data & Software Engineering Partner with Bigwigs Technologies to unlock the power of your data, automate operations, and deliver measurable business outcomes at scale."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item1",
+    "text": "About Us | Bigwigs Technologies We combine data, AI, and engineering excellence to create intelligent solutions that solve real-world problems and drive meaningful impact."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item2",
+    "text": "Services | Bigwigs Technologies From software engineering and Generative AI to data annotation, transcription, and autonomous agents — the full stack of AI-native services behind every enterprise transformation."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item3",
+    "text": "Industries | Bigwigs Technologies Enterprise AI data services, software engineering, Generative AI, and digital transformation solutions across healthcare, automotive, finance, manufacturing, agriculture, retail, logistics, and smart cities."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item4",
+    "text": "Case Studies | Bigwigs Technologies Explore how Bigwigs Technologies delivers high-quality AI data solutions across industries through scalable annotation, data collection, and digital transformation projects."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item5",
+    "text": "Careers | Bigwigs Technologies Join a team of passionate engineers, AI experts, designers, and innovators building intelligent products that empower businesses globally."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item6",
+    "text": "Apply Now | Bigwigs Technologies Become part of an innovative team building intelligent AI solutions for global enterprises. Apply now to join Bigwigs Technologies."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item7",
+    "text": "Book a Demo | Bigwigs Technologies Tell us about your project and we'll walk you through how our AI, data, and automation solutions can fit your business — tailored to your industry and goals."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item8",
+    "text": "Contact Us | Bigwigs Technologies Get in touch with Bigwigs Technologies. Share your project details and our team will get back to you shortly to discuss how we can help your business grow."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item9",
+    "text": "Privacy Policy | Bigwigs Technologies Read how Bigwigs Technologies collects, uses, and protects your personal data."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item10",
+    "text": "Terms of Service | Bigwigs Technologies Review the terms and conditions governing your use of the Bigwigs Technologies website and services."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item11",
+    "text": "Cookie Policy | Bigwigs Technologies Learn how Bigwigs Technologies uses cookies to improve your browsing experience."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item12",
+    "text": "Healthcare & Life Sciences | Bigwigs Technologies Enterprise AI, intelligent automation, and healthcare data solutions for hospitals, pharma companies, and research institutions."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item13",
+    "text": "Automotive & Mobility Solutions | Bigwigs Technologies AI data services, software engineering, and automation for automotive OEMs, Tier-1 suppliers, and mobility providers."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item14",
+    "text": "Retail & E-Commerce Solutions | Bigwigs Technologies AI, automation, and modern software for retailers, marketplaces, and consumer brands — built to accelerate growth and delight customers."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item15",
+    "text": "Banking, Financial Services & Insurance | Bigwigs Technologies AI-powered solutions and secure data services that accelerate digital transformation for banks, insurers, and fintechs."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item16",
+    "text": "Manufacturing & Industrial Solutions | Bigwigs Technologies AI-driven quality inspection, predictive maintenance, and factory software that keep production running smarter and safer."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item17",
+    "text": "Education & eLearning Solutions | Bigwigs Technologies AI-driven learning platforms, digital publishing, and accessibility solutions built for institutions, EdTech companies, and publishers."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item18",
+    "text": "Government & Public Sector Solutions | Bigwigs Technologies Secure, citizen-centric platforms that modernize legacy systems, automate administrative processes, and strengthen public sector cybersecurity."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item19",
+    "text": "Publishing & Media Solutions | Bigwigs Technologies Modernize legacy content, streamline editorial workflows, and deliver accessible, multilingual digital publications at scale."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item20",
+    "text": "Software Development | Bigwigs Technologies Secure, scalable, cloud-native software — from custom enterprise applications to AI-powered platforms, engineered for long-term growth."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item21",
+    "text": "Healthcare AI | Bigwigs Technologies AI-driven solutions for hospitals, healthcare providers, and medical innovators that improve diagnosis, automate workflows, and enhance patient care."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item22",
+    "text": "Translation & Localization | Bigwigs Technologies Accurate translation, culturally relevant localization, and multilingual digital experiences across languages, regions, and industries."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item23",
+    "text": "Transcription Services | Bigwigs Technologies Accurate, searchable, multilingual transcription with AI-assisted drafting and expert human review — built for compliance, accessibility, and analytics."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item24",
+    "text": "Voice & Speech Data Collection | Bigwigs Technologies Enterprise-grade speech datasets — collection, annotation, and validation for speech recognition, conversational AI, and voice assistants."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item25",
+    "text": "Data Collection & AI Datasets | Bigwigs Technologies Collect, validate, and prepare high-quality datasets for computer vision, NLP, speech AI, and LLMs — at enterprise scale."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item26",
+    "text": "Data Validation & Quality Assurance | Bigwigs Technologies Multi-level validation and quality assurance for Computer Vision, NLP, Speech AI, and LLM datasets — before they ever reach your model."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item27",
+    "text": "Quality Assurance | Bigwigs Technologies Multi-tier quality assurance built into every project — independent review teams, documented benchmarks, and full audit trails behind every dataset we deliver."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item28",
+    "text": "Digital Publishing Services | Bigwigs Technologies AI-enabled publishing solutions to convert, structure, and distribute content across every digital platform."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item29",
+    "text": "AI Data Annotation Services | Bigwigs Technologies Enterprise-grade data annotation for Computer Vision, NLP, Speech AI, and Autonomous Driving — accurate, scalable, and built to train reliable models."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item30",
+    "text": "Generative AI Services | Bigwigs Technologies LLMs, AI agents, RAG, and intelligent automation — deployed to accelerate operations and deliver better customer experiences."
+  },
+  {
+    "source": "src/lib/seo/routes.ts#item31",
+    "text": "AI Agents & Intelligent Automation | Bigwigs Technologies AI agents that understand, reason, retrieve enterprise knowledge, and execute business operations with minimal human intervention."
+  },
+  {
+    "source": "src/pages/CaseStudies.tsx",
+    "text": "Talk To Experts Request A Quote"
+  },
+  {
+    "source": "src/pages/CaseStudyDetail.tsx",
+    "text": "Case Studies Start Your Project Talk To Our Experts"
+  },
+  {
+    "source": "src/pages/CookiePolicy.tsx#item0",
+    "text": "1. What Are Cookies"
+  },
+  {
+    "source": "src/pages/CookiePolicy.tsx#item1",
+    "text": "2. How We Use Cookies"
+  },
+  {
+    "source": "src/pages/CookiePolicy.tsx#item2",
+    "text": "3. Types of Cookies We Use"
+  },
+  {
+    "source": "src/pages/CookiePolicy.tsx#item3",
+    "text": "4. Third-Party Cookies"
+  },
+  {
+    "source": "src/pages/CookiePolicy.tsx#item4",
+    "text": "5. Managing Cookies"
+  },
+  {
+    "source": "src/pages/CookiePolicy.tsx#item5",
+    "text": "6. Changes to This Policy"
+  },
+  {
+    "source": "src/pages/CookiePolicy.tsx",
+    "text": "Legal Cookie Policy Last updated:"
+  },
+  {
+    "source": "src/pages/Industries.tsx",
+    "text": "Get Started Talk To Experts"
+  },
+  {
+    "source": "src/pages/NotFound.tsx#item0",
+    "text": "AI Data Annotation"
+  },
+  {
+    "source": "src/pages/NotFound.tsx#item2",
+    "text": "Software Development"
+  },
+  {
+    "source": "src/pages/NotFound.tsx",
+    "text": "Page Not Found Oops! The Page You're Looking For Doesn't Exist The page may have been moved, renamed, or is temporarily unavailable. Let's help you get back on track. Go Back Home Explore Our Services Error Code: 404 — Bigwigs Technologies"
+  },
+  {
+    "source": "src/pages/PrivacyPolicy.tsx#item0",
+    "text": "1. Introduction"
+  },
+  {
+    "source": "src/pages/PrivacyPolicy.tsx#item1",
+    "text": "2. Information We Collect"
+  },
+  {
+    "source": "src/pages/PrivacyPolicy.tsx#item2",
+    "text": "3. How We Use Your Information"
+  },
+  {
+    "source": "src/pages/PrivacyPolicy.tsx#item4",
+    "text": "5. How We Share Information"
+  },
+  {
+    "source": "src/pages/PrivacyPolicy.tsx#item5",
+    "text": "6. Data Security"
+  },
+  {
+    "source": "src/pages/PrivacyPolicy.tsx#item6",
+    "text": "7. Data Retention"
+  },
+  {
+    "source": "src/pages/PrivacyPolicy.tsx#item8",
+    "text": "9. Children's Privacy"
+  },
+  {
+    "source": "src/pages/PrivacyPolicy.tsx#item9",
+    "text": "10. Changes to This Policy"
+  },
+  {
+    "source": "src/pages/PrivacyPolicy.tsx",
+    "text": "Legal Privacy Policy Last updated:"
+  },
+  {
+    "source": "src/pages/Services.tsx#item0",
+    "text": "Senior Delivery Teams Experienced engineers and specialists on every engagement, not junior teams learning on your budget."
+  },
+  {
+    "source": "src/pages/Services.tsx#item1",
+    "text": "One Partner, Every Domain Software, data, and AI services delivered by teams who already work from the same roadmap."
+  },
+  {
+    "source": "src/pages/Services.tsx#item2",
+    "text": "Security & Compliance First Every service reviewed for security and compliance at each stage, not bolted on before launch."
+  },
+  {
+    "source": "src/pages/Services.tsx#item3",
+    "text": "Proven Across Industries Healthcare, finance, retail, manufacturing, and government engagements delivered at scale."
+  },
+  {
+    "source": "src/pages/Services.tsx#item4",
+    "text": "Long-Term Partnership We stay on after delivery — monitoring, iterating, and supporting what we build."
+  },
+  {
+    "source": "src/pages/Services.tsx#item5",
+    "text": "Predictable Timelines Clear scope and delivery milestones from discovery, not open-ended engagements."
+  },
+  {
+    "source": "src/pages/Services.tsx#item0",
+    "text": "Projects Delivered"
+  },
+  {
+    "source": "src/pages/Services.tsx#item1",
+    "text": "Quality Benchmark"
+  },
+  {
+    "source": "src/pages/Services.tsx#item2",
+    "text": "Industries Served"
+  },
+  {
+    "source": "src/pages/Services.tsx#item3",
+    "text": "Faster Delivery"
+  },
+  {
+    "source": "src/pages/Services.tsx#item0",
+    "text": "Discover Understand goals, workflows, and constraints before scoping anything."
+  },
+  {
+    "source": "src/pages/Services.tsx#item1",
+    "text": "Scope Define timeline, team, and architecture decisions upfront."
+  },
+  {
+    "source": "src/pages/Services.tsx#item2",
+    "text": "Deliver Sprint-based execution across engineering, data, and AI teams."
+  },
+  {
+    "source": "src/pages/Services.tsx#item3",
+    "text": "Validate Quality and security reviewed at every stage of delivery."
+  },
+  {
+    "source": "src/pages/Services.tsx#item4",
+    "text": "Support Ongoing monitoring, iteration, and support long after launch."
+  },
+  {
+    "source": "src/pages/Services.tsx#item0",
+    "text": "Can I combine multiple services in one engagement? Yes. Most enterprise engagements blend two or more services — for example, data annotation feeding a Generative AI pipeline, or software development alongside ongoing QA. Our teams work from a shared roadmap."
+  },
+  {
+    "source": "src/pages/Services.tsx#item1",
+    "text": "Do you work with startups as well as large enterprises? Both. We scope engagements to match team size and budget, from a focused module for an early-stage startup to a multi-year platform for an enterprise."
+  },
+  {
+    "source": "src/pages/Services.tsx#item2",
+    "text": "How is pricing structured? Pricing depends on scope, team composition, and timeline. We provide a concrete estimate after a discovery call rather than a generic rate card."
+  },
+  {
+    "source": "src/pages/Services.tsx#item3",
+    "text": "How quickly can a new engagement start? Most engagements kick off within one to two weeks of scoping, depending on team availability and the complexity of onboarding."
+  },
+  {
+    "source": "src/pages/Services.tsx",
+    "text": "Book a Demo Talk To Experts"
+  },
+  {
+    "source": "src/pages/TermsOfService.tsx#item0",
+    "text": "1. Acceptance of Terms"
+  },
+  {
+    "source": "src/pages/TermsOfService.tsx#item1",
+    "text": "2. Description of Services"
+  },
+  {
+    "source": "src/pages/TermsOfService.tsx#item2",
+    "text": "3. Use of Website"
+  },
+  {
+    "source": "src/pages/TermsOfService.tsx#item3",
+    "text": "4. Intellectual Property"
+  },
+  {
+    "source": "src/pages/TermsOfService.tsx#item4",
+    "text": "5. Client Engagements"
+  },
+  {
+    "source": "src/pages/TermsOfService.tsx#item5",
+    "text": "6. Confidentiality"
+  },
+  {
+    "source": "src/pages/TermsOfService.tsx#item6",
+    "text": "7. Disclaimers & Limitation of Liability"
+  },
+  {
+    "source": "src/pages/TermsOfService.tsx#item7",
+    "text": "8. Third-Party Links"
+  },
+  {
+    "source": "src/pages/TermsOfService.tsx#item8",
+    "text": "9. Governing Law"
+  },
+  {
+    "source": "src/pages/TermsOfService.tsx#item9",
+    "text": "10. Changes to These Terms"
+  },
+  {
+    "source": "src/pages/TermsOfService.tsx",
+    "text": "Legal Terms of Service Last updated:"
+  }
+]

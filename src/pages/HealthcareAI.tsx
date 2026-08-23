@@ -1,17 +1,21 @@
 import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
 import IconGridSection from "@/components/servicePage/IconGridSection";
+import StatsBar from "@/components/servicePage/StatsBar";
 import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
 import FAQAccordion from "@/components/servicePage/FAQAccordion";
 import ClosingCta from "@/components/servicePage/ClosingCta";
 import FullScreenSection from "@/components/servicePage/FullScreenSection";
+import RelatedWork from "@/components/servicePage/RelatedWork";
 import {
   healthcareAiHero,
   healthcareAiChallenges,
   healthcareAiCapabilities,
   healthcareAiProcessSteps,
+  healthcareAiDifferentiators,
   healthcareAiFaq,
   healthcareAiBottomCta,
 } from "@/components/servicePage/content/healthcareAi";
+import { serviceStats } from "@/components/servicePage/content/shared";
 import SEO from "@/components/seo/SEO";
 import { getRouteMeta } from "@/lib/seo/routes";
 
@@ -21,7 +25,7 @@ export default function HealthcareAI() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
-      <ServiceDetailHero {...healthcareAiHero} />
+      <ServiceDetailHero {...healthcareAiHero} category="Services" />
 
       <FullScreenSection>
         <IconGridSection
@@ -45,6 +49,10 @@ export default function HealthcareAI() {
       </FullScreenSection>
 
       <FullScreenSection>
+        <StatsBar stats={serviceStats} />
+      </FullScreenSection>
+
+      <FullScreenSection>
         <ProcessTimeline
           eyebrow="How We Work"
           heading="Six Stages. Clinical to Production."
@@ -52,6 +60,19 @@ export default function HealthcareAI() {
           desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
         />
       </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={healthcareAiDifferentiators.eyebrow}
+          heading={healthcareAiDifferentiators.heading}
+          headerAlign="center"
+          align="center"
+          items={healthcareAiDifferentiators.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        />
+      </FullScreenSection>
+
+      <RelatedWork slugs={["radiology-triage-annotation"]} />
 
       <FAQAccordion items={healthcareAiFaq} />
 

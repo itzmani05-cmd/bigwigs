@@ -1,8 +1,12 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
+import { SITE_NAME, SITE_URL } from "@/lib/seo/config";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,6 +29,9 @@ interface ServiceDetailHeroProps {
   description: string;
   primaryCta: CtaAction;
   secondaryCta: CtaAction;
+  /** Adds BreadcrumbList + Service structured data for this page. Omit for pages
+   *  that aren't a listed service or industry (there currently are none). */
+  category?: "Services" | "Industries";
 }
 
 export default function ServiceDetailHero({
@@ -33,9 +40,32 @@ export default function ServiceDetailHero({
   description,
   primaryCta,
   secondaryCta,
+  category,
 }: ServiceDetailHeroProps) {
+  const { pathname } = useLocation();
+  const categoryPath = category === "Services" ? "/services" : category === "Industries" ? "/industries" : undefined;
+
   return (
-    <section className="relative w-full overflow-hidden pt-14 pb-10 lg:pt-16 lg:pb-12">
+    <section className="relative flex min-h-[calc(100vh-4.75rem)] w-full flex-col items-center justify-center overflow-hidden py-10 lg:min-h-[calc(100vh-5.25rem)] lg:py-14">
+      {category && categoryPath && (
+        <>
+          <BreadcrumbJsonLd
+            items={[{ name: "Home", path: "/" }, { name: category, path: categoryPath }, { name: eyebrow }]}
+          />
+          <Helmet>
+            <script type="application/ld+json">
+              {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                name: eyebrow,
+                description,
+                url: `${SITE_URL}${pathname}`,
+                provider: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+              })}
+            </script>
+          </Helmet>
+        </>
+      )}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white/40 to-transparent"
@@ -64,7 +94,7 @@ export default function ServiceDetailHero({
 
           <motion.h1
             variants={itemVariants}
-            className="mt-3 text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-3 text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-5xl lg:text-[44px] xl:text-5xl"
           >
             {heading}
           </motion.h1>
@@ -73,7 +103,7 @@ export default function ServiceDetailHero({
             {description}
           </motion.p>
 
-          <motion.div variants={itemVariants} className="mt-10 flex flex-wrap items-center justify-center gap-4 mb-10">
+          <motion.div variants={itemVariants} className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <MagneticButton
               href={primaryCta.href}
               magnetic={false}

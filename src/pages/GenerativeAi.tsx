@@ -1,5 +1,6 @@
 import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
 import IconGridSection from "@/components/servicePage/IconGridSection";
+import StatsBar from "@/components/servicePage/StatsBar";
 import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
 import FAQAccordion from "@/components/servicePage/FAQAccordion";
 import ClosingCta from "@/components/servicePage/ClosingCta";
@@ -9,9 +10,11 @@ import {
   genAiChallenges,
   genAiCapabilities,
   genAiProcessSteps,
+  genAiDifferentiators,
   genAiFaq,
   genAiBottomCta,
 } from "@/components/servicePage/content/generativeAi";
+import { serviceStats } from "@/components/servicePage/content/shared";
 import SEO from "@/components/seo/SEO";
 import { getRouteMeta } from "@/lib/seo/routes";
 
@@ -21,7 +24,7 @@ export default function GenerativeAi() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
-      <ServiceDetailHero {...genAiHero} />
+      <ServiceDetailHero {...genAiHero} category="Services" />
 
       <FullScreenSection>
         <IconGridSection
@@ -45,11 +48,26 @@ export default function GenerativeAi() {
       </FullScreenSection>
 
       <FullScreenSection>
+        <StatsBar stats={serviceStats} />
+      </FullScreenSection>
+
+      <FullScreenSection>
         <ProcessTimeline
           eyebrow="How We Work"
           heading="Six Stages. No Guesswork."
           steps={genAiProcessSteps}
           desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={genAiDifferentiators.eyebrow}
+          heading={genAiDifferentiators.heading}
+          headerAlign="center"
+          align="center"
+          items={genAiDifferentiators.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
         />
       </FullScreenSection>
 

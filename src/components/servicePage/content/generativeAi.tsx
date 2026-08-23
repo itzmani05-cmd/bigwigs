@@ -37,12 +37,12 @@ export const genAiChallenges = {
   eyebrow: "What We Solve",
   heading: "The Realities Enterprises Face",
   items: [
-    { icon: Database, title: "Fragmented Enterprise Knowledge" },
-    { icon: Workflow, title: "Manual, Repetitive Workflows" },
-    { icon: ShieldAlert, title: "AI Hallucination Risk" },
-    { icon: FileSearch, title: "Slow Document Processing" },
-    { icon: Lock, title: "Data Privacy & Model Security" },
-    { icon: Clock, title: "Slow AI Adoption Timelines" },
+    { icon: Database, title: "Fragmented Enterprise Knowledge", description: "Answers scattered across wikis, drives, and tools mean employees waste time hunting instead of working." },
+    { icon: Workflow, title: "Manual, Repetitive Workflows", description: "Routine tasks eat up hours that could go toward higher-value work." },
+    { icon: ShieldAlert, title: "AI Hallucination Risk", description: "Ungrounded models confidently produce wrong answers — a real risk for customer-facing use cases." },
+    { icon: FileSearch, title: "Slow Document Processing", description: "Manually reading and extracting data from contracts and forms doesn't scale." },
+    { icon: Lock, title: "Data Privacy & Model Security", description: "Enterprise AI needs to run on your own data without leaking it to public models." },
+    { icon: Clock, title: "Slow AI Adoption Timelines", description: "Long, uncertain rollouts stall the return on generative AI investment." },
   ],
 };
 
@@ -75,7 +75,22 @@ export const genAiFaq = [
   { question: "Do you support private enterprise data?", answer: "Yes. RAG pipelines and fine-tuning run against your own documents — nothing trains public models." },
   { question: "Can you integrate AI with existing applications?", answer: "Yes. We integrate with CRMs, ticketing systems, and ERPs via API, so AI fits into workflows you already run." },
   { question: "How secure are enterprise AI solutions?", answer: "Every deployment includes encrypted data handling, access controls, and audit logging for enterprise compliance." },
+  { question: "How long does it take to see results?", answer: "Most engagements ship a working prototype within weeks, with production deployment following a validated pilot." },
+  { question: "Do you fine-tune models on our own data?", answer: "Yes, where it adds value — alongside RAG, which is often faster to deploy and easier to keep current." },
 ];
+
+export const genAiDifferentiators = {
+  eyebrow: "Why Bigwigs",
+  heading: "Why Enterprises Choose Us for Generative AI",
+  items: [
+    { icon: Search, title: "Grounded, Not Guessing", description: "RAG pipelines answer from your own data, not a model's general training." },
+    { icon: ShieldAlert, title: "Hallucination Risk Taken Seriously", description: "Accuracy and safety verified before anything reaches a customer-facing surface." },
+    { icon: Lock, title: "Your Data Stays Yours", description: "Fine-tuning and retrieval run on your own infrastructure and data, never public models." },
+    { icon: Puzzle, title: "Fits Into Systems You Already Run", description: "Integrated with your CRM, ticketing, and ERP via API, not a standalone silo." },
+    { icon: FlaskConical, title: "Prototype Before You Commit", description: "A working proof of concept validated early, before full build investment." },
+    { icon: Rocket, title: "Deployed and Monitored", description: "Live in production with real monitoring, not left to drift after launch." },
+  ],
+};
 
 export const genAiBottomCta = {
   icon: Brain,

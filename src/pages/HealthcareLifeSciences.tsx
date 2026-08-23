@@ -21,7 +21,7 @@ export default function HealthcareLifeSciences() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
-      <ServiceDetailHero {...healthcareHero} />
+      <ServiceDetailHero {...healthcareHero} category="Industries" />
 
       <FullScreenSection>
         <IconGridSection

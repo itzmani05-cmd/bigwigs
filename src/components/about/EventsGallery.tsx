@@ -56,7 +56,7 @@ function MarqueeRow({ photos, direction }: { photos: string[]; direction: "left"
 
 export default function EventsGallery() {
   return (
-    <section className="relative w-full overflow-hidden py-14 lg:py-20">
+    <section id="events" className="relative w-full scroll-mt-24 overflow-hidden py-14 lg:py-20">
       <Container className="relative z-10">
         <div className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">

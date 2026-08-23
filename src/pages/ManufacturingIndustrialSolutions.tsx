@@ -21,7 +21,7 @@ export default function ManufacturingIndustrialSolutions() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
-      <ServiceDetailHero {...manufacturingHero} />
+      <ServiceDetailHero {...manufacturingHero} category="Industries" />
 
       <FullScreenSection>
         <IconGridSection
@@ -49,7 +49,7 @@ export default function ManufacturingIndustrialSolutions() {
           eyebrow="How We Work"
           heading="Five Stages. No Guesswork."
           steps={manufacturingProcessSteps}
-          desktopColumnsClassName="grid-cols-5"
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-5"
         />
       </FullScreenSection>
 

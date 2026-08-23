@@ -17,7 +17,7 @@ interface StatsBarProps {
 
 export default function StatsBar({ stats }: StatsBarProps) {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-violet-50/70 via-violet-50/25 to-white py-14 lg:py-16">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-brand-blue-50/70 via-brand-blue-50/25 to-white py-14 lg:py-16">
       <SectionBackdrop />
       <Container className="relative z-10">
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-4">

@@ -6,6 +6,7 @@ import FAQAccordion from "@/components/servicePage/FAQAccordion";
 import CTASection from "@/components/ui/CTASection";
 import { industriesFaqItems } from "@/components/industries/industriesFaqData";
 import SEO from "@/components/seo/SEO";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function Industries() {
@@ -14,6 +15,7 @@ export default function Industries() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Industries" }]} />
       <IndustriesHero />
       <IndustriesGrid />
       <IndustriesProcessTimeline />

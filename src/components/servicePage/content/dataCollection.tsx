@@ -38,12 +38,12 @@ export const dataCollectionChallenges = {
   eyebrow: "What We Solve",
   heading: "The Realities AI Teams Face Building Datasets",
   items: [
-    { icon: Database, title: "Fragmented Data Sources" },
-    { icon: ShieldCheck, title: "Inconsistent Data Quality" },
-    { icon: Globe2, title: "Limited Demographic Diversity" },
-    { icon: Clock, title: "Slow Dataset Delivery" },
-    { icon: Lock, title: "Privacy & Consent Management" },
-    { icon: DollarSign, title: "Rising Acquisition Costs" },
+    { icon: Database, title: "Fragmented Data Sources", description: "Stitching together data from scattered sources slows every project before annotation even starts." },
+    { icon: ShieldCheck, title: "Inconsistent Data Quality", description: "Data collected without a clear spec often turns out unusable once it reaches the model." },
+    { icon: Globe2, title: "Limited Demographic Diversity", description: "Narrow data leaves models that fail exactly where the real world is most diverse." },
+    { icon: Clock, title: "Slow Dataset Delivery", description: "Long collection cycles delay every downstream step of model development." },
+    { icon: Lock, title: "Privacy & Consent Management", description: "Collecting real-world data at scale requires consent tracking most teams aren't set up to manage." },
+    { icon: DollarSign, title: "Rising Acquisition Costs", description: "Sourcing data in-house is often slower and more expensive than a dedicated collection pipeline." },
   ],
 };
 
@@ -76,7 +76,22 @@ export const dataCollectionFaq = [
   { question: "Do you provide metadata?", answer: "Every dataset ships with structured metadata — demographics, device, environment, and consent status." },
   { question: "Can you create custom datasets?", answer: "Yes. Collection and preparation are scoped to your exact use case, whether computer vision, NLP, speech AI, or LLM training." },
   { question: "How do you ensure data quality?", answer: "Every batch passes automated validation plus human review for accuracy and consistency before delivery." },
+  { question: "Can you collect data for a brand-new use case?", answer: "Yes. We scope collection from scratch for novel model types, not just refresh existing datasets." },
+  { question: "Do you handle data licensing and consent?", answer: "Yes. Every collection project includes documented consent and licensing appropriate for commercial model training." },
 ];
+
+export const dataCollectionDifferentiators = {
+  eyebrow: "Why Bigwigs",
+  heading: "Why Teams Choose Us for Data Collection",
+  items: [
+    { icon: Database, title: "Sourced to Your Exact Spec", description: "Collection scoped to your model's use case, not a generic off-the-shelf dataset." },
+    { icon: Globe2, title: "Real Demographic Diversity", description: "Participants and sources spread across regions so your data reflects the real world." },
+    { icon: Wand2, title: "Cleaned and Structured on Delivery", description: "Deduplication, enrichment, and structuring included, not left for you to do." },
+    { icon: Lock, title: "Consent & Licensing Handled", description: "Every dataset ships with documentation appropriate for commercial model training." },
+    { icon: ShieldCheck, title: "Validated Before It Reaches You", description: "Automated and human review catch quality issues before delivery, not after." },
+    { icon: Clock, title: "Built to Scale With You", description: "Collection pipelines that grow from a pilot batch to millions of samples." },
+  ],
+};
 
 export const dataCollectionBottomCta = {
   icon: Database,

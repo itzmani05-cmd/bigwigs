@@ -33,12 +33,12 @@ export const voiceChallenges = {
   eyebrow: "What We Solve",
   heading: "The Realities Behind Every Voice Dataset",
   items: [
-    { icon: Globe2, title: "Fragmented Accent Coverage" },
-    { icon: Mic, title: "Noisy Recording Conditions" },
-    { icon: Speaker, title: "Wake Word False Positives" },
-    { icon: Users2, title: "Overlapping Speaker Diarization" },
-    { icon: Lock, title: "Voice Biometric Privacy" },
-    { icon: Languages, title: "Multilingual Complexity" },
+    { icon: Globe2, title: "Fragmented Accent Coverage", description: "Thin accent diversity leaves voice models blind to how large parts of your audience speak." },
+    { icon: Mic, title: "Noisy Recording Conditions", description: "Real-world audio is messier than lab conditions, and models trained on clean data struggle to cope." },
+    { icon: Speaker, title: "Wake Word False Positives", description: "Poorly tuned wake word data means devices that trigger constantly, or not at all." },
+    { icon: Users2, title: "Overlapping Speaker Diarization", description: "Separating who said what in multi-speaker audio needs carefully labeled training data." },
+    { icon: Lock, title: "Voice Biometric Privacy", description: "Voice data tied to identity requires consent management most collection pipelines skip." },
+    { icon: Languages, title: "Multilingual Complexity", description: "Scaling voice collection across languages multiplies every challenge a single language poses." },
   ],
 };
 
@@ -71,7 +71,22 @@ export const voiceFaq = [
   { question: "Can you support enterprise-scale projects?", answer: "Yes. Our pipelines scale from pilot batches to millions of speech samples across 30+ countries." },
   { question: "Do you provide annotated datasets?", answer: "Every dataset can include segmentation, speaker diarization, timestamps, intent, and emotion annotation." },
   { question: "How do you ensure recording quality?", answer: "Every file passes automated audio-quality scoring plus human review before delivery." },
+  { question: "How do you source diverse speakers?", answer: "We recruit participants across regions, age groups, and genders to match your exact demographic spec, not a convenience sample." },
+  { question: "Can you collect data for a specific device or environment?", answer: "Yes. Recordings can be captured under conditions that match your real deployment — in-car, in-home, or noisy public spaces." },
 ];
+
+export const voiceDifferentiators = {
+  eyebrow: "Why Bigwigs",
+  heading: "Why Teams Choose Us for Voice Data",
+  items: [
+    { icon: Globe2, title: "Real Accent & Dialect Diversity", description: "Native speakers recruited by region, age, and gender to match your exact spec." },
+    { icon: Mic, title: "Real-World Recording Conditions", description: "Data captured in the noise and variability your model will actually face." },
+    { icon: Lock, title: "Consent-Managed Collection", description: "Every recording tied to documented, auditable participant consent." },
+    { icon: ClipboardCheck, title: "Annotation Included", description: "Segmentation, diarization, and intent labeling delivered alongside the audio." },
+    { icon: Users2, title: "Global Participant Network", description: "Speakers sourced across 30+ countries without you managing recruitment." },
+    { icon: ShieldCheck, title: "Quality-Scored Before Delivery", description: "Automated audio scoring plus human review on every file." },
+  ],
+};
 
 export const voiceBottomCta = {
   icon: Mic,

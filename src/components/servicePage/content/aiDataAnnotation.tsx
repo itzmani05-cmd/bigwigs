@@ -38,12 +38,12 @@ export const annotationChallenges = {
   eyebrow: "What We Solve",
   heading: "The Realities AI Teams Face",
   items: [
-    { icon: Target, title: "Low-Quality Training Data" },
-    { icon: Layers, title: "Inconsistent Labeling Standards" },
-    { icon: Clock, title: "Slow Annotation Turnaround" },
-    { icon: Users2, title: "Scaling Annotation Teams" },
-    { icon: Lock, title: "Data Security & Confidentiality" },
-    { icon: TrendingUp, title: "Rising Annotation Costs" },
+    { icon: Target, title: "Low-Quality Training Data", description: "Poorly labeled data quietly caps model accuracy no matter how strong the architecture is." },
+    { icon: Layers, title: "Inconsistent Labeling Standards", description: "Annotators interpreting guidelines differently introduces noise your model has to unlearn." },
+    { icon: Clock, title: "Slow Annotation Turnaround", description: "In-house teams get buried in backlog just as model iteration speed matters most." },
+    { icon: Users2, title: "Scaling Annotation Teams", description: "Hiring and managing annotators in-house is slow and expensive to scale up or down." },
+    { icon: Lock, title: "Data Security & Confidentiality", description: "Sensitive training data needs enterprise-grade handling, not a spreadsheet and a freelancer." },
+    { icon: TrendingUp, title: "Rising Annotation Costs", description: "Per-label pricing adds up fast without a workflow built for efficiency at scale." },
   ],
 };
 
@@ -75,7 +75,22 @@ export const annotationFaq = [
   { question: "Can you scale large annotation projects?", answer: "Yes. Our teams scale from a pilot batch to millions of objects a month without changing quality or format." },
   { question: "How do you ensure annotation quality?", answer: "Every batch passes multi-level review — initial annotation, peer check, and senior QA sign-off — before delivery." },
   { question: "Can you handle confidential datasets?", answer: "Yes. Confidential and regulated datasets are handled under signed NDAs with encrypted storage and controlled access." },
+  { question: "What's your typical turnaround time?", answer: "Turnaround depends on volume and complexity, but most projects move from pilot to first delivery within one to two weeks." },
+  { question: "Do you support ongoing annotation pipelines?", answer: "Yes. Many clients run continuous pipelines that feed retraining cycles, not just one-off batches." },
 ];
+
+export const annotationDifferentiators = {
+  eyebrow: "Why Bigwigs",
+  heading: "Why Teams Choose Us for Annotation",
+  items: [
+    { icon: Target, title: "Domain-Trained Annotators", description: "Annotators trained on your specific taxonomy, not generic labeling templates." },
+    { icon: Layers, title: "Multi-Format Expertise", description: "Image, video, LiDAR, text, and audio annotation under one team, one process." },
+    { icon: ShieldCheck, title: "Multi-Level QA Built In", description: "Every batch passes peer review and senior sign-off before it reaches you." },
+    { icon: TrendingUp, title: "Scales With Your Model", description: "From a 500-image pilot to millions of labels a month, on the same pipeline." },
+    { icon: Lock, title: "Enterprise-Grade Security", description: "NDA-bound teams, encrypted storage, and controlled access on every project." },
+    { icon: Clock, title: "Fast, Predictable Delivery", description: "Clear turnaround commitments from the first pilot batch onward." },
+  ],
+};
 
 export const annotationBottomCta = {
   icon: PackageCheck,

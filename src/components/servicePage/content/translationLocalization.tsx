@@ -31,12 +31,12 @@ export const translationChallenges = {
   eyebrow: "What We Solve",
   heading: "The Realities of Going Multilingual",
   items: [
-    { icon: Languages, title: "Inaccurate Machine Translation" },
-    { icon: Globe2, title: "Inconsistent Terminology" },
-    { icon: Code2, title: "Software Localization Bugs" },
-    { icon: Megaphone, title: "Messaging That Reads Translated" },
-    { icon: Search, title: "Lost Multilingual SEO" },
-    { icon: Lock, title: "Confidential Document Handling" },
+    { icon: Languages, title: "Inaccurate Machine Translation", description: "Raw MT output reads awkward, or worse, changes meaning — high-stakes content can't risk that." },
+    { icon: Globe2, title: "Inconsistent Terminology", description: "The same term translated differently across documents erodes trust and clarity." },
+    { icon: Code2, title: "Software Localization Bugs", description: "Hardcoded strings and broken layouts slip through without dedicated localization QA." },
+    { icon: Megaphone, title: "Messaging That Reads Translated", description: "Word-for-word translation rarely lands the way native marketing copy does." },
+    { icon: Search, title: "Lost Multilingual SEO", description: "Direct translation without keyword research means localized pages rank for the wrong terms." },
+    { icon: Lock, title: "Confidential Document Handling", description: "Legal and financial documents need translators bound by real confidentiality processes." },
   ],
 };
 
@@ -68,7 +68,22 @@ export const translationFaq = [
   { question: "Can you localize websites?", answer: "Yes. We handle content, layout, currencies, date formats, and right-to-left languages without a separate codebase per market." },
   { question: "Do you support multilingual SEO?", answer: "Yes — keyword research, metadata, and on-page content are localized per region, not just translated word-for-word." },
   { question: "How do you ensure translation quality?", answer: "Every translation passes through a native-speaker review against your terminology and style guide before delivery." },
+  { question: "Which languages do you support?", answer: "We work across 50+ languages with native-speaking linguists, including right-to-left scripts and low-resource languages." },
+  { question: "Can you handle ongoing, high-volume localization?", answer: "Yes. Many clients run continuous localization pipelines tied to their release cycles rather than one-off projects." },
 ];
+
+export const translationDifferentiators = {
+  eyebrow: "Why Bigwigs",
+  heading: "Why Teams Choose Us for Localization",
+  items: [
+    { icon: UserCheck, title: "Native-Speaker Linguists", description: "Every translation done and reviewed by a native speaker, not machine output alone." },
+    { icon: BookOpenText, title: "Consistent Terminology", description: "Managed glossaries keep every document and market speaking the same language." },
+    { icon: Globe2, title: "50+ Languages, One Team", description: "A single point of contact across every market you localize into." },
+    { icon: Code2, title: "Localization-Ready Engineering", description: "Software localized without breaking layouts, dates, or currency formats." },
+    { icon: Lock, title: "Confidential by Default", description: "Legal and financial documents handled under signed NDAs, every time." },
+    { icon: ShieldCheck, title: "Style-Guide Enforced QA", description: "Independent review against your terminology and brand voice before delivery." },
+  ],
+};
 
 export const translationBottomCta = {
   icon: Languages,

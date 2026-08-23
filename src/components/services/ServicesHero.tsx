@@ -102,7 +102,6 @@ export default function ServicesHero() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.215, 0.61, 0.355, 1] }}
-            className="hidden lg:block"
           >
             <ServiceOrbitVisual />
           </motion.div>

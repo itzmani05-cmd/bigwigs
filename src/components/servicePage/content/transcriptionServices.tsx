@@ -37,12 +37,12 @@ export const transcriptionChallenges = {
   eyebrow: "What We Solve",
   heading: "The Realities Behind Every Recording",
   items: [
-    { icon: Clock, title: "Slow, Manual Transcription" },
-    { icon: Users, title: "Overlapping Speakers" },
-    { icon: Globe2, title: "Multilingual & Accented Audio" },
-    { icon: ShieldCheck, title: "Strict Compliance Requirements" },
-    { icon: Timer, title: "Tight Turnaround Windows" },
-    { icon: Lock, title: "Sensitive, Confidential Recordings" },
+    { icon: Clock, title: "Slow, Manual Transcription", description: "Typing out hours of audio by hand doesn't scale with growing content volume." },
+    { icon: Users, title: "Overlapping Speakers", description: "Crosstalk and interruptions trip up automated tools without expert review." },
+    { icon: Globe2, title: "Multilingual & Accented Audio", description: "Generic speech-to-text struggles with accents that native reviewers catch easily." },
+    { icon: ShieldCheck, title: "Strict Compliance Requirements", description: "Legal and medical transcripts need accuracy standards automation alone can't guarantee." },
+    { icon: Timer, title: "Tight Turnaround Windows", description: "Same-day delivery needs a workflow built for speed, not just accuracy." },
+    { icon: Lock, title: "Sensitive, Confidential Recordings", description: "Depositions, medical visits, and internal meetings need secure handling end to end." },
   ],
 };
 
@@ -86,7 +86,28 @@ export const transcriptionFaq = [
     question: "How is confidential data protected?",
     answer: "All files are handled under signed NDAs with restricted access, encrypted storage, and secure disposal after delivery.",
   },
+  {
+    question: "What audio formats do you accept?",
+    answer: "We work with all common audio and video formats — MP3, WAV, MP4, and more — and can accommodate custom source formats on request.",
+  },
+  {
+    question: "Do you support rush turnaround?",
+    answer: "Yes. Expedited delivery windows are available for time-sensitive projects, scoped case by case.",
+  },
 ];
+
+export const transcriptionDifferentiators = {
+  eyebrow: "Why Bigwigs",
+  heading: "Why Teams Choose Us for Transcription",
+  items: [
+    { icon: Bot, title: "AI Draft, Human Verified", description: "Speech recognition speeds up the first pass — every word is still checked by a person." },
+    { icon: Users, title: "Speaker-Aware Accuracy", description: "Speaker identification and labeling built in, even across overlapping conversations." },
+    { icon: Languages, title: "Accents & Languages Covered", description: "Native reviewers handle accented and multilingual audio machine tools miss." },
+    { icon: ShieldCheck, title: "Compliance-Ready Formatting", description: "Legal and medical transcripts formatted to the standards those industries require." },
+    { icon: Lock, title: "Confidential Handling", description: "NDA-bound teams, encrypted storage, and secure disposal after delivery." },
+    { icon: Timer, title: "Turnaround You Can Plan Around", description: "Standard and rush delivery windows, so you know exactly when to expect it." },
+  ],
+};
 
 export const transcriptionBottomCta = {
   icon: Mic,

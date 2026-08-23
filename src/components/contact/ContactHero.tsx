@@ -15,7 +15,7 @@ const itemVariants = {
 
 export default function ContactHero() {
   return (
-    <section className="relative w-full overflow-hidden pt-10 pb-10 lg:pt-10 lg:pb-14">
+    <section className="relative flex min-h-[calc(100vh-4.75rem)] w-full flex-col items-center justify-center overflow-hidden py-10 lg:min-h-[calc(100vh-5.25rem)] lg:py-14">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white/40 to-transparent"

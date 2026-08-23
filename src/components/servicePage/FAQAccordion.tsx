@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionBackdrop from "./SectionBackdrop";
+import FaqJsonLd from "@/components/seo/FaqJsonLd";
 
 export interface FaqItem {
   question: string;
@@ -24,6 +25,7 @@ export default function FAQAccordion({
 
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-b from-brand-blue-50/70 via-brand-blue-50/25 to-white py-16 lg:py-20">
+      <FaqJsonLd items={items.map(({ question, answer }) => ({ question, answer }))} />
       <SectionBackdrop />
       <Container className="relative z-10">
         <div className="mx-auto max-w-xl text-center">

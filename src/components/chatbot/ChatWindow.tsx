@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
-import { Send, X } from "lucide-react";
+import { Send, X, Sparkles } from "lucide-react";
 import { API_BASE } from "@/config/api";
 import MessageBubble from "./MessageBubble";
 import TypingIndicator from "./TypingIndicator";
@@ -14,8 +14,14 @@ const WELCOME_MESSAGE: ChatMessage = {
   id: "welcome",
   role: "assistant",
   content:
-    "Hi! I'm the Bigwigs AI assistant. Ask me anything about our services.",
+    "Hi, I'm the Bigwigs AI assistant. Ask me about our services, industries, or how to get started.",
 };
+
+const SUGGESTED_PROMPTS = [
+  "What services do you offer?",
+  "Which industries do you work with?",
+  "How do I book a demo?",
+];
 
 function extractErrorMessage(data: unknown): string {
   const message = (data as { message?: string | string[] } | null)?.message;
@@ -44,8 +50,8 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
     inputRef.current?.focus();
   }, []);
 
-  const sendMessage = async () => {
-    const trimmed = input.trim();
+  const sendMessage = async (override?: string) => {
+    const trimmed = (override ?? input).trim();
     if (!trimmed || isLoading) return;
 
     setMessages((prev) => [...prev, { id: crypto.randomUUID(), role: "user", content: trimmed }]);
@@ -88,26 +94,31 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
     }
   };
 
+  const showSuggestions = messages.length === 1 && !isLoading;
+
   return (
-    <div className="flex h-[70vh] max-h-[560px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_24px_60px_-16px_rgba(15,23,42,0.25)]">
-      <div className="flex items-center gap-3 border-b border-slate-100 bg-brand-blue-500 px-5 py-3.5">
-        <span className="flex h-9 shrink-0 items-center justify-center rounded-lg bg-white px-2 py-1.5 shadow-sm">
-          <img src="/assets/Logo.png" alt="" aria-hidden="true" className="h-full w-auto object-contain" />
+    <div className="flex h-[72vh] max-h-[600px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_28px_70px_-18px_rgba(15,23,42,0.3)]">
+      <div className="flex items-center gap-3 bg-gradient-to-r from-brand-blue-600 to-brand-blue-500 px-5 py-4">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white p-1.5 shadow-sm">
+          <img src="/assets/Logo.png" alt="" aria-hidden="true" className="h-full w-full object-contain" />
         </span>
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-bold text-white">Bigwigs AI Assistant</p>
-          <p className="flex items-center gap-1.5 truncate text-xs font-medium text-white/75">
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
-            Online
+          <p className="truncate text-sm font-bold tracking-tight text-white">Bigwigs AI Assistant</p>
+          <p className="flex items-center gap-1.5 truncate text-xs font-medium text-white/80">
+            <span className="relative flex h-1.5 w-1.5 shrink-0">
+              <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            </span>
+            Online now
           </p>
         </div>
         <button
           type="button"
           onClick={onClose}
           aria-label="Close chat"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white/80 transition-colors duration-200 hover:bg-white/15 hover:text-white"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white/85 transition-colors duration-200 hover:bg-white/15 hover:text-white"
         >
-          <X size={16} strokeWidth={2} />
+          <X size={18} strokeWidth={2} />
         </button>
       </div>
 
@@ -115,6 +126,22 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
         {messages.map((message) => (
           <MessageBubble key={message.id} role={message.role} content={message.content} />
         ))}
+
+        {showSuggestions && (
+          <div className="flex flex-col items-start gap-2 pl-8">
+            {SUGGESTED_PROMPTS.map((prompt) => (
+              <button
+                key={prompt}
+                type="button"
+                onClick={() => sendMessage(prompt)}
+                className="rounded-full border border-brand-blue-200 bg-white px-3.5 py-2 text-left text-xs font-semibold text-brand-blue-700 shadow-sm transition-colors duration-200 hover:border-brand-blue-400 hover:bg-brand-blue-50"
+              >
+                {prompt}
+              </button>
+            ))}
+          </div>
+        )}
+
         {isLoading && <TypingIndicator />}
         {error && (
           <div className="rounded-xl border border-rose-200 bg-rose-50 px-3.5 py-2.5 text-xs font-medium text-rose-600">
@@ -136,7 +163,7 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
           />
           <button
             type="button"
-            onClick={sendMessage}
+            onClick={() => sendMessage()}
             disabled={!input.trim() || isLoading}
             aria-label="Send message"
             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-blue-500 text-white transition-colors duration-200 hover:bg-brand-blue-600 disabled:cursor-not-allowed disabled:opacity-40"
@@ -144,8 +171,9 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
             <Send size={15} strokeWidth={2} />
           </button>
         </div>
-        <p className="mt-1.5 text-center text-[11px] text-slate-400">
-          AI-generated from Bigwigs documentation.
+        <p className="mt-2 flex items-center justify-center gap-1 text-center text-[11px] text-slate-400">
+          <Sparkles size={11} strokeWidth={2} className="text-slate-300" />
+          AI-generated from the Bigwigs Technologies website
         </p>
       </div>
     </div>

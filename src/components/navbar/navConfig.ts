@@ -10,6 +10,7 @@ import {
   BookOpen,
   Target,
   Sparkles,
+  Calendar,
   Car,
   ShoppingCart,
   Landmark,
@@ -73,6 +74,7 @@ export const navItems: NavItem[] = [
         { name: "Mission & Vision", href: "/about#mission-vision" },
         { name: "Our Expertise", href: "/about#expertise" },
         { name: "Certifications", href: "/about#certifications" },
+        { name: "Events", href: "/about#events" },
       ],
       features: [
         {
@@ -98,6 +100,11 @@ export const navItems: NavItem[] = [
           title: "Certifications",
           description: "Compliance and quality credentials we hold.",
           image: certificationsImg,
+        },
+        {
+          icon: Calendar,
+          title: "Events",
+          description: "Celebrations, team outings, and moments from Bigwigs.",
         },
       ],
       cta: { label: "Learn more about us", href: "/about" },

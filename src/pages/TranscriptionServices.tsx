@@ -1,5 +1,6 @@
 import ServiceDetailHero from "@/components/servicePage/ServiceDetailHero";
 import IconGridSection from "@/components/servicePage/IconGridSection";
+import StatsBar from "@/components/servicePage/StatsBar";
 import ProcessTimeline from "@/components/servicePage/ProcessTimeline";
 import FAQAccordion from "@/components/servicePage/FAQAccordion";
 import ClosingCta from "@/components/servicePage/ClosingCta";
@@ -9,9 +10,11 @@ import {
   transcriptionChallenges,
   transcriptionCapabilities,
   transcriptionProcessSteps,
+  transcriptionDifferentiators,
   transcriptionFaq,
   transcriptionBottomCta,
 } from "@/components/servicePage/content/transcriptionServices";
+import { serviceStats } from "@/components/servicePage/content/shared";
 import SEO from "@/components/seo/SEO";
 import { getRouteMeta } from "@/lib/seo/routes";
 
@@ -21,7 +24,7 @@ export default function TranscriptionServices() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
-      <ServiceDetailHero {...transcriptionHero} />
+      <ServiceDetailHero {...transcriptionHero} category="Services" />
 
       <FullScreenSection>
         <IconGridSection
@@ -45,11 +48,26 @@ export default function TranscriptionServices() {
       </FullScreenSection>
 
       <FullScreenSection>
+        <StatsBar stats={serviceStats} />
+      </FullScreenSection>
+
+      <FullScreenSection>
         <ProcessTimeline
           eyebrow="How We Work"
           heading="Six Stages to a Delivered Transcript"
           steps={transcriptionProcessSteps}
           desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
+        />
+      </FullScreenSection>
+
+      <FullScreenSection>
+        <IconGridSection
+          eyebrow={transcriptionDifferentiators.eyebrow}
+          heading={transcriptionDifferentiators.heading}
+          headerAlign="center"
+          align="center"
+          items={transcriptionDifferentiators.items}
+          columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
         />
       </FullScreenSection>
 

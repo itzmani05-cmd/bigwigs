@@ -21,7 +21,7 @@ export default function GovernmentPublicSectorSolutions() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
-      <ServiceDetailHero {...governmentHero} />
+      <ServiceDetailHero {...governmentHero} category="Industries" />
 
       <FullScreenSection>
         <IconGridSection
@@ -49,7 +49,7 @@ export default function GovernmentPublicSectorSolutions() {
           eyebrow="How We Work"
           heading="Five Stages. No Guesswork."
           steps={governmentProcessSteps}
-          desktopColumnsClassName="grid-cols-5"
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-5"
         />
       </FullScreenSection>
 

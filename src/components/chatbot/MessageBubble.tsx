@@ -1,5 +1,4 @@
 import ReactMarkdown, { type Components } from "react-markdown";
-import { Sparkles } from "lucide-react";
 
 interface MessageBubbleProps {
   role: "user" | "assistant";
@@ -40,8 +39,8 @@ export default function MessageBubble({ role, content }: MessageBubbleProps) {
 
   return (
     <div className="flex items-start gap-2">
-      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-blue-500 text-white">
-        <Sparkles size={12} strokeWidth={2} />
+      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white p-1 shadow-sm">
+        <img src="/assets/Logo.png" alt="" aria-hidden="true" className="h-full w-full object-contain" />
       </span>
       <div className="max-w-[85%] rounded-2xl rounded-tl-md border border-slate-200 bg-white px-4 py-2.5 text-sm leading-relaxed text-slate-700 shadow-sm">
         <ReactMarkdown components={markdownComponents}>{content}</ReactMarkdown>

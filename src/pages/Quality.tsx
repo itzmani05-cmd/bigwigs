@@ -21,6 +21,7 @@ import {
   qualityBottomCta,
 } from "@/components/servicePage/content/quality";
 import SEO from "@/components/seo/SEO";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { getRouteMeta } from "@/lib/seo/routes";
 
 export default function Quality() {
@@ -29,6 +30,7 @@ export default function Quality() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Quality Assurance" }]} />
 
       <QualityHero {...qualityHero} />
 
@@ -49,7 +51,7 @@ export default function Quality() {
           eyebrow="Bigwigs Quality Workflow"
           heading="From Raw Data to Reliable AI Training Data"
           steps={qualityWorkflowSteps}
-          desktopColumnsClassName="grid-cols-6"
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-6"
         />
       </FullScreenSection>
 

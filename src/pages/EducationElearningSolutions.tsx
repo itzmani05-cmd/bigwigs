@@ -21,7 +21,7 @@ export default function EducationElearningSolutions() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
-      <ServiceDetailHero {...educationHero} />
+      <ServiceDetailHero {...educationHero} category="Industries" />
 
       <FullScreenSection>
         <IconGridSection
@@ -49,7 +49,7 @@ export default function EducationElearningSolutions() {
           eyebrow="How We Work"
           heading="Five Stages. Discovery to Support."
           steps={educationProcessSteps}
-          desktopColumnsClassName="grid-cols-5"
+          desktopColumnsClassName="grid-cols-3 xl:grid-cols-5"
         />
       </FullScreenSection>
 

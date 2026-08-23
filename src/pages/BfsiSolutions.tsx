@@ -21,7 +21,7 @@ export default function BfsiSolutions() {
   return (
     <main className="relative w-full overflow-x-hidden">
       <SEO title={meta.title} description={meta.description} canonical={meta.path} />
-      <ServiceDetailHero {...bfsiHero} />
+      <ServiceDetailHero {...bfsiHero} category="Industries" />
 
       <FullScreenSection>
         <IconGridSection
