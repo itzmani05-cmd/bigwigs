@@ -1,21 +1,21 @@
 import Container from "@/components/ui/Container";
-import img1 from "@/assests/events/1000062813.jpg";
-import img2 from "@/assests/events/1000064031.jpg";
-import img3 from "@/assests/events/IMG-20241227-WA0064 - Copy.jpg";
-import img4 from "@/assests/events/IMG-20241227-WA0190_1.jpg";
-import img5 from "@/assests/events/IMG-20241227-WA0210_1.jpg";
-import img6 from "@/assests/events/IMG20241029161613.jpg";
-import img7 from "@/assests/events/IMG_20250704_161055.jpg";
-import img8 from "@/assests/events/IMG_20250704_193055.jpg";
-import img9 from "@/assests/events/WhatsApp Image 2025-12-18 at 10.11.40 PM.jpeg";
-import img10 from "@/assests/events/WhatsApp Image 2026-08-22 at 15.21.51 (1).jpeg";
-import img11 from "@/assests/events/WhatsApp Image 2026-08-22 at 15.21.51.jpeg";
-import img12 from "@/assests/events/WhatsApp Image 2026-08-22 at 18.40.04.jpeg";
-import img13 from "@/assests/events/WhatsApp Image 2026-08-22 at 2.45.55 PM.jpeg";
-import img14 from "@/assests/events/WhatsApp Image 2026-08-22 at 2.46.57 PM.jpeg";
-import img15 from "@/assests/events/WhatsApp Image 2026-08-22 at 2.49.11 PM.jpeg";
-import img16 from "@/assests/events/WhatsApp Image 2026-08-22 at 2.52.33 PM.jpeg";
-import img17 from "@/assests/events/WhatsApp Image 2026-08-22 at 2.56.38 PM.jpeg";
+import img1 from "@/assests/Events/1000062813.jpg";
+import img2 from "@/assests/Events/1000064031.jpg";
+import img3 from "@/assests/Events/IMG-20241227-WA0064 - Copy.jpg";
+import img4 from "@/assests/Events/IMG-20241227-WA0190_1.jpg";
+import img5 from "@/assests/Events/IMG-20241227-WA0210_1.jpg";
+import img6 from "@/assests/Events/IMG20241029161613.jpg";
+import img7 from "@/assests/Events/IMG_20250704_161055.jpg";
+import img8 from "@/assests/Events/IMG_20250704_193055.jpg";
+import img9 from "@/assests/Events/WhatsApp Image 2025-12-18 at 10.11.40 PM.jpeg";
+import img10 from "@/assests/Events/WhatsApp Image 2026-08-22 at 15.21.51 (1).jpeg";
+import img11 from "@/assests/Events/WhatsApp Image 2026-08-22 at 15.21.51.jpeg";
+import img12 from "@/assests/Events/WhatsApp Image 2026-08-22 at 18.40.04.jpeg";
+import img13 from "@/assests/Events/WhatsApp Image 2026-08-22 at 2.45.55 PM.jpeg";
+import img14 from "@/assests/Events/WhatsApp Image 2026-08-22 at 2.46.57 PM.jpeg";
+import img15 from "@/assests/Events/WhatsApp Image 2026-08-22 at 2.49.11 PM.jpeg";
+import img16 from "@/assests/Events/WhatsApp Image 2026-08-22 at 2.52.33 PM.jpeg";
+import img17 from "@/assests/Events/WhatsApp Image 2026-08-22 at 2.56.38 PM.jpeg";
 
 const rowOne = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 const rowTwo = [img10, img11, img12, img13, img14, img15, img16, img17];
@@ -56,7 +56,7 @@ function MarqueeRow({ photos, direction }: { photos: string[]; direction: "left"
 
 export default function EventsGallery() {
   return (
-    <section id="events" className="relative w-full scroll-mt-24 overflow-hidden py-14 lg:py-20">
+    <section id="Events" className="relative w-full scroll-mt-24 overflow-hidden py-14 lg:py-20">
       <Container className="relative z-10">
         <div className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
