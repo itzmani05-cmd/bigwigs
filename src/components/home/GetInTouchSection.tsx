@@ -6,13 +6,14 @@ import {
   Mail,
   Phone,
   PenLine,
-  Headphones,
   ArrowRight,
   CheckCircle2,
+  Loader2,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
 import FormField from "@/components/apply/FormField";
+import { API_BASE } from "@/config/api";
 
 interface GetInTouchState {
   name: string;
@@ -33,6 +34,8 @@ const EMPTY_FORM: GetInTouchState = {
 export default function GetInTouchSection() {
   const [form, setForm] = useState<GetInTouchState>(EMPTY_FORM);
   const [errors, setErrors] = useState<Partial<Record<keyof GetInTouchState, string>>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const setField = <K extends keyof GetInTouchState>(name: K, value: GetInTouchState[K]) => {
@@ -50,12 +53,33 @@ export default function GetInTouchSection() {
     return nextErrors;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const nextErrors = validate();
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
-    setIsSubmitted(true);
+
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch(`${API_BASE}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        setSubmitError(data?.error ?? "Something went wrong sending your message. Please try again.");
+        setIsSubmitting(false);
+        return;
+      }
+      setIsSubmitted(true);
+    } catch {
+      setSubmitError("We couldn't reach our servers. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -71,9 +95,8 @@ export default function GetInTouchSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-          className="mx-auto max-w-[1300px] overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_30px_70px_-30px_rgba(15,23,42,0.2)] lg:grid lg:grid-cols-[1.6fr_1fr]"
+          className="mx-auto max-w-3xl overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_30px_70px_-30px_rgba(15,23,42,0.2)]"
         >
-          {/* left: form */}
           <div className="p-6 sm:p-10 lg:p-12">
             {isSubmitted ? (
               <div className="flex h-full flex-col items-center justify-center py-16 text-center">
@@ -166,94 +189,38 @@ export default function GetInTouchSection() {
                     error={errors.message}
                   />
 
+                  {submitError && (
+                    <div className="rounded-2xl border border-rose-200 bg-rose-50 px-5 py-4 text-sm font-medium text-rose-600">
+                      {submitError}
+                    </div>
+                  )}
+
                   <MagneticButton
                     as="button"
                     type="submit"
+                    disabled={isSubmitting}
                     magnetic={false}
-                    className="mt-2 inline-flex w-fit items-center gap-3 rounded-full bg-brand-blue-500 py-2 pl-6 pr-2 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none"
+                    className="mt-2 inline-flex w-fit items-center gap-3 rounded-full bg-brand-blue-500 py-2 pl-6 pr-2 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 disabled:cursor-not-allowed disabled:opacity-70 select-none"
                   >
-                    <span>Submit Now</span>
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-brand-blue-600">
-                      <ArrowRight size={16} />
-                    </span>
+                    {isSubmitting ? (
+                      <>
+                        <span>Submitting...</span>
+                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-brand-blue-600">
+                          <Loader2 size={16} className="animate-spin" />
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Submit Now</span>
+                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-brand-blue-600">
+                          <ArrowRight size={16} />
+                        </span>
+                      </>
+                    )}
                   </MagneticButton>
                 </form>
               </>
             )}
-          </div>
-
-          {/* right: contact info */}
-          <div className="border-t border-slate-100 bg-slate-50/60 p-6 sm:p-10 lg:border-l lg:border-t-0 lg:p-10">
-            <h3 className="text-xl font-bold text-slate-900">Let&apos;s Connect</h3>
-            <span aria-hidden className="mt-2 block h-0.5 w-8 rounded-full bg-brand-blue-500" />
-            <p className="mt-3 text-sm leading-relaxed text-slate-500">
-              We&apos;re here to answer your questions and help you find the right solutions.
-            </p>
-
-            <div className="mt-6 flex items-start gap-3">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-600">
-                <Phone size={18} strokeWidth={1.75} />
-              </span>
-              <div className="min-w-0">
-                <p className="text-sm font-bold text-brand-blue-600">Call Us</p>
-                <div className="mt-1.5 flex flex-wrap items-start gap-x-4 gap-y-2">
-                  <div>
-                    <span className="block text-[11px] text-slate-400">Business Enquiries</span>
-                    <a
-                      href="tel:+919344769914"
-                      className="text-xs font-semibold text-slate-900 hover:text-brand-blue-600"
-                    >
-                      +91 93447 69914
-                    </a>
-                  </div>
-                  <span aria-hidden className="mt-1 h-7 w-px bg-slate-200" />
-                  <div>
-                    <span className="block text-[11px] text-slate-400">Career Enquiries</span>
-                    <a
-                      href="tel:+916382473625"
-                      className="text-xs font-semibold text-slate-900 hover:text-brand-blue-600"
-                    >
-                      +91 63824 73625
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-5 flex items-start gap-3">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-600">
-                <Mail size={18} strokeWidth={1.75} />
-              </span>
-              <div className="min-w-0">
-                <p className="text-sm font-bold text-brand-blue-600">Mail Us</p>
-                <a
-                  href="mailto:vignesh@bigwigstech.com"
-                  className="mt-1 block text-xs font-semibold text-slate-900 hover:text-brand-blue-600 sm:text-sm"
-                >
-                  vignesh@bigwigstech.com
-                </a>
-              </div>
-            </div>
-
-            <div className="mt-6 rounded-2xl bg-brand-blue-50/70 p-5">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-brand-blue-600 shadow-sm">
-                <Headphones size={18} strokeWidth={1.75} />
-              </span>
-              <p className="mt-3 text-sm font-bold text-slate-900">We&apos;re Ready to Help!</p>
-              <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
-                Welcome to Bigwigs Technologies. If you need any information regarding our
-                services, feel free to reach out. For job related queries, please visit our
-                Careers page.
-              </p>
-              <MagneticButton
-                href="/careers"
-                magnetic={false}
-                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-sm border border-brand-blue-500 bg-white px-5 py-2.5 text-xs font-semibold text-brand-blue-600 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-500 hover:text-white select-none"
-              >
-                <span>Visit Careers Page</span>
-                <ArrowRight size={14} />
-              </MagneticButton>
-            </div>
           </div>
         </motion.div>
       </Container>

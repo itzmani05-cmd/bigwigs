@@ -76,6 +76,7 @@ export default function ApplyForm() {
     const nextErrors = validate();
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
+    if (resumeError) return;
 
     setSubmitError(null);
     setIsSubmitting(true);
@@ -192,7 +193,7 @@ export default function ApplyForm() {
         </FormSection>
 
         <FormSection icon={CheckCircle2} title="Resume">
-          <ResumeUpload file={resume} onChange={setResume} error={resumeError} />
+          <ResumeUpload file={resume} onChange={setResume} error={resumeError} onError={setResumeError} />
         </FormSection>
 
         {submitError && (

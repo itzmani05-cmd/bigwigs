@@ -5,22 +5,32 @@ interface ResumeUploadProps {
   file: File | null;
   onChange: (file: File | null) => void;
   error?: string;
+  onError?: (message: string | undefined) => void;
 }
 
 const ACCEPTED = [".pdf", ".doc", ".docx"];
+export const MAX_RESUME_BYTES = 500 * 1024;
 
-function formatSize(bytes: number) {
+export function formatSize(bytes: number) {
   if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
-export default function ResumeUpload({ file, onChange, error }: ResumeUploadProps) {
+export default function ResumeUpload({ file, onChange, error, onError }: ResumeUploadProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
 
   const handleFiles = (files: FileList | null) => {
     const picked = files?.[0];
-    if (picked) onChange(picked);
+    if (!picked) return;
+    if (picked.size > MAX_RESUME_BYTES) {
+      onError?.(`File is too large (${formatSize(picked.size)}). Max size is 500KB.`);
+      onChange(null);
+      if (inputRef.current) inputRef.current.value = "";
+      return;
+    }
+    onError?.(undefined);
+    onChange(picked);
   };
 
   return (
@@ -90,7 +100,7 @@ export default function ResumeUpload({ file, onChange, error }: ResumeUploadProp
               <p className="text-sm font-semibold text-slate-700">
                 <span className="text-brand-blue-600">Click to upload</span> or drag & drop
               </p>
-              <p className="mt-1 text-xs text-slate-400">PDF, DOC, DOCX &middot; Max size 10MB</p>
+              <p className="mt-1 text-xs text-slate-400">PDF, DOC, DOCX &middot; Max size 500KB</p>
             </div>
             <span className="mt-1 inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-slate-600 transition-colors duration-300 group-hover:border-brand-blue-400 group-hover:text-brand-blue-600">
               Browse Files
@@ -101,7 +111,7 @@ export default function ResumeUpload({ file, onChange, error }: ResumeUploadProp
       {error ? (
         <span className="text-xs font-medium text-rose-500">{error}</span>
       ) : (
-        <span className="text-xs text-slate-400">We accept PDF, DOC, and DOCX files up to 10MB.</span>
+        <span className="text-xs text-slate-400">We accept PDF, DOC, and DOCX files up to 500KB.</span>
       )}
     </div>
   );

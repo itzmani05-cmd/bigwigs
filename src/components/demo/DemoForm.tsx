@@ -13,10 +13,12 @@ import {
   MessageSquare,
   CheckCircle2,
   ArrowRight,
+  Loader2,
   type LucideIcon,
 } from "lucide-react";
 import MagneticButton from "@/components/ui/MagneticButton";
 import FormField from "@/components/apply/FormField";
+import { API_BASE } from "@/config/api";
 
 interface DemoFormState {
   firstName: string;
@@ -85,6 +87,8 @@ function FormSection({ icon: Icon, title, children }: { icon: LucideIcon; title:
 export default function DemoForm() {
   const [form, setForm] = useState<DemoFormState>(EMPTY_FORM);
   const [errors, setErrors] = useState<Partial<Record<keyof DemoFormState, string>>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const setField = <K extends keyof DemoFormState>(name: K, value: DemoFormState[K]) => {
@@ -104,12 +108,33 @@ export default function DemoForm() {
     return nextErrors;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const nextErrors = validate();
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
-    setIsSubmitted(true);
+
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch(`${API_BASE}/demo/request`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        setSubmitError(data?.error ?? "Something went wrong submitting your request. Please try again.");
+        setIsSubmitting(false);
+        return;
+      }
+      setIsSubmitted(true);
+    } catch {
+      setSubmitError("We couldn't reach our servers. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -284,14 +309,30 @@ export default function DemoForm() {
           {errors.consent && <span className="mt-1.5 block text-xs font-medium text-rose-500">{errors.consent}</span>}
         </div>
 
+        {submitError && (
+          <div className="rounded-2xl border border-rose-200 bg-rose-50 px-5 py-4 text-sm font-medium text-rose-600">
+            {submitError}
+          </div>
+        )}
+
         <MagneticButton
           as="button"
           type="submit"
+          disabled={isSubmitting}
           magnetic={false}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-blue-500 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 select-none sm:w-auto"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-blue-500 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_10px_24px_-8px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-blue-600 disabled:cursor-not-allowed disabled:opacity-70 select-none sm:w-auto"
         >
-          <span>Schedule My Demo</span>
-          <ArrowRight size={16} />
+          {isSubmitting ? (
+            <>
+              <Loader2 size={16} className="animate-spin" />
+              <span>Submitting...</span>
+            </>
+          ) : (
+            <>
+              <span>Schedule My Demo</span>
+              <ArrowRight size={16} />
+            </>
+          )}
         </MagneticButton>
       </form>
     </div>
