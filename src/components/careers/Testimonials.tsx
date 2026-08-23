@@ -55,7 +55,7 @@ export default function Testimonials() {
           onMouseLeave={() => setIsPaused(false)}
           className="relative mx-auto mt-10 max-w-4xl"
         >
-          <div className="relative min-h-[420px] overflow-hidden sm:min-h-[300px]">
+          <motion.div layout transition={{ duration: 0.4, ease: [0.215, 0.61, 0.355, 1] }} className="relative">
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
@@ -110,7 +110,7 @@ export default function Testimonials() {
                 </div>
               </motion.div>
             </AnimatePresence>
-          </div>
+          </motion.div>
         </div>
 
         <div className="mt-6 flex items-center justify-center gap-2">

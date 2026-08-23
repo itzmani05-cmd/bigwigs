@@ -4,6 +4,7 @@ import OurStory from "@/components/about/OurStory";
 import MissionVision from "@/components/about/MissionVision";
 import JourneyTimeline from "@/components/about/JourneyTimeline";
 import WhyBigwigs from "@/components/about/WhyBigwigs";
+import EventsGallery from "@/components/about/EventsGallery";
 import Expertise from "@/components/about/Expertise";
 import GlobalImpact from "@/components/about/GlobalImpact";
 import CertificationsGrid from "@/components/certifications/CertificationsGrid";
@@ -24,6 +25,7 @@ export default function About() {
       <MissionVision />
       <JourneyTimeline />
       <WhyBigwigs />
+      <EventsGallery />
       <Expertise />
       <GlobalImpact />
       <CertificationsGrid />

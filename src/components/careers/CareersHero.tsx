@@ -100,7 +100,7 @@ export default function CareersHero() {
               globally.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6">
+            <motion.div variants={itemVariants} className="mt-6 flex flex-col gap-3">
               {HERO_POINTS.map((point) => (
                 <div key={point.label} className="flex items-center gap-2.5">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-600">
