@@ -42,10 +42,12 @@ import ScrollToTop from "@/components/ScrollToTop";
 import ChatBot from "@/components/chatbot/ChatBot";
 import OrganizationJsonLd from "@/components/seo/OrganizationJsonLd";
 import WebSiteJsonLd from "@/components/seo/WebSiteJsonLd";
+import LaunchGate from "@/components/LaunchGate";
 
 export default function App() {
   return (
     <MotionConfig reducedMotion="user">
+      <LaunchGate>
       <OrganizationJsonLd />
       <WebSiteJsonLd />
       <ScrollToHash />
@@ -100,6 +102,7 @@ export default function App() {
       <CookieConsent />
       <ScrollToTop />
       <ChatBot />
+      </LaunchGate>
     </MotionConfig>
   );
 }
