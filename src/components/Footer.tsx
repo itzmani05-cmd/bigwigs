@@ -221,20 +221,6 @@ export default function Footer() {
                 className="h-19 w-auto object-contain sm:h-21"
               />
             </HashLink>
-          
-            <div className="mt-6 flex items-center gap-3">
-              {SOCIAL_LINKS.map(({ Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className={`flex h-11 w-11 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-[#A1A1AA] transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500/50 hover:text-brand-blue-400 hover:shadow-[0_0_20px_2px_rgba(37,99,235,0.35)] ${focusRing}`}
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
-
             <ul className="mt-7 flex flex-col gap-4">
               {CONTACT_INFO.map((item, i) => {
                 const Icon = item.icon;
@@ -266,6 +252,20 @@ export default function Footer() {
                 );
               })}
             </ul>
+            <div className="mt-6 flex items-center gap-3">
+              {SOCIAL_LINKS.map(({ Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className={`flex h-11 w-11 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-[#A1A1AA] transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-blue-500/50 hover:text-brand-blue-400 hover:shadow-[0_0_20px_2px_rgba(37,99,235,0.35)] ${focusRing}`}
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+
+            
           </ScrollStaggerItem>
 
           {/* Columns 2–4 — link groups */}
