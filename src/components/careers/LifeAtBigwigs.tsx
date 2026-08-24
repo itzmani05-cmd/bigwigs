@@ -1,35 +1,11 @@
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 import { useParallax } from "@/hooks/useParallax";
 import { lifeFeatures } from "./lifeAtBigwigsData";
-import pic1 from "@/assests/lifeatbigwigs/pic1.jpg";
-import pic2 from "@/assests/lifeatbigwigs/pic2.jpg";
-import pic3 from "@/assests/lifeatbigwigs/pic3.jpg";
-import pic4 from "@/assests/lifeatbigwigs/pic4.jpg";
-import pic5 from "@/assests/lifeatbigwigs/pic5.jpeg";
-import pic6 from "@/assests/lifeatbigwigs/pic6.jpeg";
-import pic7 from "@/assests/lifeatbigwigs/pic7.jpeg";
-import pic8 from "@/assests/lifeatbigwigs/pic8.jpeg";
-import pic9 from "@/assests/lifeatbigwigs/pic9.jpeg";
-import pic10 from "@/assests/lifeatbigwigs/pic10.jpg";
-import pic11 from "@/assests/lifeatbigwigs/pic11.jpeg";
-
-const lifeAtBigwigsImages = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11];
-
-const SLIDE_INTERVAL_MS = 3000;
+import lifeAtBigwigsVideo from "@/assests/LifeAtBigwigs.mp4";
 
 export default function LifeAtBigwigs() {
-  const [activeSlide, setActiveSlide] = useState(0);
   const { ref: photoRef, y: photoY } = useParallax(20);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % lifeAtBigwigsImages.length);
-    }, SLIDE_INTERVAL_MS);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <section id="life-at-bigwigs" className="relative w-full scroll-mt-24 overflow-hidden py-14 lg:py-20">
@@ -42,18 +18,15 @@ export default function LifeAtBigwigs() {
             style={{ y: photoY }}
             className="group relative aspect-[4/3] overflow-hidden rounded-[28px] shadow-[0_15px_50px_rgba(15,23,42,0.1)]"
           >
-            <AnimatePresence mode="sync">
-              <motion.img
-                key={activeSlide}
-                src={lifeAtBigwigsImages[activeSlide]}
-                alt="Life at Bigwigs Technologies — team collaborating"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            </AnimatePresence>
+            <video
+              src={lifeAtBigwigsVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              aria-label="Life at Bigwigs Technologies — team culture highlights"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
           </ScrollReveal>
 
