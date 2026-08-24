@@ -39,6 +39,12 @@ import ourStoryImg from "@/assests/aboutNavbar/ourStory.png";
 import ourExpertiseImg from "@/assests/aboutNavbar/OurExpertise.png";
 import certificationsImg from "@/assests/aboutNavbar/Certifications.png";
 import eventImg from "@/assests/aboutNavbar/event.png";
+import medicalImageAnnotationImg from "@/assests/serviceNavbar/medicalImageAnnotation.png";
+import aiDataAnnotationImg from "@/assests/serviceNavbar/aidataannotation.png";
+import generativeAiServiceImg from "@/assests/serviceNavbar/generativeaiservice.png";
+import translationLocalizationImg from "@/assests/serviceNavbar/translation&localization.png";
+import transcriptionServiceImg from "@/assests/serviceNavbar/transcriptionservice.png";
+import voiceSpeechImg from "@/assests/serviceNavbar/voice&speech.png";
 
 export interface MegaFeature {
   icon: LucideIcon;
@@ -132,31 +138,37 @@ export const navItems: NavItem[] = [
           icon: Stethoscope,
           title: "Medical AI",
           description: "Clinically-aware imaging models & workflows.",
+          image: medicalImageAnnotationImg,
         },
         {
           icon: ScanEye,
           title: "AI Data Annotation",
           description: "Image, video, LiDAR, and OCR annotation for computer vision.",
+          image: aiDataAnnotationImg,
         },
         {
           icon: Workflow,
           title: "Generative AI Services",
           description: "LLMs, AI agents, RAG, and intelligent workflow automation.",
+          image: generativeAiServiceImg,
         },
         {
           icon: Languages,
           title: "Translation & Localization",
           description: "Multilingual content, software, and web experiences.",
+          image: translationLocalizationImg,
         },
         {
           icon: Mic,
           title: "Transcription Services",
           description: "AI-assisted, human-reviewed audio and video transcription.",
+          image: transcriptionServiceImg,
         },
         {
           icon: AudioLines,
           title: "Voice & Speech Data Collection",
           description: "Enterprise speech datasets for voice AI and conversational AI.",
+          image: voiceSpeechImg,
         },
       ],
       cta: { label: "Explore all services", href: "/services" },
