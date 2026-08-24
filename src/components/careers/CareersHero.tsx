@@ -100,13 +100,13 @@ export default function CareersHero() {
               globally.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="mt-6 grid grid-cols-3 gap-x-3 gap-y-2">
+            <motion.div variants={itemVariants} className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-x-3 sm:gap-y-2">
               {HERO_POINTS.map((point) => (
-                <div key={point.label} className="flex items-start gap-2">
+                <div key={point.label} className="flex min-w-0 items-start gap-2">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-600">
                     <point.icon size={16} strokeWidth={1.75} />
                   </span>
-                  <span className="text-sm font-semibold leading-snug text-slate-700">{point.label}</span>
+                  <span className="min-w-0 text-sm font-semibold leading-snug text-slate-700">{point.label}</span>
                 </div>
               ))}
             </motion.div>
