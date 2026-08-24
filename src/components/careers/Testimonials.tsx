@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { User } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/scroll";
 import logo from "@/assests/logo.png";
 import { testimonials } from "./testimonialsData";
 
@@ -31,7 +32,7 @@ export default function Testimonials() {
       />
 
       <Container className="relative z-10">
-        <div className="relative">
+        <ScrollReveal direction="up" className="relative">
           <div className="mx-auto max-w-xl text-center">
             <div className="flex items-center justify-center gap-3">
               <span aria-hidden className="h-px w-8 bg-brand-blue-200" />
@@ -48,21 +49,25 @@ export default function Testimonials() {
               impact at Bigwigs Technologies.
             </p>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div
+        <ScrollReveal
+          direction="none"
+          scale
+          duration={0.7}
+          delay={0.1}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           className="relative mx-auto mt-10 max-w-4xl"
         >
-          <motion.div layout transition={{ duration: 0.4, ease: [0.215, 0.61, 0.355, 1] }} className="relative">
+          <motion.div layout transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }} className="relative">
             <AnimatePresence mode="wait">
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -30 }}
-                transition={{ duration: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="relative overflow-hidden rounded-[28px] border border-slate-300 bg-white p-6 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:p-10 lg:p-12"
               >
                 <div
@@ -111,7 +116,7 @@ export default function Testimonials() {
               </motion.div>
             </AnimatePresence>
           </motion.div>
-        </div>
+        </ScrollReveal>
 
         <div className="mt-6 flex items-center justify-center gap-2">
           {testimonials.map((t, i) => (

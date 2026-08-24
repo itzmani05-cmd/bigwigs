@@ -1,25 +1,27 @@
-import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 import { qualityFlowStages, qualityFlowBadges } from "./content/quality";
 
 export default function QualityFlowVisual() {
   return (
     <div className="relative mx-auto w-full max-w-[380px]">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.94 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+      <ScrollReveal
+        direction="none"
+        scale
+        duration={0.6}
+        as="div"
         className="relative flex flex-col items-center gap-1.5 rounded-[28px] border border-slate-200 bg-white px-6 py-8 shadow-[0_24px_60px_-28px_rgba(15,23,42,0.25)]"
       >
+        <ScrollStagger staggerDelay={0.1} delayChildren={0.05} amount={0.3} className="flex w-full flex-col items-center gap-1.5">
         {qualityFlowStages.map((stage, i) => {
           const Icon = stage.icon;
           const isLast = i === qualityFlowStages.length - 1;
           return (
-            <motion.div
+            <ScrollStaggerItem
               key={stage.label}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.15 + i * 0.1, ease: [0.215, 0.61, 0.355, 1] }}
+              direction="up"
+              distance={20}
+              duration={0.4}
               className="flex w-full flex-col items-center gap-1.5"
             >
               <div
@@ -41,26 +43,29 @@ export default function QualityFlowVisual() {
                 </span>
               </div>
               {!isLast && <ArrowDown aria-hidden size={14} className="text-slate-300" />}
-            </motion.div>
+            </ScrollStaggerItem>
           );
         })}
-      </motion.div>
+        </ScrollStagger>
+      </ScrollReveal>
 
       {qualityFlowBadges.map((badge, i) => {
         const Icon = badge.icon;
         return (
-          <motion.div
+          <ScrollReveal
             key={badge.label}
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.6 + i * 0.12, ease: [0.215, 0.61, 0.355, 1] }}
+            as="div"
+            direction="none"
+            scale
+            duration={0.4}
+            delay={0.3 + i * 0.12}
             className={`absolute z-10 hidden max-w-[9.5rem] items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-[0_16px_30px_-16px_rgba(15,23,42,0.3)] sm:flex ${badge.position}`}
           >
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-blue-50 text-brand-blue-600">
               <Icon size={14} strokeWidth={1.75} />
             </span>
             <span className="text-[11px] font-bold leading-tight text-slate-700">{badge.label}</span>
-          </motion.div>
+          </ScrollReveal>
         );
       })}
     </div>

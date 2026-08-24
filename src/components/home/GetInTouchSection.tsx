@@ -94,7 +94,7 @@ export default function GetInTouchSection() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto max-w-3xl overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_30px_70px_-30px_rgba(15,23,42,0.2)]"
         >
           <div className="p-6 sm:p-10 lg:p-12">
@@ -103,7 +103,7 @@ export default function GetInTouchSection() {
                 <motion.span
                   initial={{ scale: 0.6, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-green-50 text-brand-green-600"
                 >
                   <CheckCircle2 size={32} strokeWidth={1.5} />

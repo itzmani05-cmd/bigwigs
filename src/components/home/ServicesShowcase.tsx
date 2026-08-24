@@ -23,7 +23,7 @@ function ShowcaseCard({ service, index }: { service: CoreService; index: number 
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.5, delay: (index % 6) * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
+      transition={{ duration: 0.5, delay: (index % 6) * 0.06, ease: [0.16, 1, 0.3, 1] }}
       className="h-full w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
     >
       <div

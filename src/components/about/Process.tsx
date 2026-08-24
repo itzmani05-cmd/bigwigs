@@ -53,7 +53,7 @@ export default function Process() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="relative"
               >
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-500">

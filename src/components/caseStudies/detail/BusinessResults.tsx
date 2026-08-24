@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { TrendingUp } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem, STAGGER } from "@/components/scroll";
 import type { CaseStudy } from "../caseStudiesData";
 
 export default function BusinessResults({ study }: { study: CaseStudy }) {
@@ -25,28 +26,28 @@ export default function BusinessResults({ study }: { study: CaseStudy }) {
           />
 
           <div className="relative z-10">
-            <div className="flex items-center gap-2">
-              <TrendingUp size={16} className="text-brand-blue-300" />
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-300 sm:text-sm">
-                Business Results
-              </span>
-            </div>
-            <h2 className="mt-3 max-w-lg text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-              The Measurable Impact
-            </h2>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
-              Beyond the delivery metrics, this engagement moved the needle on what {study.client} could do
-              with the data — faster decisions, fewer manual reviews, and a model pipeline built to scale.
-            </p>
+            <ScrollReveal>
+              <div className="flex items-center gap-2">
+                <TrendingUp size={16} className="text-brand-blue-300" />
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-300 sm:text-sm">
+                  Business Results
+                </span>
+              </div>
+              <h2 className="mt-3 max-w-lg text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+                The Measurable Impact
+              </h2>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
+                Beyond the delivery metrics, this engagement moved the needle on what {study.client} could do
+                with the data — faster decisions, fewer manual reviews, and a model pipeline built to scale.
+              </p>
+            </ScrollReveal>
 
-            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
-              {study.businessResults.map((result, i) => (
-                <motion.div
+            <ScrollStagger staggerDelay={STAGGER.base} className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
+              {study.businessResults.map((result) => (
+                <ScrollStaggerItem
                   key={result.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
+                  distance={20}
+                  duration={0.5}
                   className="rounded-2xl border border-white/10 bg-white/5 p-5"
                 >
                   <span className="block text-3xl font-extrabold tracking-tight text-white">{result.value}</span>
@@ -54,9 +55,9 @@ export default function BusinessResults({ study }: { study: CaseStudy }) {
                   {result.description && (
                     <p className="mt-2 text-xs leading-relaxed text-slate-400">{result.description}</p>
                   )}
-                </motion.div>
+                </ScrollStaggerItem>
               ))}
-            </div>
+            </ScrollStagger>
           </div>
         </div>
       </Container>

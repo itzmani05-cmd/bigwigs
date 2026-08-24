@@ -3,7 +3,7 @@ import type { Variants } from "framer-motion";
 /** Shared viewport config: animate once, trigger a little before full entry. */
 export const viewportOnce = { once: true, amount: 0.15 } as const;
 
-const premiumEase = [0.22, 1, 0.36, 1] as const;
+const premiumEase = [0.16, 1, 0.3, 1] as const;
 
 /** Standard section entrance — fade + rise. */
 export const sectionVariants: Variants = {

@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 import { qualitySecurity } from "./content/quality";
 
 export default function QualitySecurityPanels() {
@@ -9,7 +9,7 @@ export default function QualitySecurityPanels() {
   return (
     <section className="relative w-full overflow-hidden bg-white py-16 lg:py-20">
       <Container className="relative z-10">
-        <div className="mx-auto max-w-xl text-center">
+        <ScrollReveal direction="up" distance={24} duration={0.6} className="mx-auto max-w-xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -20,18 +20,17 @@ export default function QualitySecurityPanels() {
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             {qualitySecurity.heading}
           </h2>
-        </div>
+        </ScrollReveal>
 
-        <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
-          {panels.map((panel, i) => {
+        <ScrollStagger staggerDelay={0.1} amount={0.3} className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
+          {panels.map((panel) => {
             const Icon = panel.icon;
             return (
-              <motion.div
+              <ScrollStaggerItem
                 key={panel.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.215, 0.61, 0.355, 1] }}
+                direction="up"
+                distance={24}
+                duration={0.5}
                 className="rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-blue-50 text-brand-blue-600">
@@ -46,10 +45,10 @@ export default function QualitySecurityPanels() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </ScrollStaggerItem>
             );
           })}
-        </div>
+        </ScrollStagger>
       </Container>
     </section>
   );

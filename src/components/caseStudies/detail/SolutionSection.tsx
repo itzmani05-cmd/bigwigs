@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, Database, ScanSearch, ShieldCheck, Send } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem, STAGGER } from "@/components/scroll";
 import type { CaseStudy } from "../caseStudiesData";
 
 const FLOW_NODES = [
@@ -16,11 +17,11 @@ export default function SolutionSection({ study }: { study: CaseStudy }) {
       <Container className="relative z-10">
         <div className="mx-auto grid max-w-[1300px] grid-cols-1 items-center gap-12 lg:grid-cols-[38%_62%] lg:gap-14">
           {/* LEFT — abstract solution flow diagram */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+          <ScrollReveal
+            direction="left"
+            distance={24}
+            duration={0.6}
+            amount={0.4}
             className="relative mx-auto w-full max-w-[340px] rounded-[28px] border border-slate-200 bg-white p-8 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]"
           >
             <div className="relative flex flex-col items-center gap-0">
@@ -44,37 +45,41 @@ export default function SolutionSection({ study }: { study: CaseStudy }) {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </ScrollReveal>
 
           {/* RIGHT */}
           <div>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
-              Our Solution
-            </span>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              How Bigwigs Delivered
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-500 sm:text-lg">
-              {study.solution}
-            </p>
+            <ScrollReveal direction="right" distance={24} duration={0.6} amount={0.4}>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
+                Our Solution
+              </span>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                How Bigwigs Delivered
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-500 sm:text-lg">
+                {study.solution}
+              </p>
+            </ScrollReveal>
 
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {study.servicesDelivered.map((service, i) => (
-                <motion.div
+            <ScrollStagger
+              staggerDelay={STAGGER.tight}
+              amount={0.4}
+              className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2"
+            >
+              {study.servicesDelivered.map((service) => (
+                <ScrollStaggerItem
                   key={service}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.4, delay: i * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
+                  distance={16}
+                  duration={0.4}
                   className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]"
                 >
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-green-50 text-brand-green-600">
                     <CheckCircle2 size={17} strokeWidth={2} />
                   </span>
                   <span className="text-sm font-bold text-slate-800">{service}</span>
-                </motion.div>
+                </ScrollStaggerItem>
               ))}
-            </div>
+            </ScrollStagger>
           </div>
         </div>
       </Container>

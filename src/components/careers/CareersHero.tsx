@@ -50,7 +50,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
 } as const;
 
 export default function CareersHero() {
@@ -145,7 +145,7 @@ export default function CareersHero() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+                transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute left-1/2 top-1/2 z-10 flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-brand-blue-200 bg-gradient-to-br from-white via-brand-blue-50 to-brand-blue-100/60 shadow-[0_20px_50px_-15px_rgba(37,99,235,0.35)]"
               >
                 <img src={logo} alt="Bigwigs Technologies" className="h-14 w-auto object-contain" />

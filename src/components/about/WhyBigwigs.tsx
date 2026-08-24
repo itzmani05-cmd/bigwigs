@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 import { whyBigwigsFeatures } from "./whyBigwigsData";
 
 /** Splits a feature title into a leading line and a final keyword line
@@ -15,7 +16,7 @@ export default function WhyBigwigs() {
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-b from-orange-50/60 via-orange-50/20 to-white py-10 lg:py-12">
       <Container className="relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <ScrollReveal direction="down" distance={24} className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -26,19 +27,18 @@ export default function WhyBigwigs() {
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Why Bigwigs Technologies?
           </h2>
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-5">
+        <ScrollStagger as="div" staggerDelay={0.07} amount={0.2} className="mt-10 flex flex-wrap justify-center gap-5">
           {whyBigwigsFeatures.map((feature, i) => {
             const Icon = feature.icon;
             const [line1, line2] = splitTitleLines(feature.title);
             return (
-              <motion.div
+              <ScrollStaggerItem
                 key={feature.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.5, delay: i * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
+                as="div"
+                direction="up"
+                distance={28}
                 className="group flex w-full flex-col items-center rounded-[24px] border border-slate-200 bg-white p-7 text-center shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.834rem)] xl:w-[calc(20%-1rem)]"
               >
                 <motion.span
@@ -53,10 +53,10 @@ export default function WhyBigwigs() {
                   <span>{line2 || " "}</span>
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-500">{feature.description}</p>
-              </motion.div>
+              </ScrollStaggerItem>
             );
           })}
-        </div>
+        </ScrollStagger>
       </Container>
     </section>
   );

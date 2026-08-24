@@ -24,7 +24,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
 } as const;
 
 interface FloatingBadge {
@@ -210,7 +210,7 @@ export default function IndustriesHero() {
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white p-4 shadow-[0_20px_50px_-20px_rgba(37,99,235,0.4)] xl:h-28 xl:w-28 xl:p-6"
             >
               <img src={logoMark} alt="" aria-hidden className="h-full w-full object-contain" />
@@ -243,7 +243,7 @@ export default function IndustriesHero() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mt-2 hidden gap-6 rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:p-8"
         >
           {TRUST_ITEMS.map((item) => (

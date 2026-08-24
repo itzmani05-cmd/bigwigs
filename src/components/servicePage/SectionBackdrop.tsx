@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useParallax } from "@/hooks/useParallax";
 
 const DOTS = [
   { left: "6%", top: "22%", size: 5, duration: 7, delay: 0 },
@@ -9,6 +10,8 @@ const DOTS = [
 
 /** Subtle blue-wash + fine-grid backdrop with floating blue dots, used behind service-page sections. */
 export default function SectionBackdrop() {
+  const { ref: clusterRef, y: clusterY } = useParallax(12);
+
   return (
     <>
       <div
@@ -20,10 +23,12 @@ export default function SectionBackdrop() {
         }}
       />
       {/* dotted cluster, top-right */}
-      <div
+      <motion.div
+        ref={clusterRef}
         aria-hidden
         className="pointer-events-none absolute -right-16 -top-10 h-64 w-80 opacity-60"
         style={{
+          y: clusterY,
           backgroundImage: "radial-gradient(#2563EB 1.3px, transparent 1.3px)",
           backgroundSize: "13px 13px",
           WebkitMaskImage: "linear-gradient(to bottom left, black 25%, transparent 75%)",

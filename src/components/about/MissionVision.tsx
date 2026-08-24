@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import { Target, Eye, Gem, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 
 interface ValueItem {
   title: string;
@@ -88,16 +88,20 @@ export default function MissionVision() {
             className="pointer-events-none absolute left-[16.6%] right-[16.6%] top-11 hidden h-px bg-gradient-to-r from-brand-blue-300 via-orange-300 to-purple-300 lg:block"
           />
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {pillars.map((pillar, i) => {
+          <ScrollStagger
+            as="div"
+            staggerDelay={0.1}
+            amount={0.35}
+            className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {pillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
-                <motion.div
+                <ScrollStaggerItem
                   key={pillar.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
+                  as="div"
+                  direction="up"
+                  distance={30}
                   whileHover={{ y: -4 }}
                   className="group relative rounded-[20px] border border-slate-200 bg-white p-7 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-shadow duration-300 ease-out hover:border-slate-300 hover:shadow-[0_16px_40px_rgba(15,23,42,0.1)]"
                 >
@@ -126,10 +130,10 @@ export default function MissionVision() {
                       {pillar.description}
                     </p>
                   )}
-                </motion.div>
+                </ScrollStaggerItem>
               );
             })}
-          </div>
+          </ScrollStagger>
         </div>
       </Container>
     </section>

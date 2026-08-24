@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/scroll";
 
 export default function OurStory() {
   return (
@@ -13,11 +14,12 @@ export default function OurStory() {
       />
 
       <Container className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+        <ScrollReveal
+          direction="up"
+          distance={30}
+          scale
+          duration={0.7}
+          amount={0.4}
           className="relative mx-auto max-w-3xl overflow-hidden rounded-[28px] border border-slate-200 bg-white px-8 py-12 text-center shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:px-14 sm:py-16"
         >
           <span
@@ -48,7 +50,7 @@ export default function OurStory() {
             Today, we serve clients across multiple industries, helping them
             solve complex business challenges through technology.
           </p>
-        </motion.div>
+        </ScrollReveal>
       </Container>
     </section>
   );

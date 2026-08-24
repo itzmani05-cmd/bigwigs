@@ -7,6 +7,7 @@ import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import { SITE_NAME, SITE_URL } from "@/lib/seo/config";
+import { useParallax } from "@/hooks/useParallax";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -15,7 +16,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
 } as const;
 
 interface CtaAction {
@@ -44,6 +45,7 @@ export default function ServiceDetailHero({
 }: ServiceDetailHeroProps) {
   const { pathname } = useLocation();
   const categoryPath = category === "Services" ? "/services" : category === "Industries" ? "/industries" : undefined;
+  const { ref: glowRef, y: glowY } = useParallax(15);
 
   return (
     <section className="relative flex min-h-[calc(100vh-4.75rem)] w-full flex-col items-center justify-center overflow-hidden py-10 lg:min-h-[calc(100vh-5.25rem)] lg:py-14">
@@ -71,8 +73,10 @@ export default function ServiceDetailHero({
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white/40 to-transparent"
       />
       <motion.div
+        ref={glowRef}
         aria-hidden
         className="pointer-events-none absolute -top-24 -left-24 h-[28rem] w-[28rem] rounded-full bg-brand-blue-500/10 blur-[130px]"
+        style={{ y: glowY }}
         animate={{ opacity: [0.5, 0.9, 0.5] }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />

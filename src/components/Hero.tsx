@@ -3,6 +3,7 @@ import { ArrowRight, Users, ShieldCheck, Globe2, Star } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
 import HeroVisualAnimation from "@/components/hero/HeroVisualAnimation";
+import { useParallax } from "@/hooks/useParallax";
 import appenLogo from "/data/trustedPartners/AppenLogo.png";
 import imeritLogo from "/data/trustedPartners/ImeritLogo.jpeg";
 import ivisionLogo from "/data/trustedPartners/IvisionLogo.png";
@@ -55,7 +56,7 @@ const eyebrowVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] },
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
   },
 } as const;
 
@@ -64,7 +65,7 @@ const headingVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] },
+    transition: { duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] },
   },
 } as const;
 
@@ -73,7 +74,7 @@ const descriptionVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] },
+    transition: { duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] },
   },
 } as const;
 
@@ -82,7 +83,7 @@ const statsVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: 0.35, ease: [0.215, 0.61, 0.355, 1] },
+    transition: { duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] },
   },
 } as const;
 
@@ -98,7 +99,7 @@ const buttonVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] },
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
   },
 } as const;
 
@@ -107,7 +108,7 @@ const illustrationVariants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.9, delay: 0.15, ease: [0.215, 0.61, 0.355, 1] },
+    transition: { duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] },
   },
 } as const;
 
@@ -123,6 +124,7 @@ export default function Hero() {
     () => typeof window !== "undefined" && window.matchMedia(MOBILE_QUERY).matches
   );
   const [logoGroupIndex, setLogoGroupIndex] = useState(0);
+  const { ref: visualRef, y: visualY } = useParallax(18);
 
   useEffect(() => {
     const mql = window.matchMedia(MOBILE_QUERY);
@@ -215,9 +217,11 @@ export default function Hero() {
           </div>
 
           <motion.div
+            ref={visualRef}
             variants={illustrationVariants}
             initial="hidden"
             animate="visible"
+            style={{ y: visualY }}
             className="relative mx-auto aspect-[3/2] w-full max-w-[620px] sm:aspect-[6/5] lg:max-w-none min-[1440px]:mx-0 min-[1440px]:max-w-[720px] min-[1440px]:justify-self-end 2xl:max-w-[860px]"
           >
             <HeroVisualAnimation />

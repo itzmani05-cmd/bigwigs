@@ -1,4 +1,6 @@
 import Container from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/scroll";
+import { useParallax } from "@/hooks/useParallax";
 import globalDeliveryMap from "@/assests/worldMap.png";
 
 interface Node {
@@ -9,13 +11,15 @@ interface Node {
 }
 
 export default function GlobalDeliverySection() {
+  const { ref: mapRef, y: mapY } = useParallax(20);
+
   return (
     <section
       id="global-delivery"
       className="relative w-full scroll-mt-14 overflow-hidden bg-slate-50/60 py-16 lg:py-20"
     >
       <Container className="relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <ScrollReveal className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3" aria-hidden="true">
             <span className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold tracking-[0.2em] text-orange-500 uppercase sm:text-sm">
@@ -30,9 +34,17 @@ export default function GlobalDeliverySection() {
             Our global delivery model combines the best talent, advanced technology, and
             agile processes to deliver exceptional results, anywhere in the world.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="relative mx-auto mt-6 w-full max-w-[1200px]">
+        <ScrollReveal
+          ref={mapRef}
+          direction="none"
+          scale
+          duration={0.8}
+          delay={0.1}
+          style={{ y: mapY }}
+          className="relative mx-auto mt-6 w-full max-w-[1200px]"
+        >
           <span className="sr-only">
             Delivery locations: North America (On-site &amp; Nearshore), South America
             (Nearshore Support), Europe (On-site &amp; Nearshore), India (Global Delivery
@@ -46,7 +58,7 @@ export default function GlobalDeliverySection() {
             draggable={false}
           />
 
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

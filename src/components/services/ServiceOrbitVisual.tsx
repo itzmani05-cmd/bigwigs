@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import logo from "@/assests/logo.png";
+import { useParallax } from "@/hooks/useParallax";
 import { serviceOrbitNodes } from "./serviceOrbitData";
 
 const CARD_RADIUS = 40;
@@ -12,8 +13,14 @@ const RING_GRADIENT = `conic-gradient(from 0deg, ${serviceOrbitNodes
   .join(", ")})`;
 
 export default function ServiceOrbitVisual() {
+  const { ref, y } = useParallax(15);
+
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[460px]">
+    <motion.div
+      ref={ref}
+      style={{ y }}
+      className="relative mx-auto aspect-square w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[460px]"
+    >
       {/* soft violet/blue glow behind the whole diagram */}
       <div
         aria-hidden
@@ -71,7 +78,7 @@ export default function ServiceOrbitVisual() {
       <motion.div
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="absolute left-1/2 top-1/2 z-10 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-slate-100 bg-white p-2 text-center shadow-[0_16px_40px_-16px_rgba(37,99,235,0.4)] sm:h-28 sm:w-28"
       >
         <img src={logo} alt="Bigwigs Technologies" className="h-10 w-auto object-contain sm:h-12" />
@@ -89,7 +96,7 @@ export default function ServiceOrbitVisual() {
             key={node.label}
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.15 + i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
+            transition={{ duration: 0.4, delay: 0.15 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             className="absolute z-10 w-[6.5rem] -translate-x-1/2 -translate-y-1/2 sm:w-[7.5rem]"
             style={{ left: `${x}%`, top: `${y}%` }}
           >
@@ -110,6 +117,6 @@ export default function ServiceOrbitVisual() {
           </motion.div>
         );
       })}
-    </div>
+    </motion.div>
   );
 }

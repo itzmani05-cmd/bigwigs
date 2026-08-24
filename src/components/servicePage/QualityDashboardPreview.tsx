@@ -3,6 +3,7 @@ import { Gauge } from "lucide-react";
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
 import SectionBackdrop from "./SectionBackdrop";
+import { ScrollReveal } from "@/components/scroll";
 import { qualityDashboard } from "./content/quality";
 
 export default function QualityDashboardPreview() {
@@ -10,7 +11,7 @@ export default function QualityDashboardPreview() {
     <section className="relative w-full overflow-hidden bg-slate-50/70 py-16 lg:py-20">
       <SectionBackdrop />
       <Container className="relative z-10">
-        <div className="mx-auto max-w-xl text-center">
+        <ScrollReveal direction="up" distance={24} duration={0.6} className="mx-auto max-w-xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -22,13 +23,13 @@ export default function QualityDashboardPreview() {
             {qualityDashboard.heading}
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-500 sm:text-lg">{qualityDashboard.description}</p>
-        </div>
+        </ScrollReveal>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
+        <ScrollReveal
+          direction="none"
+          scale
+          duration={0.6}
+          amount={0.3}
           className="mx-auto mt-12 max-w-xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_60px_-28px_rgba(15,23,42,0.2)]"
         >
           <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50/60 px-6 py-4">
@@ -50,11 +51,12 @@ export default function QualityDashboardPreview() {
                 </div>
                 <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-100">
                   <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${metric.value}%` }}
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: metric.value / 100 }}
                     viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.8, delay: 0.1 + i * 0.1, ease: [0.215, 0.61, 0.355, 1] }}
-                    className="h-full rounded-full bg-gradient-to-r from-brand-blue-400 to-brand-blue-600"
+                    transition={{ duration: 0.8, delay: 0.1 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ transformOrigin: "left" }}
+                    className="h-full w-full rounded-full bg-gradient-to-r from-brand-blue-400 to-brand-blue-600"
                   />
                 </div>
               </div>
@@ -70,7 +72,7 @@ export default function QualityDashboardPreview() {
               {qualityDashboard.cta.label}
             </MagneticButton>
           </div>
-        </motion.div>
+        </ScrollReveal>
       </Container>
     </section>
   );

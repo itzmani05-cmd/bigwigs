@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import {Users2, Globe2, Award } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/scroll";
 import { industriesProcessSteps } from "./industriesProcessData";
 
 function solidFrom(color: string): string {
@@ -11,13 +12,7 @@ export default function IndustriesProcessTimeline() {
   return (
     <section className="relative w-full overflow-hidden bg-slate-50/70 py-16 lg:py-20">
       <Container className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-          className="mx-auto max-w-2xl text-center"
-        >
+        <ScrollReveal direction="up" distance={24} duration={0.6} amount={0.5} className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -32,7 +27,7 @@ export default function IndustriesProcessTimeline() {
             A streamlined process that turns complex challenges into intelligent solutions
             with measurable impact.
           </p>
-        </motion.div>
+        </ScrollReveal>
 
         {/* mobile: vertical stepper */}
         <div className="relative mt-10 lg:hidden">
@@ -41,7 +36,7 @@ export default function IndustriesProcessTimeline() {
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             style={{ transformOrigin: "top" }}
             className="absolute left-6 top-2 bottom-2 w-px border-l-2 border-dashed border-slate-300"
           />
@@ -50,12 +45,14 @@ export default function IndustriesProcessTimeline() {
               const Icon = step.icon;
               const pillBg = solidFrom(step.color);
               return (
-                <motion.div
+                <ScrollReveal
+                  as="div"
                   key={step.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  direction="up"
+                  distance={24}
+                  duration={0.45}
+                  delay={i * 0.08}
+                  amount={0.5}
                   className="relative flex items-start gap-5"
                 >
                   <span
@@ -72,7 +69,7 @@ export default function IndustriesProcessTimeline() {
                     <h3 className="mt-2 text-2xl font-bold text-slate-900">{step.title}</h3>
                     <p className="mt-1 text-sm leading-relaxed text-slate-500">{step.description}</p>
                   </div>
-                </motion.div>
+                </ScrollReveal>
               );
             })}
           </div>
@@ -85,7 +82,7 @@ export default function IndustriesProcessTimeline() {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1, ease: [0.215, 0.61, 0.355, 1] }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             style={{ transformOrigin: "left" }}
             className="absolute left-0 right-0 top-7 h-px border-t-2 border-dashed border-slate-300"
           />
@@ -104,12 +101,14 @@ export default function IndustriesProcessTimeline() {
               const pillBg = solidFrom(step.color);
               const underline = solidFrom(step.color);
               return (
-                <motion.div
+                <ScrollReveal
+                  as="div"
                   key={step.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  direction="up"
+                  distance={24}
+                  duration={0.45}
+                  delay={i * 0.08}
+                  amount={0.4}
                   className="relative flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] transition-transform duration-300 hover:-translate-y-1"
                 >
                   <span
@@ -125,7 +124,7 @@ export default function IndustriesProcessTimeline() {
                   <h3 className="mt-3 text-sm font-bold leading-tight text-slate-900">{step.title}</h3>
                   <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{step.description}</p>
                   <span aria-hidden className={`mt-3 h-0.5 w-8 rounded-full ${underline}`} />
-                </motion.div>
+                </ScrollReveal>
               );
             })}
           </div>

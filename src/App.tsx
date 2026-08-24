@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/scroll/ScrollProgress";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Industries from "@/pages/Industries";
@@ -51,6 +52,7 @@ export default function App() {
       <OrganizationJsonLd />
       <WebSiteJsonLd />
       <ScrollToHash />
+      <ScrollProgress />
       <Navbar />
       <main className="flex-grow">
         <Routes>

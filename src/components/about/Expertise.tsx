@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/scroll";
 import logo from "@/assests/logo.png";
 import { expertiseNodes } from "./expertiseData";
 
@@ -17,12 +18,7 @@ export default function Expertise() {
 
       <Container className="relative z-10">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-10">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-          >
+          <ScrollReveal direction="left" distance={40} duration={0.6} amount={0.4}>
             <div className="flex items-center gap-3">
               <span aria-hidden className="h-px w-8 bg-orange-500/50" />
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -36,7 +32,7 @@ export default function Expertise() {
               End-to-end AI and digital solutions that empower businesses to
               innovate, automate, and scale intelligently.
             </p>
-          </motion.div>
+          </ScrollReveal>
 
           <div className="relative mx-auto aspect-square w-full max-w-[420px] sm:max-w-[500px] lg:max-w-[540px]">
             {/* faint rotating orbit ring */}
@@ -77,7 +73,7 @@ export default function Expertise() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="absolute left-1/2 top-1/2 z-10 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-1 rounded-full border border-brand-blue-100 bg-white/90 p-2 text-center shadow-[0_16px_40px_-16px_rgba(37,99,235,0.4)] backdrop-blur-sm sm:h-24 sm:w-24"
             >
               <img src={logo} alt="Bigwigs Technologies" className="h-7 w-auto object-contain sm:h-8" />
@@ -107,14 +103,18 @@ export default function Expertise() {
                     marginTop: isTop ? "-1.75rem" : isBottom ? "-1.25rem" : undefined,
                     flexDirection: isBottom ? "column-reverse" : "column",
                   }}
-                  animate={{ y: ["0%", "-8%", "0%"] }}
-                  transition={{ duration: 5 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.15 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <span
+                  <motion.span
+                    animate={{ y: ["0%", "-8%", "0%"] }}
+                    transition={{ duration: 5 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
                     className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white ${node.bg} ${node.color} shadow-[0_10px_24px_-10px_rgba(15,23,42,0.35)] sm:h-13 sm:w-13`}
                   >
                     <Icon size={18} strokeWidth={1.75} className="sm:h-5 sm:w-5" />
-                  </span>
+                  </motion.span>
                   <span className="rounded-lg bg-white/85 px-2 py-1 text-center text-[9px] font-bold leading-tight text-slate-700 shadow-sm backdrop-blur-sm sm:text-[10px]">
                     {node.label}
                   </span>

@@ -1,4 +1,5 @@
 import Container from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/scroll";
 import img1 from "@/assests/Events/1000062813.jpg";
 import img2 from "@/assests/Events/1000064031.jpg";
 import img3 from "@/assests/Events/IMG-20241227-WA0064 - Copy.jpg";
@@ -20,12 +21,26 @@ import img17 from "@/assests/Events/WhatsApp Image 2026-08-22 at 2.56.38 PM.jpeg
 const rowOne = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 const rowTwo = [img10, img11, img12, img13, img14, img15, img16, img17];
 
-function MarqueeRow({ photos, direction }: { photos: string[]; direction: "left" | "right" }) {
+function MarqueeRow({
+  photos,
+  direction,
+  revealDirection,
+  delay = 0,
+}: {
+  photos: string[];
+  direction: "left" | "right";
+  revealDirection: "left" | "right";
+  delay?: number;
+}) {
   const track = [...photos, ...photos];
   const animationClass = direction === "left" ? "animate-marquee-left" : "animate-marquee-right";
 
   return (
-    <div
+    <ScrollReveal
+      direction={revealDirection}
+      distance={36}
+      delay={delay}
+      amount={0.15}
       className="relative w-full overflow-hidden"
       style={{
         maskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
@@ -45,12 +60,12 @@ function MarqueeRow({ photos, direction }: { photos: string[]; direction: "left"
               src={photo}
               alt="Bigwigs Technologies team event"
               loading="lazy"
-              className="h-full w-auto object-cover"
+              className="h-full w-auto object-cover transition-transform duration-300 ease-out hover:scale-[1.04]"
             />
           </div>
         ))}
       </div>
-    </div>
+    </ScrollReveal>
   );
 }
 
@@ -58,7 +73,7 @@ export default function EventsGallery() {
   return (
     <section id="Events" className="relative w-full scroll-mt-24 overflow-hidden py-14 lg:py-20">
       <Container className="relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <ScrollReveal direction="up" distance={24} className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-brand-blue-500/40" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
@@ -73,11 +88,11 @@ export default function EventsGallery() {
             A look back at the celebrations, team outings, and get-togethers
             that make Bigwigs feel like home.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="mt-10 space-y-3 sm:mt-12 sm:space-y-4">
-          <MarqueeRow photos={rowOne} direction="left" />
-          <MarqueeRow photos={rowTwo} direction="right" />
+          <MarqueeRow photos={rowOne} direction="left" revealDirection="left" />
+          <MarqueeRow photos={rowTwo} direction="right" revealDirection="right" delay={0.12} />
         </div>
       </Container>
     </section>

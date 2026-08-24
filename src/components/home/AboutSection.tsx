@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ScrollReveal } from "@/components/scroll";
 import {
   ArrowRight,
   Users,
@@ -69,7 +70,7 @@ export default function AboutSection() {
     >
       <Container className="relative z-10">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <div className="lg:order-1">
+          <ScrollReveal direction="left" distance={32} className="lg:order-1">
             <div className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -108,17 +109,17 @@ export default function AboutSection() {
                 <ArrowRight size={16} />
               </MagneticButton>
             </div>
-          </div>
+          </ScrollReveal>
           <div className="relative flex flex-col gap-8 lg:order-2">
             {PILLARS.map((pillar, i) => {
               const Icon = pillar.icon;
               return (
                 <motion.div
                   key={pillar.number}
-                  initial={{ opacity: 0, x: -16 }}
+                  initial={{ opacity: 0, x: 16 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   className="relative flex gap-5 sm:gap-6"
                 >
                   <div className="relative flex-1 overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.25)]">
@@ -169,7 +170,7 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mt-10 grid grid-cols-2 divide-x divide-y divide-slate-100 rounded-2xl border border-slate-200 bg-white shadow-[0_20px_45px_-20px_rgba(15,23,42,0.15)] sm:grid-cols-4 sm:divide-y-0"
         >
           {STATS.map(({ icon: Icon, value, label }) => (

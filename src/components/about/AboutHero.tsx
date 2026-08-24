@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Globe2, Users, ShieldCheck, Zap, BrainCircuit, BarChart3, Code2, Building2 } from "lucide-react";
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
+import { useParallax } from "@/hooks/useParallax";
 
 const worldMapModules = import.meta.glob("/data/aboutPageWorldMap.png", {
   eager: true,
@@ -16,7 +17,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
 } as const;
 
 const heroStats = [
@@ -34,6 +35,8 @@ const featureChips = [
 ];
 
 export default function AboutHero() {
+  const { ref: visualRef, y: visualY } = useParallax(16);
+
   return (
     <section className="relative w-full overflow-hidden bg-white pt-7 pb-10 lg:pt-10 lg:pb-14">
       <Container className="relative z-10">
@@ -80,7 +83,11 @@ export default function AboutHero() {
             </motion.div>
           </motion.div>
 
-          <div className="relative mx-auto hidden w-full max-w-[480px] lg:mr-10 lg:block">
+          <motion.div
+            ref={visualRef}
+            style={{ y: visualY }}
+            className="relative mx-auto hidden w-full max-w-[480px] lg:mr-10 lg:block"
+          >
             <motion.div
               aria-hidden
               className="pointer-events-none absolute -inset-6 rounded-full bg-brand-blue-500/15 blur-[70px]"
@@ -93,7 +100,7 @@ export default function AboutHero() {
               alt="Global network of Bigwigs Technologies AI and data operations"
               initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="relative z-10 h-auto w-full object-contain"
             />
 
@@ -108,14 +115,14 @@ export default function AboutHero() {
                 <span className="text-[11px] font-bold whitespace-nowrap text-slate-700">{chip.label}</span>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mt-5 grid grid-cols-2 divide-x divide-y divide-slate-100 rounded-2xl border border-slate-200 bg-white shadow-[0_20px_45px_-20px_rgba(15,23,42,0.15)] sm:grid-cols-4 sm:divide-y-0"
         >
           {heroStats.map(({ icon: Icon, value, label }) => (

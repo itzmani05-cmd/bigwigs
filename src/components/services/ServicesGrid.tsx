@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionBackdrop from "@/components/servicePage/SectionBackdrop";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 import { servicesGrid, SERVICE_COLOR_THEME } from "./servicesGridData";
 
 export default function ServicesGrid() {
@@ -13,7 +13,7 @@ export default function ServicesGrid() {
     >
       <SectionBackdrop />
       <Container className="relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <ScrollReveal direction="up" distance={28} className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -27,18 +27,18 @@ export default function ServicesGrid() {
           <p className="mt-4 text-base leading-relaxed text-slate-500 sm:text-lg">
             Enterprise AI systems engineered for accuracy, security, and scale — across every domain we serve.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-14 flex flex-wrap justify-center gap-6">
-          {servicesGrid.map((item, i) => {
+        <ScrollStagger staggerDelay={0.08} amount={0.2} className="mt-14 flex flex-wrap justify-center gap-6">
+          {servicesGrid.map((item) => {
             const theme = SERVICE_COLOR_THEME[item.color];
             return (
-              <motion.div
+              <ScrollStaggerItem
                 key={item.name}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: (i % 6) * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
+                direction="up"
+                distance={28}
+                scale
+                duration={0.5}
                 className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] 2xl:w-[calc(25%-1.125rem)]"
               >
                 <Link
@@ -64,10 +64,10 @@ export default function ServicesGrid() {
                     <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                 </Link>
-              </motion.div>
+              </ScrollStaggerItem>
             );
           })}
-        </div>
+        </ScrollStagger>
       </Container>
     </section>
   );

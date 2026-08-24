@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import Container from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/scroll";
 import CaseStudyCard from "./CaseStudyCard";
 import { caseStudies } from "./caseStudiesData";
 
@@ -19,7 +20,7 @@ export default function FeaturedCaseStudies() {
       className="relative w-full scroll-mt-26 overflow-hidden bg-gradient-to-b from-slate-50 via-slate-50/40 to-white py-10 lg:py-12"
     >
       <Container className="relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <ScrollReveal className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -35,9 +36,9 @@ export default function FeaturedCaseStudies() {
             Every engagement is a partnership &mdash; browse how we&rsquo;ve helped teams
             turn raw data into production-grade AI.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
+        <ScrollReveal delay={0.1} className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
           {industries.map((industry) => (
             <button
               key={industry}
@@ -52,7 +53,7 @@ export default function FeaturedCaseStudies() {
               {industry}
             </button>
           ))}
-        </div>
+        </ScrollReveal>
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           {filtered.map((study, i) => (

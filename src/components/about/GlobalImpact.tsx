@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Users, ListChecks, Globe2, Target, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import StatCounter from "@/components/ui/StatCounter";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 
 interface Stat {
   icon: LucideIcon;
@@ -29,7 +30,7 @@ export default function GlobalImpact() {
       />
 
       <Container className="relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <ScrollReveal direction="up" distance={24} className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -40,18 +41,18 @@ export default function GlobalImpact() {
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Our Global Impact
           </h2>
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {stats.map((stat, i) => {
+        <ScrollStagger as="div" staggerDelay={0.08} amount={0.3} className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {stats.map((stat) => {
             const Icon = stat.icon;
             return (
-              <motion.div
+              <ScrollStaggerItem
                 key={stat.label}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
+                as="div"
+                direction="up"
+                distance={28}
+                scale
                 className="flex flex-col items-center rounded-[24px] border border-slate-200 bg-white p-6 text-center shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:p-8"
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-500">
@@ -64,10 +65,10 @@ export default function GlobalImpact() {
                   <StatCounter value={stat.value} decimals={stat.decimals} suffix={stat.suffix} />
                 </span>
                 <span className="mt-1 text-sm font-medium text-slate-500">{stat.label}</span>
-              </motion.div>
+              </ScrollStaggerItem>
             );
           })}
-        </div>
+        </ScrollStagger>
       </Container>
     </section>
   );

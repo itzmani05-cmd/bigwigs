@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 import {
   MapPin,
   Mail,
@@ -153,30 +153,9 @@ const LEGAL_LINKS = [
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const footerRef = useRef<HTMLElement>(null);
-  const [reveal, setReveal] = useState(0);
-
-  useEffect(() => {
-    const node = footerRef.current;
-    if (!node) return;
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setReveal(1);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setReveal(1);
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
 
   return (
-    <footer ref={footerRef} className="relative overflow-hidden bg-slate-950 text-[#A1A1A1]">
+    <footer className="relative overflow-hidden bg-slate-950 text-[#A1A1A1]">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
@@ -224,13 +203,15 @@ export default function Footer() {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
       />
 
-      <Container
-        className="relative z-10 pt-16 sm:pt-20 lg:pt-24 pb-6 transition-[opacity,transform] duration-500 ease-out"
-        style={{ opacity: reveal, transform: `translateY(${(1 - reveal) * 48}px)` }}
-      >
-        <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-12">
+      <Container className="relative z-10 pt-16 sm:pt-20 lg:pt-24 pb-6">
+        <ScrollStagger
+          as="div"
+          amount={0.1}
+          staggerDelay={0.06}
+          className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-12"
+        >
           {/* Column 1 — brand */}
-          <div className="sm:col-span-2 lg:col-span-4">
+          <ScrollStaggerItem as="div" distance={24} duration={0.5} className="sm:col-span-2 lg:col-span-4">
             <HashLink href="/" className={`inline-flex w-fit ${focusRing}`}>
               <img
                 src={FooterLogo}
@@ -285,11 +266,11 @@ export default function Footer() {
                 );
               })}
             </ul>
-          </div>
+          </ScrollStaggerItem>
 
           {/* Columns 2–4 — link groups */}
           {linkGroups.map((group) => (
-            <nav key={group.heading} aria-label={group.heading} className="lg:col-span-2">
+            <ScrollStaggerItem as="nav" distance={24} duration={0.5} key={group.heading} aria-label={group.heading} className="lg:col-span-2">
               <h4 className="text-sm font-bold text-white">{group.heading}</h4>
               <span aria-hidden className="mt-2 block h-0.5 w-8 rounded-full bg-brand-blue-500" />
               <ul className="mt-5 flex flex-col gap-3">
@@ -304,11 +285,11 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </nav>
+            </ScrollStaggerItem>
           ))}
 
           {/* Column 5 — contact details (replaces the old Resources column) */}
-          <nav aria-label="Contact" className="lg:col-span-2">
+          <ScrollStaggerItem as="nav" distance={24} duration={0.5} aria-label="Contact" className="lg:col-span-2">
             <h4 className="text-sm font-bold text-white">Contact</h4>
             <span aria-hidden className="mt-2 block h-0.5 w-8 rounded-full bg-brand-blue-500" />
             <div className="mt-5 flex flex-col gap-5">
@@ -345,11 +326,17 @@ export default function Footer() {
                 </div>
               ))}
             </div>
-          </nav>
-        </div>
+          </ScrollStaggerItem>
+        </ScrollStagger>
 
         {/* bottom bar */}
-        <div className="mt-10 flex flex-col items-center gap-6 border-t border-[#1F2937] pt-4 sm:flex-row sm:justify-between">
+        <ScrollReveal
+          distance={20}
+          duration={0.5}
+          delay={0.1}
+          amount={0.1}
+          className="mt-10 flex flex-col items-center gap-6 border-t border-[#1F2937] pt-4 sm:flex-row sm:justify-between"
+        >
           <p className="text-center text-xs text-[#A1A1AA] sm:text-left">
             © {year} Bigwigs Technologies Private Limited .
             <br className="sm:hidden" /> All Rights Reserved.
@@ -378,9 +365,7 @@ export default function Footer() {
               </span>
             ))}
           </div>
-        </div>
-
-        
+        </ScrollReveal>
       </Container>
     </footer>
   );

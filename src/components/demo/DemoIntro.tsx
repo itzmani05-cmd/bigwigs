@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 
 const CONTACT_GROUPS = [
   {
@@ -15,12 +15,7 @@ const CONTACT_GROUPS = [
 export default function DemoIntro() {
   return (
     <div className="lg:sticky lg:top-18">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.5, delay: 0.15, ease: [0.215, 0.61, 0.355, 1] }}
-      >
+      <ScrollReveal direction="left" duration={0.6} delay={0.1}>
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
           Book Your Demo
         </span>
@@ -53,7 +48,7 @@ export default function DemoIntro() {
               <span className="text-xs font-bold uppercase tracking-[0.1em] text-slate-400">
                 {group.heading}
               </span>
-              <ul className="mt-2 flex flex-col gap-1.5">
+              <ScrollStagger as="ul" staggerDelay={0.06} className="mt-2 flex flex-col gap-1.5">
                 {group.details.map((item, i) => {
                   const Icon = item.icon;
                   const content = (
@@ -63,7 +58,7 @@ export default function DemoIntro() {
                     </>
                   );
                   return (
-                    <li key={i}>
+                    <ScrollStaggerItem key={i} as="li" direction="left" distance={20}>
                       {item.href ? (
                         <a
                           href={item.href}
@@ -74,14 +69,14 @@ export default function DemoIntro() {
                       ) : (
                         <div className="flex items-center gap-2">{content}</div>
                       )}
-                    </li>
+                    </ScrollStaggerItem>
                   );
                 })}
-              </ul>
+              </ScrollStagger>
             </div>
           ))}
         </div>
-      </motion.div>
+      </ScrollReveal>
     </div>
   );
 }

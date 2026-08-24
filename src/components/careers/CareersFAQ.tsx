@@ -4,6 +4,7 @@ import { Plus } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionBackdrop from "@/components/servicePage/SectionBackdrop";
 import FaqJsonLd from "@/components/seo/FaqJsonLd";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 import { faqItems } from "./faqData";
 
 export default function CareersFAQ() {
@@ -14,20 +15,26 @@ export default function CareersFAQ() {
       <FaqJsonLd items={faqItems} />
       <SectionBackdrop />
       <Container className="relative z-10">
-        <div className="mx-auto max-w-xl text-center">
+        <ScrollReveal direction="up" className="mx-auto max-w-xl text-center">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
             FAQ
           </span>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Frequently Asked Questions
           </h2>
-        </div>
+        </ScrollReveal>
 
-        <div className="mx-auto mt-10 flex max-w-2xl flex-col gap-3">
+        <ScrollStagger as="div" staggerDelay={0.06} className="mx-auto mt-10 flex max-w-2xl flex-col gap-3">
           {faqItems.map((item, i) => {
             const isOpen = openIndex === i;
             return (
-              <div key={item.question} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]">
+              <ScrollStaggerItem
+                key={item.question}
+                as="div"
+                direction="up"
+                distance={20}
+                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]"
+              >
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
@@ -49,17 +56,17 @@ export default function CareersFAQ() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
                       <p className="px-6 pb-5 text-sm leading-relaxed text-slate-500">{item.answer}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </ScrollStaggerItem>
             );
           })}
-        </div>
+        </ScrollStagger>
       </Container>
     </section>
   );

@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
+import { ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 
 export interface IconGridItem {
   icon: LucideIcon;
@@ -53,17 +53,20 @@ export default function IconGrid({
   const widthClass = WIDTH_BY_COLUMNS[columnsClassName];
 
   return (
-    <div className={widthClass ? "flex flex-wrap justify-center gap-5" : `grid gap-5 ${columnsClassName}`}>
-      {items.map((item, i) => {
+    <ScrollStagger
+      staggerDelay={0.08}
+      amount={0.2}
+      className={widthClass ? "flex flex-wrap justify-center gap-5" : `grid gap-5 ${columnsClassName}`}
+    >
+      {items.map((item) => {
         const Icon = item.icon;
         const hasDescription = Boolean(item.description);
         return (
-          <motion.div
+          <ScrollStaggerItem
             key={item.title}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.4, delay: (i % 6) * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
+            direction="up"
+            distance={24}
+            duration={0.45}
             className={`rounded-[24px] border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] ${hoverable ? "hover:bg-slate-50" : ""} ${widthClass ?? ""} ${
               isCenter ? "flex flex-col items-center gap-3 px-5 py-7 text-center" : "flex flex-col gap-4 p-6"
             }`}
@@ -86,9 +89,9 @@ export default function IconGrid({
             ) : (
               <span className="text-xs font-medium leading-tight text-slate-600">{item.title}</span>
             )}
-          </motion.div>
+          </ScrollStaggerItem>
         );
       })}
-    </div>
+    </ScrollStagger>
   );
 }

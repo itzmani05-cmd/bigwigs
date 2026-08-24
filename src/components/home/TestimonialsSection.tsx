@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { useParallax } from "@/hooks/useParallax";
+import { ScrollReveal } from "@/components/scroll";
 import { testimonials, type Testimonial } from "./testimonials";
 
 const AUTOPLAY_DELAY = 7000;
@@ -16,12 +17,12 @@ const groupVariants = {
   center: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.5, ease: [0.215, 0.61, 0.355, 1] as const },
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
   },
   exit: (direction: number) => ({
     opacity: 0,
     x: direction > 0 ? -32 : 32,
-    transition: { duration: 0.35, ease: [0.215, 0.61, 0.355, 1] as const },
+    transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] as const },
   }),
 };
 
@@ -38,7 +39,7 @@ function TestimonialCard({ item, index }: { item: Testimonial; index: number }) 
   return (
     <motion.div
       whileHover={{ y: -6 }}
-      transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}
+      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       className="relative flex h-full w-full flex-col rounded-[24px] border border-slate-200/70 bg-white/80 py-8 px-4 shadow-[0_20px_50px_-28px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-shadow duration-300 hover:border-brand-blue-500/30 hover:shadow-[0_32px_64px_-24px_rgba(37,99,235,0.2)] md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1.334rem)]"
     >
       <div className="flex items-start justify-between">
@@ -174,7 +175,7 @@ export default function TestimonialsSection() {
       />
 
       <Container className="relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <ScrollReveal className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3" aria-hidden="true">
             <span className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold tracking-[0.2em] text-orange-500 uppercase sm:text-sm">
@@ -189,9 +190,9 @@ export default function TestimonialsSection() {
             See why global enterprises trust Bigwigs Technologies for high-quality AI
             data solutions.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="relative mt-8 lg:px-16 xl:px-20">
+        <ScrollReveal delay={0.1} className="relative mt-8 lg:px-16 xl:px-20">
           <button
             type="button"
             onClick={() => handleManualNav(goPrev)}
@@ -265,7 +266,7 @@ export default function TestimonialsSection() {
               </button>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

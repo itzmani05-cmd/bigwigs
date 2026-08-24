@@ -4,6 +4,7 @@ import { Plus } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionBackdrop from "./SectionBackdrop";
 import FaqJsonLd from "@/components/seo/FaqJsonLd";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 
 export interface FaqItem {
   question: string;
@@ -28,7 +29,7 @@ export default function FAQAccordion({
       <FaqJsonLd items={items.map(({ question, answer }) => ({ question, answer }))} />
       <SectionBackdrop />
       <Container className="relative z-10">
-        <div className="mx-auto max-w-xl text-center">
+        <ScrollReveal direction="up" distance={24} duration={0.6} className="mx-auto max-w-xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -37,13 +38,19 @@ export default function FAQAccordion({
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
           </div>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-black sm:text-4xl lg:text-5xl">{heading}</h2>
-        </div>
+        </ScrollReveal>
 
-        <div className="mx-auto mt-10 flex max-w-2xl flex-col gap-3">
+        <ScrollStagger staggerDelay={0.06} amount={0.2} className="mx-auto mt-10 flex max-w-2xl flex-col gap-3">
           {items.map((item, i) => {
             const isOpen = openIndex === i;
             return (
-              <div key={item.question} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]">
+              <ScrollStaggerItem
+                key={item.question}
+                direction="up"
+                distance={20}
+                duration={0.45}
+                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)]"
+              >
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
@@ -65,17 +72,17 @@ export default function FAQAccordion({
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: [0.215, 0.61, 0.355, 1] }}
+                      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
                       <p className="px-6 pb-5 text-sm leading-relaxed text-slate-500">{item.answer}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </ScrollStaggerItem>
             );
           })}
-        </div>
+        </ScrollStagger>
       </Container>
     </section>
   );

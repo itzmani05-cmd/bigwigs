@@ -1,21 +1,27 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { ScrollReveal, PREMIUM_EASE } from "@/components/scroll";
+import { useParallax } from "@/hooks/useParallax";
 import type { CaseStudy } from "../caseStudiesData";
 
 const FLOATING_TAGS = ["Data Pipeline", "QA Layer", "Model Handoff"];
 
 export default function ProjectOverview({ study }: { study: CaseStudy }) {
+  const { ref: illustrationRef, y: illustrationY } = useParallax(16);
+
   return (
     <section className="relative w-full overflow-hidden py-10 lg:py-12">
       <Container className="relative z-10">
         <div className="mx-auto grid max-w-[1300px] grid-cols-1 items-center gap-12 lg:grid-cols-[42%_58%] lg:gap-14">
           {/* LEFT — abstract project illustration */}
           <motion.div
+            ref={illustrationRef}
             initial={{ opacity: 0, scale: 0.94 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+            transition={{ duration: 0.6, ease: PREMIUM_EASE }}
+            style={{ y: illustrationY }}
             className="relative mx-auto aspect-square w-full max-w-[380px]"
           >
             <div
@@ -59,23 +65,24 @@ export default function ProjectOverview({ study }: { study: CaseStudy }) {
 
           {/* RIGHT */}
           <div>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
-              Project Overview
-            </span>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              The Brief
-            </h2>
+            <ScrollReveal direction="right" amount={0.4}>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
+                Project Overview
+              </span>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                The Brief
+              </h2>
+            </ScrollReveal>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
+            <ScrollReveal
+              delay={0.1}
+              duration={0.5}
+              amount={0.4}
               className="relative mt-7 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-8 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:p-9"
             >
               <Quote size={36} className="text-brand-blue-500/15" strokeWidth={1.5} />
               <p className="mt-3 text-lg leading-relaxed text-slate-700 sm:text-xl">{study.overview}</p>
-            </motion.div>
+            </ScrollReveal>
           </div>
         </div>
       </Container>

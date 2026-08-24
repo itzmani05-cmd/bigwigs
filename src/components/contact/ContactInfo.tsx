@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
 import { Phone, Mail } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { LinkedInIcon, YoutubeIcon } from "@/components/ui/SocialIcons";
+import { ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 
 const CARDS = [
   {
@@ -31,16 +31,15 @@ export default function ContactInfo() {
   return (
     <section className="relative w-full overflow-hidden bg-white pb-16 lg:pb-20">
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {CARDS.map((card, i) => {
+        <ScrollStagger as="div" staggerDelay={0.08} className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {CARDS.map((card) => {
             const Icon = card.icon;
             return (
-              <motion.div
+              <ScrollStaggerItem
                 key={card.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.215, 0.61, 0.355, 1] }}
+                as="div"
+                direction="up"
+                distance={24}
                 className="rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:p-8"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-600">
@@ -60,15 +59,14 @@ export default function ContactInfo() {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </ScrollStaggerItem>
             );
           })}
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: 0.16, ease: [0.215, 0.61, 0.355, 1] }}
+          <ScrollStaggerItem
+            as="div"
+            direction="up"
+            distance={24}
             className="rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:p-8"
           >
             <h3 className="text-base font-bold text-slate-900">Follow Us</h3>
@@ -89,8 +87,8 @@ export default function ContactInfo() {
                 </a>
               ))}
             </div>
-          </motion.div>
-        </div>
+          </ScrollStaggerItem>
+        </ScrollStagger>
       </Container>
     </section>
   );

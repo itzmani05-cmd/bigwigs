@@ -107,7 +107,7 @@ export default function Quality() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="relative mx-auto max-w-2xl overflow-hidden rounded-[28px] border border-slate-200 bg-white px-8 py-12 text-center shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] sm:px-14 sm:py-16"
           >
             <span aria-hidden className="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-brand-blue-500 via-brand-blue-300 to-transparent" />

@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import MagneticButton from "@/components/ui/MagneticButton";
 import FormField from "@/components/apply/FormField";
+import { ScrollReveal } from "@/components/scroll";
 import { API_BASE } from "@/config/api";
 
 interface DemoFormState {
@@ -143,7 +144,7 @@ export default function DemoForm() {
         <motion.span
           initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="relative flex h-20 w-20 items-center justify-center rounded-full bg-brand-green-50 text-brand-green-600"
         >
           <motion.span
@@ -177,7 +178,13 @@ export default function DemoForm() {
   }
 
   return (
-    <div className="overflow-hidden rounded-[28px] border border-gray-300 bg-white p-6 sm:p-10 lg:p-12 lg:pt-2 shadow-sm">
+    <ScrollReveal
+      direction="right"
+      duration={0.6}
+      amount={0.15}
+      as="div"
+      className="overflow-hidden rounded-[28px] border border-gray-300 bg-white p-6 sm:p-10 lg:p-12 lg:pt-2 shadow-sm"
+    >
       <form noValidate onSubmit={handleSubmit} className="mt-10 flex flex-col gap-10">
         <FormSection icon={User} title="Your Details">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -335,6 +342,6 @@ export default function DemoForm() {
           )}
         </MagneticButton>
       </form>
-    </div>
+    </ScrollReveal>
   );
 }

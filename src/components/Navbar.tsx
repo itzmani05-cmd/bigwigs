@@ -46,14 +46,20 @@ export default function Navbar() {
             : "bg-white border-b border-transparent"
         }`}
       >
-        <div className="mx-auto max-w-[1500px] 2xl:max-w-[1800px] min-[1920px]:max-w-[2200px] px-4 sm:px-6 lg:px-8 flex items-center justify-between h-19 lg:h-21">
+        <div
+          className={`mx-auto max-w-[1500px] 2xl:max-w-[1800px] min-[1920px]:max-w-[2200px] px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-[height] duration-300 ease-out ${
+            scrolled ? "h-16 lg:h-18" : "h-19 lg:h-21"
+          }`}
+        >
           <HashLink href="/" className="flex items-center group shrink-0">
             <img
               src="/assets/Logo.png"
               alt="BigWigs Technologies Logo"
               width={296}
               height={74}
-              className="h-14 md:h-15 lg:h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className={`w-auto object-contain transition-all duration-300 ease-out group-hover:scale-[1.02] ${
+                scrolled ? "h-12 md:h-13 lg:h-15" : "h-14 md:h-15 lg:h-18"
+              }`}
             />
           </HashLink>
 

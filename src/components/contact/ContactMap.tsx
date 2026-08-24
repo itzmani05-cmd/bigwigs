@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/scroll";
 
 const MAP_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5382.623926218913!2d78.72139737484088!3d10.712436618850697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf367fcdc2acf%3A0xaaccd02b1697ce3!2sBigwigs%20Technologies!5e0!3m2!1sen!2sin!4v1787309795759!5m2!1sen!2sin";
@@ -9,11 +9,11 @@ export default function ContactMap() {
   return (
     <section className="relative w-full overflow-hidden bg-white pb-16 lg:pb-20">
       <Container className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+        <ScrollReveal
+          direction="none"
+          scale
+          duration={0.7}
+          amount={0.2}
           className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_30px_70px_-30px_rgba(15,23,42,0.2)]"
         >
           <div className="flex items-center gap-3 border-b border-slate-100 p-6 sm:p-8">
@@ -41,7 +41,7 @@ export default function ContactMap() {
               className="h-full w-full"
             />
           </div>
-        </motion.div>
+        </ScrollReveal>
       </Container>
     </section>
   );

@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
 import iso27001Badge from "@/assests/certifications/iso270001.png";
 import iso9001Badge from "@/assests/certifications/iso9001-2015.png";
 
@@ -32,7 +32,7 @@ export default function CertificationsGrid() {
   return (
     <section id="certifications" className="relative w-full scroll-mt-24 overflow-hidden py-10 lg:py-12">
       <Container className="relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <ScrollReveal direction="up" distance={24} className="mx-auto max-w-2xl text-center">
            <div className="flex items-center justify-center gap-3">
             <span aria-hidden className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500 sm:text-sm">
@@ -47,16 +47,15 @@ export default function CertificationsGrid() {
             Independently audited and certified, so enterprises can trust how we handle their
             data and deliver their projects.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <ScrollStagger as="div" staggerDelay={0.12} amount={0.3} className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {CERTIFICATIONS.map((cert, i) => (
-            <motion.div
+            <ScrollStaggerItem
               key={cert.code}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.1, ease: [0.215, 0.61, 0.355, 1] }}
+              as="div"
+              direction={i === 0 ? "left" : "right"}
+              distance={36}
               className="glass-card flex h-full flex-col items-center rounded-[28px] p-7 text-center sm:p-8"
             >
               <span className="flex h-28 w-28 shrink-0 items-center justify-center rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
@@ -66,9 +65,9 @@ export default function CertificationsGrid() {
               <p className="mt-5 text-lg font-extrabold tracking-tight text-slate-900">{cert.code}</p>
               <p className="text-sm font-semibold text-slate-500">{cert.title}</p>
               <p className="mt-4 text-sm leading-relaxed text-slate-500">{cert.description}</p>
-            </motion.div>
+            </ScrollStaggerItem>
           ))}
-        </div>
+        </ScrollStagger>
       </Container>
     </section>
   );

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/scroll";
 import ServicesShowcase from "./ServicesShowcase";
 
 export default function CoreServicesSection() {
@@ -63,7 +64,7 @@ export default function CoreServicesSection() {
       />
 
       <Container className="relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <ScrollReveal className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3" aria-hidden="true">
             <span className="h-px w-8 bg-orange-500/50" />
             <span className="text-xs font-bold tracking-[0.2em] text-orange-500 uppercase sm:text-sm">
@@ -81,7 +82,7 @@ export default function CoreServicesSection() {
             From high-quality training data to intelligent applications, we deliver
             AI-powered solutions that drive innovation and business impact.
           </p>
-        </div>
+        </ScrollReveal>
         <div className="mt-4">
           <ServicesShowcase />
         </div>

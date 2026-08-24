@@ -96,7 +96,7 @@ export default function LaunchCountdown({ target, onComplete }: LaunchCountdownP
         <motion.span
           initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="relative flex h-16 w-16 items-center justify-center rounded-full bg-brand-blue-50 text-brand-blue-600 sm:h-20 sm:w-20"
         >
           <motion.span

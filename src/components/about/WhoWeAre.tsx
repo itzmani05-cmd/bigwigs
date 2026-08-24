@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
+import { ScrollReveal } from "@/components/scroll";
 import ourTeamImage from "@/assests/about/ourteams.jpg";
 
 export default function WhoWeAre() {
@@ -23,22 +24,29 @@ export default function WhoWeAre() {
       />
 
       <Container className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-          className="grid grid-cols-1 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] lg:grid-cols-2"
-        >
-          <div className="relative min-h-[280px] overflow-hidden lg:min-h-[380px]">
+        <div className="grid grid-cols-1 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_16px_40px_-28px_rgba(15,23,42,0.18)] lg:grid-cols-2">
+          <ScrollReveal
+            direction="left"
+            distance={40}
+            scale
+            duration={0.7}
+            amount={0.3}
+            className="relative min-h-[280px] overflow-hidden lg:min-h-[380px]"
+          >
             <img
               src={ourTeamImage}
               alt="The Bigwigs Technologies team collaborating"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
             />
-          </div>
+          </ScrollReveal>
 
-          <div className="flex flex-col justify-center bg-white p-8 sm:p-12 lg:p-14">
+          <ScrollReveal
+            direction="right"
+            distance={40}
+            delay={0.1}
+            amount={0.3}
+            className="flex flex-col justify-center bg-white p-8 sm:p-12 lg:p-14"
+          >
             <div className="flex items-center gap-3">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-blue-600 sm:text-sm">
                 Who We Are
@@ -55,8 +63,8 @@ export default function WhoWeAre() {
               organizations to transform raw data into intelligent business solutions
               through innovation, precision, and scalable delivery.
             </p>
-          </div>
-        </motion.div>
+          </ScrollReveal>
+        </div>
       </Container>
     </section>
   );
