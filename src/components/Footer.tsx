@@ -264,8 +264,6 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-
-            
           </ScrollStaggerItem>
 
           {/* Columns 2–4 — link groups */}
