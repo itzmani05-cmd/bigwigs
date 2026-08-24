@@ -38,10 +38,6 @@ function ShowcaseCard({ service, index }: { service: CoreService; index: number 
         </div>
 
         <div className="relative mt-1 flex h-20 items-end justify-center">
-          <span
-            aria-hidden
-            className={`absolute top-0 h-16 w-16 rounded-full border border-dashed opacity-40 ${s.cardBorder}`}
-          />
           <span aria-hidden className="absolute bottom-0 h-3 w-20 rounded-full bg-slate-100" />
           {service.image ? (
             <motion.img
