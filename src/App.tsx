@@ -40,7 +40,6 @@ import NotFound from "@/pages/NotFound";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollToHash from "@/components/ScrollToHash";
 import ScrollToTop from "@/components/ScrollToTop";
-import ChatBot from "@/components/chatbot/ChatBot";
 import OrganizationJsonLd from "@/components/seo/OrganizationJsonLd";
 import WebSiteJsonLd from "@/components/seo/WebSiteJsonLd";
 import LaunchGate from "@/components/LaunchGate";
@@ -103,7 +102,6 @@ export default function App() {
       <Footer />
       <CookieConsent />
       <ScrollToTop />
-      <ChatBot />
       </LaunchGate>
     </MotionConfig>
   );

@@ -39,7 +39,7 @@ export default function ScrollToTop() {
           transition={{ duration: 0.45, ease: "easeOut" }}
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
-          className="group fixed right-4 bottom-24 z-[9998] flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue-500 text-white shadow-[0_12px_30px_-8px_rgba(37,99,235,0.6)] transition-colors duration-300 hover:bg-brand-blue-600 hover:shadow-[0_16px_40px_-8px_rgba(37,99,235,0.75)] sm:right-6"
+          className="group fixed right-4 bottom-5 z-[9998] flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue-500 text-white shadow-[0_12px_30px_-8px_rgba(37,99,235,0.6)] transition-colors duration-300 hover:bg-brand-blue-600 hover:shadow-[0_16px_40px_-8px_rgba(37,99,235,0.75)] sm:right-6"
         >
           <motion.span
             aria-hidden
