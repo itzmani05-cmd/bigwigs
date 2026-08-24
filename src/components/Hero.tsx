@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Users, ShieldCheck, Globe2, Star } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
@@ -37,12 +37,18 @@ const partnerLogos: PartnerLogo[] = [
 
 // Show a handful of logos at a time and rotate through the rest so the row
 // stays compact instead of shrinking every logo to fit them all at once.
-const LOGOS_PER_GROUP = 4;
+// Mobile shows fewer per row (3) than sm+ (4) so logos stay legible.
+const LOGOS_PER_GROUP_MOBILE = 3;
+const LOGOS_PER_GROUP_DESKTOP = 4;
 const LOGO_ROTATION_MS = 2000;
-const trustedPartnerLogoGroups = Array.from(
-  { length: Math.ceil(partnerLogos.length / LOGOS_PER_GROUP) },
-  (_, i) => partnerLogos.slice(i * LOGOS_PER_GROUP, i * LOGOS_PER_GROUP + LOGOS_PER_GROUP)
-);
+const MOBILE_QUERY = "(max-width: 639px)";
+
+function buildLogoGroups(perGroup: number) {
+  return Array.from(
+    { length: Math.ceil(partnerLogos.length / perGroup) },
+    (_, i) => partnerLogos.slice(i * perGroup, i * perGroup + perGroup)
+  );
+}
 
 const eyebrowVariants = {
   hidden: { opacity: 0, y: 16 },
@@ -113,7 +119,27 @@ const stats = [
 ];
 
 export default function Hero() {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.matchMedia(MOBILE_QUERY).matches
+  );
   const [logoGroupIndex, setLogoGroupIndex] = useState(0);
+
+  useEffect(() => {
+    const mql = window.matchMedia(MOBILE_QUERY);
+    const update = () => setIsMobile(mql.matches);
+    update();
+    mql.addEventListener("change", update);
+    return () => mql.removeEventListener("change", update);
+  }, []);
+
+  const trustedPartnerLogoGroups = useMemo(
+    () => buildLogoGroups(isMobile ? LOGOS_PER_GROUP_MOBILE : LOGOS_PER_GROUP_DESKTOP),
+    [isMobile]
+  );
+
+  useEffect(() => {
+    setLogoGroupIndex(0);
+  }, [trustedPartnerLogoGroups.length]);
 
   useEffect(() => {
     if (trustedPartnerLogoGroups.length <= 1) return;
@@ -121,7 +147,7 @@ export default function Hero() {
       setLogoGroupIndex((i) => (i + 1) % trustedPartnerLogoGroups.length);
     }, LOGO_ROTATION_MS);
     return () => window.clearInterval(id);
-  }, []);
+  }, [trustedPartnerLogoGroups.length]);
 
   return (
     <section id="home" className="relative w-full overflow-hidden bg-white">
@@ -208,7 +234,7 @@ export default function Hero() {
             className="grid w-full grid-cols-2 gap-x-2 gap-y-4 sm:gap-x-3 sm:gap-y-5 lg:grid-cols-4 lg:gap-x-3"
           >
            {stats.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="flex flex-col items-start gap-1">
+            <div key={label} className="flex flex-col items-center text-center gap-1 sm:items-start sm:text-left">
               <div className="flex items-center gap-1">
                 <Icon
                   size={20}

@@ -55,7 +55,7 @@ const itemVariants = {
 
 export default function CareersHero() {
   return (
-    <section className="relative w-full overflow-hidden pt-10 pb-10 lg:pt-10 lg:pb-14">
+    <section className="relative flex w-full flex-col justify-center overflow-hidden min-h-[calc(100svh-4.75rem)] pt-10 pb-10 lg:flex-none lg:block lg:min-h-0 lg:pt-10 lg:pb-14">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white/40 to-transparent"

@@ -126,7 +126,7 @@ const TRUST_ITEMS: TrustItem[] = [
 
 export default function IndustriesHero() {
   return (
-    <section className="relative w-full overflow-hidden pt-2 pb-10 lg:pt-3 lg:pb-12">
+    <section className="relative flex w-full flex-col justify-center overflow-hidden min-h-[calc(100svh-4.75rem)] pt-2 pb-10 lg:flex-none lg:block lg:min-h-0 lg:pt-3 lg:pb-12">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-blue-50/50 via-white/40 to-transparent"
@@ -179,30 +179,6 @@ export default function IndustriesHero() {
                 <span>Book a Demo</span>
                 <ArrowRight size={16} />
               </MagneticButton>
-            </motion.div>
-
-            {/* mobile/tablet*/}
-            <motion.div
-              variants={itemVariants}
-              className="mt-9 flex flex-wrap justify-center gap-4 lg:hidden"
-            >
-              {FLOATING_BADGES.map((badge) => (
-                <div
-                  key={badge.label}
-                  className="w-full rounded-2xl border border-slate-100 bg-white p-3.5 shadow-[0_16px_36px_-24px_rgba(15,23,42,0.2)] sm:w-[calc(50%-0.5rem)]"
-                >
-                  <div className="flex items-start gap-3">
-                    <span
-                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${badge.iconBg} ${badge.iconText}`}
-                    >
-                      <badge.icon size={18} strokeWidth={1.75} />
-                    </span>
-                    <div className="min-w-0">
-                      <p className="text-sm font-bold text-slate-900">{badge.label}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </motion.div>
           </motion.div>
 
@@ -268,7 +244,7 @@ export default function IndustriesHero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
-          className="mt-2 grid grid-cols-1 gap-6 rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:p-8"
+          className="mt-2 hidden gap-6 rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_20px_45px_-28px_rgba(15,23,42,0.2)] sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:p-8"
         >
           {TRUST_ITEMS.map((item) => (
             <div key={item.title} className="flex items-start gap-3">
