@@ -77,7 +77,9 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
         {
           id: crypto.randomUUID(),
           role: "assistant",
-          content: answer || "I couldn't find the information. Please try asking in a different way.",
+          content:
+            answer ||
+            "Happy to help! I can only answer questions about Bigwigs Technologies — try asking about our services, industries, or how to get in touch.",
         },
       ]);
     } catch (err) {
@@ -97,20 +99,14 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
   const showSuggestions = messages.length === 1 && !isLoading;
 
   return (
-    <div className="flex h-[72vh] max-h-[600px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_28px_70px_-18px_rgba(15,23,42,0.3)]">
-      <div className="flex items-center gap-3 bg-gradient-to-r from-brand-blue-600 to-brand-blue-500 px-5 py-4">
+    <div className="flex h-full w-full flex-col overflow-hidden bg-white sm:h-[72vh] sm:max-h-[600px] sm:rounded-2xl sm:border sm:border-slate-200 sm:shadow-[0_28px_70px_-18px_rgba(15,23,42,0.3)]">
+      <div className="flex items-center gap-3 bg-gradient-to-r from-brand-blue-600 to-brand-blue-500 px-4 py-3.5 pt-[max(0.875rem,env(safe-area-inset-top))] sm:pt-3.5">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white p-1.5 shadow-sm">
           <img src="/assets/Logo.png" alt="" aria-hidden="true" className="h-full w-full object-contain" />
         </span>
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-bold tracking-tight text-white">Bigwigs AI Assistant</p>
-          <p className="flex items-center gap-1.5 truncate text-xs font-medium text-white/80">
-            <span className="relative flex h-1.5 w-1.5 shrink-0">
-              <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            </span>
-            Online now
-          </p>
+          <p className="truncate text-xs font-medium text-white/80">Ask about our services, industries & more</p>
         </div>
         <button
           type="button"
@@ -150,8 +146,8 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
         )}
       </div>
 
-      <div className="border-t border-slate-100 bg-white px-3 pt-3 pb-2.5">
-        <div className="flex items-end gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 transition-colors duration-200 focus-within:border-brand-blue-400 focus-within:bg-white focus-within:ring-2 focus-within:ring-brand-blue-100">
+      <div className="border-t border-slate-100 bg-white px-3 pt-3 pb-[max(0.625rem,env(safe-area-inset-bottom))]">
+        <div className="flex items-end gap-2 rounded-2xl border border-slate-200 bg-slate-50 py-1.5 pr-1.5 pl-4 transition-colors duration-200 focus-within:border-brand-blue-400 focus-within:bg-white focus-within:ring-2 focus-within:ring-brand-blue-100">
           <textarea
             ref={inputRef}
             rows={1}
@@ -159,14 +155,14 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Ask about Bigwigs..."
-            className="max-h-24 flex-1 resize-none bg-transparent text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none"
+            className="max-h-24 flex-1 resize-none bg-transparent py-2 text-sm leading-relaxed text-slate-800 placeholder:text-slate-400 focus:outline-none"
           />
           <button
             type="button"
             onClick={() => sendMessage()}
             disabled={!input.trim() || isLoading}
             aria-label="Send message"
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-blue-500 text-white transition-colors duration-200 hover:bg-brand-blue-600 disabled:cursor-not-allowed disabled:opacity-40"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue-500 text-white transition-colors duration-200 hover:bg-brand-blue-600 disabled:cursor-not-allowed disabled:opacity-40"
           >
             <Send size={15} strokeWidth={2} />
           </button>

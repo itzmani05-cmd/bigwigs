@@ -38,6 +38,7 @@ import missionVisionImg from "@/assests/aboutNavbar/Mission&Vission.png";
 import ourStoryImg from "@/assests/aboutNavbar/ourStory.png";
 import ourExpertiseImg from "@/assests/aboutNavbar/OurExpertise.png";
 import certificationsImg from "@/assests/aboutNavbar/Certifications.png";
+import eventImg from "@/assests/aboutNavbar/event.png";
 
 export interface MegaFeature {
   icon: LucideIcon;
@@ -105,6 +106,7 @@ export const navItems: NavItem[] = [
           icon: Calendar,
           title: "Events",
           description: "Celebrations, team outings, and moments from Bigwigs.",
+          image: eventImg,
         },
       ],
       cta: { label: "Learn more about us", href: "/about" },

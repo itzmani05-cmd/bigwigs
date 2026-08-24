@@ -46,7 +46,7 @@ type FormFieldProps = InputFieldProps | SelectFieldProps | TextareaFieldProps;
 export default function FormField(props: FormFieldProps) {
   const { label, name, required, icon: Icon, error, className = "" } = props;
 
-  const fieldClasses = `w-full rounded-2xl border bg-white/60 backdrop-blur-sm px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all duration-300 focus:bg-white focus:outline-none ${
+  const fieldClasses = `w-full rounded-2xl border bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-all duration-300 focus:outline-none ${
     error
       ? "border-rose-300 focus:border-rose-500 focus:shadow-[0_0_0_4px_rgba(244,63,94,0.12)]"
       : "border-slate-200 focus:border-brand-blue-500 focus:shadow-[0_0_0_4px_rgba(37,99,235,0.12)]"
@@ -64,10 +64,14 @@ export default function FormField(props: FormFieldProps) {
       </label>
       <div className="relative">
         {Icon && (
-          <Icon
-            size={20}
-            className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-600"
-          />
+          <span
+            aria-hidden
+            className={`pointer-events-none absolute left-4 z-10 flex text-slate-600 ${
+              props.as === "textarea" ? "top-3.5" : "inset-y-0 items-center"
+            }`}
+          >
+            <Icon size={20} />
+          </span>
         )}
 
         {props.as === "select" ? (
@@ -88,10 +92,12 @@ export default function FormField(props: FormFieldProps) {
                 </option>
               ))}
             </select>
-            <ChevronDown
-              size={16}
-              className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"
-            />
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 right-4 z-10 flex items-center text-slate-400"
+            >
+              <ChevronDown size={16} />
+            </span>
           </>
         ) : props.as === "textarea" ? (
           <textarea

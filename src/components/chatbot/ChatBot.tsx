@@ -15,7 +15,7 @@ export default function ChatBot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.96 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-20 right-4 z-[9999] w-[calc(100vw-2rem)] max-w-[400px] sm:right-6 sm:bottom-24"
+            className="fixed inset-0 z-[9999] sm:inset-auto sm:right-6 sm:bottom-24 sm:w-[400px]"
           >
             <ChatWindow onClose={() => setIsOpen(false)} />
           </motion.div>
