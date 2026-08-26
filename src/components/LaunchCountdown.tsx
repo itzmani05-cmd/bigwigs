@@ -112,10 +112,10 @@ export default function LaunchCountdown({ target, onComplete }: LaunchCountdownP
         <img src={logo} alt="Bigwigs Technologies" className="mt-6 h-8 w-auto object-contain sm:mt-8 sm:h-9" />
 
         <h1 className="relative mt-5 max-w-sm text-2xl font-extrabold leading-tight tracking-tight text-slate-900 sm:mt-6 sm:max-w-none sm:text-4xl">
-          Happy 13th Anniversary, <span className="text-brand-blue-600">Team!</span>
+          Happy 14th Anniversary, <span className="text-brand-blue-600">Team!</span>
         </h1>
         <p className="relative mt-3 max-w-xs text-sm leading-relaxed text-slate-500 sm:max-w-md sm:text-base">
-          Thirteen years of building intelligent solutions together. Thank you for being part of
+          Fourteen years of building intelligent solutions together. Thank you for being part of
           the journey — here&rsquo;s to what we build next.
         </p>
 
