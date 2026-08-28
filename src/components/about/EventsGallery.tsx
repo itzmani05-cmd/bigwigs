@@ -71,7 +71,7 @@ function MarqueeRow({
 
 export default function EventsGallery() {
   return (
-    <section id="Events" className="relative w-full scroll-mt-24 overflow-hidden py-14 lg:py-20">
+    <section id="events" className="relative w-full scroll-mt-24 overflow-hidden py-14 lg:py-20">
       <Container className="relative z-10">
         <ScrollReveal direction="up" distance={24} className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">

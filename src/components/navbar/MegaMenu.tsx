@@ -22,9 +22,10 @@ const panelVariants = {
 interface MegaMenuProps {
   content: MegaContent;
   id: string;
+  onNavigate: () => void;
 }
 
-export default function MegaMenu({ content, id }: MegaMenuProps) {
+export default function MegaMenu({ content, id, onNavigate }: MegaMenuProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeFeature = content.features[activeIndex] ?? content.features[0];
 
@@ -42,10 +43,15 @@ export default function MegaMenu({ content, id }: MegaMenuProps) {
       <div className="mx-auto max-w-[1400px] px-8 lg:px-16 py-10 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-8">
           <div className="lg:col-span-4 xl:col-span-3">
-            <MegaMenuIntro content={content} />
+            <MegaMenuIntro content={content} onNavigate={onNavigate} />
           </div>
           <div className="lg:col-span-8 xl:col-span-4 lg:border-l lg:border-slate-100 lg:pl-10">
-            <MegaMenuLinks content={content} activeIndex={activeIndex} onHoverLink={setActiveIndex} />
+            <MegaMenuLinks
+              content={content}
+              activeIndex={activeIndex}
+              onHoverLink={setActiveIndex}
+              onNavigate={onNavigate}
+            />
           </div>
           <div className="hidden xl:block xl:col-span-5">
             {activeFeature && <FeaturePreview feature={activeFeature} index={activeIndex} />}

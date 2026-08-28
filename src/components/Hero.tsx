@@ -113,7 +113,7 @@ const illustrationVariants = {
 } as const;
 
 const stats = [
-  { icon: Users, value: "12+", label: "Years Experience" },
+  { icon: Users, value: "13+", label: "Years Experience" },
   { icon: ShieldCheck, value: "ISO 27001", label: "Certified" },
   { icon: Globe2, value: "Global", label: "Delivery" },
   { icon: Star, value: "99%", label: "Client Satisfaction" },

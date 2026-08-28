@@ -3,7 +3,12 @@ import { ArrowUpRight } from "lucide-react";
 import HashLink from "@/components/ui/HashLink";
 import type { MegaContent } from "./navConfig";
 
-export default function MegaMenuIntro({ content }: { content: MegaContent }) {
+interface MegaMenuIntroProps {
+  content: MegaContent;
+  onNavigate: () => void;
+}
+
+export default function MegaMenuIntro({ content, onNavigate }: MegaMenuIntroProps) {
   const ctaClassName =
     "group mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green-600 hover:text-brand-green-700 transition-colors w-fit";
   const ctaArrow = (
@@ -21,12 +26,12 @@ export default function MegaMenuIntro({ content }: { content: MegaContent }) {
       <h3 className="mt-2 text-2xl font-bold text-slate-900 tracking-tight">{content.title}</h3>
       <p className="mt-3 text-sm text-slate-500 leading-relaxed">{content.description}</p>
       {content.cta.href.startsWith("/") ? (
-        <Link to={content.cta.href} className={ctaClassName}>
+        <Link to={content.cta.href} onClick={onNavigate} className={ctaClassName}>
           {content.cta.label}
           {ctaArrow}
         </Link>
       ) : (
-        <HashLink href={content.cta.href} className={ctaClassName}>
+        <HashLink href={content.cta.href} onClick={onNavigate} className={ctaClassName}>
           {content.cta.label}
           {ctaArrow}
         </HashLink>

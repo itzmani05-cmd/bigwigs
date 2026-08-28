@@ -6,9 +6,10 @@ interface MegaMenuLinksProps {
   content: MegaContent;
   activeIndex: number;
   onHoverLink: (index: number) => void;
+  onNavigate: () => void;
 }
 
-export default function MegaMenuLinks({ content, activeIndex, onHoverLink }: MegaMenuLinksProps) {
+export default function MegaMenuLinks({ content, activeIndex, onHoverLink, onNavigate }: MegaMenuLinksProps) {
   return (
     <ul className="flex flex-col">
       {content.links.map((link, index) => {
@@ -24,6 +25,7 @@ export default function MegaMenuLinks({ content, activeIndex, onHoverLink }: Meg
                 to={link.href}
                 onMouseEnter={() => onHoverLink(index)}
                 onFocus={() => onHoverLink(index)}
+                onClick={onNavigate}
                 className={linkClassName}
               >
                 {link.name}
@@ -33,6 +35,7 @@ export default function MegaMenuLinks({ content, activeIndex, onHoverLink }: Meg
                 href={link.href}
                 onMouseEnter={() => onHoverLink(index)}
                 onFocus={() => onHoverLink(index)}
+                onClick={onNavigate}
                 className={linkClassName}
               >
                 {link.name}

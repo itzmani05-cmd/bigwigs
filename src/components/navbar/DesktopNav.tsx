@@ -73,6 +73,12 @@ export default function DesktopNav({ items, pathname, activeHash }: DesktopNavPr
     }, CLOSE_DELAY_MS);
   };
 
+  const closeMegaNow = () => {
+    clearCloseTimeout();
+    setOpenMega(null);
+    setHoveredIndex(null);
+  };
+
   useEffect(() => {
     if (!openMega) return;
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -153,7 +159,9 @@ export default function DesktopNav({ items, pathname, activeHash }: DesktopNavPr
       </nav>
 
       <AnimatePresence>
-        {activeItem?.mega && <MegaMenu content={activeItem.mega} id={`mega-${slug(activeItem.name)}`} />}
+        {activeItem?.mega && (
+          <MegaMenu content={activeItem.mega} id={`mega-${slug(activeItem.name)}`} onNavigate={closeMegaNow} />
+        )}
       </AnimatePresence>
     </div>
   );
