@@ -5,22 +5,40 @@ import gsap from "gsap";
 /**
  * Images in data/video/, grouped by their filename prefix (LongSize/MediumSize/SmallSize)
  * and sorted numerically within each group, so each hero tile only cycles through images
- * whose aspect ratio matches its own shape.
+ * whose aspect ratio matches its own shape. Each source has a 420w and 820w variant so
+ * mobile viewports (where these tiles render at ~170-260px) don't download the desktop-sized
+ * asset — see the `-sm` suffix glob below.
  */
-const imageModules = import.meta.glob("/data/video/*.webp", {
+const largeModules = import.meta.glob("/data/video/*.webp", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+const smallModules = import.meta.glob("/data/video/*-sm.webp", {
   eager: true,
   import: "default",
 }) as Record<string, string>;
 
-function loadGroup(prefix: string): string[] {
-  return Object.entries(imageModules)
-    .filter(([path]) => path.includes(`/${prefix}`))
+interface ImageSource {
+  src: string;
+  srcSet: string;
+}
+
+function loadGroup(prefix: string): ImageSource[] {
+  return Object.entries(largeModules)
+    .filter(([path]) => path.includes(`/${prefix}`) && !path.endsWith("-sm.webp"))
     .sort(([a], [b]) => {
       const na = parseInt(a.match(/(\d+)/)?.[1] ?? "0", 10);
       const nb = parseInt(b.match(/(\d+)/)?.[1] ?? "0", 10);
       return na - nb;
     })
-    .map(([, url]) => url);
+    .map(([path, largeUrl]) => {
+      const smallPath = path.replace(/\.webp$/, "-sm.webp");
+      const smallUrl = smallModules[smallPath];
+      return {
+        src: largeUrl,
+        srcSet: smallUrl ? `${smallUrl} 420w, ${largeUrl} 820w` : largeUrl,
+      };
+    });
 }
 
 const longImages = loadGroup("LongSize");
@@ -28,13 +46,13 @@ const mediumImages = loadGroup("MediumSize");
 const smallImages = loadGroup("SmallSize");
 
 /** Rotates a group's images so a tile can start its crossfade sequence partway through. */
-function pickSequence(images: string[], offset: number) {
+function pickSequence(images: ImageSource[], offset: number) {
   if (images.length === 0) return [];
   return images.map((_, i) => images[(offset + i) % images.length]);
 }
 
 interface TileProps {
-  images: string[];
+  images: ImageSource[];
   interval: number;
   delay: number;
   className: string;
@@ -43,6 +61,9 @@ interface TileProps {
   /** Only the true LCP candidate (the first/largest tile) should carry this. */
   fetchPriority?: "high";
 }
+
+/** Tiles span 2 of the grid's columns on tablet+ and roughly half the viewport on mobile. */
+const TILE_SIZES = "(min-width: 1024px) 420px, (min-width: 640px) 260px, 45vw";
 
 function Tile({ images, interval, delay, className, paused, priority, fetchPriority }: TileProps) {
   const layerARef = useRef<HTMLImageElement>(null);
@@ -60,12 +81,13 @@ function Tile({ images, interval, delay, className, paused, priority, fetchPrior
     const advance = () => {
       if (cancelled) return;
       indexRef.current = (indexRef.current + 1) % images.length;
-      const nextSrc = images[indexRef.current];
+      const next = images[indexRef.current];
 
       const front = aIsFront.current ? layerARef.current : layerBRef.current;
       const back = aIsFront.current ? layerBRef.current : layerARef.current;
       if (front && back) {
-        back.src = nextSrc;
+        back.srcset = next.srcSet;
+        back.src = next.src;
         gsap.set(back, { opacity: 0, scale: 1.08 });
         gsap.to(back, { opacity: 1, scale: 1, duration: 1.6, ease: "power2.out" });
         gsap.to(front, { opacity: 0, duration: 1.3, ease: "power1.inOut" });
@@ -89,7 +111,9 @@ function Tile({ images, interval, delay, className, paused, priority, fetchPrior
     <div className={`relative overflow-hidden rounded-2xl bg-slate-100 ${className}`}>
       <img
         ref={layerARef}
-        src={images[0]}
+        src={images[0].src}
+        srcSet={images[0].srcSet}
+        sizes={TILE_SIZES}
         alt=""
         aria-hidden
         className="absolute inset-0 h-full w-full object-cover"
@@ -99,7 +123,9 @@ function Tile({ images, interval, delay, className, paused, priority, fetchPrior
       />
       <img
         ref={layerBRef}
-        src={images[0]}
+        src={images[0].src}
+        srcSet={images[0].srcSet}
+        sizes={TILE_SIZES}
         alt=""
         aria-hidden
         className="absolute inset-0 h-full w-full object-cover opacity-0"

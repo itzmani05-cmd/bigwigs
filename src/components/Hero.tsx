@@ -108,7 +108,10 @@ const illustrationVariants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] },
+    // No start delay: this wraps the LCP image mosaic, and framer-motion only
+    // counts the element as "rendered" once opacity leaves 0 — a delay here
+    // directly adds to LCP's element-render-delay window.
+    transition: { duration: 0.6, delay: 0, ease: [0.16, 1, 0.3, 1] },
   },
 } as const;
 

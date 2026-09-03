@@ -269,7 +269,7 @@ export default function Footer() {
           {/* Columns 2–4 — link groups */}
           {linkGroups.map((group) => (
             <ScrollStaggerItem as="nav" distance={24} duration={0.5} key={group.heading} aria-label={group.heading} className="lg:col-span-2">
-              <h4 className="text-sm font-bold text-white">{group.heading}</h4>
+              <h3 className="text-sm font-bold text-white">{group.heading}</h3>
               <span aria-hidden className="mt-2 block h-0.5 w-8 rounded-full bg-brand-blue-500" />
               <ul className="mt-5 flex flex-col gap-3">
                 {group.links.map((link) => (
@@ -288,14 +288,14 @@ export default function Footer() {
 
           {/* Column 5 — contact details (replaces the old Resources column) */}
           <ScrollStaggerItem as="nav" distance={24} duration={0.5} aria-label="Contact" className="lg:col-span-2">
-            <h4 className="text-sm font-bold text-white">Contact</h4>
+            <h3 className="text-sm font-bold text-white">Contact</h3>
             <span aria-hidden className="mt-2 block h-0.5 w-8 rounded-full bg-brand-blue-500" />
             <div className="mt-5 flex flex-col gap-5">
               {CONTACT_GROUPS.map((group) => (
                 <div key={group.heading}>
-                  <h5 className="text-xs font-semibold uppercase tracking-[0.08em] text-[#A1A1AA]">
+                  <h4 className="text-xs font-semibold uppercase tracking-[0.08em] text-[#A1A1AA]">
                     {group.heading}
-                  </h5>
+                  </h4>
                   <ul className="mt-2.5 flex flex-col gap-2">
                     {group.details.map((item, i) => {
                       const Icon = item.icon;

@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* Self-hosted (no third-party font origin round-trip). Both are variable
+   fonts, so one file per family covers every weight actually used
+   (400/500/600/700/800) via the `font-weight` range below. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/manrope-latin.woff2") format("woff2");
+}
+
 @theme {
   /* Logo Green Colors */
   --color-brand-green-500: #10b981; /* Emerald green - rgba(16, 185, 129, 1) */

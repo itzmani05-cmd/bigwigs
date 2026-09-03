@@ -38,6 +38,8 @@ function IndustryCard({ industry, index }: { industry: Industry; index: number }
             src={industry.image}
             alt={`${industry.name} solutions by Bigwigs Technologies`}
             onError={() => setImageOk(false)}
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
         )}

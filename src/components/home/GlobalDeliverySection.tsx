@@ -2,6 +2,7 @@ import Container from "@/components/ui/Container";
 import { ScrollReveal } from "@/components/scroll";
 import { useParallax } from "@/hooks/useParallax";
 import globalDeliveryMap from "@/assests/worldMap.webp";
+import globalDeliveryMapSmall from "@/assests/worldMap-sm.webp";
 
 interface Node {
   id: string;
@@ -52,8 +53,12 @@ export default function GlobalDeliverySection() {
           </span>
           <img
             src={globalDeliveryMap}
+            srcSet={`${globalDeliveryMapSmall} 760w, ${globalDeliveryMap} 1400w`}
+            sizes="(min-width: 1200px) 1200px, 92vw"
             alt=""
             aria-hidden
+            loading="lazy"
+            decoding="async"
             className="w-full select-none rounded-2xl aspect-[1672/941]"
             draggable={false}
           />
