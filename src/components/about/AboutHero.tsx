@@ -4,7 +4,7 @@ import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { useParallax } from "@/hooks/useParallax";
 
-const worldMapModules = import.meta.glob("/data/aboutPageWorldMap.png", {
+const worldMapModules = import.meta.glob("/data/aboutPageWorldMap.webp", {
   eager: true,
   import: "default",
 }) as Record<string, string>;

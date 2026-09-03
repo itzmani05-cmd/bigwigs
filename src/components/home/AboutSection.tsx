@@ -13,8 +13,8 @@ import {
 import Container from "@/components/ui/Container";
 import MagneticButton from "@/components/ui/MagneticButton";
 
-import mountainFlagIllustration from "@/assests/about/mountainFlag.png";
-import telescopeIllustration from "@/assests/about/telescope.png";
+import mountainFlagIllustration from "@/assests/about/mountainFlag.webp";
+import telescopeIllustration from "@/assests/about/telescope.webp";
 
 const STATS = [
   { icon: Users, value: "75+", label: "Experts" },

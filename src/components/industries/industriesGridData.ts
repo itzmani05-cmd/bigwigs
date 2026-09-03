@@ -12,17 +12,17 @@ import {
   BookOpen as PublishingIcon,
   type LucideIcon,
 } from "lucide-react";
-import healthCareImg from "@/assests/industries/healthCare.png";
-import automotiveImg from "@/assests/industries/Automotive.png";
-import retailImg from "@/assests/industries/Retail.png";
-import bankingImg from "@/assests/industries/Banking.png";
-import manufacturingImg from "@/assests/industries/Manufacturing.png";
-import agricultureImg from "@/assests/industries/Agriculture.png";
-import smartCitiesImg from "@/assests/industries/SmartCities.png";
-import logisticsImg from "@/assests/industries/Drones.png";
-import educationImg from "@/assests/industries/Education.png";
-import governmentImg from "@/assests/industries/Government.png";
-import publishingImg from "@/assests/industries/Publishing.png";
+import healthCareImg from "@/assests/industries/healthCare.webp";
+import automotiveImg from "@/assests/industries/Automotive.webp";
+import retailImg from "@/assests/industries/Retail.webp";
+import bankingImg from "@/assests/industries/Banking.webp";
+import manufacturingImg from "@/assests/industries/Manufacturing.webp";
+import agricultureImg from "@/assests/industries/Agriculture.webp";
+import smartCitiesImg from "@/assests/industries/SmartCities.webp";
+import logisticsImg from "@/assests/industries/Drones.webp";
+import educationImg from "@/assests/industries/Education.webp";
+import governmentImg from "@/assests/industries/Government.webp";
+import publishingImg from "@/assests/industries/Publishing.webp";
 
 export interface IndustryCardItem {
   icon: LucideIcon;

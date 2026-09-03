@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import { ScrollReveal } from "@/components/scroll";
-import ourTeamImage from "@/assests/about/ourteams.jpg";
+import ourTeamImage from "@/assests/about/ourteams.webp";
 
 export default function WhoWeAre() {
   return (

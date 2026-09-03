@@ -65,45 +65,39 @@ function ShowcaseCard({ service, index }: { service: CoreService; index: number 
 
         <span className="mt-5 h-px w-full bg-slate-200" aria-hidden="true" />
 
-        <ul className="mt-4 grid grid-cols-1 gap-x-6 sm:grid-cols-2">
-        {[0, 1].map((col) => (
-          <div key={col} className="space-y-3">
-            {service.capabilities
-              .filter((_, i) => i % 2 === col)
-              .map((cap) => {
-                const [line1, line2] = splitCapabilityLines(cap);
-                return (
-                  <li
-                    key={cap}
-                    className="flex items-start gap-1.5 text-[11.5px] leading-[1.35] text-slate-700"
-                  >
-                    <span
-                      className={`
-                        mt-0.5
-                        flex h-5 w-5 shrink-0 items-center justify-center
-                        rounded-full
-                        ${s.capabilityIcon}
-                        bg-white
-                      `}
-                    >
-                      <CheckCircle2
-                        size={15}
-                        strokeWidth={1.75}
-                        className={`shrink-0 ${s.capabilityIcon}`}
-                        aria-hidden="true"
-                      />
-                    </span>
+        <ul className="mt-4 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
+          {service.capabilities.map((cap) => {
+            const [line1, line2] = splitCapabilityLines(cap);
+            return (
+              <li
+                key={cap}
+                className="flex items-start gap-1.5 text-[11.5px] leading-[1.35] text-slate-700"
+              >
+                <span
+                  className={`
+                    mt-0.5
+                    flex h-5 w-5 shrink-0 items-center justify-center
+                    rounded-full
+                    ${s.capabilityIcon}
+                    bg-white
+                  `}
+                >
+                  <CheckCircle2
+                    size={15}
+                    strokeWidth={1.75}
+                    className={`shrink-0 ${s.capabilityIcon}`}
+                    aria-hidden="true"
+                  />
+                </span>
 
-                    <span className="flex min-h-[1.4em] flex-col justify-center break-words sm:min-h-[2.4em]">
-                      <span className="block truncate sm:hidden">{cap}</span>
-                      <span className="hidden sm:block">{line1}</span>
-                      <span className="hidden sm:block">{line2 || " "}</span>
-                    </span>
-                  </li>
-                );
-              })}
-          </div>
-        ))}
+                <span className="flex min-h-[1.4em] flex-col justify-center break-words sm:min-h-[2.4em]">
+                  <span className="block truncate sm:hidden">{cap}</span>
+                  <span className="hidden sm:block">{line1}</span>
+                  <span className="hidden sm:block">{line2 || " "}</span>
+                </span>
+              </li>
+            );
+          })}
       </ul>
 
         <a

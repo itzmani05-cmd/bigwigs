@@ -4,14 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
 import HeroVisualAnimation from "@/components/hero/HeroVisualAnimation";
 import { useParallax } from "@/hooks/useParallax";
-import appenLogo from "/data/trustedPartners/AppenLogo.png";
-import imeritLogo from "/data/trustedPartners/ImeritLogo.jpeg";
-import ivisionLogo from "/data/trustedPartners/IvisionLogo.png";
-import bigwigsPartnerLogo from "/data/trustedPartners/Logo.jpeg";
-import prudentLogo from "/data/trustedPartners/PrudentLogo.png";
-import tictagLogo from "/data/trustedPartners/TictagLogo.png";
-import wiseplLogo from "/data/trustedPartners/WiseplLogo.jpeg";
-import u2dLogo from "/data/trustedPartners/u2d-logo.png";
+import appenLogo from "/data/trustedPartners/AppenLogo.webp";
+import imeritLogo from "/data/trustedPartners/ImeritLogo.webp";
+import ivisionLogo from "/data/trustedPartners/IvisionLogo.webp";
+import bigwigsPartnerLogo from "/data/trustedPartners/Logo.webp";
+import prudentLogo from "/data/trustedPartners/PrudentLogo.webp";
+import tictagLogo from "/data/trustedPartners/TictagLogo.webp";
+import wiseplLogo from "/data/trustedPartners/WiseplLogo.webp";
+import u2dLogo from "/data/trustedPartners/u2d-logo.webp";
 
 interface PartnerLogo {
   src: string;
@@ -160,7 +160,7 @@ export default function Hero() {
               variants={eyebrowVariants}
               initial="hidden"
               animate="visible"
-              className="text-xs min-[1920px]:text-sm pl-1 font-bold  tracking-[0.1em] text-brand-blue-400"
+              className="text-xs min-[1920px]:text-sm pl-1 font-bold  tracking-[0.1em] text-brand-blue-600"
             >
               AI. Data. Digital Engineering.
             </motion.span>

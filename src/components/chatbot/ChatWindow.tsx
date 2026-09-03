@@ -102,7 +102,7 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
     <div className="flex h-full w-full flex-col overflow-hidden bg-white sm:h-[72vh] sm:max-h-[600px] sm:rounded-2xl sm:border sm:border-slate-200 sm:shadow-[0_28px_70px_-18px_rgba(15,23,42,0.3)]">
       <div className="flex items-center gap-3 bg-gradient-to-r from-brand-blue-600 to-brand-blue-500 px-4 py-3.5 pt-[max(0.875rem,env(safe-area-inset-top))] sm:pt-3.5">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white p-1.5 shadow-sm">
-          <img src="/assets/Logo.png" alt="" aria-hidden="true" className="h-full w-full object-contain" />
+          <img src="/assets/Logo.webp" alt="" aria-hidden="true" className="h-full w-full object-contain" />
         </span>
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-bold tracking-tight text-white">Bigwigs AI Assistant</p>

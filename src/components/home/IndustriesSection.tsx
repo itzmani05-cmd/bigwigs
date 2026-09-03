@@ -53,6 +53,7 @@ function IndustryCard({ industry, index }: { industry: Industry; index: number }
         </p>
         <a
           href="#contact"
+          aria-label={`Learn more about ${industry.name} solutions`}
           className="mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-brand-blue-600 transition-colors duration-300 hover:text-brand-blue-700"
         >
           Learn More

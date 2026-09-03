@@ -18,7 +18,7 @@ export default function OrganizationJsonLd() {
     name: SITE_NAME,
     legalName: SITE_LEGAL_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/assets/Logo.png`,
+    logo: `${SITE_URL}/assets/Logo.webp`,
     telephone: ORGANIZATION_CONTACT.telephone,
     email: ORGANIZATION_CONTACT.email,
     address: {

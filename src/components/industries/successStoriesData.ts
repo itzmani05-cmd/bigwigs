@@ -1,6 +1,6 @@
-import healthCareImg from "@/assests/industries/healthCare.png";
-import retailImg from "@/assests/industries/Retail.png";
-import automotiveImg from "@/assests/industries/Automotive.png";
+import healthCareImg from "@/assests/industries/healthCare.webp";
+import retailImg from "@/assests/industries/Retail.webp";
+import automotiveImg from "@/assests/industries/Automotive.webp";
 
 export interface SuccessStory {
   industry: string;

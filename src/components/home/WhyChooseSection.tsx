@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ShieldCheck,
@@ -71,6 +72,49 @@ const stats: Stat[] = [
   { icon: Star, value: "500+", label: "Successful Projects" },
 ];
 
+function LazyShowcaseVideo() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setShouldLoad(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="rounded-xl bg-gray-600 p-1 shadow-[0_16px_40px_-30px_rgba(15,23,42,0.35)]">
+      {shouldLoad ? (
+        <video
+          src="/bigwigs-technologies.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+          aria-hidden
+          className="aspect-[16/10] w-full rounded-lg bg-gray-600 object-contain"
+        />
+      ) : (
+        <div className="aspect-[16/10] w-full rounded-lg bg-gray-600" />
+      )}
+    </div>
+  );
+}
+
 export default function WhyChooseSection() {
   return (
     <section id="why-choose-us" className="relative w-full scroll-mt-24 overflow-hidden bg-white py-16 lg:py-20">
@@ -136,10 +180,10 @@ export default function WhyChooseSection() {
                       <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue-50">
                         <Icon size={18} strokeWidth={1.5} />
                       </span>
-                      <h2 className="flex flex-col text-[15px] font-bold leading-snug text-slate-900">
+                      <h3 className="flex flex-col text-[15px] font-bold leading-snug text-slate-900">
                         <span>{line1}</span>
                         <span>{line2 || " "}</span>
-                      </h2>
+                      </h3>
                     </div>
                     
                     <p className="mt-2 text-xs leading-relaxed text-slate-500">
@@ -153,16 +197,7 @@ export default function WhyChooseSection() {
 
           {/* middle: stats */}
           <div className="flex flex-col border-t border-slate-100 mt-12 pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
-            <div className="rounded-xl bg-gray-600 p-1 shadow-[0_16px_40px_-30px_rgba(15,23,42,0.35)]">
-              <video
-                src="/bigwigs-technologies.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="aspect-[16/10] w-full rounded-lg bg-gray-600 object-contain"
-              />
-            </div>
+            <LazyShowcaseVideo />
             <div className="mt-8 flex w-full flex-col divide-y divide-slate-100">
               {stats.map((stat, i) => {
                 const Icon = stat.icon;

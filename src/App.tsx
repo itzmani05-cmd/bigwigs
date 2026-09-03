@@ -1,48 +1,50 @@
+import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/scroll/ScrollProgress";
 import Home from "@/pages/Home";
-import About from "@/pages/About";
-import Industries from "@/pages/Industries";
-import Services from "@/pages/Services";
-import HealthcareLifeSciences from "@/pages/HealthcareLifeSciences";
-import AutomotiveMobility from "@/pages/AutomotiveMobility";
-import RetailEcommerce from "@/pages/RetailEcommerce";
-import BfsiSolutions from "@/pages/BfsiSolutions";
-import ManufacturingIndustrialSolutions from "@/pages/ManufacturingIndustrialSolutions";
-import EducationElearningSolutions from "@/pages/EducationElearningSolutions";
-import GovernmentPublicSectorSolutions from "@/pages/GovernmentPublicSectorSolutions";
-import PublishingMediaSolutions from "@/pages/PublishingMediaSolutions";
-import Careers from "@/pages/Careers";
-import Apply from "@/pages/Apply";
-import Demo from "@/pages/Demo";
-import Contact from "@/pages/Contact";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
-import TermsOfService from "@/pages/TermsOfService";
-import CookiePolicy from "@/pages/CookiePolicy";
-import CaseStudies from "@/pages/CaseStudies";
-import CaseStudyDetail from "@/pages/CaseStudyDetail";
-import SoftwareDevelopment from "@/pages/SoftwareDevelopment";
-import HealthcareAI from "@/pages/HealthcareAI";
-import TranslationLocalization from "@/pages/TranslationLocalization";
-import TranscriptionServices from "@/pages/TranscriptionServices";
-import VoiceDataCollection from "@/pages/VoiceDataCollection";
-import DataCollection from "@/pages/DataCollection";
-import DataQualityAssurance from "@/pages/DataQualityAssurance";
-import Quality from "@/pages/Quality";
-import DigitalPublishing from "@/pages/DigitalPublishing";
-import AiDataAnnotation from "@/pages/AiDataAnnotation";
-import GenerativeAI from "@/pages/GenerativeAi";
-import AIAgentsAutomation from "@/pages/AiAgentsAutomation";
-import NotFound from "@/pages/NotFound";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollToHash from "@/components/ScrollToHash";
 import ScrollToTop from "@/components/ScrollToTop";
 import OrganizationJsonLd from "@/components/seo/OrganizationJsonLd";
 import WebSiteJsonLd from "@/components/seo/WebSiteJsonLd";
 import LaunchGate from "@/components/LaunchGate";
+
+const About = lazy(() => import("@/pages/About"));
+const Industries = lazy(() => import("@/pages/Industries"));
+const Services = lazy(() => import("@/pages/Services"));
+const HealthcareLifeSciences = lazy(() => import("@/pages/HealthcareLifeSciences"));
+const AutomotiveMobility = lazy(() => import("@/pages/AutomotiveMobility"));
+const RetailEcommerce = lazy(() => import("@/pages/RetailEcommerce"));
+const BfsiSolutions = lazy(() => import("@/pages/BfsiSolutions"));
+const ManufacturingIndustrialSolutions = lazy(() => import("@/pages/ManufacturingIndustrialSolutions"));
+const EducationElearningSolutions = lazy(() => import("@/pages/EducationElearningSolutions"));
+const GovernmentPublicSectorSolutions = lazy(() => import("@/pages/GovernmentPublicSectorSolutions"));
+const PublishingMediaSolutions = lazy(() => import("@/pages/PublishingMediaSolutions"));
+const Careers = lazy(() => import("@/pages/Careers"));
+const Apply = lazy(() => import("@/pages/Apply"));
+const Demo = lazy(() => import("@/pages/Demo"));
+const Contact = lazy(() => import("@/pages/Contact"));
+const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
+const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
+const CaseStudies = lazy(() => import("@/pages/CaseStudies"));
+const CaseStudyDetail = lazy(() => import("@/pages/CaseStudyDetail"));
+const SoftwareDevelopment = lazy(() => import("@/pages/SoftwareDevelopment"));
+const HealthcareAI = lazy(() => import("@/pages/HealthcareAI"));
+const TranslationLocalization = lazy(() => import("@/pages/TranslationLocalization"));
+const TranscriptionServices = lazy(() => import("@/pages/TranscriptionServices"));
+const VoiceDataCollection = lazy(() => import("@/pages/VoiceDataCollection"));
+const DataCollection = lazy(() => import("@/pages/DataCollection"));
+const DataQualityAssurance = lazy(() => import("@/pages/DataQualityAssurance"));
+const Quality = lazy(() => import("@/pages/Quality"));
+const DigitalPublishing = lazy(() => import("@/pages/DigitalPublishing"));
+const AiDataAnnotation = lazy(() => import("@/pages/AiDataAnnotation"));
+const GenerativeAI = lazy(() => import("@/pages/GenerativeAi"));
+const AIAgentsAutomation = lazy(() => import("@/pages/AiAgentsAutomation"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
 
 export default function App() {
   return (
@@ -54,6 +56,7 @@ export default function App() {
       <ScrollProgress />
       <Navbar />
       <main className="flex-grow">
+        <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -98,6 +101,7 @@ export default function App() {
 
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </main>
       <Footer />
       <CookieConsent />

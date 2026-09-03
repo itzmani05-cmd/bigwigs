@@ -7,13 +7,13 @@ import {
   Building2,
   type LucideIcon,
 } from "lucide-react";
-import healthCareImg from "@/assests/industries/healthCare.png";
-import automotiveImg from "@/assests/industries/Automotive.png";
-import retailImg from "@/assests/industries/Retail.png";
-import bankingImg from "@/assests/industries/Banking.png";
-import agricultureImg from "@/assests/industries/Agriculture.png";
-import dronesImg from "@/assests/industries/Drones.png";
-import smartCitiesImg from "@/assests/industries/SmartCities.png";
+import healthCareImg from "@/assests/industries/healthCare.webp";
+import automotiveImg from "@/assests/industries/Automotive.webp";
+import retailImg from "@/assests/industries/Retail.webp";
+import bankingImg from "@/assests/industries/Banking.webp";
+import agricultureImg from "@/assests/industries/Agriculture.webp";
+import dronesImg from "@/assests/industries/Drones.webp";
+import smartCitiesImg from "@/assests/industries/SmartCities.webp";
 import pic1 from "@/assests/trusted/pic1.jpg";
 import pic2 from "@/assests/trusted/pic2.jpg";
 import pic3 from "@/assests/trusted/pic3.jpg";

@@ -53,7 +53,7 @@ export default function Navbar() {
         >
           <HashLink href="/" className="flex items-center group shrink-0">
             <img
-              src="/assets/Logo.png"
+              src="/assets/Logo.webp"
               alt="BigWigs Technologies Logo"
               width={296}
               height={74}

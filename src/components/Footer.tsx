@@ -15,7 +15,7 @@ import {
 import Container from "@/components/ui/Container";
 import HashLink from "@/components/ui/HashLink";
 import { LinkedInIcon, YoutubeIcon } from "@/components/ui/SocialIcons";
-import FooterLogo from "@/assests/FooterLogo.png";
+import FooterLogo from "@/assests/FooterLogo.webp";
 
 const focusRing =
   "outline-none rounded-sm focus-visible:ring-2 focus-visible:ring-brand-blue-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]";

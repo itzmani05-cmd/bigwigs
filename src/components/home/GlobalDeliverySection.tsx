@@ -1,7 +1,7 @@
 import Container from "@/components/ui/Container";
 import { ScrollReveal } from "@/components/scroll";
 import { useParallax } from "@/hooks/useParallax";
-import globalDeliveryMap from "@/assests/worldMap.png";
+import globalDeliveryMap from "@/assests/worldMap.webp";
 
 interface Node {
   id: string;

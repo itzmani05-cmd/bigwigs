@@ -9,14 +9,14 @@ import {
   Drone,
   type LucideIcon,
 } from "lucide-react";
-import healthCareImg from "@/assests/industries/healthCare.png";
-import DronesImg from "@/assests/industries/Drones.png";
-import RetailsImg from "@/assests/industries/Retail.png";
-import SmartCitiesImg from "@/assests/industries/SmartCities.png";
-import AgricultureImg from "@/assests/industries/Agriculture.png";
-import AutomotiveImg from "@/assests/industries/Automotive.png";
-import ManufacturingImg from "@/assests/industries/Manufacturing.png";
-import BankingImg from "@/assests/industries/Banking.png";
+import healthCareImg from "@/assests/industries/healthCare.webp";
+import DronesImg from "@/assests/industries/Drones.webp";
+import RetailsImg from "@/assests/industries/Retail.webp";
+import SmartCitiesImg from "@/assests/industries/SmartCities.webp";
+import AgricultureImg from "@/assests/industries/Agriculture.webp";
+import AutomotiveImg from "@/assests/industries/Automotive.webp";
+import ManufacturingImg from "@/assests/industries/Manufacturing.webp";
+import BankingImg from "@/assests/industries/Banking.webp";
 
 export interface Industry {
   icon: LucideIcon;

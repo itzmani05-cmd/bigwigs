@@ -24,7 +24,8 @@ export default function LifeAtBigwigs() {
               loop
               muted
               playsInline
-              aria-label="Life at Bigwigs Technologies — team culture highlights"
+              preload="none"
+              aria-hidden="true"
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />

@@ -1,6 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
 import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/scroll";
-import applyImage from "@/assests/aboutRightSide.png";
 
 const FEATURES = [
   "Global Projects",

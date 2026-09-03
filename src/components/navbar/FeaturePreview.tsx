@@ -58,13 +58,13 @@ export default function FeaturePreview({ feature, index }: FeaturePreviewProps) 
           >
             <Icon size={26} strokeWidth={1.75} />
           </span>
-          <h4
+          <h3
             className={`relative z-10 text-2xl font-bold tracking-tight ${
               feature.image ? "text-white" : "text-slate-900"
             }`}
           >
             {feature.title}
-          </h4>
+          </h3>
           <p
             className={`relative z-10 mt-2 text-sm leading-relaxed max-w-sm ${
               feature.image ? "text-white/85" : "text-slate-600"

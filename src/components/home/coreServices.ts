@@ -6,7 +6,7 @@ import {
   MessagesSquare,
   type LucideIcon,
 } from "lucide-react";
-import dataAnnotationCoreImg from "@/assests/DataAnnotationCore.png";
+import dataAnnotationCoreImg from "@/assests/DataAnnotationCore.webp";
 
 export type AccentColor = "blue" | "purple" | "green" | "cyan" | "orange";
 

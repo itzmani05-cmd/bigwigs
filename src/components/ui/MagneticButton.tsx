@@ -1,5 +1,5 @@
 import type { MouseEvent, ReactNode } from "react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useHashLink } from "@/hooks/useHashLink";
 
@@ -35,15 +35,27 @@ export default function MagneticButton({
   const y = useMotionValue(0);
   const springX = useSpring(x, { stiffness: 300, damping: 20, mass: 0.5 });
   const springY = useSpring(y, { stiffness: 300, damping: 20, mass: 0.5 });
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
 
   const handleMouseMove = (event: MouseEvent<HTMLElement>) => {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const offsetX = event.clientX - (rect.left + rect.width / 2);
-    const offsetY = event.clientY - (rect.top + rect.height / 2);
-    x.set(Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, offsetX * strength)));
-    y.set(Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, offsetY * strength)));
+    const clientX = event.clientX;
+    const clientY = event.clientY;
+    if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => {
+      const el = ref.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const offsetX = clientX - (rect.left + rect.width / 2);
+      const offsetY = clientY - (rect.top + rect.height / 2);
+      x.set(Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, offsetX * strength)));
+      y.set(Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, offsetY * strength)));
+    });
   };
 
   const handleMouseLeave = () => {

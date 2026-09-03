@@ -7,7 +7,7 @@ import gsap from "gsap";
  * and sorted numerically within each group, so each hero tile only cycles through images
  * whose aspect ratio matches its own shape.
  */
-const imageModules = import.meta.glob("/data/video/*.{jpg,jfif}", {
+const imageModules = import.meta.glob("/data/video/*.webp", {
   eager: true,
   import: "default",
 }) as Record<string, string>;
@@ -40,9 +40,11 @@ interface TileProps {
   className: string;
   paused: boolean;
   priority?: boolean;
+  /** Only the true LCP candidate (the first/largest tile) should carry this. */
+  fetchPriority?: "high";
 }
 
-function Tile({ images, interval, delay, className, paused, priority }: TileProps) {
+function Tile({ images, interval, delay, className, paused, priority, fetchPriority }: TileProps) {
   const layerARef = useRef<HTMLImageElement>(null);
   const layerBRef = useRef<HTMLImageElement>(null);
   const aIsFront = useRef(true);
@@ -92,6 +94,8 @@ function Tile({ images, interval, delay, className, paused, priority }: TileProp
         aria-hidden
         className="absolute inset-0 h-full w-full object-cover"
         loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={fetchPriority}
       />
       <img
         ref={layerBRef}
@@ -149,6 +153,7 @@ export default function HeroVisualAnimation() {
           delay={0}
           paused={paused}
           priority
+          fetchPriority="high"
           className="col-span-1 row-span-2 sm:col-span-2 sm:row-span-3"
         />
         <Tile
